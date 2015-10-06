@@ -57,13 +57,20 @@ namespace AwsWebApp1
                 if (item.ContainsKey("options"))
                 {
                     string test1234 = string.Empty;
+                    string testRemoveComa = string.Empty;
+                    
                     foreach (var itemNew in item["options"].M)
                     {
 
-                        test1234 += itemNew.Value.S;
-
+                        if(item["options"].M.Count>1)
+                        {
+                            test1234 += itemNew.Value.S + ",";
+                            
+                        }
+                       
                     }
-                    question.options = test1234;
+                    testRemoveComa = test1234.Remove(test1234.Length - 1);
+                    question.options = testRemoveComa;
                 }
                 questionDataList.Add(question);
 
@@ -134,28 +141,41 @@ namespace AwsWebApp1
             questionType.Text = typeOfQuestion;
             txtOptions.Text = choices;
 
+            string[] optionsCount = choices.Split(',');
+
+            for (int i = 0; i < optionsCount.Count(); i++)
+            {
+                TextBox txt = new TextBox();
+                txt.ID = "txtOptions" + optionsCount.Count();
+                txt.Text = optionsCount[i].ToString();
+
+                divEdit.Controls.Add(txt);
+            }
+
+            divEdit.Controls.Add(new TextBox());
+
         }
 
         protected void Update_Click(object sender, EventArgs e)
         {
-                string questionNew = questionEdit.Text;
-                string eventNew = eId.Text;
-                string questionIdNew = lblquestionId.Text;
-                string newCorrectAnswer = correctanswer.Text;
-                string newType = questionType.Text;
+            string questionNew = questionEdit.Text;
+            string eventNew = eId.Text;
+            string questionIdNew = lblquestionId.Text;
+            string newCorrectAnswer = correctanswer.Text;
+            string newType = questionType.Text;
             string newChoices = txtOptions.Text;
-                //string newOptionA = optionA.Text;
-                //string newOptionB = optionB.Text;
-                //string newOptionC = optionC.Text;
-                //string newOptionD = optionD.Text;
-                AmazonDynamoDBClient client = new AmazonDynamoDBClient();
-                string tableName = "QuizQuestion";
+            //string newOptionA = optionA.Text;
+            //string newOptionB = optionB.Text;
+            //string newOptionC = optionC.Text;
+            //string newOptionD = optionD.Text;
+            AmazonDynamoDBClient client = new AmazonDynamoDBClient();
+            string tableName = "QuizQuestion";
 
-                var request = new UpdateItemRequest
-                {
-                    TableName = tableName,
-                    Key = new Dictionary<string, AttributeValue>() { { "eventId", new AttributeValue { S = eventNew } }, { "questionId", new AttributeValue { S = questionIdNew } } },
-                    ExpressionAttributeNames = new Dictionary<string, string>()
+            var request = new UpdateItemRequest
+            {
+                TableName = tableName,
+                Key = new Dictionary<string, AttributeValue>() { { "eventId", new AttributeValue { S = eventNew } }, { "questionId", new AttributeValue { S = questionIdNew } } },
+                ExpressionAttributeNames = new Dictionary<string, string>()
     {
         {"#oldQuestion", "question"},
         {"#oldCorrectAnswer", "correctAnswer"},
@@ -167,7 +187,7 @@ namespace AwsWebApp1
         //{"#NA", "NewAttribute"},
         //{"#I", "ISBN"}
     },
-                    ExpressionAttributeValues = new Dictionary<string, AttributeValue>()
+                ExpressionAttributeValues = new Dictionary<string, AttributeValue>()
     {
         {":newQuestion",new AttributeValue {S = questionNew}},
         {":newCorrectAnswer",new AttributeValue {S = newCorrectAnswer}},
@@ -193,23 +213,23 @@ namespace AwsWebApp1
         }}
     },
 
-                    // This expression does the following:
-                    // 1) Adds two new authors to the list
-                    // 2) Reduces the price
-                    // 3) Adds a new attribute to the item
-                    // 4) Removes the ISBN attribute from the item
-                    UpdateExpression = "SET #oldQuestion = :newQuestion, #oldCorrectAnswer = :newCorrectAnswer, #oldOptions = :newOptions"
-                };
-                var response = client.UpdateItem(request);
-                //After updating the data in db.
+                // This expression does the following:
+                // 1) Adds two new authors to the list
+                // 2) Reduces the price
+                // 3) Adds a new attribute to the item
+                // 4) Removes the ISBN attribute from the item
+                UpdateExpression = "SET #oldQuestion = :newQuestion, #oldCorrectAnswer = :newCorrectAnswer, #oldOptions = :newOptions"
+            };
+            var response = client.UpdateItem(request);
+            //After updating the data in db.
 
-                divEdit.Visible = false;
-                divMain.Visible = true;
+            divEdit.Visible = false;
+            divMain.Visible = true;
 
-                BindData();
-            }
-
-
+            BindData();
         }
 
+
     }
+
+}
