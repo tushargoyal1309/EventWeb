@@ -98,13 +98,19 @@
             </Columns>
         </asp:GridView>
     </div>
-    <div id="divEdit" visible="false" runat="server">
+    <asp:Panel id="pnlEdit" ClientIDMode="Static"  visible="false" runat="server" >
         <asp:Label ID="eId" runat="server"></asp:Label>
         <asp:Label ID="lblquestionId" runat="server"></asp:Label>
-        <asp:TextBox ID="questionEdit" runat="server"></asp:TextBox>
-        <asp:TextBox ID="questionType" runat="server"></asp:TextBox>
-        <asp:TextBox ID="correctanswer" runat="server"></asp:TextBox>
+        <asp:TextBox ID="txtQuestionEdit" runat="server"></asp:TextBox>
+        <asp:TextBox ID="txtQuestionType" runat="server"></asp:TextBox>
+        <asp:TextBox ID="txtCorrectanswer" runat="server"></asp:TextBox>
         <asp:TextBox ID="txtOptions" runat="server"></asp:TextBox>
-        <asp:Button ID="Update" runat="server" OnClick="Update_Click" />
-    </div>
+       
+        <asp:Button ID="btnAdd" runat="server" Text="Add More Question(s)" OnClick="AddTextBox" />
+
+     <asp:Button ID="Update" runat="server" OnClick="Update_Click" Text="Update Question(s)" />
+
+    </asp:Panel>
+
+    
 </asp:Content>
