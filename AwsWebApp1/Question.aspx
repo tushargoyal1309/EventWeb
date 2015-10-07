@@ -23,7 +23,7 @@
             </div>
         </div>
         <br />
-        <asp:GridView OnSelectedIndexChanged="questionData_SelectedIndexChanged"
+        <asp:GridView OnSelectedIndexChanged="questionData_SelectedIndexChanged" PageSize="5" OnPageIndexChanging="questionData_PageIndexChanging"
             CssClass="table table-bordered table-striped table-responsive" AllowPaging="true"
             AlternatingRowStyle-BackColor="#FFFFFF" BorderStyle="None" BackColor="#F9F9F9" ID="questionData"
             runat="server" AutoGenerateColumns="false" PagerStyle-BackColor="White">
@@ -187,17 +187,17 @@
                                     <label>Options</label>
                                 </div>
                             </div>
-                            <div class="col-xs-6 col-sm-6 col-md-6">
+                            <%--<div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group" style="text-align:left;">
         <asp:TextBox ID="txtOptions" cssclass="form-control input-sm" runat="server"></asp:TextBox>
                                     </div>
-                            </div>
+                            </div>--%>
                      <div class="col-xs-2 col-sm-2 col-md-2"></div>
                         </div>
         <div class="row">
                     <div class="col-xs-4 col-sm-4 col-md-4"></div>
                     <div class="col-md-6">
-                        <asp:Button ID="btncancle" runat="server" CssClass="btn btn-danger" Text="Cancel"/>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <asp:Button ID="btncancle" OnClick="btncancle_Click" runat="server" CssClass="btn btn-danger" Text="Cancel"/>&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Button ID="btnAdd" runat="server"  CssClass="btn btn-info"  Text="Add More Option(s)" OnClick="AddTextBox" />&nbsp;&nbsp;&nbsp;&nbsp;
      <asp:Button ID="btnUpdate" runat="server" OnClick="Update_Click" CssClass="btn btn-success" Text="Update"/>
                        

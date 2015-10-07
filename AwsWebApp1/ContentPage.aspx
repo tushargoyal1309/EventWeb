@@ -22,8 +22,8 @@
         </div>
         </div>
     <br />
-    <asp:GridView OnSelectedIndexChanged="contentData_SelectedIndexChanged"
-        CssClass="table table-bordered table-striped table-responsive" AllowPaging="true" 
+    <asp:GridView OnSelectedIndexChanged="contentData_SelectedIndexChanged" OnPageIndexChanging="contentData_PageIndexChanging"
+        CssClass="table table-bordered table-striped table-responsive" AllowPaging="true" PageSize="5"
         AlternatingRowStyle-BackColor="#FFFFFF" BorderStyle="None" BackColor="#F9F9F9" ID="contentData" 
         runat="server" AutoGenerateColumns="false" PagerStyle-BackColor="White">
         <PagerSettings Mode="NumericFirstLast" PageButtonCount="5" FirstPageText="First" LastPageText="Last" />

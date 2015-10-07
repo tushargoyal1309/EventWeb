@@ -140,7 +140,10 @@ namespace AwsWebApp1
 
         protected void EventData_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-
+            EventData.PageIndex = e.NewPageIndex;
+            dt = GetData();
+            EventData.DataSource = dt;
+            EventData.DataBind();
         }
 
         protected void btnUpdate_Click(object sender, EventArgs e)

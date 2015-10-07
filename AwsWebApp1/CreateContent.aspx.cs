@@ -13,6 +13,16 @@ namespace AwsWebApp1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+        }
+
+        protected void Cancel_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ContentPage.aspx");
+        }
+
+        protected void submitButton_Click(object sender, EventArgs e)
+        {
             if (file.PostedFile != null)
             {
                 //string FileName = Path.GetFileName(file.PostedFile.FileName);
@@ -21,8 +31,8 @@ namespace AwsWebApp1
                 string myBucketName = "isbils"; //your s3 bucket name goes here
                 string s3DirectoryName = "";
                 // string s3FileName = @"mybackupFile uploaded in 10-1-2016.png";
-                //string Url = "https://s3.amazonaws.com/" + myBucketName + "/" + fileName;
-                //string imageNew = Url;
+                string Url = "https://s3.amazonaws.com/" + myBucketName + "/" + fileName;
+                string imageNew = Url;
                 AmazonUploader myUploader = new AmazonUploader();
                 myUploader.sendMyFileToS3(fileToBackup, myBucketName, s3DirectoryName, file.PostedFile.InputStream, file.PostedFile.FileName);
                 string FileExtension = System.IO.Path.GetExtension(file.FileName);
@@ -32,15 +42,15 @@ namespace AwsWebApp1
                     Amazon.DynamoDBv2.DocumentModel.Table table = Amazon.DynamoDBv2.DocumentModel.Table.LoadTable(client, "Content");
 
                     var book = new Document();
-                    //book["eventId"] = EventId.Text;
-                    //book["Email"] = Email.Text;
-                    //book["Biography"] = Biography.Text;
-                    //book["designation"] = Designation.Text;
+                    book["eventId"] = EventId.Text;
+                    book["contentId"] = ContentId.Text;
+                    book["fileType"] = FileType.Text;
+                    book["name"] = Name.Text;
                     //book["Name"] = Name.Text;
                     //book["organization"] = Organization.Text;
 
                     table.PutItem(book);
-                    Response.Redirect("Events.aspx");
+                    Response.Redirect("ContentPage.aspx");
                 }
                 else
                 {
@@ -55,26 +65,6 @@ namespace AwsWebApp1
                 ScriptManager.RegisterStartupScript(this, GetType(),
                                       "ServerControlScript", script, true);
             }
-        }
-
-        protected void Cancel_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("ContentPage.aspx");
-        }
-
-        protected void submitButton_Click(object sender, EventArgs e)
-        {
-            AmazonDynamoDBClient client = new AmazonDynamoDBClient();
-            Amazon.DynamoDBv2.DocumentModel.Table table = Amazon.DynamoDBv2.DocumentModel.Table.LoadTable(client, "Event");
-
-            var book = new Document();
-            book["ContentId"] = ContentId.Text;
-            book["EventId"] = EventId.Text;
-            book["FileType"] = FileType.Text;
-            book["Name"] = Name.Text;
-           
-            table.PutItem(book);
-            Response.Redirect("Events.aspx");
 
         }
     }

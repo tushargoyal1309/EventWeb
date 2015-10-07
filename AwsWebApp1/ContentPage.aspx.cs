@@ -91,7 +91,10 @@ namespace AwsWebApp1
 
         protected void contentData_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-
+            contentData.PageIndex = e.NewPageIndex;
+            dt = GetData();
+            contentData.DataSource = dt;
+            contentData.DataBind();
         }
 
         protected void contentData_SelectedIndexChanged(object sender, EventArgs e)

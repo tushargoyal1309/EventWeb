@@ -9,12 +9,12 @@ using System.Web.UI.WebControls;
 
 namespace AwsWebApp1
 {
-	public partial class CreateSponsor : System.Web.UI.Page
-	{
-		protected void Page_Load(object sender, EventArgs e)
-		{
+    public partial class CreateSponsor : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
 
-		}
+        }
 
         protected void Cancel_Click(object sender, EventArgs e)
         {
@@ -23,19 +23,39 @@ namespace AwsWebApp1
 
         protected void submitButton_Click(object sender, EventArgs e)
         {
-            AmazonDynamoDBClient client = new AmazonDynamoDBClient();
-            Amazon.DynamoDBv2.DocumentModel.Table table = Amazon.DynamoDBv2.DocumentModel.Table.LoadTable(client, "Sponsor");
+            if (file.PostedFile != null)
+            {
+                //string FileName = Path.GetFileName(file.PostedFile.FileName);
+                string fileToBackup = file.PostedFile.FileName;
+                string fileName = file.FileName;// test file
+                string myBucketName = "isbils"; //your s3 bucket name goes here
+                string s3DirectoryName = "";
+                // string s3FileName = @"mybackupFile uploaded in 10-1-2016.png";
+                string Url = "https://s3.amazonaws.com/" + myBucketName + "/" + fileName;
+                string imageNew = Url;
+                AmazonUploader myUploader = new AmazonUploader();
+                myUploader.sendMyFileToS3(fileToBackup, myBucketName, s3DirectoryName, file.PostedFile.InputStream, file.PostedFile.FileName);
+                // string FileExtension = System.IO.Path.GetExtension(file.FileName);
 
-            var book = new Document();
-            book["description"] = description.Text;
-            book["eventId"] = EventId.Text;
-            //book["logoUrl"] = file.Text;
-            book["name"] = Name.Text;
-            book["sno"] = sno.Text;
-            book["type"] = Type.Text;
-            
-            table.PutItem(book);
-            Response.Redirect("Sponsor.aspx");
+                AmazonDynamoDBClient client = new AmazonDynamoDBClient();
+                Amazon.DynamoDBv2.DocumentModel.Table table = Amazon.DynamoDBv2.DocumentModel.Table.LoadTable(client, "Sponsor");
+                var book = new Document();
+                book["description"] = description.Text;
+                book["eventId"] = EventId.Text;
+                book["logoUrl"] = Url;
+                book["name"] = Name.Text;
+                book["sno"] = sno.Text;
+                book["type"] = Type.Text;
+
+                table.PutItem(book);
+                Response.Redirect("Sponsor.aspx");
+            }
+            else
+            {
+                string script = "alert(\"Please select a file to upload.\");";
+                ScriptManager.RegisterStartupScript(this, GetType(),
+                                      "ServerControlScript", script, true);
+            }
         }
-	}
+    }
 }

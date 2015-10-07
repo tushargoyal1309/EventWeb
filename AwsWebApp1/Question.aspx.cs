@@ -140,7 +140,10 @@ namespace AwsWebApp1
 
         protected void questionData_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-
+            questionData.PageIndex = e.NewPageIndex;
+            dt = GetData();
+            questionData.DataSource = dt;
+            questionData.DataBind();
         }
 
         protected void questionData_SelectedIndexChanged(object sender, EventArgs e)
@@ -164,7 +167,7 @@ namespace AwsWebApp1
             txtQuestionEdit.Text = name;
             txtCorrectanswer.Text = rightAnswer;
             txtQuestionType.Text = typeOfQuestion;
-            txtOptions.Text = choices;
+            //txtOptions.Text = choices;
 
             string[] optionsCount = choices.Split(',');
 
@@ -208,7 +211,7 @@ namespace AwsWebApp1
             string questionIdNew = lblquestionId.Text;
             string newCorrectAnswer = txtCorrectanswer.Text;
             string newType = txtQuestionType.Text;
-            string newChoices = txtOptions.Text;
+            //string newChoices = txtOptions.Text;
 
             AmazonDynamoDBClient client = new AmazonDynamoDBClient();
             string tableName = "QuizQuestion";
@@ -272,6 +275,12 @@ namespace AwsWebApp1
             divMain.Visible = true;
 
             BindData();
+        }
+
+        protected void btncancle_Click(object sender, EventArgs e)
+        {
+            pnlEdit.Visible = false;
+            divMain.Visible = true;
         }
 
 

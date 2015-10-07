@@ -93,7 +93,10 @@ namespace AwsWebApp1
 
         protected void speakerData_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-
+            speakerData.PageIndex = e.NewPageIndex;
+            dt = GetData();
+            speakerData.DataSource = dt;
+            speakerData.DataBind();
         }
 
         protected void speakerData_SelectedIndexChanged(object sender, EventArgs e)

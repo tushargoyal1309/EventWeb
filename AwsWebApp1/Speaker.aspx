@@ -23,7 +23,7 @@
     </div>
     <br />
          <div runat="server">
-    <asp:GridView OnSelectedIndexChanged="speakerData_SelectedIndexChanged"
+    <asp:GridView OnSelectedIndexChanged="speakerData_SelectedIndexChanged" PageSize="5" OnPageIndexChanging="speakerData_PageIndexChanging"
         CssClass="table table-bordered table-striped table-responsive" AllowPaging="true" 
         AlternatingRowStyle-BackColor="#FFFFFF" BorderStyle="None" BackColor="#F9F9F9" ID="speakerData" 
         runat="server" AutoGenerateColumns="false" PagerStyle-BackColor="White">

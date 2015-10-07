@@ -92,7 +92,10 @@ namespace AwsWebApp1
 
         protected void sponsorData_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-
+            sponsorData.PageIndex = e.NewPageIndex;
+            dt = GetData();
+            sponsorData.DataSource = dt;
+            sponsorData.DataBind();
         }
 
         protected void sponsorData_SelectedIndexChanged(object sender, EventArgs e)

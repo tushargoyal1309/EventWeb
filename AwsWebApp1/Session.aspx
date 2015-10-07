@@ -23,7 +23,7 @@
     </div>
     <br />
         <div runat="server">
-    <asp:GridView PageSize="6" OnPageIndexChanging="sessionData_PageIndexChanging" OnSelectedIndexChanged="sessionData_SelectedIndexChanged"
+    <asp:GridView PageSize="5" OnPageIndexChanging="sessionData_PageIndexChanging" OnSelectedIndexChanged="sessionData_SelectedIndexChanged"
         CssClass="table table-bordered table-striped table-responsive" AllowPaging="true" 
         AlternatingRowStyle-BackColor="#FFFFFF" BorderStyle="None" BackColor="#F9F9F9" ID="sessionData" 
         runat="server" AutoGenerateColumns="false" PagerStyle-BackColor="White">

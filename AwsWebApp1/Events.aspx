@@ -32,8 +32,8 @@
         <br />
         <div runat="server">
 
-            <asp:GridView OnSelectedIndexChanged="EventData_SelectedIndexChanged" OnRowCancelingEdit="EventData_RowCancelingEdit"
-                CssClass="table table-bordered table-striped table-responsive" AllowPaging="true"
+            <asp:GridView OnSelectedIndexChanged="EventData_SelectedIndexChanged" OnPageIndexChanging="EventData_PageIndexChanging" OnRowCancelingEdit="EventData_RowCancelingEdit"
+                CssClass="table table-bordered table-striped table-responsive" PageSize="5" AllowPaging="true"
                 AlternatingRowStyle-BackColor="#FFFFFF" BorderStyle="None" BackColor="#F9F9F9" ID="EventData"
                 runat="server" AutoGenerateColumns="false" PagerStyle-BackColor="White">
                 <PagerSettings Mode="NumericFirstLast" PageButtonCount="5" FirstPageText="First" LastPageText="Last" />
