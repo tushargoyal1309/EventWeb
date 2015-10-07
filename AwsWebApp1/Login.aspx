@@ -4,7 +4,7 @@
 
 <html>
 <head>
-    <title>Sonic Responsive Template</title>
+    <title>Evento</title>
 	<meta name="keywords" content="" />
 	<meta name="description" content="" />
 <!-- 
@@ -39,9 +39,10 @@ http://www.templatemo.com/preview/templatemo_394_sonic
 </head>
 <body>
 
-    <div  id="header" class="top-header" style="z-index: 3;position: fixed;">
-        <span style="text-align:right; color:white; font-size:30px; vertical-align:middle;margin-top:10px">ISB</span>
-        <p id="Eventmodel" class="pull-right"><a href="#" id="details" data-toggle="modal"  data-target="#myModal" style="color:white;float:right;font-size:20px;margin-right:30px">LogIn</a></p>
+    <div  id="header" class="top-header" style="z-index: 3;position: fixed;background-color:#fff">
+       <div class="lgo"> <span style="text-align:right; color:white; font-size:30px; vertical-align:middle;margin-top:10px">
+           <img src="images/ISB.png" width="100" height="42" /></span></div>
+        <p id="Eventmodel" class="pull-right"><a href="#" id="details" data-toggle="modal"  data-target="#myModal" style="color:black;float:right;font-size:15px;margin-right:30px;margin-top:10px;font-weight:bold">LogIn</a></p>
     </div>
 	
 	<!-- This one in here is responsive menu for tablet and mobiles -->
