@@ -62,7 +62,7 @@
 <asp:TextBox ID="TextBox3" BorderStyle="None" runat="server" Text='<%# Eval("text") %>'></asp:TextBox>
 </EditItemTemplate>--%>
     </asp:TemplateField>
-     <asp:ButtonField HeaderText="Edit" CommandName="Select"   ImageUrl="images/edit%20(1).png"  Text="Edit" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#FFFFFFF" ButtonType="Image" ItemStyle-Height="10px" CausesValidation="false"></asp:ButtonField>
+     <asp:ButtonField HeaderText="Actions" CommandName="Select"   ImageUrl="images/edit%20(1).png"  Text="Edit" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#FFFFFFF" ButtonType="Image" ItemStyle-Height="10px" CausesValidation="false"></asp:ButtonField>
     </Columns>  
         </asp:GridView>
     </div>
@@ -71,77 +71,76 @@
         <div class="panel-heading" style="background-color: #00C7F7; color: white">
             <h3 class="panel-title">Edit an Announcement</h3>
         </div>
-        <div class="panel-body text-center">
-            <div class="col-md-12" id="divParent">
+        <div class="panel-body">
+            <div id="divParent">
                 <div class="row">
-                    <div class="col-md-6">
-                        <div class="col-xs-12 col-sm-12 col-md-12 row">
-                            <div class="col-xs-6 col-sm-6 col-md-6 text-right">
-                                <div class="form-group">
-                                    <span style="font-family: Adobe Hebrew">AnnouncementId</span>
+                         <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">
+                                <div class="form-group"  style="text-align:left">
+                                    <label>AnnouncementId</label>
                                 </div>
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
-                                <div class="form-group">
-        <asp:TextBox ID="AnnouncementId" runat="server" ></asp:TextBox>
+                                <div class="form-group" style="text-align:left;">
+        <asp:TextBox ID="AnnouncementId"  cssclass="form-control input-sm" runat="server"></asp:TextBox>
                 </div>
                             </div>
+                     <div class="col-xs-2 col-sm-2 col-md-2"></div>
                         </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="col-xs-12 col-sm-12 col-md-12 row">
-                            <div class="col-xs-6 col-sm-6 col-md-6 text-right">
-                                <div class="form-group">
-                                    <span style="font-family: Adobe Hebrew">EventId</span>
+                <div class="row">
+                  
+                      <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">
+                                <div class="form-group"  style="text-align:left">
+                                    <label>EventId</label>
                                 </div>
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
-        <asp:TextBox ID="EventId" runat="server" ></asp:TextBox>
+        <asp:TextBox ID="EventId" runat="server"  cssclass="form-control input-sm"></asp:TextBox>
                             </div>
                             </div>
-                        </div>
+                     <div class="col-xs-2 col-sm-2 col-md-2"></div>
                     </div>
+                <div class="row">
+                    <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                                      
+                            <div class="col-xs-2 col-sm-2 col-md-2">
+                                <div class="form-group" style="text-align:left">
+                                    <label>PublishTime</label>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+        <asp:TextBox ID="PublishTime" runat="server"  cssclass="form-control input-sm"></asp:TextBox>
+                </div>
+                            </div>
+                                        
+                  <div class="col-xs-2 col-sm-2 col-md-2"></div>
                 </div>
                 <div class="row">
-                    <div class="col-md-6">
-                        <div class="col-xs-12 col-sm-12 col-md-12 row">
-                            <div class="col-xs-6 col-sm-6 col-md-6 text-right">
-                                <div class="form-group">
-                                    <span style="font-family: Adobe Hebrew">PublishTime</span>
+                    
+                        <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">
+                           
+                                <div class="form-group"  style="text-align:left">
+                                    <label>Text</label>
                                 </div>
-                            </div>
+                          </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
-        <asp:TextBox ID="PublishTime" runat="server" ></asp:TextBox>
-                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="col-xs-12 col-sm-12 col-md-12 row">
-                            <div class="col-xs-6 col-sm-6 col-md-6 text-right">
-                                <div class="form-group">
-                                    <span style="font-family: Adobe Hebrew">Text</span>
-                                </div>
-                            </div>
-                            <div class="col-xs-6 col-sm-6 col-md-6">
-                                <div class="form-group">
-        <asp:TextBox ID="Text" runat="server" ></asp:TextBox>
+        <asp:TextBox ID="Text" runat="server"  cssclass="form-control input-sm"></asp:TextBox>
                               </div>
-             </div>
                             </div>
-                        </div>
-                    </div>
-               
-           
-           <div class="row">
-                    <div class="col-md-6">
-                        <asp:Button ID="btncancle" runat="server" CssClass="btn btn-danger" Text="Cancel" OnClick="btncancle_Click"/>
+                   
+                   <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                </div>
 
-                    </div>
+
+                <div class="row">
+                    <div class="col-xs-4 col-sm-4 col-md-4"></div>
                     <div class="col-md-6">
+                        <asp:Button ID="btncancle" runat="server" CssClass="btn btn-danger" Text="Cancel" OnClick="btncancle_Click"/>&nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:Button ID="Update" runat="server" OnClick="btnUpdate_Click" CssClass="btn btn-success" Text="Update"/>
                     </div>
                 </div>

@@ -94,130 +94,130 @@
         </div>
         <div class="panel panel-default" runat="server" id="divEdit" visible="false">
         <div class="panel-heading" style="background-color: #F98E33; color: white">
-            <h3 class="panel-title">Edit an Event</h3>
+            <h3 class="panel-title">Edit a Speaker</h3>
         </div>
-        <div class="panel-body text-center">
-            <div class="col-md-12" id="divParent">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="col-xs-12 col-sm-12 col-md-12 row">
-                            <div class="col-xs-4 col-sm-4 col-md-4 text-right">
-                                <div class="form-group">
-                                    <span style="font-family: Adobe Hebrew">Biography</span>
+        <div class="panel-body">
+            <div id="divParent">
+               <div class="row">
+                    
+                        <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">
+                           
+                                <div class="form-group"  style="text-align:left">
+                                    <label>EventId</label>
                                 </div>
-                            </div>
-                            <div class="col-xs-8 col-sm-8 col-md-8">
-                                <div class="form-group text-center">
-        <textarea class="form-control" rows="10" ID="txtBio" runat="server" ></textarea>
-                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="col-xs-12 col-sm-12 col-md-12 row">
-                            <div class="col-xs-6 col-sm-6 col-md-6 text-right">
-                                <div class="form-group">
-                                    <span style="font-family: Adobe Hebrew">Designation</span>
-                                </div>
-                            </div>
+                          </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
-        <asp:TextBox ID="txtDesignation" runat="server" ></asp:TextBox>
-                            </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="col-xs-12 col-sm-12 col-md-12 row">
-                            <div class="col-xs-6 col-sm-6 col-md-6 text-right">
-                                <div class="form-group">
-                                    <span style="font-family: Adobe Hebrew">Email</span>
-                                </div>
-                            </div>
-                            <div class="col-xs-6 col-sm-6 col-md-6">
-                                <div class="form-group">
-        <asp:Label ID="txtmail" runat="server" ></asp:Label>
-                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="col-xs-12 col-sm-12 col-md-12 row">
-                            <div class="col-xs-6 col-sm-6 col-md-6 text-right">
-                                <div class="form-group">
-                                    <span style="font-family: Adobe Hebrew">EventId</span>
-                                </div>
-                            </div>
-                            <div class="col-xs-6 col-sm-6 col-md-6">
-                                <div class="form-group">
-        <asp:Label ID="EventId" runat="server" ></asp:Label>
+        <asp:Label ID="EventId" runat="server"></asp:Label>
                              </div>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="col-xs-12 col-sm-12 col-md-12 row">
-                            <div class="col-xs-6 col-sm-6 col-md-6 text-right">
-                                <div class="form-group">
-                                    <span style="font-family: Adobe Hebrew">ImageUrl</span>
-                                </div>
-                            </div>
-                            <div class="col-xs-6 col-sm-6 col-md-6">
-                                <div class="form-group">
-        <asp:Image ID="Image" runat="server" ></asp:Image>
-                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="col-xs-12 col-sm-12 col-md-12 row">
-                            <div class="col-xs-6 col-sm-6 col-md-6 text-right">
-                                <div class="form-group">
-                                    <span style="font-family: Adobe Hebrew">Organization</span>
-                                </div>
-                            </div>
-                            <asp:FileUpload ID="file" runat="server" />
-                            <div class="col-xs-6 col-sm-6 col-md-6">
-                                <div class="form-group">
-        <asp:TextBox ID="txtOrganisation" runat="server" ></asp:TextBox>
-                              </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="col-md-6">
-                        <div class="col-xs-12 col-sm-12 col-md-12 row">
-                            <div class="col-xs-6 col-sm-6 col-md-6 text-right">
-                                <div class="form-group">
-                                    <span style="font-family: Adobe Hebrew">SpeakerName</span>
+                     
+                    <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                   </div>
+               <div class="row">
+                     <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">
+                                <div class="form-group" style="text-align:left">
+                                    <label>SpeakerName</label>
                                 </div>
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
         <asp:TextBox ID="txtSpeakerName" runat="server"></asp:TextBox>
                 </div>
-             </div>
                             </div>
-                        </div>
+                     
+                   <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                </div>
+               <div class="row">
+                    <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                                      
+                            <div class="col-xs-2 col-sm-2 col-md-2">
+                                <div class="form-group" style="text-align:left">
+                                    <label>Email</label>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+        <asp:Label ID="txtmail" runat="server"></asp:Label>
+                </div>
+                            </div>
+                                        
+                  <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                </div>
+               <div class="row">
+                  
+                      <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">
+                                <div class="form-group"  style="text-align:left">
+                                    <label>Designation</label>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+        <asp:TextBox ID="txtDesignation" runat="server"></asp:TextBox>
+                            </div>
+                            </div>
+                     <div class="col-xs-2 col-sm-2 col-md-2"></div>
                     </div>
+               <div class="row">
+                         <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">
+                                <div class="form-group"  style="text-align:left">
+                                    <label>Biography</label>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group" style="text-align:left;">
+        <textarea class="form-control" rows="5" ID="txtBio" runat="server"></textarea>
+                </div>
+                            </div>
+                     <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                        </div>
+               <div class="row">
+                    <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                      
+                            <div class="col-xs-2 col-sm-2 col-md-2">
+                                <div class="form-group" style="text-align:left">
+                                   <label style="text-align:left">ImageUrl</label>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group" >
+        <asp:Image ID="Image" Height="100px" Width="100px" runat="server"></asp:Image>
+                                    <asp:FileUpload ID="file" height="100px" Width="100px"  runat="server" />
+                </div>
+                            </div>
+                        <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                    </div>
+               <div class="row">
+                    <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">
+                           
+                                <div class="form-group"  style="text-align:left">
+                                    <label>Organization</label>
+                                    </div>
+                           </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+        <asp:TextBox ID="txtOrganisation" runat="server"></asp:TextBox>
+                              </div>
+                            </div>
+                   
+                   <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                </div>
+            
+
+
+                <div class="row">
+                    <div class="col-xs-4 col-sm-4 col-md-4"></div>
+                    <div class="col-md-6">
+                        <asp:Button ID="btncancle" runat="server" CssClass="btn btn-danger" Text="Cancel" OnClick="btncancle_Click"/>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <asp:Button ID="btnUpdate" runat="server" OnClick="btnUpdate_Click" CssClass="btn btn-success" Text="Update"/>
+                    </div>          <div class="col-xs-2 col-sm-2 col-md-2"></div>
                 </div>
             </div>
-            <div class="row">
-                    <div class="col-md-6">
-                        <asp:Button ID="btncancle" runat="server" CssClass="btn btn-danger" Text="Cancel" OnClick="btncancle_Click"/>
-
-                    </div>
-                    <div class="col-md-6">
-                        <asp:Button ID="btnUpdate" runat="server" OnClick="btnUpdate_Click" CssClass="btn btn-success" Text="Update"/>
-                    </div>
-                </div>
-             </div>
+        </div>
+    </div>
 </asp:Content>

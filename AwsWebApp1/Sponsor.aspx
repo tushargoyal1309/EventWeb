@@ -54,6 +54,14 @@
 <asp:TextBox ID="TextBox2" BorderStyle="None" runat="server" Text='<%# Eval("name") %>'></asp:TextBox>
 </EditItemTemplate>
     </asp:TemplateField>
+            <asp:TemplateField HeaderText="Description" AccessibleHeaderText="center"  HeaderStyle-BackColor="#FFFFFF">
+<ItemTemplate>
+<asp:Label ID="description" runat="server" Text='<%# Eval("description") %>'></asp:Label>
+</ItemTemplate>
+<EditItemTemplate>
+<asp:TextBox ID="TextBox5" BorderStyle="None" runat="server" Text='<%# Eval("description") %>'></asp:TextBox>
+</EditItemTemplate>
+    </asp:TemplateField>
 <asp:TemplateField HeaderText="Type" AccessibleHeaderText="center"  HeaderStyle-BackColor="#FFFFFF">
 <ItemTemplate>
 <asp:Label ID="type" runat="server" Text='<%# Eval("type") %>'></asp:Label>
@@ -70,14 +78,7 @@
 <asp:TextBox ID="TextBox4" BorderStyle="None" runat="server" Text='<%# Eval("logoUrl") %>'></asp:TextBox>
 </EditItemTemplate>--%>
     </asp:TemplateField>
-<asp:TemplateField HeaderText="Description" AccessibleHeaderText="center"  HeaderStyle-BackColor="#FFFFFF">
-<ItemTemplate>
-<asp:Label ID="description" runat="server" Text='<%# Eval("description") %>'></asp:Label>
-</ItemTemplate>
-<EditItemTemplate>
-<asp:TextBox ID="TextBox5" BorderStyle="None" runat="server" Text='<%# Eval("description") %>'></asp:TextBox>
-</EditItemTemplate>
-    </asp:TemplateField>
+
        <asp:ButtonField HeaderText="Actions" ImageUrl="images/edit%20(1).png" CommandName="Select" Text="Edit" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#FFFFFFF" ButtonType="Image" ItemStyle-Height="10px" CausesValidation="false"></asp:ButtonField>
     </Columns>   
          </asp:GridView>
@@ -87,109 +88,110 @@
         <div class="panel-heading" style="background-color: #335397; color: white">
             <h3 class="panel-title">Edit a Sponsor</h3>
         </div>
-        <div class="panel-body text-center">
-            <div class="col-md-12" id="divParent">
+     <div class="panel-body">
+            <div id="divParent">
+               
                 <div class="row">
-                    <div class="col-md-12">
-                        <div class="col-xs-12 col-sm-12 col-md-12 row">
-                            <div class="col-xs-4 col-sm-4 col-md-4 text-right">
+                  
+                      <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">
+                                <div class="form-group"  style="text-align:left">
+                                    <label>Sno</label>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
-                                    <span style="font-family: Adobe Hebrew">Description</span>
+                                    <asp:TextBox ID="sno" cssclass="form-control input-sm" runat="server"></asp:TextBox>
                                 </div>
                             </div>
-                            <div class="col-xs-8 col-sm-8 col-md-8">
-                                <div class="form-group text-center">
-                                    <textarea name="txtDesc" class="form-control" rows="10" id="Description" runat="server"></textarea>
-                                </div>
-                            </div>
-                        </div>
+                     <div class="col-xs-2 col-sm-2 col-md-2"></div>
                     </div>
+                <div class="row">
+                    <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                                      
+                            <div class="col-xs-2 col-sm-2 col-md-2">
+                                <div class="form-group" style="text-align:left">
+                                    <label>EventId</label>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <asp:Label ID="txtEventId" cssclass="form-control input-sm" runat="server"></asp:Label>
+                                </div>
+                            </div>
+                                        
+                  <div class="col-xs-2 col-sm-2 col-md-2"></div>
                 </div>
                 <div class="row">
-                    <div class="col-md-6">
-                        <div class="col-xs-12 col-sm-12 col-md-12 row">
-                            <div class="col-xs-6 col-sm-6 col-md-6 text-right">
-                                <div class="form-group">
-                                    <span style="font-family: Adobe Hebrew">Sno</span>
+                    
+                        <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">
+                           
+                                <div class="form-group"  style="text-align:left">
+                                    <label>Name</label>
                                 </div>
-                            </div>
+                          </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
-                                    <asp:TextBox ID="sno" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="txtEventName" cssclass="form-control input-sm" runat="server"></asp:TextBox>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="col-xs-12 col-sm-12 col-md-12 row">
-                            <div class="col-xs-6 col-sm-6 col-md-6 text-right">
-                                <div class="form-group">
-                                    <span style="font-family: Adobe Hebrew">EventId</span>
-                                </div>
-                            </div>
-                            <div class="col-xs-6 col-sm-6 col-md-6">
-                                <div class="form-group">
-                                    <asp:Label ID="txtEventId" runat="server"></asp:Label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                     
+                    <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                   </div>
                 <div class="row">
-                    <div class="col-md-6">
-                        <div class="col-xs-12 col-sm-12 col-md-12 row">
-                            <div class="col-xs-6 col-sm-6 col-md-6 text-right">
-                                <div class="form-group">
-                                    <span style="font-family: Adobe Hebrew">Name</span>
+                         <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">
+                                <div class="form-group"  style="text-align:left">
+                                    <label>Description</label>
                                 </div>
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
-                                <div class="form-group">
-                                    <asp:TextBox ID="txtEventName" runat="server"></asp:TextBox>
+                                <div class="form-group" style="text-align:left;">
+                                    <textarea name="txtDesc" class="form-control" rows="5" id="Description" runat="server"></textarea>
                                 </div>
                             </div>
+                     <div class="col-xs-2 col-sm-2 col-md-2"></div>
                         </div>
+                <div class="row">
+                    <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                      
+                            <div class="col-xs-2 col-sm-2 col-md-2">
+                                <div class="form-group" style="text-align:left">
+                                   <label style="text-align:left">Type</label>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group" >
+                                    <asp:TextBox ID="txttype" cssclass="form-control input-sm" runat="server"></asp:TextBox>
+                                </div>
+                            </div>
+                        <div class="col-xs-2 col-sm-2 col-md-2"></div>
                     </div>
+                <div class="row">
+                    <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">
+                           
+                                <div class="form-group"  style="text-align:left">
+                                    <label>Choose a file to Upload</label>
+                                    </div>
+                           </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <asp:FileUpload  ID="file" height="100px" Width="100px"  runat="server" />
+                                </div>
+                            </div>
+                     
+                   <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                </div>
 
-                    <div class="col-md-6">
-                        <div class="col-xs-12 col-sm-12 col-md-12 row">
-                            <div class="col-xs-6 col-sm-6 col-md-6 text-right">
-                                <div class="form-group">
-                                    <span style="font-family: Adobe Hebrew">Type</span>
-                                </div>
-                            </div>
-                            <div class="col-xs-6 col-sm-6 col-md-6">
-                                <div class="form-group">
-                                    <asp:TextBox ID="txttype" runat="server"></asp:TextBox>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="col-xs-12 col-sm-12 col-md-12 row">
-                            <div class="col-xs-6 col-sm-6 col-md-6 text-right">
-                                <div class="form-group">
-                                    <span style="font-family: Adobe Hebrew">logo.ImageUrl</span>
-                                </div>
-                            </div>
-                            <div class="col-xs-6 col-sm-6 col-md-6">
-                                <div class="form-group">
-                                    <asp:Image ID="logo" runat="server"></asp:Image>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-               <div class="row">
-                    <div class="col-md-6">
-                        <asp:Button ID="btncancle" runat="server" CssClass="btn btn-danger" Text="Cancel" OnClick="btncancle_Click"/>
 
-                    </div>
+                <div class="row">
+                    <div class="col-xs-4 col-sm-4 col-md-4"></div>
                     <div class="col-md-6">
+                        <asp:Button ID="btncancle" runat="server" CssClass="btn btn-danger" Text="Cancel" OnClick="btncancle_Click"/>&nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:Button ID="btnUpdate" runat="server" CssClass="btn btn-success" Text="Update" OnClick="btnUpdate_Click"/>
-                    </div>
+                    </div>          <div class="col-xs-2 col-sm-2 col-md-2"></div>
                 </div>
             </div>
         </div>

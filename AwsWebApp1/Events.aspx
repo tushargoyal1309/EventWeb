@@ -39,7 +39,23 @@
                 <PagerSettings Mode="NumericFirstLast" PageButtonCount="5" FirstPageText="First" LastPageText="Last" />
                 <PagerStyle BackColor="#FFFFFF" CssClass="GridPager" HorizontalAlign="center" />
                 <Columns>
-                    <asp:TemplateField HeaderText="Description" AccessibleHeaderText="center" HeaderStyle-BackColor="#FFFFFF">
+                <asp:TemplateField HeaderText="Event&nbsp;Id" AccessibleHeaderText="center" HeaderStyle-BackColor="#FFFFFF">
+                        <ItemTemplate>
+                            <asp:Label ReadOnly="true" BorderStyle="None" ID="eventId" runat="server" Text='<%# Eval("eventId") %>'></asp:Label>
+                        </ItemTemplate>
+                        <%--<EditItemTemplate>
+                                <asp:Label ID="TextBox2" BorderStyle="None" runat="server" Text='<%# Eval("eventId") %>'></asp:Label>
+                            </EditItemTemplate>--%>
+                    </asp:TemplateField>
+                <asp:TemplateField HeaderText="Event&nbsp;Name" AccessibleHeaderText="center" HeaderStyle-BackColor="#FFFFFF">
+                        <ItemTemplate>
+                            <asp:Label ReadOnly="true" BorderStyle="None" ID="eventName" runat="server" Text='<%# Eval("eventName") %>'></asp:Label>
+                        </ItemTemplate>
+                        <%-- <EditItemTemplate>
+                                <asp:TextBox ID="TextBox3" BorderStyle="None" runat="server" Text='<%# Eval("eventName") %>'></asp:TextBox>
+                            </EditItemTemplate>--%>
+                    </asp:TemplateField>
+                <asp:TemplateField HeaderText="Description" AccessibleHeaderText="center" HeaderStyle-BackColor="#FFFFFF">
                         <ItemTemplate>
                             <asp:Label ID="description1" CssClass="ShortDesc" BorderStyle="None" ReadOnly="true" runat="server" Text='<%# Eval("description1").ToString().Substring(0,Math.Min(150,Eval("description1").ToString().Length)) %>'></asp:Label>
                             <asp:Label ID="description11" Style="display: none" CssClass="ShortDesc" BorderStyle="None" ReadOnly="true" runat="server" Text='<%# Eval("description1") %>'></asp:Label>
@@ -53,39 +69,7 @@
                                 <asp:TextBox MaxLength="500" Wrap="true" BorderStyle="None" ID="description1" runat="server" Text='<%# Eval("description1") %>'></asp:TextBox>
                             </EditItemTemplate>--%>
                     </asp:TemplateField>
-                    <asp:TemplateField HeaderText="EndDate" AccessibleHeaderText="center" HeaderStyle-BackColor="#FFFFFF">
-                        <ItemTemplate>
-                            <asp:Label ReadOnly="true" BorderStyle="None" ID="endDate" runat="server" Text='<%# Eval("endDate") %>'></asp:Label>
-                        </ItemTemplate>
-                        <%-- <EditItemTemplate>
-                                <asp:TextBox ID="TextBox1" BorderStyle="None" runat="server" Text='<%# Eval("endDate") %>'></asp:TextBox>
-                            </EditItemTemplate>--%>
-                    </asp:TemplateField>
-                    <asp:TemplateField HeaderText="EventId" AccessibleHeaderText="center" HeaderStyle-BackColor="#FFFFFF">
-                        <ItemTemplate>
-                            <asp:Label ReadOnly="true" BorderStyle="None" ID="eventId" runat="server" Text='<%# Eval("eventId") %>'></asp:Label>
-                        </ItemTemplate>
-                        <%--<EditItemTemplate>
-                                <asp:Label ID="TextBox2" BorderStyle="None" runat="server" Text='<%# Eval("eventId") %>'></asp:Label>
-                            </EditItemTemplate>--%>
-                    </asp:TemplateField>
-                    <asp:TemplateField HeaderText="EventName" AccessibleHeaderText="center" HeaderStyle-BackColor="#FFFFFF">
-                        <ItemTemplate>
-                            <asp:Label ReadOnly="true" BorderStyle="None" ID="eventName" runat="server" Text='<%# Eval("eventName") %>'></asp:Label>
-                        </ItemTemplate>
-                        <%-- <EditItemTemplate>
-                                <asp:TextBox ID="TextBox3" BorderStyle="None" runat="server" Text='<%# Eval("eventName") %>'></asp:TextBox>
-                            </EditItemTemplate>--%>
-                    </asp:TemplateField>
-                    <asp:TemplateField HeaderText="OrganiserName" AccessibleHeaderText="center" HeaderStyle-BackColor="#FFFFFF">
-                        <ItemTemplate>
-                            <asp:Label ReadOnly="true" BorderStyle="None" ID="organiserName" runat="server" Text='<%# Eval("organiserName") %>'></asp:Label>
-                        </ItemTemplate>
-                        <%-- <EditItemTemplate>
-                                <asp:TextBox ID="TextBox4" BorderStyle="None" runat="server" Text='<%# Eval("organiserName") %>'></asp:TextBox>
-                            </EditItemTemplate>--%>
-                    </asp:TemplateField>
-                    <asp:TemplateField HeaderText="StartDate" AccessibleHeaderText="center" HeaderStyle-BackColor="#FFFFFF">
+                <asp:TemplateField HeaderText="Star&nbsp;tDate" AccessibleHeaderText="center" HeaderStyle-BackColor="#FFFFFF">
                         <ItemTemplate>
                             <asp:Label ReadOnly="true" BorderStyle="None" ID="startDate" runat="server" Text='<%# Eval("startDate") %>'></asp:Label>
                         </ItemTemplate>
@@ -93,7 +77,23 @@
                                 <asp:TextBox ID="TextBox5" BorderStyle="None" runat="server" Text='<%# Eval("startDate") %>'></asp:TextBox>
                             </EditItemTemplate>--%>
                     </asp:TemplateField>
-                    <asp:TemplateField HeaderText="Venue" AccessibleHeaderText="center" HeaderStyle-BackColor="#FFFFFF">
+                <asp:TemplateField HeaderText="End&nbsp;Date" AccessibleHeaderText="center" HeaderStyle-BackColor="#FFFFFF">
+                        <ItemTemplate>
+                            <asp:Label ReadOnly="true" BorderStyle="None" ID="endDate" runat="server" Text='<%# Eval("endDate") %>'></asp:Label>
+                        </ItemTemplate>
+                        <%-- <EditItemTemplate>
+                                <asp:TextBox ID="TextBox1" BorderStyle="None" runat="server" Text='<%# Eval("endDate") %>'></asp:TextBox>
+                            </EditItemTemplate>--%>
+                    </asp:TemplateField>
+                <asp:TemplateField HeaderText="Organiser&nbsp;Name" AccessibleHeaderText="center" HeaderStyle-BackColor="#FFFFFF">
+                        <ItemTemplate>
+                            <asp:Label ReadOnly="true" BorderStyle="None" ID="organiserName" runat="server" Text='<%# Eval("organiserName") %>'></asp:Label>
+                        </ItemTemplate>
+                        <%-- <EditItemTemplate>
+                                <asp:TextBox ID="TextBox4" BorderStyle="None" runat="server" Text='<%# Eval("organiserName") %>'></asp:TextBox>
+                            </EditItemTemplate>--%>
+                    </asp:TemplateField>
+                <asp:TemplateField HeaderText="Venue" AccessibleHeaderText="center" HeaderStyle-BackColor="#FFFFFF">
                         <ItemTemplate>
                             <asp:Label ReadOnly="true" BorderStyle="None" ID="venue" runat="server" Text='<%# Eval("venue") %>'></asp:Label>
                         </ItemTemplate>
@@ -114,14 +114,43 @@
         <div class="panel-heading" style="background-color: #2EC1CC; color: white">
             <h3 class="panel-title">Edit an Event</h3>
         </div>
-        <div class="panel-body" >
+        <div class="panel-body">
             <div id="divParent">
+                <div class="row">
+                         <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">
+                                <div class="form-group"  style="text-align:left">
+                                    <label>Event Id</label>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group" style="text-align:left;">
+                                    <asp:Label ID="txtEventId" runat="server" cssclass="form-control input-sm"></asp:Label>
+                                </div>
+                            </div>
+                     <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                        </div>
+                <div class="row">
+                  
+                      <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">
+                                <div class="form-group"  style="text-align:left">
+                                    <label>Event Name</label>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <asp:TextBox ID="txtEventName" runat="server"  cssclass="form-control input-sm"></asp:TextBox>
+                                </div>
+                            </div>
+                     <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                    </div>
                 <div class="row">
                     <div class="col-xs-2 col-sm-2 col-md-2"></div>
                                       
                             <div class="col-xs-2 col-sm-2 col-md-2">
                                 <div class="form-group" style="text-align:left">
-                                    <label >Description</label>
+                                    <label>Description</label>
                                 </div>
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
@@ -133,76 +162,9 @@
                   <div class="col-xs-2 col-sm-2 col-md-2"></div>
                 </div>
                 <div class="row">
-                    <div class="col-xs-2 col-sm-2 col-md-2"></div>
-                      
-                            <div class="col-xs-2 col-sm-2 col-md-2" >
-                                <div class="form-group" style="text-align:left">
-                                   <label style="text-align:left">End Date</label>
-                                </div>
-                            </div>
-                            <div class="col-xs-6 col-sm-6 col-md-6">
-                                <div class="form-group"  >
-                                    <asp:TextBox ID="txtEnd" runat="server" CssClass="form-control"></asp:TextBox>
-                                </div>
-                            </div>
-                        <div class="col-xs-2 col-sm-2 col-md-2"></div>
-                    </div>
-             
-              
-                <div class="row">
-                         <div class="col-xs-2 col-sm-2 col-md-2"></div>
-                            <div class="col-xs-2 col-sm-2 col-md-2" >
-                                <div class="form-group"  style="text-align:left" >
-                                    <label>Event Id</label>
-                                </div>
-                            </div>
-                            <div class="col-xs-6 col-sm-6 col-md-6">
-                                <div class="form-group" style="text-align:left">
-                                    <asp:Label ID="txtEventId" runat="server" CssClass="form-control"></asp:Label>
-                                </div>
-                            </div>
-                     <div class="col-xs-2 col-sm-2 col-md-2"></div>
-                        </div>
-                
-               
-                <div class="row">
-                  
-                      <div class="col-xs-2 col-sm-2 col-md-2"></div>
-                            <div class="col-xs-2 col-sm-2 col-md-2" >
-                                <div class="form-group"  style="text-align:left">
-                                    <label >Event Name</label>
-                                </div>
-                            </div>
-                            <div class="col-xs-6 col-sm-6 col-md-6">
-                                <div class="form-group">
-                                    <asp:TextBox ID="txtEventName" runat="server"  CssClass="form-control"></asp:TextBox>
-                                </div>
-                            </div>
-                     <div class="col-xs-2 col-sm-2 col-md-2"></div>
-                    </div>
-                   <div class="row">
-                    <div class="col-xs-2 col-sm-2 col-md-2"></div>
-                            <div class="col-xs-2 col-sm-2 col-md-2">
-                           
-                                <div class="form-group"  style="text-align:left">
-                                    <label >Organiser Name</label>
-                                    </div>
-                           </div>
-                            <div class="col-xs-6 col-sm-6 col-md-6">
-                                <div class="form-group">
-                                    <asp:TextBox ID="txtOName" runat="server"  CssClass="form-control"></asp:TextBox>
-                                </div>
-                            </div>
-                   
-                   <div class="col-xs-2 col-sm-2 col-md-2"></div>
-                </div>
-
-
-
-                <div class="row">
                     
                         <div class="col-xs-2 col-sm-2 col-md-2"></div>
-                            <div class="col-xs-2 col-sm-2 col-md-2" >
+                            <div class="col-xs-2 col-sm-2 col-md-2">
                            
                                 <div class="form-group"  style="text-align:left">
                                     <label>Start Date</label>
@@ -210,27 +172,53 @@
                           </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
-                                    <asp:TextBox ID="txtSatrt" runat="server"  CssClass="form-control"></asp:TextBox>
+                                    <asp:TextBox ID="txtSatrt" type="Date" runat="server"  cssclass="form-control input-sm"></asp:TextBox>
                                 </div>
                             </div>
                      
                     <div class="col-xs-2 col-sm-2 col-md-2"></div>
                    </div>
-
-
-                 <div class="row">
-
-
-                       
-                           <div class="col-xs-2 col-sm-2 col-md-2"></div>
-                            <div class="col-xs-2 col-sm-2 col-md-2" >
+                <div class="row">
+                    <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                      
+                            <div class="col-xs-2 col-sm-2 col-md-2">
+                                <div class="form-group" style="text-align:left">
+                                   <label style="text-align:left">End Date</label>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group" >
+                                    <asp:TextBox ID="txtEnd" type="Date"  runat="server" cssclass="form-control input-sm"></asp:TextBox>
+                                </div>
+                            </div>
+                        <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                    </div>
+                <div class="row">
+                    <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">
+                           
+                                <div class="form-group"  style="text-align:left">
+                                    <label>Organiser Name</label>
+                                    </div>
+                           </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <asp:TextBox ID="txtOName" runat="server"  cssclass="form-control input-sm"></asp:TextBox>
+                                </div>
+                            </div>
+                   
+                   <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                </div>
+                <div class="row">
+                     <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">
                                 <div class="form-group" style="text-align:left">
                                     <label>Venue</label>
                                 </div>
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
-                                    <asp:TextBox ID="txtVenue" runat="server"  CssClass="form-control"></asp:TextBox>
+                                    <asp:TextBox ID="txtVenue" runat="server"  cssclass="form-control input-sm"></asp:TextBox>
                                 </div>
                             </div>
                      
@@ -243,7 +231,7 @@
                     <div class="col-md-6">
                         <asp:Button ID="btncancle" runat="server" CssClass="btn btn-danger" Text="Cancel" OnClick="btncancle_Click"/>&nbsp;&nbsp;&nbsp;&nbsp;
                          <asp:Button ID="Button1" runat="server" CssClass="btn btn-success" Text="Update" OnClick="btnUpdate_Click" />
-                    </div >                  <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                    </div>          <div class="col-xs-2 col-sm-2 col-md-2"></div>
                 </div>
             </div>
         </div>

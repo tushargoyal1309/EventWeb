@@ -18,9 +18,9 @@
             </span>--%>
         </div>
         <div class="col-md-3">
-       <button type="button" class="btn btn-info">Create Content</button>
+       <asp:Button runat="server" Text="Create a New Attendee" OnClick="newContent_Click" type="button" ID="newContent" class="btn btn-info"></asp:Button>
         </div>
-    </div>
+        </div>
     <br />
     <asp:GridView OnSelectedIndexChanged="contentData_SelectedIndexChanged"
         CssClass="table table-bordered table-striped table-responsive" AllowPaging="true" 
@@ -65,34 +65,102 @@
 <asp:Label ID="contentUrl" Visible="false" runat="server" Text='<%# Eval("contentUrl") %>'></asp:Label>
 </ItemTemplate>
     </asp:TemplateField>
-    <asp:ButtonField CommandName="Select" HeaderText="Actions" Text="Edit" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#FFFFFFF" ButtonType="Image" ItemStyle-Height="10px" CausesValidation="false"></asp:ButtonField>
+    <asp:ButtonField CommandName="Select" HeaderText="Actions" ImageUrl="images/edit%20(1).png"  Text="Edit" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#FFFFFFF" ButtonType="Image" ItemStyle-Height="10px" CausesValidation="false"></asp:ButtonField>
     </Columns>   
         </asp:GridView>
         </div>
-    <div id="divEdit" runat="server" visible="false">
-        <div class="row">
-            <div class="col-md-6">
-        <asp:Label class="form-control" rows="10" ID="contentId" runat="server" ></asp:Label>
-                </div>
-                        <div class="col-md-6">
-                            <asp:FileUpload ID="file" runat="server" />
+    <div class="panel panel-default" runat="server" id="divEdit" visible="false">
+        <div class="panel-heading" style="background-color: #6A55C2; color: white">
+            <h3 class="panel-title">Edit a Content</h3>
+        </div>
+        <div class="panel-body">
+            <div id="divParent">
+                  <div class="row">
+                  
+                      <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">
+                                <div class="form-group"  style="text-align:left">
+                                    <label>Content Id</label>
+                                </div>
                             </div>
-            </div>
-         <div class="row">
-            <div class="col-md-6">
-        <asp:Label ID="txtId" runat="server" ></asp:Label>
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+        <asp:Label ID="txtcontentId"  cssclass="form-control input-sm" runat="server"></asp:Label>
                 </div>
-             </div>
-         <div class="row">
-                          <div class="col-md-6">
-        <asp:TextBox ID="filetype" runat="server" ></asp:TextBox>
-        <asp:TextBox ID="name" runat="server" ></asp:TextBox>
+                            </div>
+                     <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                        </div>
+                <div class="row">
+                  
+                      <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">
+                                <div class="form-group"  style="text-align:left">
+                                    <label>Event Id</label>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+        <asp:TextBox ID="txtId" runat="server"  cssclass="form-control input-sm"></asp:TextBox>
+                                    </div>
+                            </div>
+                     <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                        </div>
+                <div class="row">
+                  
+                      <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">
+                                <div class="form-group"  style="text-align:left">
+                                    <label>File Type</label>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+        <asp:TextBox ID="txtType" runat="server"  cssclass="form-control input-sm"></asp:TextBox>
                               </div>
-             </div>
-         <div class="row">
-            <div class="col-md-12">
-        <asp:Button ID="btnUpdate" runat="server" Text="Update" OnClick="btnUpdate_Click" />
+                            </div>
+                     
+                   <div class="col-xs-2 col-sm-2 col-md-2"></div>
                 </div>
-             </div>
+                <div class="row">
+                  
+                      <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">
+                                <div class="form-group"  style="text-align:left">
+                                    <label>Name</label>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+        <asp:TextBox ID="txtName" runat="server"  cssclass="form-control input-sm"></asp:TextBox>
+                              </div>
+                            </div>
+                     
+                   <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                </div>
+                <div class="row">
+                         <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">
+                                <div class="form-group"  style="text-align:left">
+                                    <label></label>
+
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group" style="text-align:left;">   
+                            <asp:FileUpload  height="100px" Width="100px" ID="file" runat="server" />
+                            </div>
+                            </div>
+                     <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                        </div>
+
+                <div class="row">
+                    <div class="col-xs-4 col-sm-4 col-md-4"></div>
+                    <div class="col-md-6">
+        <asp:Button ID="btncancle" runat="server" CssClass="btn btn-danger" Text="Cancel" OnClick="btncancle_Click"/>&nbsp;&nbsp;&nbsp;&nbsp;
+                         <asp:Button ID="btnUpdate" runat="server" CssClass="btn btn-success" OnClick="btnUpdate_Click" text="Update"/>
+                    </div>          <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                </div>
+            </div>
+        </div>
     </div>
 </asp:Content>
