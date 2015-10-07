@@ -144,6 +144,7 @@
     <Content Include="ContentPage.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\formValidation.min.css" />
     <Content Include="Content\Index.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Counter.aspx" />
@@ -183,6 +184,7 @@
     <Content Include="scripts\app.js" />
     <Content Include="scripts\bootbox.min.js" />
     <Content Include="scripts\bootstrap.js" />
+    <Content Include="scripts\bootstrap.min.js" />
     <Content Include="scripts\formValidation.min.js" />
     <Content Include="scripts\js\custom.js" />
     <Content Include="scripts\js\jquery-1.10.2.min.js" />

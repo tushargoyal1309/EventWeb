@@ -31,7 +31,6 @@ http://www.templatemo.com/preview/templatemo_394_sonic
        <link href="Content/formValidation.min.css" rel="stylesheet" />
         <script src="scripts/formValidation.min.js"></script>
     <script src="scripts/bootstrap.js"></script>
-
     <script src="scripts/bootstrap.min.js"></script>
 
 
