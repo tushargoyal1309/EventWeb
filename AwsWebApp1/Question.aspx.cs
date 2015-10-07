@@ -9,6 +9,7 @@ using System.Linq;
 using System.Reflection;
 using System.Web;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
 namespace AwsWebApp1
@@ -17,12 +18,31 @@ namespace AwsWebApp1
     {
         DataTable dt;
         int count;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 BindData();
             }
+
+            List<string> keys = Request.Form.AllKeys.Where(key => key.Contains("txtOptions")).ToList();
+            int i = 0;
+            foreach (string key in keys)
+            {
+                this.CreateTextBox("txtOptions" + i);
+                i++;
+            }
+        }
+
+        protected void GetTextBoxValues(object sender, EventArgs e)
+        {
+            string message = "";
+            foreach (TextBox textBox in pnlEdit.Controls.OfType<TextBox>())
+            {
+                message += textBox.ID + ": " + textBox.Text + "\\n";
+            }
+            ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "alert('" + message + "');", true);
         }
 
         DataTable GetData()
@@ -58,16 +78,16 @@ namespace AwsWebApp1
                 {
                     string test1234 = string.Empty;
                     string testRemoveComa = string.Empty;
-                    
+
                     foreach (var itemNew in item["options"].M)
                     {
 
-                        if(item["options"].M.Count>1)
+                        if (item["options"].M.Count > 1)
                         {
                             test1234 += itemNew.Value.S + ",";
-                            
+
                         }
-                       
+
                     }
                     testRemoveComa = test1234.Remove(test1234.Length - 1);
                     question.options = testRemoveComa;
@@ -121,7 +141,7 @@ namespace AwsWebApp1
         protected void questionData_SelectedIndexChanged(object sender, EventArgs e)
         {
             divMain.Visible = false;
-            divEdit.Visible = true;
+            pnlEdit.Visible = true;
             Label correct = (Label)(questionData.SelectedRow.FindControl("correctAnswer"));
             Label answerOptions = (Label)(questionData.SelectedRow.FindControl("options"));
             Label id = (Label)(questionData.SelectedRow.FindControl("eventId"));
@@ -136,9 +156,9 @@ namespace AwsWebApp1
             string typeOfQuestion = type.Text;
             eId.Text = eveId;
             lblquestionId.Text = qId;
-            questionEdit.Text = name;
-            correctanswer.Text = rightAnswer;
-            questionType.Text = typeOfQuestion;
+            txtQuestionEdit.Text = name;
+            txtCorrectanswer.Text = rightAnswer;
+            txtQuestionType.Text = typeOfQuestion;
             txtOptions.Text = choices;
 
             string[] optionsCount = choices.Split(',');
@@ -146,30 +166,79 @@ namespace AwsWebApp1
             for (int i = 0; i < optionsCount.Count(); i++)
             {
                 TextBox txt = new TextBox();
-                txt.ID = "txtOptions" + optionsCount.Count();
+                txt.ID = "txtOptions" + i;
+                txt.ClientIDMode = ClientIDMode.Static;
                 txt.Text = optionsCount[i].ToString();
-
-                divEdit.Controls.Add(txt);
+                Session["ctrlCount"] = optionsCount.Count();
+                pnlEdit.Controls.Add(txt);
             }
 
-            divEdit.Controls.Add(new TextBox());
+            //pnlEdit.Controls.Add(new TextBox());
 
+        }
+
+        private void CreateTextBox(string id)
+        {
+            TextBox txt = new TextBox();
+            txt.ID = id;
+            pnlEdit.Controls.Add(txt);
+
+            Literal lt = new Literal();
+            lt.Text = "<br />";
+            pnlEdit.Controls.Add(lt);
+        }
+
+
+
+        protected void AddTextBox(object sender, EventArgs e)
+        {
+            //  int index = pnlEdit.Controls.OfType<TextBox>().ToList().Count + 1;
+            // this.CreateTextBox("txtOptions" + index);
         }
 
         protected void Update_Click(object sender, EventArgs e)
         {
-            string questionNew = questionEdit.Text;
+            string questionNew = txtQuestionEdit.Text;
             string eventNew = eId.Text;
             string questionIdNew = lblquestionId.Text;
-            string newCorrectAnswer = correctanswer.Text;
-            string newType = questionType.Text;
+            string newCorrectAnswer = txtCorrectanswer.Text;
+            string newType = txtQuestionType.Text;
             string newChoices = txtOptions.Text;
-            //string newOptionA = optionA.Text;
-            //string newOptionB = optionB.Text;
-            //string newOptionC = optionC.Text;
-            //string newOptionD = optionD.Text;
+
             AmazonDynamoDBClient client = new AmazonDynamoDBClient();
             string tableName = "QuizQuestion";
+
+            int count = Convert.ToInt16(Session["ctrlCount"]);
+
+            string message = "";
+            int iCount = 0;
+            int iNewCount = 0;
+            List<string> txtOptionsList = new List<string>();
+            foreach (TextBox textBox in pnlEdit.Controls.OfType<TextBox>())
+            {
+                iCount = iCount + 1;
+                if (iCount > 4)
+                {
+                    if (textBox.ID == "txtOptions" + iNewCount)
+                    {
+                        iNewCount = iNewCount + 1;
+                        message = textBox.Text;
+                    }
+                }
+                txtOptionsList.Add(message);
+            }
+
+            string alpha = "ABCDEFGHIJKLMNOPQRSTUVQXYZ";
+
+            Dictionary<string, AttributeValue> tttt = new Dictionary<string, AttributeValue>();
+            int alphabet = 0;
+            for (int i = 4; i < txtOptionsList.Count - 1; i++)
+            {
+                AttributeValue attribute = new AttributeValue();
+                attribute.S = txtOptionsList[i];
+                tttt.Add(alpha[alphabet].ToString().ToLower(), attribute);
+                alphabet = alphabet + 1;
+            }
 
             var request = new UpdateItemRequest
             {
@@ -180,12 +249,6 @@ namespace AwsWebApp1
         {"#oldQuestion", "question"},
         {"#oldCorrectAnswer", "correctAnswer"},
         {"#oldOptions", "options"},
-        //{"#oldEndDate", "endDate"},
-        //{"#oldOrganiserName", "organiserName"},
-        //{"#oldVenue", "venue"},
-        //{"#P", "Price"},
-        //{"#NA", "NewAttribute"},
-        //{"#I", "ISBN"}
     },
                 ExpressionAttributeValues = new Dictionary<string, AttributeValue>()
     {
@@ -193,37 +256,16 @@ namespace AwsWebApp1
         {":newCorrectAnswer",new AttributeValue {S = newCorrectAnswer}},
         {":newOptions",new AttributeValue 
         {
-            M = new Dictionary<string, AttributeValue>
-        {
-            //{ "a", new AttributeValue { S = newOptionA } },
-            //{ "b", new AttributeValue { S = newOptionB } },
-            //{ "c", new AttributeValue { S = newOptionC } },
-            //{ "d", new AttributeValue { S = newOptionD } },
-            //{ "SampleInput", new AttributeValue {
-            //    L = new List<AttributeValue>
-            //    {
-            //        new AttributeValue { BOOL = true },
-            //        new AttributeValue { N =  "42" },
-            //        new AttributeValue { NULL = true },
-            //        new AttributeValue {
-            //            SS = new List<string> { "apple", "orange" } }
-            //    } }
-            //}
-        }
+            M = tttt
         }}
     },
 
-                // This expression does the following:
-                // 1) Adds two new authors to the list
-                // 2) Reduces the price
-                // 3) Adds a new attribute to the item
-                // 4) Removes the ISBN attribute from the item
                 UpdateExpression = "SET #oldQuestion = :newQuestion, #oldCorrectAnswer = :newCorrectAnswer, #oldOptions = :newOptions"
             };
             var response = client.UpdateItem(request);
             //After updating the data in db.
 
-            divEdit.Visible = false;
+            pnlEdit.Visible = false;
             divMain.Visible = true;
 
             BindData();
