@@ -22,6 +22,15 @@ namespace AwsWebApp1 {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl divMain;
         
         /// <summary>
+        /// newContent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button newContent;
+        
+        /// <summary>
         /// contentData control.
         /// </summary>
         /// <remarks>
@@ -40,13 +49,40 @@ namespace AwsWebApp1 {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl divEdit;
         
         /// <summary>
-        /// contentId control.
+        /// txtcontentId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label contentId;
+        protected global::System.Web.UI.WebControls.Label txtcontentId;
+        
+        /// <summary>
+        /// txtId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtId;
+        
+        /// <summary>
+        /// txtType control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtType;
+        
+        /// <summary>
+        /// txtName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtName;
         
         /// <summary>
         /// file control.
@@ -58,31 +94,13 @@ namespace AwsWebApp1 {
         protected global::System.Web.UI.WebControls.FileUpload file;
         
         /// <summary>
-        /// txtId control.
+        /// btncancle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txtId;
-        
-        /// <summary>
-        /// filetype control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox filetype;
-        
-        /// <summary>
-        /// name control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox name;
+        protected global::System.Web.UI.WebControls.Button btncancle;
         
         /// <summary>
         /// btnUpdate control.

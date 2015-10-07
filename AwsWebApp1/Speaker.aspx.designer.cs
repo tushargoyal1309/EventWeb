@@ -49,22 +49,22 @@ namespace AwsWebApp1 {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl divEdit;
         
         /// <summary>
-        /// txtBio control.
+        /// EventId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea txtBio;
+        protected global::System.Web.UI.WebControls.Label EventId;
         
         /// <summary>
-        /// txtDesignation control.
+        /// txtSpeakerName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDesignation;
+        protected global::System.Web.UI.WebControls.TextBox txtSpeakerName;
         
         /// <summary>
         /// txtmail control.
@@ -76,13 +76,22 @@ namespace AwsWebApp1 {
         protected global::System.Web.UI.WebControls.Label txtmail;
         
         /// <summary>
-        /// EventId control.
+        /// txtDesignation control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label EventId;
+        protected global::System.Web.UI.WebControls.TextBox txtDesignation;
+        
+        /// <summary>
+        /// txtBio control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea txtBio;
         
         /// <summary>
         /// Image control.
@@ -110,15 +119,6 @@ namespace AwsWebApp1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtOrganisation;
-        
-        /// <summary>
-        /// txtSpeakerName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSpeakerName;
         
         /// <summary>
         /// btncancle control.

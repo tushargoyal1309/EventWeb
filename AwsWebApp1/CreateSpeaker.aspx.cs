@@ -32,7 +32,7 @@ namespace AwsWebApp1
             book["Email"] = Email.Text;
             book["Designation"] = Designation.Text;
             book["Biography"] = Biography.Text;
-            book["ImageUrl"] = ImageUrl.Text;
+           // book["ImageUrl"] = file.Text;
             book["Organization"] = Organization.Text;
 
             table.PutItem(book);

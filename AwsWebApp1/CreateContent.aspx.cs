@@ -26,7 +26,7 @@ namespace AwsWebApp1
                 AmazonUploader myUploader = new AmazonUploader();
                 myUploader.sendMyFileToS3(fileToBackup, myBucketName, s3DirectoryName, file.PostedFile.InputStream, file.PostedFile.FileName);
                 string FileExtension = System.IO.Path.GetExtension(file.FileName);
-                if(FileExtension == type.Text)
+                if (FileExtension == FileType.Text)
                 {
                     AmazonDynamoDBClient client = new AmazonDynamoDBClient();
                     Amazon.DynamoDBv2.DocumentModel.Table table = Amazon.DynamoDBv2.DocumentModel.Table.LoadTable(client, "Content");
@@ -55,6 +55,27 @@ namespace AwsWebApp1
                 ScriptManager.RegisterStartupScript(this, GetType(),
                                       "ServerControlScript", script, true);
             }
+        }
+
+        protected void Cancel_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ContentPage.aspx");
+        }
+
+        protected void submitButton_Click(object sender, EventArgs e)
+        {
+            AmazonDynamoDBClient client = new AmazonDynamoDBClient();
+            Amazon.DynamoDBv2.DocumentModel.Table table = Amazon.DynamoDBv2.DocumentModel.Table.LoadTable(client, "Event");
+
+            var book = new Document();
+            book["ContentId"] = ContentId.Text;
+            book["EventId"] = EventId.Text;
+            book["FileType"] = FileType.Text;
+            book["Name"] = Name.Text;
+           
+            table.PutItem(book);
+            Response.Redirect("Events.aspx");
+
         }
     }
 }

@@ -305,16 +305,16 @@
           totalPoints = 300;
           getRandomData = function() {
             var i, prev, res, y;
-            if (data.length > 0) {
+            if (data.length> 0) {
               data = data.slice(1);
             }
             while (data.length < totalPoints) {
-              prev = (data.length > 0 ? data[data.length - 1] : 50);
+              prev = (data.length> 0 ? data[data.length - 1] : 50);
               y = prev + Math.random() * 10 - 5;
               if (y < 0) {
                 y = 0;
               } else {
-                if (y > 100) {
+                if (y> 100) {
                   y = 100;
                 }
               }
@@ -834,7 +834,7 @@
         var path, ref, specificPages;
         path = $location.path();
         specificPages = ['/404', '/page/404', '/page/500', '/page/login', '/page/signin', '/page/signin1', '/page/signin2', '/page/signup', '/page/signup1', '/page/signup2', '/page/lock-screen'];
-        return (ref = specificPages.indexOf(path) >= 0) != null ? ref : {
+        return (ref = specificPages.indexOf(path)>= 0) != null ? ref : {
           1: -1
         };
       };

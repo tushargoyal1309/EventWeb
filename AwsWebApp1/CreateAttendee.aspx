@@ -7,112 +7,109 @@
         <div class="panel-heading" style="background-color: #FFB61C; color: white">
             <h3 class="panel-title">Create an Attendee</h3>
         </div>
-        <div class="panel-body text-center">
-            <div class="col-md-12" id="divParent">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="col-xs-12 col-sm-12 col-md-12 row">
-                            <div class="col-xs-4 col-sm-4 col-md-4 text-right">
-                                <div class="form-group">
-                                    <span style="font-family:Adobe Hebrew">Biography</span>
-                                   </div>
-                            </div>
-
-                            <div class="col-xs-8 col-sm-8 col-md-8">
-                                <div class="form-group">
-                                   <asp:TextBox runat="server" TextMode="multiline" cssclass="form-control" id="Biography" class="form-control input-lg" Columns="10" Height="100" Wrap="true" type="text" placeholder="">
-                                       </asp:TextBox>
-                                </div>
-                            </div>
-                        </div>
-                        </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                        <div class="col-xs-12 col-sm-12 col-md-12 row">
-                            <div class="col-xs-6 col-sm-6 col-md-6 text-right">
-                                <div class="form-group">
-                                    <span style="font-family:Adobe Hebrew">Designation</span>
-                                 </div>
-                            </div>
-
-                            <div class="col-xs-6 col-sm-6 col-md-6">
-                                <div class="form-group">
-                                <asp:TextBox runat="server" id="Designation" class="form-control input-sm" type="text" placeholder="">
-                                    </asp:TextBox>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-xs-12 col-sm-12 col-md-12 row">
-                            <div class="col-xs-6 col-sm-6 col-md-6 text-right">
-                                <div class="form-group">
-                                       <span style="font-family:Adobe Hebrew">Email</span>
+        <div class="panel-body">
+            <div id="divParent">
+               <div class="row">
+                         <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">
+                                <div class="form-group"  style="text-align:left">
+                                    <label>EventId</label>
                                     </div>
                             </div>
-
                             <div class="col-xs-6 col-sm-6 col-md-6">
-                                <div class="form-group">
-                                  <asp:TextBox runat="server" id="Email" class="form-control input-sm" type="text" placeholder="">
-                                      </asp:TextBox>
-                                </div>
-                            </div>
-                        </div>
-                         <div class="col-xs-12 col-sm-12 col-md-12 row">
-                            <div class="col-xs-6 col-sm-6 col-md-6 text-right">
-                                <div class="form-group">
-                                        <span style="font-family:Adobe Hebrew">EventId</span>
-                                    </div>
-                            </div>
-
-                            <div class="col-xs-6 col-sm-6 col-md-6">
-                                <div class="form-group">
+                                <div class="form-group" style="text-align:left;">
                                    <asp:TextBox runat="server" id="EventId" class="form-control input-sm" type="text" placeholder="">
                                        </asp:TextBox>
                                 </div>
                             </div>
+                     <div class="col-xs-2 col-sm-2 col-md-2"></div>
                         </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="col-xs-12 col-sm-12 col-md-12 row">
-                            <div class="col-xs-6 col-sm-6 col-md-6 text-right">
-                                <div class="form-group">
-                                       <span style="font-family:Adobe Hebrew">Name</span>
-                                    </div>
+               <div class="row">
+                  
+                      <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">
+                                <div class="form-group"  style="text-align:left">
+                                    <label>Name</label>
+                                   </div>
                             </div>
-
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
                                   <asp:TextBox runat="server" id="Name" class="form-control input-sm" type="text" placeholder="">
                                       </asp:TextBox>
                                 </div>
                             </div>
+                     <div class="col-xs-2 col-sm-2 col-md-2"></div>
                         </div>
-                        <div class="col-xs-12 col-sm-12 col-md-12 row">
-                            <div class="col-xs-6 col-sm-6 col-md-6 text-right">
-                                <div class="form-group">
-                                       <span style="font-family:Adobe Hebrew">Organization</span>
-                                   </div>
+               <div class="row">
+                  
+                      <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">
+                                <div class="form-group"  style="text-align:left">
+                                    <label>Designation</label>
+                                    </div>
                             </div>
-
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group" style="text-align:left;">
+                                <asp:TextBox runat="server" id="Designation" class="form-control input-sm" type="text" placeholder="">
+                                    </asp:TextBox>
+                                </div>
+                            </div>
+                     <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                        </div>
+               <div class="row">
+                    <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">
+                                <div class="form-group"  style="text-align:left">
+                                    <label>Biography</label>
+                                 </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                   <asp:TextBox runat="server" TextMode="multiline" cssclass="form-control input-sm" id="Biography" class="form-control input-lg" Columns="10" Height="100" Wrap="true" type="text" placeholder="">
+                                       </asp:TextBox>
+                                </div>
+                            </div>
+                     <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                        </div>
+               <div class="row">
+                         <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">
+                                <div class="form-group"  style="text-align:left">
+                                    <label>Email</label>
+                                        </div>
+                                   </div>
+                                                        <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group" style="text-align:left;">
+                                  <asp:TextBox runat="server" id="Email" class="form-control input-sm" type="text" placeholder="">
+                                      </asp:TextBox>
+                                </div>
+                            </div>
+                     <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                        </div>
+               <div class="row">
+                  
+                      <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">
+                                <div class="form-group"  style="text-align:left">
+                                    <label>Organization</label>
+                                </div>
+                            </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
                                     <asp:TextBox runat="server" id="Organization" class="form-control input-sm" type="text" placeholder="">
                                         </asp:TextBox>
                                 </div>
                             </div>
-                        </div>
-
-                                         
-                    </div>
-                    
+                     
+                   <div class="col-xs-2 col-sm-2 col-md-2"></div>
                 </div>
+               
+
+
                     <div class="row">
-                        <div class="col-md-6">
-                   <asp:Button runat="server" id="Cancel" Text="Cancel" value="Cancel" class="btn btn-danger" OnClick="Cancel_Click"/>
-                   </div>
-                        <div class="col-md-6">
+                    <div class="col-xs-4 col-sm-4 col-md-4"></div>
+                    <div class="col-md-6">
+                   <asp:Button runat="server" id="Cancel" Text="Cancel" value="Cancel" class="btn btn-danger" OnClick="Cancel_Click"/>&nbsp;&nbsp;&nbsp;&nbsp;
                    <asp:Button runat="server"  Text="Create"  type="submit" id="submitButton" OnClick= "submitButton_Click" value="Create" class="btn btn-success" />
                    </div>
                         </div>

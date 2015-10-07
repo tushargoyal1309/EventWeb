@@ -49,15 +49,6 @@ namespace AwsWebApp1 {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl divEdit;
         
         /// <summary>
-        /// Description control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea Description;
-        
-        /// <summary>
         /// sno control.
         /// </summary>
         /// <remarks>
@@ -85,6 +76,15 @@ namespace AwsWebApp1 {
         protected global::System.Web.UI.WebControls.TextBox txtEventName;
         
         /// <summary>
+        /// Description control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea Description;
+        
+        /// <summary>
         /// txttype control.
         /// </summary>
         /// <remarks>
@@ -94,13 +94,13 @@ namespace AwsWebApp1 {
         protected global::System.Web.UI.WebControls.TextBox txttype;
         
         /// <summary>
-        /// logo control.
+        /// file control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image logo;
+        protected global::System.Web.UI.WebControls.FileUpload file;
         
         /// <summary>
         /// btncancle control.

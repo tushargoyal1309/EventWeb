@@ -3,13 +3,9 @@ C:\Users\KANCHENJUNGA-GRADING\Desktop\Roop\AWS\EventWeb\AwsWebApp1\bin\AwsWebApp
 C:\Users\KANCHENJUNGA-GRADING\Desktop\Roop\AWS\EventWeb\AwsWebApp1\bin\AwsWebApp1.pdb
 C:\Users\KANCHENJUNGA-GRADING\Desktop\Roop\AWS\EventWeb\AwsWebApp1\bin\AWSSDK.Core.dll
 C:\Users\KANCHENJUNGA-GRADING\Desktop\Roop\AWS\EventWeb\AwsWebApp1\bin\AWSSDK.dll
-C:\Users\KANCHENJUNGA-GRADING\Desktop\Roop\AWS\EventWeb\AwsWebApp1\bin\AWSSDK.EC2.dll
-C:\Users\KANCHENJUNGA-GRADING\Desktop\Roop\AWS\EventWeb\AwsWebApp1\bin\AWSSDK.S3.dll
 C:\Users\KANCHENJUNGA-GRADING\Desktop\Roop\AWS\EventWeb\AwsWebApp1\bin\AWSSDK.SimpleDB.dll
 C:\Users\KANCHENJUNGA-GRADING\Desktop\Roop\AWS\EventWeb\AwsWebApp1\bin\Newtonsoft.Json.dll
 C:\Users\KANCHENJUNGA-GRADING\Desktop\Roop\AWS\EventWeb\AwsWebApp1\bin\AWSSDK.Core.xml
-C:\Users\KANCHENJUNGA-GRADING\Desktop\Roop\AWS\EventWeb\AwsWebApp1\bin\AWSSDK.EC2.xml
-C:\Users\KANCHENJUNGA-GRADING\Desktop\Roop\AWS\EventWeb\AwsWebApp1\bin\AWSSDK.S3.xml
 C:\Users\KANCHENJUNGA-GRADING\Desktop\Roop\AWS\EventWeb\AwsWebApp1\bin\AWSSDK.SimpleDB.xml
 C:\Users\KANCHENJUNGA-GRADING\Desktop\Roop\AWS\EventWeb\AwsWebApp1\bin\AWSSDK.pdb
 C:\Users\KANCHENJUNGA-GRADING\Desktop\Roop\AWS\EventWeb\AwsWebApp1\bin\Newtonsoft.Json.xml

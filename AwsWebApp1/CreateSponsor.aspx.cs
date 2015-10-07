@@ -29,7 +29,7 @@ namespace AwsWebApp1
             var book = new Document();
             book["description"] = description.Text;
             book["eventId"] = EventId.Text;
-            book["logoUrl"] = logo.Text;
+            book["logoUrl"] = file.Text;
             book["name"] = Name.Text;
             book["sno"] = sno.Text;
             book["type"] = Type.Text;

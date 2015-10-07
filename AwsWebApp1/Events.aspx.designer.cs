@@ -49,24 +49,6 @@ namespace AwsWebApp1 {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl divSearchResult;
         
         /// <summary>
-        /// txtDesc control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea txtDesc;
-        
-        /// <summary>
-        /// txtEnd control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEnd;
-        
-        /// <summary>
         /// txtEventId control.
         /// </summary>
         /// <remarks>
@@ -85,13 +67,13 @@ namespace AwsWebApp1 {
         protected global::System.Web.UI.WebControls.TextBox txtEventName;
         
         /// <summary>
-        /// txtOName control.
+        /// txtDesc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtOName;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea txtDesc;
         
         /// <summary>
         /// txtSatrt control.
@@ -101,6 +83,24 @@ namespace AwsWebApp1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtSatrt;
+        
+        /// <summary>
+        /// txtEnd control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtEnd;
+        
+        /// <summary>
+        /// txtOName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtOName;
         
         /// <summary>
         /// txtVenue control.

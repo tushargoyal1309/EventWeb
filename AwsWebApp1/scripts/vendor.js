@@ -286,7 +286,7 @@ function isArrayLike(obj) {
   }
 
   return isString(obj) || isArray(obj) || length === 0 ||
-         typeof length === 'number' && length > 0 && (length - 1) in obj;
+         typeof length === 'number' && length> 0 && (length - 1) in obj;
 }
 
 /**
@@ -805,7 +805,7 @@ function includes(array, obj) {
 
 function arrayRemove(array, value) {
   var index = array.indexOf(value);
-  if (index >= 0) {
+  if (index>= 0) {
     array.splice(index, 1);
   }
   return index;
@@ -1178,7 +1178,7 @@ function sliceArgs(args, startIndex) {
  */
 /* jshint +W101 */
 function bind(self, fn) {
-  var curryArgs = arguments.length > 2 ? sliceArgs(arguments, 2) : [];
+  var curryArgs = arguments.length> 2 ? sliceArgs(arguments, 2) : [];
   if (isFunction(fn) && !(fn instanceof RegExp)) {
     return curryArgs.length
       ? function() {
@@ -2253,7 +2253,7 @@ function serializeObject(obj) {
     val = toJsonReplacer(key, val);
     if (isObject(val)) {
 
-      if (seen.indexOf(val) >= 0) return '<<already seen>>';
+      if (seen.indexOf(val)>= 0) return '<<already seen>>';
 
       seen.push(val);
     }
@@ -2827,7 +2827,7 @@ function jqLiteOff(element, type, fn, unsupported) {
       if (isDefined(fn)) {
         var listenerFns = events[type];
         arrayRemove(listenerFns || [], fn);
-        if (listenerFns && listenerFns.length > 0) {
+        if (listenerFns && listenerFns.length> 0) {
           return;
         }
       }
@@ -2902,7 +2902,7 @@ function jqLiteData(element, key, value) {
 function jqLiteHasClass(element, selector) {
   if (!element.getAttribute) return false;
   return ((" " + (element.getAttribute('class') || '') + " ").replace(/[\n\t]/g, " ").
-      indexOf(" " + selector + " ") > -1);
+      indexOf(" " + selector + " ")> -1);
 }
 
 function jqLiteRemoveClass(element, cssClasses) {
@@ -3042,7 +3042,7 @@ var JQLitePrototype = JQLite.prototype = {
   },
 
   eq: function(index) {
-      return (index >= 0) ? jqLite(this[index]) : jqLite(this[this.length + index]);
+      return (index>= 0) ? jqLite(this[index]) : jqLite(this[this.length + index]);
   },
 
   length: 0,
@@ -3290,7 +3290,7 @@ function createEventHandler(element, events) {
     };
 
     // Copy event handlers in case event handlers array is modified during execution.
-    if ((eventFnsLength > 1)) {
+    if ((eventFnsLength> 1)) {
       eventFns = shallowCopy(eventFns);
     }
 
@@ -3332,7 +3332,7 @@ forEach({
     }
 
     // http://jsperf.com/string-indexof-vs-split
-    var types = type.indexOf(' ') >= 0 ? type.split(' ') : [type];
+    var types = type.indexOf(' ')>= 0 ? type.split(' ') : [type];
     var i = types.length;
 
     while (i--) {
@@ -4666,7 +4666,7 @@ function $AnchorScrollProvider() {
            top: 0; left: 0; right: 0;
          }
 
-         .fixed-header > a {
+         .fixed-header> a {
            display: inline-block;
            margin: 5px 15px;
          }
@@ -4904,7 +4904,7 @@ var $$CoreAnimateQueueProvider = function() {
 
       var classesAdded = updateData(add, true);
       var classesRemoved = updateData(remove, false);
-      if ((!classesAdded && !classesRemoved) || postDigestElements.length > 1) return;
+      if ((!classesAdded && !classesRemoved) || postDigestElements.length> 1) return;
 
       $rootScope.$$postDigest(function() {
         forEach(postDigestElements, function(element) {
@@ -5970,7 +5970,7 @@ function $CacheFactoryProvider() {
           if (!(key in data)) size++;
           data[key] = value;
 
-          if (size > capacity) {
+          if (size> capacity) {
             this.remove(staleEnd.key);
           }
 
@@ -7216,7 +7216,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
        * @param {string} classVal The className value that will be added to the element
        */
       $addClass: function(classVal) {
-        if (classVal && classVal.length > 0) {
+        if (classVal && classVal.length> 0) {
           $animate.addClass(this.$$element, classVal);
         }
       },
@@ -7233,7 +7233,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
        * @param {string} classVal The className value that will be removed from the element
        */
       $removeClass: function(classVal) {
-        if (classVal && classVal.length > 0) {
+        if (classVal && classVal.length> 0) {
           $animate.removeClass(this.$$element, classVal);
         }
       },
@@ -7803,7 +7803,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
           }
           nodes.push(node);
           node = node.nextSibling;
-        } while (depth > 0);
+        } while (depth> 0);
       } else {
         nodes.push(node);
       }
@@ -7884,7 +7884,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
         }
         $template = undefined;
 
-        if (terminalPriority > directive.priority) {
+        if (terminalPriority> directive.priority) {
           break; // prevent further processing of directives
         }
 
@@ -8247,7 +8247,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
         childLinkFn && childLinkFn(scopeToChild, linkNode.childNodes, undefined, boundTranscludeFn);
 
         // POSTLINKING
-        for (i = postLinkFns.length - 1; i >= 0; i--) {
+        for (i = postLinkFns.length - 1; i>= 0; i--) {
           linkFn = postLinkFns[i];
           invokeLinkFn(linkFn,
               linkFn.isolateScope ? isolateScope : scope,
@@ -8311,7 +8311,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
             i = 0, ii = directives.length; i < ii; i++) {
           try {
             directive = directives[i];
-            if ((maxPriority === undefined || maxPriority > directive.priority) &&
+            if ((maxPriority === undefined || maxPriority> directive.priority) &&
                  directive.restrict.indexOf(location) != -1) {
               if (startAttrName) {
                 directive = inherit(directive, {$$start: startAttrName, $$end: endAttrName});
@@ -8939,7 +8939,7 @@ function tokenDifference(str1, str2) {
     for (var j = 0; j < tokens2.length; j++) {
       if (token == tokens2[j]) continue outer;
     }
-    values += (values.length > 0 ? ' ' : '') + token;
+    values += (values.length> 0 ? ' ' : '') + token;
   }
   return values;
 }
@@ -10547,7 +10547,7 @@ function $HttpProvider() {
 
 
     function buildUrl(url, serializedParams) {
-      if (serializedParams.length > 0) {
+      if (serializedParams.length> 0) {
         url += ((url.indexOf('?') == -1) ? '?' : '&') + serializedParams;
       }
       return url;
@@ -10667,7 +10667,7 @@ function createHttpBackend($browser, createXhr, $browserDefer, callbacks, rawDoc
       xhr.send(post);
     }
 
-    if (timeout > 0) {
+    if (timeout> 0) {
       var timeoutId = $browserDefer(timeoutRequest, timeout);
     } else if (isPromiseLike(timeout)) {
       timeout.then(timeoutRequest);
@@ -10981,7 +10981,7 @@ function $InterpolateProvider() {
       // that's used is assigned or constructed by some JS code somewhere that is more testable or
       // make it obvious that you bound the value to some user controlled value.  This helps reduce
       // the load when auditing for XSS issues.
-      if (trustedContext && concat.length > 1) {
+      if (trustedContext && concat.length> 1) {
           $interpolateMinErr.throwNoconcat(text);
       }
 
@@ -11136,7 +11136,7 @@ function $IntervalProvider() {
       *             if ( angular.isDefined(stop) ) return;
       *
       *             stop = $interval(function() {
-      *               if ($scope.blood_1 > 0 && $scope.blood_2 > 0) {
+      *               if ($scope.blood_1> 0 && $scope.blood_2> 0) {
       *                 $scope.blood_1 = $scope.blood_1 - 3;
       *                 $scope.blood_2 = $scope.blood_2 - 4;
       *               } else {
@@ -11210,7 +11210,7 @@ function $IntervalProvider() {
       * </example>
       */
     function interval(fn, delay, count, invokeApply) {
-      var hasParams = arguments.length > 4,
+      var hasParams = arguments.length> 4,
           args = hasParams ? sliceArgs(arguments, 4) : [],
           setInterval = $window.setInterval,
           clearInterval = $window.clearInterval,
@@ -11228,7 +11228,7 @@ function $IntervalProvider() {
       promise.$$intervalId = setInterval(function tick() {
         deferred.notify(iteration++);
 
-        if (count > 0 && iteration >= count) {
+        if (count> 0 && iteration>= count) {
           deferred.resolve(iteration);
           clearInterval(promise.$$intervalId);
           delete intervals[promise.$$intervalId];
@@ -12526,7 +12526,7 @@ function ensureSafeFunction(obj, fullExpression) {
 }
 
 var OPERATORS = createMap();
-forEach('+ - * / % === !== == != < > <= >= && || ! = |'.split(' '), function(operator) { OPERATORS[operator] = true; });
+forEach('+ - * / % === !== == != <> <=>= && || ! = |'.split(' '), function(operator) { OPERATORS[operator] = true; });
 var ESCAPE = {"n":"\n", "f":"\f", "r":"\r", "t":"\t", "v":"\v", "'":"'", '"':'"'};
 
 
@@ -12749,7 +12749,7 @@ AST.prototype = {
   program: function() {
     var body = [];
     while (true) {
-      if (this.tokens.length > 0 && !this.peek('}', ')', ';', ']'))
+      if (this.tokens.length> 0 && !this.peek('}', ')', ';', ']'))
         body.push(this.expressionStatement());
       if (!this.expect(';')) {
         return { type: AST.Program, body: body};
@@ -12999,7 +12999,7 @@ AST.prototype = {
   },
 
   peekAhead: function(i, e1, e2, e3, e4) {
-    if (this.tokens.length > i) {
+    if (this.tokens.length> i) {
       var token = this.tokens[i];
       var t = token.text;
       if (t === e1 || t === e2 || t === e3 || t === e4 ||
@@ -13922,7 +13922,7 @@ ASTInterpreter.prototype = {
   },
   'binary>': function(left, right, context) {
     return function(scope, locals, assign, inputs) {
-      var arg = left(scope, locals, assign, inputs) > right(scope, locals, assign, inputs);
+      var arg = left(scope, locals, assign, inputs)> right(scope, locals, assign, inputs);
       return context ? {value: arg} : arg;
     };
   },
@@ -13934,7 +13934,7 @@ ASTInterpreter.prototype = {
   },
   'binary>=': function(left, right, context) {
     return function(scope, locals, assign, inputs) {
-      var arg = left(scope, locals, assign, inputs) >= right(scope, locals, assign, inputs);
+      var arg = left(scope, locals, assign, inputs)>= right(scope, locals, assign, inputs);
       return context ? {value: arg} : arg;
     };
   },
@@ -14601,7 +14601,7 @@ function qFactory(nextTick, exceptionHandler) {
 
       this.$$state.pending = this.$$state.pending || [];
       this.$$state.pending.push([result, onFulfilled, onRejected, progressBack]);
-      if (this.$$state.status > 0) scheduleProcessQueue(this.$$state);
+      if (this.$$state.status> 0) scheduleProcessQueue(this.$$state);
 
       return result.promise;
     },
@@ -15334,7 +15334,7 @@ function $RootScopeProvider() {
         incrementWatchersCount(this, 1);
 
         return function deregisterWatch() {
-          if (arrayRemove(array, watcher) >= 0) {
+          if (arrayRemove(array, watcher)>= 0) {
             incrementWatchersCount(scope, -1);
           }
           lastDirtyWatch = null;
@@ -15492,7 +15492,7 @@ function $RootScopeProvider() {
         // a shallow copy of the newValue from when the last change happened
         var veryOldValue;
         // only track veryOldValue if the listener is asking for it
-        var trackVeryOldValue = (listener.length > 1);
+        var trackVeryOldValue = (listener.length> 1);
         var changeDetected = 0;
         var changeDetector = $parse(obj, $watchCollectionInterceptor);
         var internalArray = [];
@@ -15566,7 +15566,7 @@ function $RootScopeProvider() {
                 }
               }
             }
-            if (oldLength > newLength) {
+            if (oldLength> newLength) {
               // we used to have more keys, need to find them and destroy them.
               changeDetected++;
               for (key in oldValue) {
@@ -16394,7 +16394,7 @@ function adjustMatcher(matcher) {
     // '*' matches any character except those from the set ':/.?&'.
     // '**' matches any character (like .* in a RegExp).
     // More than 2 *'s raises an error as it's ill defined.
-    if (matcher.indexOf('***') > -1) {
+    if (matcher.indexOf('***')> -1) {
       throw $sceMinErr('iwcard',
           'Illegal sequence *** in string matcher.  String: {0}', matcher);
     }
@@ -17966,7 +17966,7 @@ function $$CookieReader($document) {
       for (i = 0; i < cookieArray.length; i++) {
         cookie = cookieArray[i];
         index = cookie.indexOf('=');
-        if (index > 0) { //ignore nameless cookies
+        if (index> 0) { //ignore nameless cookies
           name = safeDecodeURIComponent(cookie.substring(0, index));
           // the first value that is seen for a cookie is the most
           // specific one.  values for the same cookie name that
@@ -18563,7 +18563,7 @@ function formatNumber(number, pattern, groupSep, decimalSep, fractionSize) {
 
   if (!isInfinity && numStr.indexOf('e') !== -1) {
     var match = numStr.match(/([\d\.]+)e(-?)(\d+)/);
-    if (match && match[2] == '-' && match[3] > fractionSize + 1) {
+    if (match && match[2] == '-' && match[3]> fractionSize + 1) {
       number = 0;
     } else {
       formatedText = numStr;
@@ -18592,7 +18592,7 @@ function formatNumber(number, pattern, groupSep, decimalSep, fractionSize) {
         lgroup = pattern.lgSize,
         group = pattern.gSize;
 
-    if (whole.length >= (lgroup + group)) {
+    if (whole.length>= (lgroup + group)) {
       pos = whole.length - lgroup;
       for (i = 0; i < pos; i++) {
         if ((pos - i) % group === 0 && i !== 0) {
@@ -18616,7 +18616,7 @@ function formatNumber(number, pattern, groupSep, decimalSep, fractionSize) {
 
     if (fractionSize && fractionSize !== "0") formatedText += decimalSep + fraction.substr(0, fractionSize);
   } else {
-    if (fractionSize > 0 && number < 1) {
+    if (fractionSize> 0 && number < 1) {
       formatedText = number.toFixed(fractionSize);
       number = parseFloat(formatedText);
     }
@@ -18651,7 +18651,7 @@ function dateGetter(name, size, offset, trim) {
   offset = offset || 0;
   return function(date) {
     var value = date['get' + name]();
-    if (offset > 0 || value > -offset) {
+    if (offset> 0 || value> -offset) {
       value += offset;
     }
     if (value === 0 && offset == -12) value = 12;
@@ -18670,9 +18670,9 @@ function dateStrGetter(name, shortForm) {
 
 function timeZoneGetter(date, formats, offset) {
   var zone = -1 * offset;
-  var paddedZone = (zone >= 0) ? "+" : "";
+  var paddedZone = (zone>= 0) ? "+" : "";
 
-  paddedZone += padNumber(Math[zone > 0 ? 'floor' : 'ceil'](zone / 60), 2) +
+  paddedZone += padNumber(Math[zone> 0 ? 'floor' : 'ceil'](zone / 60), 2) +
                 padNumber(Math.abs(zone % 60), 2);
 
   return paddedZone;
@@ -19095,9 +19095,9 @@ function limitToFilter() {
     if (!isArray(input) && !isString(input)) return input;
 
     begin = (!begin || isNaN(begin)) ? 0 : toInt(begin);
-    begin = (begin < 0 && begin >= -input.length) ? input.length + begin : begin;
+    begin = (begin < 0 && begin>= -input.length) ? input.length + begin : begin;
 
-    if (limit >= 0) {
+    if (limit>= 0) {
       return input.slice(begin, begin + limit);
     } else {
       if (begin === 0) {
@@ -21679,7 +21679,7 @@ function createDateInputType(type, regexp, parseDate, format) {
     if (isDefined(attr.min) || attr.ngMin) {
       var minVal;
       ctrl.$validators.min = function(value) {
-        return !isValidDate(value) || isUndefined(minVal) || parseDate(value) >= minVal;
+        return !isValidDate(value) || isUndefined(minVal) || parseDate(value)>= minVal;
       };
       attr.$observe('min', function(val) {
         minVal = parseObservedDateValue(val);
@@ -21748,7 +21748,7 @@ function numberInputType(scope, element, attr, ctrl, $sniffer, $browser) {
   if (isDefined(attr.min) || attr.ngMin) {
     var minVal;
     ctrl.$validators.min = function(value) {
-      return ctrl.$isEmpty(value) || isUndefined(minVal) || value >= minVal;
+      return ctrl.$isEmpty(value) || isUndefined(minVal) || value>= minVal;
     };
 
     attr.$observe('min', function(val) {
@@ -22466,9 +22466,9 @@ function classDirective(name, selector) {
           var classCounts = element.data('$classCounts') || createMap();
           var classesToUpdate = [];
           forEach(classes, function(className) {
-            if (count > 0 || classCounts[className]) {
+            if (count> 0 || classCounts[className]) {
               classCounts[className] = (classCounts[className] || 0) + count;
-              if (classCounts[className] === +(count > 0)) {
+              if (classCounts[className] === +(count> 0)) {
                 classesToUpdate.push(className);
               }
             }
@@ -23238,7 +23238,7 @@ var ngControllerDirective = [function() {
           function getAndClearSevereErrors() {
             return browser.manage().logs().get('browser').then(function(browserLog) {
               return browserLog.filter(function(logEntry) {
-                return logEntry.level.value > webdriver.logging.Level.WARNING.value;
+                return logEntry.level.value> webdriver.logging.Level.WARNING.value;
               });
             });
           }
@@ -24093,7 +24093,7 @@ var ngIfDirective = ['$animate', function($animate) {
  * @name ngInclude#$includeContentError
  * @eventType emit on the scope ngInclude was declared in
  * @description
- * Emitted when a template HTTP request yields an erroneous response (status < 200 || status > 299)
+ * Emitted when a template HTTP request yields an erroneous response (status < 200 || status> 299)
  *
  * @param {Object} angularEvent Synthetic event object.
  * @param {String} src URL of content to load.
@@ -28483,7 +28483,7 @@ var patternDirective = function() {
 
       var regexp, patternExp = attr.ngPattern || attr.pattern;
       attr.$observe('pattern', function(regex) {
-        if (isString(regex) && regex.length > 0) {
+        if (isString(regex) && regex.length> 0) {
           regex = new RegExp('^' + regex + '$');
         }
 
@@ -28539,7 +28539,7 @@ var minlengthDirective = function() {
         ctrl.$validate();
       });
       ctrl.$validators.minlength = function(modelValue, viewValue) {
-        return ctrl.$isEmpty(viewValue) || viewValue.length >= minlength;
+        return ctrl.$isEmpty(viewValue) || viewValue.length>= minlength;
       };
     }
   };

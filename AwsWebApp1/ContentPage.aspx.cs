@@ -97,19 +97,19 @@ namespace AwsWebApp1
             Label contentId = (Label)(contentData.SelectedRow.FindControl("contentId"));
             Label eventId = (Label)(contentData.SelectedRow.FindControl("eventId"));
             Label Type = (Label)(contentData.SelectedRow.FindControl("fileType"));
-            Label Name = (Label)(contentData.SelectedRow.FindControl("name"));
+           // Label Name = (Label)(contentData.SelectedRow.FindControl("name"));
            // Label fileUrl = (Label)(contentData.SelectedRow.FindControl("contentUrl"));
             string cId = contentId.Text;
             string eveId = eventId.Text;
-            string fileType = Name.Text;
+            string fileType = Type.Text;
            // string Url = fileUrl.Text;
-            string fileName = Name.Text;
+           // string fileName = Name.Text;
             // string speakerName = Speaker.Text;
-            contentId.Text = cId;
+            txtcontentId.Text = cId;
             //fileupload.Text = Url;
             txtId.Text = eveId;
-            filetype.Text = fileType;
-            name.Text = fileName;
+            txtType.Text = fileType;
+           // txtName.Text = fileName;
         }
 
         protected void btnUpdate_Click(object sender, EventArgs e)
@@ -127,10 +127,10 @@ namespace AwsWebApp1
                 AmazonUploader myUploader = new AmazonUploader();
                 myUploader.sendMyFileToS3(fileToBackup, myBucketName, s3DirectoryName, file.PostedFile.InputStream, file.PostedFile.FileName);
                 string FileExtension = System.IO.Path.GetExtension(file.FileName); 
-                string newFileType = filetype.Text;
-                string newName = name.Text;
+                string newFileType = txtType.Text;
+                string newName = txtName.Text;
                 string eventId = txtId.Text;
-                string cId = contentId.Text;
+                string cId = txtcontentId.Text;
                 if(FileExtension == newFileType)
                 {
                     AmazonDynamoDBClient client = new AmazonDynamoDBClient();
@@ -192,5 +192,19 @@ namespace AwsWebApp1
             }
            
         }
+
+        protected void btncancle_Click(object sender, EventArgs e)
+        {
+            divEdit.Visible = false;
+            divMain.Visible = true;
+        }
+
+        protected void newContent_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("CreateContent.aspx");
+        }
+
+      
+       
     }
 }

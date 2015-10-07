@@ -31,13 +31,13 @@ namespace AwsWebApp1 {
         protected global::System.Web.UI.WebControls.GridView questionData;
         
         /// <summary>
-        /// divEdit control.
+        /// pnlEdit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divEdit;
+        protected global::System.Web.UI.WebControls.Panel pnlEdit;
         
         /// <summary>
         /// eId control.
@@ -58,31 +58,31 @@ namespace AwsWebApp1 {
         protected global::System.Web.UI.WebControls.Label lblquestionId;
         
         /// <summary>
-        /// questionEdit control.
+        /// txtQuestionEdit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox questionEdit;
+        protected global::System.Web.UI.WebControls.TextBox txtQuestionEdit;
         
         /// <summary>
-        /// questionType control.
+        /// txtQuestionType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox questionType;
+        protected global::System.Web.UI.WebControls.TextBox txtQuestionType;
         
         /// <summary>
-        /// correctanswer control.
+        /// txtCorrectanswer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox correctanswer;
+        protected global::System.Web.UI.WebControls.TextBox txtCorrectanswer;
         
         /// <summary>
         /// txtOptions control.
@@ -92,6 +92,15 @@ namespace AwsWebApp1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtOptions;
+        
+        /// <summary>
+        /// btnAdd control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAdd;
         
         /// <summary>
         /// Update control.

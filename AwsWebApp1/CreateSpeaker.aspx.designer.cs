@@ -58,13 +58,13 @@ namespace AwsWebApp1 {
         protected global::System.Web.UI.WebControls.TextBox Designation;
         
         /// <summary>
-        /// ImageUrl control.
+        /// file control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ImageUrl;
+        protected global::System.Web.UI.WebControls.FileUpload file;
         
         /// <summary>
         /// Organization control.

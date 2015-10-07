@@ -11,7 +11,7 @@
                                     class="form-control"
                                     required
                                     data-ng-model="form.required"
-                            >
+                           >
                             <br>
                             <textarea class="form-control"
                                       rows="10"
@@ -31,7 +31,7 @@
                                     required
                                     data-ng-minlength=3
                                     data-ng-model="form.minlength"
-                            >
+                           >
                             <span></span>
                         </div>
                         <div class="form-group">
@@ -41,7 +41,7 @@
                                     required
                                     data-ng-maxlength=10
                                     data-ng-model="form.maxlength"
-                            >
+                           >
                             <span></span>
                         </div>
                         <div class="form-group">
@@ -52,7 +52,7 @@
                                     data-ng-minlength=3
                                     data-ng-maxlength=10
                                     data-ng-model="form.length_rage"
-                            >
+                           >
                             <span></span>
                         </div>
                         <div class="form-group">
@@ -65,7 +65,7 @@
                                             name="type_something"
                                             data-ng-trim='false'
                                             data-ng-model="form.type_something"
-                                    >                        
+                                   >                        
                                     <span></span>
                                 </div>
                                 <div class="col-md-6">
@@ -77,7 +77,7 @@
                                             data-ng-trim='false'
                                             data-ng-model="form.confirm_type"
                                             data-validate-equals="form.type_something"
-                                    >                        
+                                   >                        
                                     <span></span>
                                 </div>
                             </div>
@@ -89,7 +89,7 @@
                                     required
                                     data-ng-model="form.foo"
                                     data-ng-pattern="/^foo$/"
-                            >
+                           >
                             <span></span>
                         </div>
                         <div class="form-group">
@@ -98,7 +98,7 @@
                                     class="form-control"
                                     required
                                     data-ng-model="form.email"
-                            >
+                           >
                             <span></span>
                         </div>
                         <div class="form-group">
@@ -107,7 +107,7 @@
                                     class="form-control"
                                     required
                                     data-ng-model="form.url"
-                            >
+                           >
                             <span></span>
                         </div>
                         <div class="form-group">
@@ -117,7 +117,7 @@
                                     required
                                     name="form.num"
                                     data-ng-model="form.num"
-                            >
+                           >
                             <span></span>
                         </div>
                         <div class="form-group">
@@ -127,7 +127,7 @@
                                     required
                                     data-min=3
                                     data-ng-model="form.minVal"
-                            >
+                           >
                             <span></span>
                         </div>
                         <div class="form-group">
@@ -137,7 +137,7 @@
                                     required
                                     data-max=20
                                     data-ng-model="form.maxVal"
-                            >
+                           >
                             <span></span>
                         </div>
                         <div class="form-group">
@@ -148,7 +148,7 @@
                                     data-min=3
                                     data-max=20
                                     data-ng-model="form.valRange"
-                            >
+                           >
                             <span></span>
                         </div>
                         <div class="form-group">
@@ -159,18 +159,18 @@
                                     required
                                     data-ng-pattern="/^#(?:[0-9a-fA-F]{3}){1,2}$/"
                                     data-ng-model="form.pattern"
-                            >
+                           >
                             <span></span>
                         </div>
 
                         <button type="submit"
                                 class="btn btn-success"
                                 data-ng-disabled="!canSubmit()"
-                                >Submit</button>
+                               >Submit</button>
                         <button class="btn btn-default"
                                 data-ng-disabled="!canRevert()"
                                 data-ng-click="revert()"
-                        >Revert Changes</button>
+                       >Revert Changes</button>
                         <div class="callout callout-info">
                             <p>Submit button will be active only when all fields are valid.</p>
                             <p>Revert button will be active only when one or more fields is changed.</p>
@@ -211,11 +211,11 @@
                             <button type="submit"
                                     class="btn btn-success"
                                     data-ng-disabled="!canSubmit()"
-                                    >Submit</button>
+                                   >Submit</button>
                             <button class="btn btn-default"
                                     data-ng-disabled="!canRevert()"
                                     data-ng-click="revert()"
-                            >Revert Changes</button>
+                           >Revert Changes</button>
                             <div class="callout callout-info">
                                 <p>Submit button will be active only when all fields are valid.</p>
                                 <p>Revert button will be active only when one or more fields is changed.</p>

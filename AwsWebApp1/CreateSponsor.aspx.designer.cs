@@ -13,15 +13,6 @@ namespace AwsWebApp1 {
     public partial class CreateSponsor {
         
         /// <summary>
-        /// description control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox description;
-        
-        /// <summary>
         /// sno control.
         /// </summary>
         /// <remarks>
@@ -49,6 +40,15 @@ namespace AwsWebApp1 {
         protected global::System.Web.UI.WebControls.TextBox Name;
         
         /// <summary>
+        /// description control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox description;
+        
+        /// <summary>
         /// Type control.
         /// </summary>
         /// <remarks>
@@ -58,13 +58,13 @@ namespace AwsWebApp1 {
         protected global::System.Web.UI.WebControls.TextBox Type;
         
         /// <summary>
-        /// logo control.
+        /// file control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox logo;
+        protected global::System.Web.UI.WebControls.FileUpload file;
         
         /// <summary>
         /// Cancel control.
