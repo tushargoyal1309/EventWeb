@@ -61,8 +61,8 @@ http://www.templatemo.com/preview/templatemo_394_sonic
     </div> <!-- /responsive_navigation -->
 
 	<div id="main-sidebar" class="hidden-xs hidden-sm">
-		<div class="logo">
-			<a href="#"><h1>Evento</h1></a>
+		<div class="logo" style="background:none">
+			<%--<a href="#"><h1>Evento</h1></a>--%>
 			<%--<span>Creative Portfolio Template</span>--%>
 		</div> <!-- /.logo -->
 
@@ -86,29 +86,29 @@ http://www.templatemo.com/preview/templatemo_394_sonic
                     
 						<li>
 							<div class="slider-caption">
-								<h2>Responsive Layout</h2>
-								<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames.</p>
+								<h2>Events</h2>
+								<p>" That People Talk about "</p>
 								<a href="#" class="largeButton homeBgColor">Read More</a>
 							</div>
-							<img src="images/slide1.jpg" alt="Slide 1">
+							<img src="images/slid1.jpg" alt="Slide 1">
 						</li>
                         
 						<li>
 							<div class="slider-caption">
-								<h2>Portfolio Website</h2>
-								<p>Fusce convallis enim vitae sagittis mollis. Sed bibendum ultricies dignissim.</p>
+								<h2>Events</h2>
+								<p>That People Talk about</p>
 								<a href="#" class="largeButton homeBgColor">Details</a>
 							</div>
-							<img src="images/slide2.jpg" alt="Slide 2">
+							<img src="images/slid2.jpg" alt="Slide 2">
 						</li>
                         
                         <li>
 							<div class="slider-caption">
-								<h2>Free Templates</h2>
-								<p>All templates are free to download and use for your personal or commercial websites.</p>
+								<h2>Events</h2>
+								<p>That People Talk about.</p>
 								<a href="#" class="largeButton homeBgColor">Downloads</a>
 							</div>
-							<img src="images/slide3.jpg" alt="Slide 3">
+							<img src="images/slid3.jpg" alt="Slide 3">
 						</li>
                         
 					</ul>
@@ -118,7 +118,7 @@ http://www.templatemo.com/preview/templatemo_394_sonic
 				<div class="row">
 					<div class="col-md-12">
 						<div class="welcome-text">
-							<h2>Welcome to Sonic Template</h2>
+							<h2>Welcome to Our site</h2>
 							<p>Sonic is <a href="#">free HTML5 template</a> provided by templatemo website for everyone. Credit goes to <a rel="nofollow" href="http://flexslider.woothemes.com">FlexSlider</a>. Maecenas adipiscing pellentesque elit eu volutpat. Integer vitae <a href="#">pulvinar magna</a>. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent auctor mi metus, nec sagittis purus ultrices id.</p>
 						</div>
 					</div>
