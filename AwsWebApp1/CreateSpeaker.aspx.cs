@@ -23,20 +23,43 @@ namespace AwsWebApp1
 
         protected void submitButton_Click(object sender, EventArgs e)
         {
-            AmazonDynamoDBClient client = new AmazonDynamoDBClient();
-            Amazon.DynamoDBv2.DocumentModel.Table table = Amazon.DynamoDBv2.DocumentModel.Table.LoadTable(client, "Speaker");
+            if (flFile.PostedFile != null)
+            {
+                //string FileName = Path.GetFileName(file.PostedFile.FileName);
+                string fileToBackup = flFile.PostedFile.FileName;
+                string fileName = flFile.FileName;// test file
+                string myBucketName = "isbils"; //your s3 bucket name goes here
+                string s3DirectoryName = "";
+                // string s3FileName = @"mybackupFile uploaded in 10-1-2016.png";
+                string Url = "https://s3.amazonaws.com/" + myBucketName + "/" + fileName;
+                string imageNew = Url;
+                AmazonUploader myUploader = new AmazonUploader();
+                myUploader.sendMyFileToS3(fileToBackup, myBucketName, s3DirectoryName, flFile.PostedFile.InputStream, flFile.PostedFile.FileName);
+                // string FileExtension = System.IO.Path.GetExtension(file.FileName);
 
-            var book = new Document();
-            book["EventId"] = EventId.Text;
-            book["SpeakerName"] = SpeakerName.Text;
-            book["Email"] = Email.Text;
-            book["Designation"] = Designation.Text;
-            book["Biography"] = Biography.Text;
-           // book["ImageUrl"] = file.Text;
-            book["Organization"] = Organization.Text;
+                AmazonDynamoDBClient client = new AmazonDynamoDBClient();
+                Amazon.DynamoDBv2.DocumentModel.Table table = Amazon.DynamoDBv2.DocumentModel.Table.LoadTable(client, "Speaker");
 
-            table.PutItem(book);
-            Response.Redirect("Speaker.aspx");
+                //var book = new Document();
+
+                var book = new Document();
+                book["eventId"] = EventId.Text;
+                book["speakerName"] = SpeakerName.Text;
+                book["email"] = Email.Text;
+                book["designation"] = Designation.Text;
+                book["biography"] = Biography.Text;
+                book["imageUrl"] = Url;
+                book["organization"] = Organization.Text;
+
+                table.PutItem(book);
+                Response.Redirect("Speaker.aspx");
+            }
+            else
+            {
+                string script = "alert(\"Please select a file to upload.\");";
+                ScriptManager.RegisterStartupScript(this, GetType(),
+                                      "ServerControlScript", script, true);
+            }
         }
 	}
 }

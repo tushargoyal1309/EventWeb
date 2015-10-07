@@ -30,7 +30,7 @@ namespace AwsWebApp1
             book["AnnouncementId"] = AnnouncementId.Text;
             book["EventId"] = EventId.Text;
             book["PublishTime"] = PublishTime.Text;
-            book["Text"] = Text.Text;
+            book["Text"] = txtText.Text;
             
             table.PutItem(book);
             Response.Redirect("Announcement.aspx");

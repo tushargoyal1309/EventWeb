@@ -31,20 +31,24 @@ namespace AwsWebApp1
             {
                 TableName = "Event",
             };
+            var eventid = Session["EventId"].ToString(); 
             var response = client.Scan(request);
             List<Event> eventList = new List<Event>();
             foreach (Dictionary<string, AttributeValue> item in response.ScanResult.Items)
             {
-                // Process the result.
-                Event eventNew = new Event();
-                eventNew.description1 = item["description1"].S;
-                eventNew.endDate = item["endDate"].S;
-                eventNew.eventId = item["eventId"].S;
-                eventNew.eventName = item["eventName"].S;
-                eventNew.organiserName = item["organiserName"].S;
-                eventNew.startDate = item["startDate"].S;
-                eventNew.venue = item["venue"].S;
-                eventList.Add(eventNew);
+                if (eventid == item["eventId"].S)
+                {
+                    // Process the result.
+                    Event eventNew = new Event();
+                    eventNew.description1 = item["description1"].S;
+                    eventNew.endDate = item["endDate"].S;
+                    eventNew.eventId = item["eventId"].S;
+                    eventNew.eventName = item["eventName"].S;
+                    eventNew.organiserName = item["organiserName"].S;
+                    eventNew.startDate = item["startDate"].S;
+                    eventNew.venue = item["venue"].S;
+                    eventList.Add(eventNew);
+                }
                 //Console.WriteLine(item);
             }
             dt = ToDataTable(eventList);

@@ -35,7 +35,7 @@ namespace AwsWebApp1
            
 
             table.PutItem(book);
-            Response.Redirect("Events.aspx");
+            Response.Redirect("Session.aspx");
         }
 	}
 }

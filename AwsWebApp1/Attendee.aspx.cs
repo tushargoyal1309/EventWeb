@@ -36,20 +36,24 @@ namespace AwsWebApp1
                 TableName = "Attendee",
 
             };
+            var eventid = Session["EventId"].ToString(); 
             var response = client.Scan(request);
             List<Attendee> attendeeList = new List<Attendee>();
             foreach (Dictionary<string, AttributeValue> item in response.ScanResult.Items)
             {
-                // Process the result.
-                Attendee attendeeNew = new Attendee();
-                attendeeNew.biography = item["biography"].S;
-                attendeeNew.designation = item["designation"].S;
-                attendeeNew.email = item["email"].S;
-                attendeeNew.eventId = item["eventId"].S;
-                attendeeNew.imageUrl = item["imageUrl"].S;
-                attendeeNew.name = item["name"].S;
-                attendeeNew.organization = item["organization"].S;
-                attendeeList.Add(attendeeNew);
+                if (eventid == item["eventId"].S)
+                {
+                    // Process the result.
+                    Attendee attendeeNew = new Attendee();
+                    attendeeNew.biography = item["biography"].S;
+                    attendeeNew.designation = item["designation"].S;
+                    attendeeNew.email = item["email"].S;
+                    attendeeNew.eventId = item["eventId"].S;
+                    attendeeNew.imageUrl = item["imageUrl"].S;
+                    attendeeNew.name = item["name"].S;
+                    attendeeNew.organization = item["organization"].S;
+                    attendeeList.Add(attendeeNew);
+                }
                 //Console.WriteLine(item);
             }
             dt = ToDataTable(attendeeList);

@@ -118,7 +118,22 @@
                      
                    <div class="col-xs-2 col-sm-2 col-md-2"></div>
                 </div>
-               
+               <div class="row">
+                  
+                      <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">
+                                <div class="form-group"  style="text-align:left">
+                                    <label>Choose image to upload</label>
+                                    </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group" style="text-align:left;">
+                                  <asp:FileUpload runat="server" ID="flFile" class="form-control input-sm">
+                                      </asp:FileUpload>
+                                </div>
+                            </div>
+                     <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                        </div>
 
 
                     <div class="row">

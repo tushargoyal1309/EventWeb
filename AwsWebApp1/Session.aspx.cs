@@ -32,18 +32,22 @@ namespace AwsWebApp1
                 TableName = "Session",
 
             };
+            var eventid = Session["EventId"].ToString();
             var response = client.Scan(request);
             List<SessionData> sessionList = new List<SessionData>();
             foreach (Dictionary<string, AttributeValue> item in response.ScanResult.Items)
             {
-                // Process the result.
-                SessionData session = new SessionData();
-                session.eventId = item["eventId"].S;
-                session.name = item["name"].S;
-                session.startTime = item["startTime"].S;
-                session.endTime = item["endTime"].S;
-                //session.endTime = item["speakerName"].S;
-                sessionList.Add(session);
+                if (eventid == item["eventId"].S)
+                {
+                    // Process the result.
+                    SessionData session = new SessionData();
+                    session.eventId = item["eventId"].S;
+                    session.name = item["name"].S;
+                    session.startTime = item["startTime"].S;
+                    session.endTime = item["endTime"].S;
+                    //session.endTime = item["speakerName"].S;
+                    sessionList.Add(session);
+                }
 
                 Console.WriteLine(item);
             }

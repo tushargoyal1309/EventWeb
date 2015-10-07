@@ -65,7 +65,7 @@
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group" style="text-align:left;">
-                                  <asp:TextBox runat="server" id="Text" class="form-control input-sm" type="text" placeholder="">
+                                  <asp:TextBox runat="server" id="txtText" class="form-control input-sm" type="text" placeholder="">
                                       </asp:TextBox>
                                 </div>
                             </div>

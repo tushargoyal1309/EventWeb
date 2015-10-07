@@ -32,18 +32,22 @@ namespace AwsWebApp1
                 TableName = "Content",
 
             };
+            var eventid = Session["EventId"].ToString();
             var response = client.Scan(request);
             List<ContentData> contentDataList = new List<ContentData>();
             foreach (Dictionary<string, AttributeValue> item in response.ScanResult.Items)
             {
-                // Process the result.
-                ContentData content = new ContentData();
-                content.contentId = item["contentId"].S;
-                content.eventId = item["eventId"].S;
-                content.fileType = item["fileType"].S;
-                content.name = item["name"].S;
-               // content.name = item["contentUrl"].S;
-                contentDataList.Add(content);
+                if (eventid == item["eventId"].S)
+                {
+                    // Process the result.
+                    ContentData content = new ContentData();
+                    content.contentId = item["contentId"].S;
+                    content.eventId = item["eventId"].S;
+                    content.fileType = item["fileType"].S;
+                    content.name = item["name"].S;
+                    // content.name = item["contentUrl"].S;
+                    contentDataList.Add(content);
+                }
 
                 Console.WriteLine(item);
             }

@@ -32,19 +32,23 @@ namespace AwsWebApp1
                 TableName = "Sponsor",
 
             };
+            var eventid = Session["EventId"].ToString();
             var response = client.Scan(request);
             List<SponsorData> sponsorList = new List<SponsorData>();
             foreach (Dictionary<string, AttributeValue> item in response.ScanResult.Items)
             {
-                // Process the result.
-                SponsorData sponsor = new SponsorData();
-                sponsor.sno = item["sno"].S;
-                sponsor.eventId = item["eventId"].S;
-                sponsor.name = item["name"].S;
-                sponsor.type = item["type"].S;
-                sponsor.logoUrl = item["logoUrl"].S;
-                sponsor.description = item["description"].S;
-                sponsorList.Add(sponsor);
+                if (eventid == item["eventId"].S)
+                {
+                    // Process the result.
+                    SponsorData sponsor = new SponsorData();
+                    sponsor.sno = item["sno"].S;
+                    sponsor.eventId = item["eventId"].S;
+                    sponsor.name = item["name"].S;
+                    sponsor.type = item["type"].S;
+                    sponsor.logoUrl = item["logoUrl"].S;
+                    sponsor.description = item["description"].S;
+                    sponsorList.Add(sponsor);
+                }
 
                 Console.WriteLine(item);
             }

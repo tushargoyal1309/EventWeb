@@ -54,6 +54,7 @@ namespace AwsWebApp1
                 TableName = "QuizQuestion",
 
             };
+            var eventid = Session["EventId"].ToString();
             var response = client.Scan(request);
             List<QuestionData> questionDataList = new List<QuestionData>();
             //var template = new TemplateField();
@@ -62,37 +63,41 @@ namespace AwsWebApp1
             //questionData.Columns.Add(template);
             foreach (Dictionary<string, AttributeValue> item in response.ScanResult.Items)
             {
-                // Process the result.
-
-                QuestionData question = new QuestionData();
-                if (item.ContainsKey("correctAnswer"))
+                if (eventid == item["eventId"].S)
                 {
-                    question.correctAnswer = item["correctAnswer"].S;
-                }
-                question.eventId = item["eventId"].S;
-                question.question = item["question"].S;
-                question.questionId = item["questionId"].S;
-                question.questionType = item["questionType"].S;
+                    // Process the result.
 
-                if (item.ContainsKey("options"))
-                {
-                    string test1234 = string.Empty;
-                    string testRemoveComa = string.Empty;
-
-                    foreach (var itemNew in item["options"].M)
+                    QuestionData question = new QuestionData();
+                    if (item.ContainsKey("correctAnswer"))
                     {
+                        question.correctAnswer = item["correctAnswer"].S;
+                    }
+                    question.eventId = item["eventId"].S;
+                    question.question = item["question"].S;
+                    question.questionId = item["questionId"].S;
+                    question.questionType = item["questionType"].S;
 
-                        if (item["options"].M.Count > 1)
+                    if (item.ContainsKey("options"))
+                    {
+                        string test1234 = string.Empty;
+                        string testRemoveComa = string.Empty;
+
+                        foreach (var itemNew in item["options"].M)
                         {
-                            test1234 += itemNew.Value.S + ",";
+
+                            if (item["options"].M.Count > 1)
+                            {
+                                test1234 += itemNew.Value.S + ",";
+
+                            }
 
                         }
+                        testRemoveComa = test1234.Remove(test1234.Length - 1);
+                        question.options = testRemoveComa;
 
+                        questionDataList.Add(question);
                     }
-                    testRemoveComa = test1234.Remove(test1234.Length - 1);
-                    question.options = testRemoveComa;
                 }
-                questionDataList.Add(question);
 
                 //Console.WriteLine(item);
             }
@@ -208,8 +213,6 @@ namespace AwsWebApp1
             AmazonDynamoDBClient client = new AmazonDynamoDBClient();
             string tableName = "QuizQuestion";
 
-            int count = Convert.ToInt16(Session["ctrlCount"]);
-
             string message = "";
             int iCount = 0;
             int iNewCount = 0;
@@ -230,13 +233,13 @@ namespace AwsWebApp1
 
             string alpha = "ABCDEFGHIJKLMNOPQRSTUVQXYZ";
 
-            Dictionary<string, AttributeValue> tttt = new Dictionary<string, AttributeValue>();
+            Dictionary<string, AttributeValue> attValue = new Dictionary<string, AttributeValue>();
             int alphabet = 0;
             for (int i = 4; i < txtOptionsList.Count - 1; i++)
             {
                 AttributeValue attribute = new AttributeValue();
                 attribute.S = txtOptionsList[i];
-                tttt.Add(alpha[alphabet].ToString().ToLower(), attribute);
+                attValue.Add(alpha[alphabet].ToString().ToLower(), attribute);
                 alphabet = alphabet + 1;
             }
 
@@ -256,7 +259,7 @@ namespace AwsWebApp1
         {":newCorrectAnswer",new AttributeValue {S = newCorrectAnswer}},
         {":newOptions",new AttributeValue 
         {
-            M = tttt
+            M = attValue
         }}
     },
 
