@@ -37,7 +37,7 @@ namespace AwsWebApp1 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlEdit;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl pnlEdit;
         
         /// <summary>
         /// eId control.
@@ -94,6 +94,15 @@ namespace AwsWebApp1 {
         protected global::System.Web.UI.WebControls.TextBox txtOptions;
         
         /// <summary>
+        /// btncancle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btncancle;
+        
+        /// <summary>
         /// btnAdd control.
         /// </summary>
         /// <remarks>
@@ -103,12 +112,12 @@ namespace AwsWebApp1 {
         protected global::System.Web.UI.WebControls.Button btnAdd;
         
         /// <summary>
-        /// Update control.
+        /// btnUpdate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Update;
+        protected global::System.Web.UI.WebControls.Button btnUpdate;
     }
 }
