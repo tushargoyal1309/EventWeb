@@ -54,7 +54,7 @@ namespace AwsWebApp1
                 TableName = "QuizQuestion",
 
             };
-            var eventid = Session["EventId"].ToString();
+            //var eventid = Session["EventId"].ToString();
             var response = client.Scan(request);
             List<QuestionData> questionDataList = new List<QuestionData>();
             //var template = new TemplateField();
@@ -63,8 +63,8 @@ namespace AwsWebApp1
             //questionData.Columns.Add(template);
             foreach (Dictionary<string, AttributeValue> item in response.ScanResult.Items)
             {
-                if (eventid == item["eventId"].S)
-                {
+                //if (eventid == item["eventId"].S)
+                //{
                     // Process the result.
 
                     QuestionData question = new QuestionData();
@@ -96,7 +96,7 @@ namespace AwsWebApp1
                         question.options = testRemoveComa;
 
                         questionDataList.Add(question);
-                    }
+                    //}
                 }
 
                 //Console.WriteLine(item);
@@ -200,8 +200,8 @@ namespace AwsWebApp1
 
         protected void AddTextBox(object sender, EventArgs e)
         {
-            //  int index = pnlEdit.Controls.OfType<TextBox>().ToList().Count + 1;
-            // this.CreateTextBox("txtOptions" + index);
+            int index = pnlEdit.Controls.OfType<TextBox>().ToList().Count + 1;
+            this.CreateTextBox("txtOptions" + index);
         }
 
         protected void Update_Click(object sender, EventArgs e)
@@ -281,6 +281,11 @@ namespace AwsWebApp1
         {
             pnlEdit.Visible = false;
             divMain.Visible = true;
+        }
+
+        protected void btnNewQuestion_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("CreateQuestion.aspx");
         }
 
 

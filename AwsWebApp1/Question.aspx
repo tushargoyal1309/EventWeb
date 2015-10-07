@@ -19,7 +19,7 @@
             </span>--%>
             </div>
             <div class="col-md-3">
-                <button type="button" class="btn btn-info">Create Question</button>
+                <asp:Button ID="btnNewQuestion" Text="Add a new Question" runat="server" OnClick="btnNewQuestion_Click" type="button" class="btn btn-info"></asp:Button>
             </div>
         </div>
         <br />
