@@ -2,24 +2,25 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div  id="divMain" runat="server" style="background-color:#ffffff">
+    <div  id="divMain" runat="server" style="background-color:#ffffff; overflow: hidden">
         <br />
-    <div class="row">
+    <div class="row" style="background-color:#F9F9F9;">
        
         <div class="col-md-4" style="padding-left:40px;">
-            <input type="text"
+            <%--<input type="text"
                 placeholder="Search..."
                 class="form-control fa-border"
                 data-ng-model="searchKeywords"
-                data-ng-keyup="search()">
+                data-ng-keyup="search()">--%>
+            <p style="padding-top:10px; font-size:large"><span class="fa fa-table">&nbsp;&nbsp;&nbsp;</span>Sponsor</p>
         </div>
         <div class="col-md-5 filter-result-info">
             <%--<span>Showing {{filteredStores.length}}/{{stores.length}} entries
             </span>--%>
         </div>
-        <div class="col-md-3">
-            <asp:Button runat="server" Text="Create a New Sponsor" OnClick="newSponsor_Click" type="button" ID="newSponsor" class="btn btn-info"></asp:Button>
-        </div>
+        <div class="col-md-2" style="padding-top:6px;">
+            <asp:Button runat="server" Text="Create a New Sponsor" OnClick="newSponsor_Click" type="button" ID="newSponsor" class="btn btn-info pull-right"></asp:Button>
+        </div><div class="col-md-1"></div>
     </div>
     <br />
         <div runat="server">

@@ -33,7 +33,7 @@
             <aside data-ng-include=" 'app/layout/nav.html' " id="nav-container"></aside>
         </div>
 
-        <div class="view-container">
+        <div class="view-container" style="height:600px;overflow:scroll">
                         <form runat="server">
 <%--                             style="padding-left:10px; padding-top:15px;"--%>
                <%-- <section data-ng-view id="content" class="animate-fade-up"></section>--%>

@@ -13,24 +13,25 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
    
-    <div id="divMain" runat="server" style="background-color: #ffffff">
+    <div id="divMain" runat="server" style="background-color: #ffffff; overflow: hidden">
         <br />
-        <div class="row">
+        <div class="row" style="background-color:#F9F9F9;">
 
             <div class="col-md-4" style="padding-left: 40px;">
-                <input type="text"
+                <%--<input type="text"
                     placeholder="Search..."
                     class="form-control fa-border"
                     data-ng-model="searchKeywords"
-                    data-ng-keyup="search()">
+                    data-ng-keyup="search()">--%>
+                <p style="padding-top:10px; font-size:large"><span class="fa fa-table">&nbsp;&nbsp;&nbsp;</span>Question</p>
             </div>
             <div class="col-md-5 filter-result-info">
                 <%--<span>Showing {{filteredStores.length}}/{{stores.length}} entries
             </span>--%>
             </div>
-            <div class="col-md-3">
-                <asp:Button ID="btnNewQuestion" Text="Add a new Question" runat="server" OnClick="btnNewQuestion_Click" type="button" class="btn btn-info"></asp:Button>
-            </div>
+        <div class="col-md-2" style="padding-top:6px;">
+                <asp:Button ID="btnNewQuestion" Text="Add a new Question" runat="server" OnClick="btnNewQuestion_Click" type="button" class="btn btn-info pull-right"></asp:Button>
+            </div><div class="col-md-1"></div>
         </div>
         <br />
         <asp:GridView OnSelectedIndexChanged="questionData_SelectedIndexChanged" PageSize="5" OnPageIndexChanging="questionData_PageIndexChanging"
@@ -197,11 +198,16 @@
                             <label>Options</label>
                         </div>
                     </div>
-                    <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="col-xs-4 col-sm-4 col-md-4">
                        <div class="form-group"  ID="pnlOptions" ClientIDMode="Static" runat="server">
                            <asp:TextBox ID="txtOptions" ClientIDMode="Static" CssClass="form-control input-sm hideOne"  runat="server"></asp:TextBox>
                         </div>
                     </div>
+                                        <div class="col-xs-2 col-sm-2 col-md-2">
+                                                                    <div class="form-group" style="text-align: left;">
+                     <asp:Button ID="btnAdd" runat="server" CssClass="btn btn-info" Text="Add More Option(s)" OnClick="AddTextBox" />
+</div>
+                                            </div>
                     <div class="col-xs-2 col-sm-2 col-md-2"></div>
                 </div>
                 <div class="row">
@@ -209,8 +215,7 @@
                     <div class="col-md-6">
                         <asp:Button ID="btncancle" OnClick="btncancle_Click" runat="server" CssClass="btn btn-danger" Text="Cancel" />&nbsp;&nbsp;&nbsp;&nbsp;
        
-                        <asp:Button ID="btnAdd" runat="server" CssClass="btn btn-info" Text="Add More Option(s)" OnClick="AddTextBox" />&nbsp;&nbsp;&nbsp;&nbsp;
-    
+                       
                         <asp:Button ID="btnUpdate" runat="server" ClientIDMode="Static"  OnClick="Update_Click" CssClass="btn btn-success" Text="Update" />
 
 

@@ -104,7 +104,7 @@
                         </div>
                         <div class="col-xs-6 col-sm-6 col-md-6">
                             <div class="form-group">
-                                <asp:TextBox runat="server" ID="txtDescription" class="form-control input-sm" type="text" placeholder=""></asp:TextBox>
+                                <asp:TextBox runat="server" rows="5" Wrap="true"  ID="txtDescription" class="form-control input-sm" type="text" placeholder=""></asp:TextBox>
                             </div>
                         </div>
                         <div class="col-xs-2 col-sm-2 col-md-2"></div>
