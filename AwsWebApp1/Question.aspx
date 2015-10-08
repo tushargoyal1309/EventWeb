@@ -10,12 +10,6 @@
         }
     </style>
 
-  <script type = "text/javascript">
-      function SetSource(SourceID) {
-          var hidSourceID = document.getElementById("<%=hidSourceID.ClientID%>");
-        hidSourceID.value = SourceID;
-    }
-</script> 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
    
@@ -217,12 +211,12 @@
        
                         <asp:Button ID="btnAdd" runat="server" CssClass="btn btn-info" Text="Add More Option(s)" OnClick="AddTextBox" />&nbsp;&nbsp;&nbsp;&nbsp;
     
-                        <asp:Button ID="btnUpdate" runat="server" ClientIDMode="Static"  OnClientClick = "SetSource(this.id)" OnClick="Update_Click" CssClass="btn btn-success" Text="Update" />
+                        <asp:Button ID="btnUpdate" runat="server" ClientIDMode="Static"  OnClick="Update_Click" CssClass="btn btn-success" Text="Update" />
 
 
                     </div>
                     <div class="col-xs-2 col-sm-2 col-md-2"></div>
-                            <asp:HiddenField ID="hidSourceID" runat="server" />
+                           
                 </div>
             </div>
         </div>

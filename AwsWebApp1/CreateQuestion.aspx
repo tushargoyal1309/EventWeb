@@ -84,7 +84,7 @@
                         <div  class="col-xs-4 col-sm-4 col-md-4">
                             <div class="form-group" id="divTest" runat="server">
                                 <asp:TextBox runat="server" ID="txtOptions0" ClientIDMode="Static" class="form-control input-sm" type="text" placeholder=""></asp:TextBox><br />
-                                <asp:TextBox runat="server" ID="txtOptions1" ClientIDMode="Static" class="form-control input-sm" type="text" placeholder=""></asp:TextBox><br />
+                                
                             </div>
                         </div>
                         <div class="col-xs-2 col-sm-2 col-md-2">

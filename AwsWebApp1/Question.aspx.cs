@@ -26,30 +26,15 @@ namespace AwsWebApp1
                 BindData();
             }
 
-            string CtrlID = string.Empty;
-            if (Request.Form["__EVENTTARGET"] != null && Request.Form["__EVENTTARGET"] != string.Empty)
+            List<string> keys = Request.Form.AllKeys.Where(key => key.Contains("txtOptions")).ToList();
+            
+            int i = 0;
+            foreach (string key in keys)
             {
-                CtrlID = Request.Form["__EVENTTARGET"];
-            }
-            else
-            {
-                //Buttons and ImageButtons
-                if (Request.Form[hidSourceID.UniqueID] != null && Request.Form[hidSourceID.UniqueID] != string.Empty)
-                {
-                    CtrlID = Request.Form[hidSourceID.UniqueID];
-                }
+                this.CreateTextBox("txtOptions" + i);
+                i++;
             }
 
-            //if (CtrlID != "btnUpdate")
-            {
-                List<string> keys = Request.Form.AllKeys.Where(key => key.Contains("txtOptions")).ToList();
-                int i = 0;
-                foreach (string key in keys)
-                {
-                    this.CreateTextBox("txtOptions" + i);
-                    i++;
-                }
-            }
         }
 
         DataTable GetData()
@@ -235,26 +220,39 @@ namespace AwsWebApp1
             List<string> txtOptionsList = new List<string>();
 
             int index = pnlOptions.Controls.OfType<TextBox>().ToList().Count();
+
+            //TextBox textBoxLast = pnlOptions.Controls.OfType<TextBox>().LastOrDefault();
+
+            //pnlOptions.Controls.OfType<TextBox>().ToList().Remove(textBoxLast);
+
+            //pnlOptions.Controls.OfType<TextBox>().ToList().LastOrDefault().Visible = false;
+
             int getIndex = index - 1;
             foreach (TextBox textBox in pnlOptions.Controls.OfType<TextBox>())
             {
-                iCount = iCount + 1;
-                if (iCount > 4)
+                if (!string.IsNullOrEmpty(textBox.Text))
                 {
-                    if (textBox.ID == "txtOptions" + iNewCount)
+                    // iCount = iCount + 1;
+
+                    //  if (iCount > 4)
                     {
-                        iNewCount = iNewCount + 1;
-                        message = textBox.Text;
+
+                        if (textBox.ID == "txtOptions" + iNewCount)
+                        {
+                            iNewCount = iNewCount + 1;
+                            message = textBox.Text;
+                            txtOptionsList.Add(message);
+                        }
                     }
+
                 }
-                txtOptionsList.Add(message);
             }
 
             string alpha = "ABCDEFGHIJKLMNOPQRSTUVQXYZ";
 
             Dictionary<string, AttributeValue> attValue = new Dictionary<string, AttributeValue>();
             int alphabet = 0;
-            for (int i = 4; i < txtOptionsList.Count - 1; i++)
+            for (int i = 0; i <= txtOptionsList.Count - 1; i++)
             {
                 AttributeValue attribute = new AttributeValue();
                 attribute.S = txtOptionsList[i];

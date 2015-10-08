@@ -18,28 +18,14 @@ namespace AwsWebApp1
             {
 
             }
+
             List<string> keys = Request.Form.AllKeys.Where(key => key.Contains("txtOptions")).ToList();
-            int count = keys.Count - 1;
-            int newId = keys.Count;
-            int i = 0;
+            int i = 1;
             foreach (string key in keys)
             {
-                if (count == i)
-                {
-                    this.CreateTextBox("txtOptions" + newId);
-                }
+                this.CreateTextBox("txtOptions" + i);
                 i++;
             }
-        }
-
-        protected void GetTextBoxValues(object sender, EventArgs e)
-        {
-            string message = "";
-            foreach (TextBox textBox in divTest.Controls.OfType<TextBox>())
-            {
-                message += textBox.ID + ": " + textBox.Text + "\\n";
-            }
-            ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "alert('" + message + "');", true);
         }
 
         private void CreateTextBox(string id)
@@ -47,6 +33,7 @@ namespace AwsWebApp1
             TextBox txt = new TextBox();
             txt.ID = id;
             txt.ClientIDMode = ClientIDMode.Static;
+            txt.CssClass = "form-control input-sm";
             divTest.Controls.Add(txt);
 
             Literal lt = new Literal();
@@ -62,38 +49,41 @@ namespace AwsWebApp1
 
         protected void submitButton_Click(object sender, EventArgs e)
         {
-            string message = "";
-            int iCount = 0;
-            int iNewCount = 0;
-            List<string> txtOptionsList = new List<string>();
-            foreach (TextBox textBox in divTest.Controls.OfType<TextBox>())
+            try
             {
-                iCount = iCount + 1;
-                if (iCount > 3)
+
+                string message = "";
+                int iCount = 0;
+                int iNewCount = 0;
+                List<string> txtOptionsList = new List<string>();
+                foreach (TextBox textBox in divTest.Controls.OfType<TextBox>())
                 {
-                    if (textBox.ID == "txtOptions" + iNewCount)
+                    if (!string.IsNullOrEmpty(textBox.Text))
                     {
-                        iNewCount = iNewCount + 1;
-                        message = textBox.Text;
+                        if (textBox.ID == "txtOptions" + iNewCount)
+                        {
+                            iNewCount = iNewCount + 1;
+                            message = textBox.Text;
+                        }
+                        txtOptionsList.Add(message);
                     }
                 }
-                txtOptionsList.Add(message);
-            }
+                //txtOptionsList.Remove(txtOptionsList[txtOptionsList.Count() - 1]);
 
-            string alpha = "ABCDEFGHIJKLMNOPQRSTUVQXYZ";
+                string alpha = "ABCDEFGHIJKLMNOPQRSTUVQXYZ";
 
-            Dictionary<string, AttributeValue> attValue = new Dictionary<string, AttributeValue>();
-            int alphabet = 0;
-            for (int i = 4; i < txtOptionsList.Count - 1; i++)
-            {
-                AttributeValue attribute = new AttributeValue();
-                attribute.S = txtOptionsList[i];
-                attValue.Add(alpha[alphabet].ToString().ToLower(), attribute);
-                alphabet = alphabet + 1;
-            }
-            AmazonDynamoDBClient client = new AmazonDynamoDBClient();
-            // Amazon.DynamoDBv2.DocumentModel.Table table = Amazon.DynamoDBv2.DocumentModel.Table.LoadTable(client, "Event");
-            client.PutItem("QuizQuestion", new Dictionary<string, AttributeValue>
+                Dictionary<string, AttributeValue> attValue = new Dictionary<string, AttributeValue>();
+                int alphabet = 0;
+                for (int i = 0; i <= txtOptionsList.Count - 1; i++)
+                {
+                    AttributeValue attribute = new AttributeValue();
+                    attribute.S = txtOptionsList[i];
+                    attValue.Add(alpha[alphabet].ToString().ToLower(), attribute);
+                    alphabet = alphabet + 1;
+                }
+                AmazonDynamoDBClient client = new AmazonDynamoDBClient();
+                // Amazon.DynamoDBv2.DocumentModel.Table table = Amazon.DynamoDBv2.DocumentModel.Table.LoadTable(client, "Event");
+                client.PutItem("QuizQuestion", new Dictionary<string, AttributeValue>
 
             {
     { "eventId", new AttributeValue { S = txtEventId.Text } },
@@ -108,7 +98,14 @@ namespace AwsWebApp1
     }
     }
 });
-            Response.Redirect("Question.aspx");
+                Response.Redirect("Question.aspx");
+
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
         }
 
         protected void ddlQuestionType_SelectedIndexChanged(object sender, EventArgs e)
