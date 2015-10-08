@@ -67,22 +67,22 @@ namespace AwsWebApp1 {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl divTest;
         
         /// <summary>
-        /// txtFirstOption control.
+        /// txtOptions0 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFirstOption;
+        protected global::System.Web.UI.WebControls.TextBox txtOptions0;
         
         /// <summary>
-        /// txtSecondOption control.
+        /// txtOptions1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSecondOption;
+        protected global::System.Web.UI.WebControls.TextBox txtOptions1;
         
         /// <summary>
         /// btnAddMore control.
