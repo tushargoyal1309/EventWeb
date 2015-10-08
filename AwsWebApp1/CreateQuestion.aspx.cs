@@ -16,46 +16,20 @@ namespace AwsWebApp1
         {
             if (!IsPostBack)
             {
-                
+
             }
             List<string> keys = Request.Form.AllKeys.Where(key => key.Contains("txtOptions")).ToList();
+            int count = keys.Count - 1;
+            int newId = keys.Count;
             int i = 0;
             foreach (string key in keys)
             {
-                this.CreateTextBox("txtOptions" + i);
+                if (count == i)
+                {
+                    this.CreateTextBox("txtOptions" + newId);
+                }
                 i++;
             }
-            //            AmazonDynamoDBClient client = new AmazonDynamoDBClient();
-            //            // Amazon.DynamoDBv2.DocumentModel.Table table = Amazon.DynamoDBv2.DocumentModel.Table.LoadTable(client, "Event");
-            //            client.PutItem("QuizQuestion", new Dictionary<string, AttributeValue>
-            //{
-            //    { "eventId", new AttributeValue { S = "1" } },
-            //    { "questionId", new AttributeValue { S = "DataWriter" } },
-            //    { "question", new AttributeValue { S = "What is the name of your company?" } },
-            //    { "questionType", new AttributeValue { S = "Objective" } },
-            //    { "correctAnswer", new AttributeValue { S = "c" } },
-            //    { "endTime", new AttributeValue { S = "28/10/2017 4:00 PM" } }, 
-            //    { "startTime", new AttributeValue { S = "28/10/2016 4:00 PM" } },
-            //    { "options", new AttributeValue {
-            //        M = new Dictionary<string, AttributeValue>
-            //        {
-            //            { "a", new AttributeValue { S = "Google" } },
-            //            { "b", new AttributeValue { S = "Microsoft" } },
-            //            { "c", new AttributeValue { S = "Motifworks" } },
-            //            { "d", new AttributeValue { S = "Time" } },
-            //            //{ "SampleInput", new AttributeValue {
-            //            //    L = new List<AttributeValue>
-            //            //    {
-            //            //        new AttributeValue { BOOL = true },
-            //            //        new AttributeValue { N =  "42" },
-            //            //        new AttributeValue { NULL = true },
-            //            //        new AttributeValue {
-            //            //            SS = new List<string> { "apple", "orange" } }
-            //            //    } }
-            //            //}
-            //        } }
-            //    }
-            //});
         }
 
         protected void GetTextBoxValues(object sender, EventArgs e)
@@ -72,6 +46,7 @@ namespace AwsWebApp1
         {
             TextBox txt = new TextBox();
             txt.ID = id;
+            txt.ClientIDMode = ClientIDMode.Static;
             divTest.Controls.Add(txt);
 
             Literal lt = new Literal();
@@ -81,8 +56,8 @@ namespace AwsWebApp1
 
         protected void btnAddMore_Click(object sender, EventArgs e)
         {
-            int index = divTest.Controls.OfType<TextBox>().ToList().Count + 1;
-            this.CreateTextBox("txtOptions" + index);
+            //int index = divTest.Controls.OfType<TextBox>().ToList().Count + 1;
+            //this.CreateTextBox("txtOptions" + index);
         }
 
         protected void submitButton_Click(object sender, EventArgs e)
@@ -117,7 +92,7 @@ namespace AwsWebApp1
                 alphabet = alphabet + 1;
             }
             AmazonDynamoDBClient client = new AmazonDynamoDBClient();
-           // Amazon.DynamoDBv2.DocumentModel.Table table = Amazon.DynamoDBv2.DocumentModel.Table.LoadTable(client, "Event");
+            // Amazon.DynamoDBv2.DocumentModel.Table table = Amazon.DynamoDBv2.DocumentModel.Table.LoadTable(client, "Event");
             client.PutItem("QuizQuestion", new Dictionary<string, AttributeValue>
 
             {
@@ -138,7 +113,7 @@ namespace AwsWebApp1
 
         protected void ddlQuestionType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         protected void ddlQuestionType_SelectedIndexChanged1(object sender, EventArgs e)
