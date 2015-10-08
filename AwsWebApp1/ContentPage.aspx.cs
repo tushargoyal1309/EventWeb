@@ -45,7 +45,10 @@ namespace AwsWebApp1
                     content.eventId = item["eventId"].S;
                     content.fileType = item["fileType"].S;
                     content.name = item["name"].S;
-                    // content.name = item["contentUrl"].S;
+                    if (item.ContainsKey("contentUrl"))
+                    {
+                        content.contentUrl = item["contentUrl"].S;
+                    }
                     contentDataList.Add(content);
                 }
 
@@ -104,19 +107,19 @@ namespace AwsWebApp1
             Label contentId = (Label)(contentData.SelectedRow.FindControl("contentId"));
             Label eventId = (Label)(contentData.SelectedRow.FindControl("eventId"));
             Label Type = (Label)(contentData.SelectedRow.FindControl("fileType"));
-           // Label Name = (Label)(contentData.SelectedRow.FindControl("name"));
-           // Label fileUrl = (Label)(contentData.SelectedRow.FindControl("contentUrl"));
+            Label Name = (Label)(contentData.SelectedRow.FindControl("name"));
+            Label fileUrl = (Label)(contentData.SelectedRow.FindControl("contentUrl"));
             string cId = contentId.Text;
             string eveId = eventId.Text;
             string fileType = Type.Text;
-           // string Url = fileUrl.Text;
-           // string fileName = Name.Text;
+            string Url = fileUrl.Text;
+            string fileName = Name.Text;
             // string speakerName = Speaker.Text;
             txtcontentId.Text = cId;
             //fileupload.Text = Url;
             txtId.Text = eveId;
             txtType.Text = fileType;
-           // txtName.Text = fileName;
+            txtName.Text = fileName;
         }
 
         protected void btnUpdate_Click(object sender, EventArgs e)
@@ -129,16 +132,16 @@ namespace AwsWebApp1
                 string myBucketName = "isbils"; //your s3 bucket name goes here
                 string s3DirectoryName = "";
                 // string s3FileName = @"mybackupFile uploaded in 10-1-2016.png";
-                //string Url = "https://s3.amazonaws.com/" + myBucketName + "/" + fileName;
-                //string imageNew = Url;
+                string Url = "https://s3.amazonaws.com/" + myBucketName + "/" + fileName;
+                string contentNew = Url;
                 AmazonUploader myUploader = new AmazonUploader();
                 myUploader.sendMyFileToS3(fileToBackup, myBucketName, s3DirectoryName, file.PostedFile.InputStream, file.PostedFile.FileName);
-                string FileExtension = System.IO.Path.GetExtension(file.FileName); 
-                string newFileType = txtType.Text;
+                string FileExtension = System.IO.Path.GetExtension(file.FileName).Replace(".", "").ToLower();
+                string newFileType = txtType.Text.ToLower();
                 string newName = txtName.Text;
                 string eventId = txtId.Text;
                 string cId = txtcontentId.Text;
-                if(FileExtension == newFileType)
+                if (FileExtension == newFileType)
                 {
                     AmazonDynamoDBClient client = new AmazonDynamoDBClient();
                     string tableName = "Content";
@@ -152,6 +155,7 @@ namespace AwsWebApp1
         //{"#oldUrl", "contentUrl"},
         {"#oldFileName", "name"},
         {"#oldFileType", "fileType"},
+        {"#oldContent", "contentUrl"},
        // {"#oldSpeakerName", "speakerName"},
         //{"#P", "Price"},
         //{"#NA", "NewAttribute"},
@@ -162,6 +166,7 @@ namespace AwsWebApp1
         //{":newUrl",new AttributeValue {S = newFile}},
         {":newFileName",new AttributeValue {S = newName}},
         {":newFileType",new AttributeValue {S = newFileType}},
+        {":newContent",new AttributeValue {S = Url}},
         //{":newSpeakerName",new AttributeValue {S = speaker}},
        // {":newattr",new AttributeValue {S = "someValue"}},
     },
@@ -171,7 +176,7 @@ namespace AwsWebApp1
                         // 2) Reduces the price
                         // 3) Adds a new attribute to the item
                         // 4) Removes the ISBN attribute from the item
-                        UpdateExpression = "SET #oldFileName = :newFileName, #oldFileType = :newFileType"
+                        UpdateExpression = "SET #oldFileName = :newFileName, #oldFileType = :newFileType, #oldContent = :newContent"
                     };
                     var response = client.UpdateItem(request);
                     //After updating the data in db.
@@ -187,9 +192,9 @@ namespace AwsWebApp1
                     ScriptManager.RegisterStartupScript(this, GetType(),
                                           "ServerControlScript", script, true);
                 }
-                
+
                 // string speaker = speakername.Text;
-               
+
             }
             else
             {
@@ -197,7 +202,7 @@ namespace AwsWebApp1
                 ScriptManager.RegisterStartupScript(this, GetType(),
                                       "ServerControlScript", script, true);
             }
-           
+
         }
 
         protected void btncancle_Click(object sender, EventArgs e)
@@ -211,7 +216,7 @@ namespace AwsWebApp1
             Response.Redirect("CreateContent.aspx");
         }
 
-      
-       
+
+
     }
 }

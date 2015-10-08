@@ -203,7 +203,7 @@
                                 <div class="form-group" style="text-align:left;">
         <asp:Image ID="Image" runat="server"></asp:Image>
                                     <br /><br />
-                                    <asp:FileUpload height="100px" Width="100px" ID="file" runat="server" />
+                                    <asp:FileUpload ID="file" runat="server" />
                 </div>
                             </div>
                    

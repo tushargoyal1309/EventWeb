@@ -83,7 +83,7 @@
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group" style="text-align:left;">
-        <asp:TextBox ID="AnnouncementId"  cssclass="form-control input-sm" runat="server"></asp:TextBox>
+        <asp:Label ID="AnnouncementId"  cssclass="form-control input-sm" runat="server"></asp:Label>
                 </div>
                             </div>
                      <div class="col-xs-2 col-sm-2 col-md-2"></div>
@@ -98,7 +98,7 @@
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
-        <asp:TextBox ID="EventId" runat="server"  cssclass="form-control input-sm"></asp:TextBox>
+        <asp:Label ID="EventId" runat="server"  cssclass="form-control input-sm"></asp:Label>
                             </div>
                             </div>
                      <div class="col-xs-2 col-sm-2 col-md-2"></div>

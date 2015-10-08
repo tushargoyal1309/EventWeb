@@ -13,7 +13,7 @@ namespace AwsWebApp1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         protected void Cancel_Click(object sender, EventArgs e)
@@ -23,7 +23,7 @@ namespace AwsWebApp1
 
         protected void submitButton_Click(object sender, EventArgs e)
         {
-            if (file.PostedFile != null)
+            if (file.PostedFile != null && EventId.Text != null && ContentId.Text != null && FileType.Text != null && Name.Text != null)
             {
                 //string FileName = Path.GetFileName(file.PostedFile.FileName);
                 string fileToBackup = file.PostedFile.FileName;
@@ -32,11 +32,11 @@ namespace AwsWebApp1
                 string s3DirectoryName = "";
                 // string s3FileName = @"mybackupFile uploaded in 10-1-2016.png";
                 string Url = "https://s3.amazonaws.com/" + myBucketName + "/" + fileName;
-                string imageNew = Url;
+                string contentNew = Url;
                 AmazonUploader myUploader = new AmazonUploader();
                 myUploader.sendMyFileToS3(fileToBackup, myBucketName, s3DirectoryName, file.PostedFile.InputStream, file.PostedFile.FileName);
-                string FileExtension = System.IO.Path.GetExtension(file.FileName);
-                if (FileExtension == FileType.Text)
+                string FileExtension = System.IO.Path.GetExtension(file.FileName).Replace(".", "").ToLower();
+                if (FileExtension == FileType.Text.ToLower())
                 {
                     AmazonDynamoDBClient client = new AmazonDynamoDBClient();
                     Amazon.DynamoDBv2.DocumentModel.Table table = Amazon.DynamoDBv2.DocumentModel.Table.LoadTable(client, "Content");
@@ -46,6 +46,7 @@ namespace AwsWebApp1
                     book["contentId"] = ContentId.Text;
                     book["fileType"] = FileType.Text;
                     book["name"] = Name.Text;
+                    book["contentUrl"] = Url;
                     //book["Name"] = Name.Text;
                     //book["organization"] = Organization.Text;
 
@@ -61,7 +62,7 @@ namespace AwsWebApp1
             }
             else
             {
-                string script = "alert(\"Please select a file to upload.\");";
+                string script = "alert(\"Please fill all the data.\");";
                 ScriptManager.RegisterStartupScript(this, GetType(),
                                       "ServerControlScript", script, true);
             }

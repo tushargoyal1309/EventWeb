@@ -23,7 +23,7 @@ namespace AwsWebApp1
 
         protected void submitButton_Click(object sender, EventArgs e)
         {
-            if (file.PostedFile != null)
+            if (file.PostedFile != null && EventId.Text != null && Email.Text != null && Biography.Text != null && Designation.Text != null && Name.Text != null && Organization.Text != null)
             {
                 //string FileName = Path.GetFileName(file.PostedFile.FileName);
                 string fileToBackup = file.PostedFile.FileName;
@@ -54,7 +54,7 @@ namespace AwsWebApp1
             }
             else
             {
-                string script = "alert(\"Please select a file to upload.\");";
+                string script = "alert(\"Please fill all the data.\");";
                 ScriptManager.RegisterStartupScript(this, GetType(),
                                       "ServerControlScript", script, true);
             }

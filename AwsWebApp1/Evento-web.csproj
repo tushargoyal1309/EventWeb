@@ -188,6 +188,7 @@
     <Content Include="Login.aspx" />
     <Content Include="Logistics.aspx" />
     <Content Include="Question.aspx" />
+    <Content Include="QuizAnswer.aspx" />
     <Content Include="scripts\app.js" />
     <Content Include="scripts\bootbox.min.js" />
     <Content Include="scripts\bootstrap.js" />
@@ -339,6 +340,7 @@
       <DependentUpon>master.Master</DependentUpon>
     </Compile>
     <Compile Include="Models\Announcement.cs" />
+    <Compile Include="Models\Answers.cs" />
     <Compile Include="Models\Attendee.cs" />
     <Compile Include="Models\Content.cs" />
     <Compile Include="Models\Counter.cs" />
@@ -356,6 +358,13 @@
     </Compile>
     <Compile Include="Question.aspx.designer.cs">
       <DependentUpon>Question.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QuizAnswer.aspx.cs">
+      <DependentUpon>QuizAnswer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QuizAnswer.aspx.designer.cs">
+      <DependentUpon>QuizAnswer.aspx</DependentUpon>
     </Compile>
     <Compile Include="Session.aspx.cs">
       <DependentUpon>Session.aspx</DependentUpon>

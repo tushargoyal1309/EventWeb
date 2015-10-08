@@ -9,12 +9,12 @@ using System.Web.UI.WebControls;
 
 namespace AwsWebApp1
 {
-	public partial class CreateSpeaker : System.Web.UI.Page
-	{
-		protected void Page_Load(object sender, EventArgs e)
-		{
+    public partial class CreateSpeaker : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
 
-		}
+        }
 
         protected void Cancel_Click(object sender, EventArgs e)
         {
@@ -23,7 +23,7 @@ namespace AwsWebApp1
 
         protected void submitButton_Click(object sender, EventArgs e)
         {
-            if (flFile.PostedFile != null)
+            if (flFile.PostedFile != null && EventId.Text != null && SpeakerName.Text != null && Email.Text != null && Designation.Text != null && Biography.Text != null && Organization.Text != null)
             {
                 //string FileName = Path.GetFileName(file.PostedFile.FileName);
                 string fileToBackup = flFile.PostedFile.FileName;
@@ -56,10 +56,10 @@ namespace AwsWebApp1
             }
             else
             {
-                string script = "alert(\"Please select a file to upload.\");";
+                string script = "alert(\"Please fill all the data.\");";
                 ScriptManager.RegisterStartupScript(this, GetType(),
                                       "ServerControlScript", script, true);
             }
         }
-	}
+    }
 }

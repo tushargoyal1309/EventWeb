@@ -72,7 +72,7 @@
 <asp:TextBox ID="TextBox4" BorderStyle="None" runat="server" Text='<%# Eval("biography") %>'></asp:TextBox>
 </EditItemTemplate>--%>
     </asp:TemplateField>
-<asp:TemplateField HeaderText="ImageUrl"  AccessibleHeaderText="center"  HeaderStyle-BackColor="#FFFFFF">
+<asp:TemplateField HeaderText="ImageUrl" Visible="false" AccessibleHeaderText="center"  HeaderStyle-BackColor="#FFFFFF">
 <ItemTemplate>
 <asp:Label ID="imageUrl" runat="server" Visible="false" Text='<%# Eval("imageUrl") %>'></asp:Label>
 </ItemTemplate>
@@ -125,7 +125,7 @@
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
-        <asp:TextBox ID="txtSpeakerName" runat="server"></asp:TextBox>
+        <asp:TextBox ID="txtSpeakerName" runat="server" CssClass="form-control input-sm"></asp:TextBox>
                 </div>
                             </div>
                      
@@ -157,7 +157,7 @@
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
-        <asp:TextBox ID="txtDesignation" runat="server"></asp:TextBox>
+        <asp:TextBox ID="txtDesignation" runat="server" CssClass="form-control input-sm"></asp:TextBox>
                             </div>
                             </div>
                      <div class="col-xs-2 col-sm-2 col-md-2"></div>
@@ -180,14 +180,15 @@
                     <div class="col-xs-2 col-sm-2 col-md-2"></div>
                       
                             <div class="col-xs-2 col-sm-2 col-md-2">
-                                <div class="form-group" style="text-align:left">
-                                   <label style="text-align:left">ImageUrl</label>
-                                </div>
                             </div>
-                            <div class="col-xs-6 col-sm-6 col-md-6">
+                            <div class="col-xs-3 col-sm-3 col-md-3">
                                 <div class="form-group" >
         <asp:Image ID="Image" Height="100px" Width="100px" runat="server"></asp:Image>
-                                    <asp:FileUpload ID="file" height="100px" Width="100px"  runat="server" />
+                                    </div>
+                                </div>
+                                    <div class="col-xs-3 col-sm-3 col-md-3">
+                                <div class="form-group pull-left" >
+                                   <span>Choose file to update</span> <br /> <asp:FileUpload ID="file" runat="server" />
                 </div>
                             </div>
                         <div class="col-xs-2 col-sm-2 col-md-2"></div>

@@ -55,7 +55,7 @@ namespace AwsWebApp1 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox AnnouncementId;
+        protected global::System.Web.UI.WebControls.Label AnnouncementId;
         
         /// <summary>
         /// EventId control.
@@ -64,7 +64,7 @@ namespace AwsWebApp1 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox EventId;
+        protected global::System.Web.UI.WebControls.Label EventId;
         
         /// <summary>
         /// PublishTime control.

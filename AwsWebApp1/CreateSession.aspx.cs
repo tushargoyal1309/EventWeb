@@ -9,12 +9,12 @@ using System.Web.UI.WebControls;
 
 namespace AwsWebApp1
 {
-	public partial class CreateSession : System.Web.UI.Page
-	{
-		protected void Page_Load(object sender, EventArgs e)
-		{
+    public partial class CreateSession : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
 
-		}
+        }
 
         protected void Cancel_Click(object sender, EventArgs e)
         {
@@ -23,19 +23,28 @@ namespace AwsWebApp1
 
         protected void submitButton_Click(object sender, EventArgs e)
         {
-            AmazonDynamoDBClient client = new AmazonDynamoDBClient();
-            Amazon.DynamoDBv2.DocumentModel.Table table = Amazon.DynamoDBv2.DocumentModel.Table.LoadTable(client, "Session");
+            if (eventId.Text != null && startTime.Text != null && endTime.Text != null && name.Text != null && speakerName.Text != null)
+            {
+                AmazonDynamoDBClient client = new AmazonDynamoDBClient();
+                Amazon.DynamoDBv2.DocumentModel.Table table = Amazon.DynamoDBv2.DocumentModel.Table.LoadTable(client, "Session");
 
-            var book = new Document();
-            book["eventId"] = eventId.Text;
-            book["startTime"] = startTime.Text;
-            book["endTime"] = endTime.Text;
-            book["name"] = name.Text;
-            book["speakerName"] = speakerName.Text;
-           
+                var book = new Document();
+                book["eventId"] = eventId.Text;
+                book["startTime"] = startTime.Text;
+                book["endTime"] = endTime.Text;
+                book["name"] = name.Text;
+                book["speakerName"] = speakerName.Text;
 
-            table.PutItem(book);
-            Response.Redirect("Session.aspx");
+
+                table.PutItem(book);
+                Response.Redirect("Session.aspx");
+            }
+            else
+            {
+                string script = "alert(\"Please fill all the data.\");";
+                ScriptManager.RegisterStartupScript(this, GetType(),
+                                      "ServerControlScript", script, true);
+            }
         }
-	}
+    }
 }

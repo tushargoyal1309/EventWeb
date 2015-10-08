@@ -111,18 +111,18 @@ namespace AwsWebApp1
             string endTime = End.Text;
             string eventId = Id.Text;
            // string speakerName = Speaker.Text;
-            Start.Text = startTime;
-            End.Text = endTime;
-            Name.Text = name;
-            Id.Text = eventId;
+            lblStart.Text = startTime;
+            txtEnd.Text = endTime;
+            txtName.Text = name;
+            lblId.Text = eventId;
            // speakername.Text = speakerName;
         }
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
-            string startNew = Start.Text;
-            string endNew = End.Text;
-            string nameNew = Name.Text;
-            string eventId = Id.Text;
+            string startNew = lblStart.Text;
+            string endNew = txtEnd.Text;
+            string nameNew = txtName.Text;
+            string eventId = lblId.Text;
            // string speaker = speakername.Text;
             AmazonDynamoDBClient client = new AmazonDynamoDBClient();
             string tableName = "Session";

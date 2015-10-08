@@ -18,20 +18,29 @@ namespace AwsWebApp1
 
         protected void submitButton_Click(object sender, EventArgs e)
         {
-            AmazonDynamoDBClient client = new AmazonDynamoDBClient();
-            Amazon.DynamoDBv2.DocumentModel.Table table = Amazon.DynamoDBv2.DocumentModel.Table.LoadTable(client, "Event");
+            if (description.Text != null && end.Text != null && Id.Text != null && Name.Text != null && oName.Text != null && start.Text != null && venue.Text != null)
+            {
+                AmazonDynamoDBClient client = new AmazonDynamoDBClient();
+                Amazon.DynamoDBv2.DocumentModel.Table table = Amazon.DynamoDBv2.DocumentModel.Table.LoadTable(client, "Event");
 
-            var book = new Document();
-            book["description1"] = description.Text;
-            book["endDate"] = end.Text;
-            book["eventId"] = Id.Text;
-            book["eventName"] = Name.Text;
-            book["organiserName"] = oName.Text;
-            book["startDate"] = start.Text;
-            book["venue"] = venue.Text;
+                var book = new Document();
+                book["description1"] = description.Text;
+                book["endDate"] = end.Text;
+                book["eventId"] = Id.Text;
+                book["eventName"] = Name.Text;
+                book["organiserName"] = oName.Text;
+                book["startDate"] = start.Text;
+                book["venue"] = venue.Text;
 
-            table.PutItem(book);
-            Response.Redirect("Events.aspx");
+                table.PutItem(book);
+                Response.Redirect("Events.aspx");
+            }
+            else
+            {
+                string script = "alert(\"Please fill all the data.\");";
+                ScriptManager.RegisterStartupScript(this, GetType(),
+                                      "ServerControlScript", script, true);
+            }
         }
 
         protected void Cancel_Click(object sender, EventArgs e)

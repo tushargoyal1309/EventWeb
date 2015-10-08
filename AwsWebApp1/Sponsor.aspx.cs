@@ -116,7 +116,7 @@ namespace AwsWebApp1
             string Desc = desc.Text;
             // string speakerName = Speaker.Text;
             Description.Value = Desc;
-            logo.ImageUrl = Url;
+            Image.ImageUrl = Url;
             txtEventId.Text = eveId;
             sno.Text = SerialNo;
             txtEventName.Text = name;
@@ -130,7 +130,7 @@ namespace AwsWebApp1
             string newSponsorName = txtEventName.Text;
             string eventId = txtEventId.Text;
             string Sno = sno.Text;
-            string Url = logo.ImageUrl;
+            string Url = Image.ImageUrl;
             // string speaker = speakername.Text;
             AmazonDynamoDBClient client = new AmazonDynamoDBClient();
             string tableName = "Sponsor";

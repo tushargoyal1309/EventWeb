@@ -173,13 +173,12 @@
                     <div class="col-xs-2 col-sm-2 col-md-2"></div>
                             <div class="col-xs-2 col-sm-2 col-md-2">
                            
-                                <div class="form-group"  style="text-align:left">
-                                    <asp:Image ID="logo" runat="server"></asp:Image>
-                                    </div>
+                                
                            </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
-                                    <asp:FileUpload  ID="file" height="100px" Width="100px"  runat="server" />
+                                    <asp:FileUpload Visible="false" ID="file" height="100px" Width="100px"  runat="server" />
+                                    <asp:Image ID="Image" runat="server" Height="150px" Width="150px"></asp:Image>
                                 </div>
                             </div>
                      
