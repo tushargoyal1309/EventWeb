@@ -26,23 +26,30 @@ namespace AwsWebApp1
                 BindData();
             }
 
-            List<string> keys = Request.Form.AllKeys.Where(key => key.Contains("txtOptions")).ToList();
-            int i = 0;
-            foreach (string key in keys)
+            string CtrlID = string.Empty;
+            if (Request.Form["__EVENTTARGET"] != null && Request.Form["__EVENTTARGET"] != string.Empty)
             {
-                this.CreateTextBox("txtOptions" + i);
-                i++;
+                CtrlID = Request.Form["__EVENTTARGET"];
             }
-        }
+            else
+            {
+                //Buttons and ImageButtons
+                if (Request.Form[hidSourceID.UniqueID] != null && Request.Form[hidSourceID.UniqueID] != string.Empty)
+                {
+                    CtrlID = Request.Form[hidSourceID.UniqueID];
+                }
+            }
 
-        protected void GetTextBoxValues(object sender, EventArgs e)
-        {
-            string message = "";
-            foreach (TextBox textBox in pnlEdit.Controls.OfType<TextBox>())
+            //if (CtrlID != "btnUpdate")
             {
-                message += textBox.ID + ": " + textBox.Text + "\\n";
+                List<string> keys = Request.Form.AllKeys.Where(key => key.Contains("txtOptions")).ToList();
+                int i = 0;
+                foreach (string key in keys)
+                {
+                    this.CreateTextBox("txtOptions" + i);
+                    i++;
+                }
             }
-            ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "alert('" + message + "');", true);
         }
 
         DataTable GetData()
@@ -65,37 +72,36 @@ namespace AwsWebApp1
             {
                 //if (eventid == item["eventId"].S)
                 //{
-                    // Process the result.
+                // Process the result.
 
-                    QuestionData question = new QuestionData();
-                    if (item.ContainsKey("correctAnswer"))
+                QuestionData question = new QuestionData();
+                if (item.ContainsKey("correctAnswer"))
+                {
+                    question.correctAnswer = item["correctAnswer"].S;
+                }
+                question.eventId = item["eventId"].S;
+                question.question = item["question"].S;
+                question.questionId = item["questionId"].S;
+                question.questionType = item["questionType"].S;
+
+                if (item.ContainsKey("options"))
+                {
+                    string test1234 = string.Empty;
+                    string testRemoveComa = string.Empty;
+
+                    foreach (var itemNew in item["options"].M)
                     {
-                        question.correctAnswer = item["correctAnswer"].S;
-                    }
-                    question.eventId = item["eventId"].S;
-                    question.question = item["question"].S;
-                    question.questionId = item["questionId"].S;
-                    question.questionType = item["questionType"].S;
 
-                    if (item.ContainsKey("options"))
-                    {
-                        string test1234 = string.Empty;
-                        string testRemoveComa = string.Empty;
-
-                        foreach (var itemNew in item["options"].M)
+                        if (item["options"].M.Count > 1)
                         {
-
-                            if (item["options"].M.Count > 1)
-                            {
-                                test1234 += itemNew.Value.S + ",";
-
-                            }
-
+                            test1234 += itemNew.Value.S + ",";
                         }
-                        testRemoveComa = test1234.Remove(test1234.Length - 1);
-                        question.options = testRemoveComa;
 
-                        questionDataList.Add(question);
+                    }
+                    testRemoveComa = test1234.Remove(test1234.Length - 1);
+                    question.options = testRemoveComa;
+
+                    questionDataList.Add(question);
                     //}
                 }
 
@@ -177,8 +183,13 @@ namespace AwsWebApp1
                 txt.ID = "txtOptions" + i;
                 txt.ClientIDMode = ClientIDMode.Static;
                 txt.Text = optionsCount[i].ToString();
+                txt.CssClass = "form-control input-sm";
                 Session["ctrlCount"] = optionsCount.Count();
-                pnlEdit.Controls.Add(txt);
+                pnlOptions.Controls.Add(txt);
+
+                Literal lt = new Literal();
+                lt.Text = "<br />";
+                pnlOptions.Controls.Add(lt);
             }
 
             //pnlEdit.Controls.Add(new TextBox());
@@ -189,19 +200,21 @@ namespace AwsWebApp1
         {
             TextBox txt = new TextBox();
             txt.ID = id;
-            pnlEdit.Controls.Add(txt);
+            txt.ClientIDMode = ClientIDMode.Static;
+            txt.CssClass = "form-control input-sm";
+            pnlOptions.Controls.Add(txt);
 
             Literal lt = new Literal();
             lt.Text = "<br />";
-            pnlEdit.Controls.Add(lt);
+            pnlOptions.Controls.Add(lt);
         }
 
 
 
         protected void AddTextBox(object sender, EventArgs e)
         {
-            int index = pnlEdit.Controls.OfType<TextBox>().ToList().Count + 1;
-            this.CreateTextBox("txtOptions" + index);
+            // int index = pnlOptions.Controls.OfType<TextBox>().ToList().Count + 1;
+            // this.CreateTextBox("txtOptions" + index);
         }
 
         protected void Update_Click(object sender, EventArgs e)
@@ -220,7 +233,10 @@ namespace AwsWebApp1
             int iCount = 0;
             int iNewCount = 0;
             List<string> txtOptionsList = new List<string>();
-            foreach (TextBox textBox in pnlEdit.Controls.OfType<TextBox>())
+
+            int index = pnlOptions.Controls.OfType<TextBox>().ToList().Count();
+            int getIndex = index - 1;
+            foreach (TextBox textBox in pnlOptions.Controls.OfType<TextBox>())
             {
                 iCount = iCount + 1;
                 if (iCount > 4)
