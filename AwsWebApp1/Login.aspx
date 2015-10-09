@@ -42,7 +42,7 @@ http://www.templatemo.com/preview/templatemo_394_sonic
     <div  id="header" class="top-header" style="z-index: 3;position: fixed;background-color:#fff">
        <div class="lgo"> <span style="text-align:right; color:white; font-size:30px; vertical-align:middle;margin-top:10px">
            <img src="images/ISB.png" width="100" height="42" /></span></div>
-        <p id="Eventmodel" class="pull-right"><a href="#" id="details" data-toggle="modal"  data-target="#myModal" style="color:black;float:right;font-size:15px;margin-right:30px;margin-top:10px;font-weight:bold">LogIn</a></p>
+        <p id="Eventmodel" class="pull-right"><a href="#" id="details" data-toggle="modal"  data-target="#myModal" style="color:black;float:right;font-size:15px;margin-right:30px;margin-top:10px;font-weight:bold" onclick="disable_arrivals();">LogIn</a></p>
     </div>
 	
 	<!-- This one in here is responsive menu for tablet and mobiles -->
@@ -373,6 +373,12 @@ http://www.templatemo.com/preview/templatemo_394_sonic
 
 	    function openModal() {
 	        $('#myModal').modal('show');
+	    }
+
+	    function disable_arrivals() {
+	        document.getElementById("<%=RequiredFieldValidator1.ClientID %>").style.visibility = "hidden";
+	        document.getElementById("<%=reqName.ClientID%>").style.visibility = "hidden";
+	        document.getElementById("<%=lbltext.ClientID%>").style.visibility = "hidden";
 	    }
 
 	    function initialize() {
