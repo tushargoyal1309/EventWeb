@@ -20,8 +20,8 @@ namespace AwsWebApp1
         }
         protected void newEvent_Click(object sender, EventArgs e)
         {
-            txtusername.Text = string.Empty;
-            txtpassword.Text = string.Empty;
+           // txtusername.Text = string.Empty;
+           // txtpassword.Text = string.Empty;
             lbltext.Text = string.Empty;
             var username = txtusername.Text;
             var password = txtpassword.Text;

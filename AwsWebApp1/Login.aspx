@@ -228,10 +228,11 @@ http://www.templatemo.com/preview/templatemo_394_sonic
 		<%--<input type="text" value="Email address" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email address';}"/>--%>
 		<%--<input type="password" value="Password:"  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password:';}"/>--%>
         <asp:TextBox ID ="txtpassword" runat="server" placeHolder="Password" TextMode="Password"></asp:TextBox>
+                <div><asp:Label runat="server" Text="" ID="lbltext" style="color:red"></asp:Label></div>
         <div><asp:RequiredFieldValidator runat="server" id="RequiredFieldValidator1" controltovalidate="txtpassword" errormessage="Please enter your password!" /></div>
 		<%--<input type="submit" value="Authenticate" id="loginButton" />--%>
           
-        <div><asp:Label runat="server" Text="" ID="lbltext"></asp:Label></div>
+
         <div class="">
       <asp:Button runat="server" Text="Login" OnClick="newEvent_Click" type="button" ID="newEvent" class="btn btn-info"  CssClass="submit1"  UseSubmitBehavior="false" style=" background: #39DAF7;color: #FFF;font-size:20px;
     font-weight: 400;
