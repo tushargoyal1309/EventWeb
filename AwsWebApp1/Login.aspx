@@ -119,7 +119,7 @@ http://www.templatemo.com/preview/templatemo_394_sonic
 					<div class="col-md-12">
 						<div class="welcome-text">
 							<h2>Welcome to Our site</h2>
-							<p>Sonic is <a href="#">free HTML5 template</a> provided by templatemo website for everyone. Credit goes to <a rel="nofollow" href="http://flexslider.woothemes.com">FlexSlider</a>. Maecenas adipiscing pellentesque elit eu volutpat. Integer vitae <a href="#">pulvinar magna</a>. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent auctor mi metus, nec sagittis purus ultrices id.</p>
+							<p>We aspire to be a business and technology leader by providing high functionality, easy to use, high quality and right priced solutions for our clients while keeping the creative spirit alive of our team.</p>
 						</div>
 					</div>
 				</div>
@@ -200,7 +200,7 @@ http://www.templatemo.com/preview/templatemo_394_sonic
                    <div style="border-bottom: 1px solid #e5e5e5;"> <button style="margin-top: 21px;margin-right: 20px;" type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div> 
 
 	<div class="top-bar">
-			<div class="navg">
+<%--			<div class="navg">
 				<span class="menu"> <img src="images/menu.png" alt=""/></span>
 				<ul class="res">
 					<li><a class="active scroll" href="#coffee">Menu</a></li>
@@ -215,12 +215,12 @@ http://www.templatemo.com/preview/templatemo_394_sonic
 				        });
 				    });
 		       </script>
-			</div>
+			</div>--%>
 		<h2>Welcome</h2>
 	</div>
-	<div class="cam-img">
-		 <a href="#"><img src="images/cam.png" alt=""/></a> 
-		 <input type="file" value="" />
+	<div class="cam-img" style="height:10px">
+<%--		 <a href="#"><img src="images/cam.png" alt=""/></a> 
+		 <input type="file" value="" />--%>
 	</div>
 	<form id="loginForm" runat="server">
         <asp:TextBox ID ="txtusername" runat="server" placeHolder="Username" ></asp:TextBox>
