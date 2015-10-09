@@ -23,13 +23,13 @@ namespace AwsWebApp1
 
         protected void submitButton_Click(object sender, EventArgs e)
         {
-            if (eventId.Text != null && startTime.Text != null && endTime.Text != null && name.Text != null && speakerName.Text != null)
+            if (inId.Value != "" && startTime.Text != "" && endTime.Text != "" && name.Text != "" && speakerName.Text != "")
             {
                 AmazonDynamoDBClient client = new AmazonDynamoDBClient();
                 Amazon.DynamoDBv2.DocumentModel.Table table = Amazon.DynamoDBv2.DocumentModel.Table.LoadTable(client, "Session");
 
                 var book = new Document();
-                book["eventId"] = eventId.Text;
+                book["eventId"] = inId.Value;
                 book["startTime"] = startTime.Text;
                 book["endTime"] = endTime.Text;
                 book["name"] = name.Text;

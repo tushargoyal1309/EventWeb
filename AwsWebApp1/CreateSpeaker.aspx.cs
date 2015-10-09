@@ -23,7 +23,7 @@ namespace AwsWebApp1
 
         protected void submitButton_Click(object sender, EventArgs e)
         {
-            if (flFile.PostedFile != null && EventId.Text != null && SpeakerName.Text != null && Email.Text != null && Designation.Text != null && Biography.Text != null && Organization.Text != null)
+            if (flFile.PostedFile != null && inId.Value != "" && SpeakerName.Text != "" && Email.Text != "" && Designation.Text != "" && Biography.Text != "" && Organization.Text != "")
             {
                 //string FileName = Path.GetFileName(file.PostedFile.FileName);
                 string fileToBackup = flFile.PostedFile.FileName;
@@ -43,7 +43,7 @@ namespace AwsWebApp1
                 //var book = new Document();
 
                 var book = new Document();
-                book["eventId"] = EventId.Text;
+                book["eventId"] = inId.Value;
                 book["speakerName"] = SpeakerName.Text;
                 book["email"] = Email.Text;
                 book["designation"] = Designation.Text;

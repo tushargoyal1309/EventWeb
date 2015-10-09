@@ -23,7 +23,7 @@ namespace AwsWebApp1
 
         protected void submitButton_Click(object sender, EventArgs e)
         {
-            if (file.PostedFile != null && EventId.Text != null && ContentId.Text != null && FileType.Text != null && Name.Text != null)
+            if (file.PostedFile != null && inEid.Value != "" && inCId.Value != "" && FileType.Text != "" && Name.Text != "")
             {
                 //string FileName = Path.GetFileName(file.PostedFile.FileName);
                 string fileToBackup = file.PostedFile.FileName;
@@ -42,8 +42,8 @@ namespace AwsWebApp1
                     Amazon.DynamoDBv2.DocumentModel.Table table = Amazon.DynamoDBv2.DocumentModel.Table.LoadTable(client, "Content");
 
                     var book = new Document();
-                    book["eventId"] = EventId.Text;
-                    book["contentId"] = ContentId.Text;
+                    book["eventId"] = inEid.Value;
+                    book["contentId"] = inCId.Value;
                     book["fileType"] = FileType.Text;
                     book["name"] = Name.Text;
                     book["contentUrl"] = Url;

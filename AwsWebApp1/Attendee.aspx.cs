@@ -131,7 +131,7 @@ namespace AwsWebApp1
         }
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (file.PostedFile != null)
+            if (file.PostedFile != null && txtBio.Value != "" && txtDesignation.Text != "" && txtName.Text != "" && txtOrganisation.Text != "")
             {
                 //string FileName = Path.GetFileName(file.PostedFile.FileName);
                 string fileToBackup = file.PostedFile.FileName;

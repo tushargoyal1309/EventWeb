@@ -22,13 +22,13 @@ namespace AwsWebApp1 {
         protected global::System.Web.UI.WebControls.TextBox Biography;
         
         /// <summary>
-        /// EventId control.
+        /// inId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox EventId;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText inId;
         
         /// <summary>
         /// SpeakerName control.
@@ -49,6 +49,24 @@ namespace AwsWebApp1 {
         protected global::System.Web.UI.WebControls.TextBox Email;
         
         /// <summary>
+        /// RequiredFieldValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        
+        /// <summary>
+        /// RegularExpressionValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
+        
+        /// <summary>
         /// Designation control.
         /// </summary>
         /// <remarks>
@@ -56,15 +74,6 @@ namespace AwsWebApp1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Designation;
-        
-        /// <summary>
-        /// file control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload file;
         
         /// <summary>
         /// Organization control.

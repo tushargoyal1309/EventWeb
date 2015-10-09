@@ -148,21 +148,23 @@ namespace AwsWebApp1
 
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
-            string descNew = txtDesc.Value;
-            string eventNew = txtEventName.Text;
-            string oNewName = txtOName.Text;
-            string newStartDate = txtSatrt.Text;
-            string newVenue = txtVenue.Text;
-            string newEndDate = txtEnd.Text;
-            string eventId = txtEventId.Text;
-            AmazonDynamoDBClient client = new AmazonDynamoDBClient();
-            string tableName = "Event";
-
-            var request = new UpdateItemRequest
+            if (txtDesc.Value != null && txtEventName.Text != null && txtOName.Text != null && lblSatrt.Text != null && txtVenue.Text != null && txtEnd.Text != null)
             {
-                TableName = tableName,
-                Key = new Dictionary<string, AttributeValue>() { { "eventId", new AttributeValue { S = eventId } } },
-                ExpressionAttributeNames = new Dictionary<string, string>()
+                string descNew = txtDesc.Value;
+                string eventNew = txtEventName.Text;
+                string oNewName = txtOName.Text;
+                string newStartDate = lblSatrt.Text;
+                string newVenue = txtVenue.Text;
+                string newEndDate = txtEnd.Text;
+                string eventId = txtEventId.Text;
+                AmazonDynamoDBClient client = new AmazonDynamoDBClient();
+                string tableName = "Event";
+
+                var request = new UpdateItemRequest
+                {
+                    TableName = tableName,
+                    Key = new Dictionary<string, AttributeValue>() { { "eventId", new AttributeValue { S = eventId } } },
+                    ExpressionAttributeNames = new Dictionary<string, string>()
     {
         {"#oldDescription", "description1"},
         {"#oldName", "eventName"},
@@ -174,7 +176,7 @@ namespace AwsWebApp1
         //{"#NA", "NewAttribute"},
         //{"#I", "ISBN"}
     },
-                ExpressionAttributeValues = new Dictionary<string, AttributeValue>()
+                    ExpressionAttributeValues = new Dictionary<string, AttributeValue>()
     {
         {":newDescription",new AttributeValue {S = descNew}},
         {":newName",new AttributeValue {S = eventNew}},
@@ -185,21 +187,29 @@ namespace AwsWebApp1
        // {":newattr",new AttributeValue {S = "someValue"}},
     },
 
-                // This expression does the following:
-                // 1) Adds two new authors to the list
-                // 2) Reduces the price
-                // 3) Adds a new attribute to the item
-                // 4) Removes the ISBN attribute from the item
-                UpdateExpression = "SET #oldDescription = :newDescription, #oldName = :newName, #oldStartDate = :newStartDate, #oldEndDate = :newEndDate, #oldOrganiserName = :newOrganiserName, #oldVenue = :newVenue"
-            };
-            var response = client.UpdateItem(request);
-            //After updating the data in db.
+                    // This expression does the following:
+                    // 1) Adds two new authors to the list
+                    // 2) Reduces the price
+                    // 3) Adds a new attribute to the item
+                    // 4) Removes the ISBN attribute from the item
+                    UpdateExpression = "SET #oldDescription = :newDescription, #oldName = :newName, #oldStartDate = :newStartDate, #oldEndDate = :newEndDate, #oldOrganiserName = :newOrganiserName, #oldVenue = :newVenue"
+                };
+                var response = client.UpdateItem(request);
+                //After updating the data in db.
 
-            divSearchResult.Visible = false;
-            divMain.Visible = true;
+                divSearchResult.Visible = false;
+                divMain.Visible = true;
 
-            BindData();
+                BindData();
+            }
+            else
+            {
+                string script = "alert(\"Please fill all the data to update this event.\");";
+                ScriptManager.RegisterStartupScript(this, GetType(),
+                                      "ServerControlScript", script, true);
+            }
         }
+       
 
         protected void EventData_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -225,7 +235,7 @@ namespace AwsWebApp1
             txtEventId.Text = eventId;
             txtEventName.Text = eventName;
             txtOName.Text = organiserName;
-            txtSatrt.Text = startDate;
+            lblSatrt.Text = startDate;
             txtVenue.Text = Place;
         }
 
