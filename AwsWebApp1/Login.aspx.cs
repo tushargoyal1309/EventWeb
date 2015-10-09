@@ -16,10 +16,13 @@ namespace AwsWebApp1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
         protected void newEvent_Click(object sender, EventArgs e)
         {
+           // txtusername.Text = string.Empty;
+           // txtpassword.Text = string.Empty;
+            lbltext.Text = string.Empty;
             var username = txtusername.Text;
             var password = txtpassword.Text;
             AmazonDynamoDBClient client = new AmazonDynamoDBClient();
@@ -30,8 +33,10 @@ namespace AwsWebApp1
             var response = client.Scan(request);
             //  List<LoginCredential> eventList = new List<LoginCredential>();
             LoginCredential loginData = new LoginCredential();
+            bool status = false;
             foreach (Dictionary<string, AttributeValue> item in response.ScanResult.Items)
             {
+               // ScriptManager.RegisterStartupScript(this, this.GetType(), "LaunchServerSide", "$(function() { openModal(); });", true);
                 // Process the result.
 
                 loginData.UserName = item["name"].S;
@@ -42,8 +47,15 @@ namespace AwsWebApp1
                 //Console.WriteLine(item);
                 if (username == loginData.UserName && password == loginData.Password)
                 {
+                    status = true;
                     Session["EventId"] = item["eventId"].S;
                     Response.Redirect("Default.aspx");
+                }
+                if(item == response.ScanResult.Items.Last() && status == false)
+                {
+
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "LaunchServerSide", "$(function() { openModal(); });", true);
+                    lbltext.Text = "Invalid UserId/Passowrd";
                 }
             }
 

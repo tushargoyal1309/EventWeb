@@ -38,11 +38,11 @@ http://www.templatemo.com/preview/templatemo_394_sonic
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js"></script>
 </head>
 <body>
-
+    
     <div  id="header" class="top-header" style="z-index: 3;position: fixed;background-color:#fff">
        <div class="lgo"> <span style="text-align:right; color:white; font-size:30px; vertical-align:middle;margin-top:10px">
            <img src="images/ISB.png" width="100" height="42" /></span></div>
-        <p id="Eventmodel" class="pull-right"><a href="#" id="details" data-toggle="modal"  data-target="#myModal" style="color:black;float:right;font-size:15px;margin-right:30px;margin-top:10px;font-weight:bold">LogIn</a></p>
+        <p id="Eventmodel" class="pull-right"><a href="#" id="details" data-toggle="modal"  data-target="#myModal" style="color:black;float:right;font-size:15px;margin-right:30px;margin-top:10px;font-weight:bold" onclick="disable_arrivals();">LogIn</a></p>
     </div>
 	
 	<!-- This one in here is responsive menu for tablet and mobiles -->
@@ -119,7 +119,7 @@ http://www.templatemo.com/preview/templatemo_394_sonic
 					<div class="col-md-12">
 						<div class="welcome-text">
 							<h2>Welcome to Our site</h2>
-							<p>Sonic is <a href="#">free HTML5 template</a> provided by templatemo website for everyone. Credit goes to <a rel="nofollow" href="http://flexslider.woothemes.com">FlexSlider</a>. Maecenas adipiscing pellentesque elit eu volutpat. Integer vitae <a href="#">pulvinar magna</a>. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent auctor mi metus, nec sagittis purus ultrices id.</p>
+							<p>We aspire to be a business and technology leader by providing high functionality, easy to use, high quality and right priced solutions for our clients while keeping the creative spirit alive of our team.</p>
 						</div>
 					</div>
 				</div>
@@ -136,62 +136,6 @@ http://www.templatemo.com/preview/templatemo_394_sonic
 						</div>
 					</div>
 				</div>
-				<div class="row">
-					<div class="col-md-4">
-						<div class="member-item">
-							<div class="member-thumb">
-								<img src="images/team1.jpg" alt="girl 1">
-								<div class="overlay">
-									<ul class="social-member">
-										<li><a href="#" class="fa fa-facebook"></a></li>
-										<li><a href="#" class="fa fa-twitter"></a></li>
-										<li><a href="#" class="fa fa-linkedin"></a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="member-content">
-								<h4>Christina Welldone</h4>
-								<p>Marketing Director</p>
-							</div>
-						</div>
-					</div> <!-- /.col-md-4 -->
-					<div class="col-md-4">
-						<div class="member-item">
-							<div class="member-thumb">
-								<img src="images/team2.jpg" alt="girl 2">
-								<div class="overlay">
-									<ul class="social-member">
-										<li><a href="#" class="fa fa-facebook"></a></li>
-										<li><a href="#" class="fa fa-twitter"></a></li>
-										<li><a href="#" class="fa fa-linkedin"></a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="member-content">
-								<h4>Teri Belle</h4>
-								<p>Creative Executive</p>
-							</div>
-						</div>
-					</div> <!-- /.col-md-4 -->
-					<div class="col-md-4">
-						<div class="member-item">
-							<div class="member-thumb">
-								<img src="images/team3.jpg" alt="girl 3">
-								<div class="overlay">
-									<ul class="social-member">
-										<li><a href="#" class="fa fa-facebook"></a></li>
-										<li><a href="#" class="fa fa-twitter"></a></li>
-										<li><a href="#" class="fa fa-linkedin"></a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="member-content">
-								<h4>Tawana Cherry</h4>
-								<p>Company President</p>
-							</div>
-						</div>
-					</div> <!-- /.col-md-4 -->
-				</div> <!-- /.row -->
 				<div class="row our-story">
 					<div class="col-md-8">
 						<h3>Our Management Team</h3>
@@ -256,7 +200,7 @@ http://www.templatemo.com/preview/templatemo_394_sonic
                    <div style="border-bottom: 1px solid #e5e5e5;"> <button style="margin-top: 21px;margin-right: 20px;" type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div> 
 
 	<div class="top-bar">
-			<div class="navg">
+<%--			<div class="navg">
 				<span class="menu"> <img src="images/menu.png" alt=""/></span>
 				<ul class="res">
 					<li><a class="active scroll" href="#coffee">Menu</a></li>
@@ -271,21 +215,26 @@ http://www.templatemo.com/preview/templatemo_394_sonic
 				        });
 				    });
 		       </script>
-			</div>
+			</div>--%>
 		<h2>Welcome</h2>
 	</div>
-	<div class="cam-img">
-		 <a href="#"><img src="images/cam.png" alt=""/></a> 
-		 <input type="file" value="" />
+	<div class="cam-img" style="height:10px">
+<%--		 <a href="#"><img src="images/cam.png" alt=""/></a> 
+		 <input type="file" value="" />--%>
 	</div>
 	<form id="loginForm" runat="server">
         <asp:TextBox ID ="txtusername" runat="server" placeHolder="Username" ></asp:TextBox>
+       <div><asp:RequiredFieldValidator runat="server" id="reqName" controltovalidate="txtusername" errormessage="Please enter your name!" /></div>
 		<%--<input type="text" value="Email address" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email address';}"/>--%>
 		<%--<input type="password" value="Password:"  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password:';}"/>--%>
         <asp:TextBox ID ="txtpassword" runat="server" placeHolder="Password" TextMode="Password"></asp:TextBox>
+                <div><asp:Label runat="server" Text="" ID="lbltext" style="color:red"></asp:Label></div>
+        <div><asp:RequiredFieldValidator runat="server" id="RequiredFieldValidator1" controltovalidate="txtpassword" errormessage="Please enter your password!" /></div>
 		<%--<input type="submit" value="Authenticate" id="loginButton" />--%>
-          <div class="">
-      <asp:Button runat="server" Text="Authenticate" OnClick="newEvent_Click" type="button" ID="newEvent" class="btn btn-info"  CssClass="submit1"  UseSubmitBehavior="false" style=" background: #39DAF7;color: #FFF;font-size:20px;
+          
+
+        <div class="">
+      <asp:Button runat="server" Text="Login" OnClick="newEvent_Click" type="button" ID="newEvent" class="btn btn-info"  CssClass="submit1"  UseSubmitBehavior="false" style=" background: #39DAF7;color: #FFF;font-size:20px;
     font-weight: 400;
     width: 60%;
     padding: 14px 15px;
@@ -309,23 +258,6 @@ http://www.templatemo.com/preview/templatemo_394_sonic
 		</div> <!-- /.container-fluid -->
 
 		<div class="site-footer">
-			<div class="first-footer">
-				<div class="container-fluid">
-					<div class="row">
-						<div class="col-md-12">
-							<div class="social-footer">
-								<ul>
-									<li><a href="#" class="fa fa-facebook"></a></li>
-									<li><a href="#" class="fa fa-twitter"></a></li>
-									<li><a href="#" class="fa fa-dribbble"></a></li>
-									<li><a href="#" class="fa fa-linkedin"></a></li>
-									<li><a href="#" class="fa fa-rss"></a></li>
-								</ul>
-							</div> <!-- /.social-footer -->
-						</div> <!-- /.col-md-12 -->
-					</div> <!-- /.row -->
-				</div> <!-- /.container-fluid -->
-			</div> <!-- /.first-footer -->
 			<div class="bottom-footer">
 				<div class="container-fluid">
 					<div class="row">
@@ -438,6 +370,16 @@ http://www.templatemo.com/preview/templatemo_394_sonic
 	
 
 	    });
+
+	    function openModal() {
+	        $('#myModal').modal('show');
+	    }
+
+	    function disable_arrivals() {
+	        document.getElementById("<%=RequiredFieldValidator1.ClientID %>").style.visibility = "hidden";
+	        document.getElementById("<%=reqName.ClientID%>").style.visibility = "hidden";
+	        document.getElementById("<%=lbltext.ClientID%>").style.visibility = "hidden";
+	    }
 
 	    function initialize() {
 	        var mapOptions = {
