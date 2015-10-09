@@ -159,6 +159,7 @@
     <Content Include="Default.aspx" />
     <Content Include="Events.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
     <Content Include="images\1 copy.jpg" />
     <Content Include="images\assets\600_400-1.jpg" />
     <Content Include="images\assets\600_400-2.jpg" />
@@ -187,6 +188,7 @@
     <Content Include="images\top-bar.jpg" />
     <Content Include="Login.aspx" />
     <Content Include="Logistics.aspx" />
+    <Content Include="Logout.aspx" />
     <Content Include="Question.aspx" />
     <Content Include="QuizAnswer.aspx" />
     <Content Include="scripts\app.js" />
@@ -317,6 +319,9 @@
     <Compile Include="Events.aspx.designer.cs">
       <DependentUpon>Events.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
     <Compile Include="LinkColumn.cs" />
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -331,6 +336,13 @@
     </Compile>
     <Compile Include="Logistics.aspx.designer.cs">
       <DependentUpon>Logistics.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
     </Compile>
     <Compile Include="master.Master.cs">
       <DependentUpon>master.Master</DependentUpon>

@@ -7,6 +7,7 @@ using System.Data;
 using System.Linq;
 using System.Reflection;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -47,6 +48,18 @@ namespace AwsWebApp1
                 //Console.WriteLine(item);
                 if (username == loginData.UserName && password == loginData.Password)
                 {
+                    FormsAuthenticationTicket ticket = new FormsAuthenticationTicket(1, loginData.UserName, DateTime.Now,
+                        DateTime.Now.AddMinutes(2880), true, "Administrator", FormsAuthentication.FormsCookiePath);
+                    string hash = FormsAuthentication.Encrypt(ticket);
+                    HttpCookie cookie = new HttpCookie(FormsAuthentication.FormsCookieName, hash);
+
+                    if (ticket.IsPersistent)
+                    {
+                        cookie.Expires = ticket.Expiration;
+                    }
+                    Response.Cookies.Add(cookie);
+                    Response.Redirect(FormsAuthentication.GetRedirectUrl(loginData.UserName, true));
+
                     status = true;
                     Session["EventId"] = item["eventId"].S;
                     Response.Redirect("Default.aspx");

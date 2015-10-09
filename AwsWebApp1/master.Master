@@ -1,8 +1,9 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="master.master.cs" Inherits="AwsWebApp1.master" %>
+
 <!doctype html>
 <!--[if gt IE 8]><!-->
 <html class="no-js">
- <!--<![endif]-->
+<!--<![endif]-->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,8 +18,7 @@
     <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="bower_components/weather-icons/css/weather-icons.min.css">
     <!-- end needs images -->
-        <link rel="stylesheet" href="styles/main.css">
-
+    <link rel="stylesheet" href="styles/main.css">
 </head>
 <body data-ng-app="app" id="app" data-custom-background data-off-canvas-nav>
     <!--[if lt IE 9]>
@@ -33,21 +33,21 @@
             <aside data-ng-include=" 'app/layout/nav.html' " id="nav-container"></aside>
         </div>
 
-        <div class="view-container" style="height:600px;overflow:scroll">
-                        <form runat="server">
-<%--                             style="padding-left:10px; padding-top:15px;"--%>
-               <%-- <section data-ng-view id="content" class="animate-fade-up"></section>--%>
-                            <div class="page page-table ng-scope">
-                                <section class="class="panel panel-default table-dynamic">
-               <div class="animate-fade-up" style="padding-left:217px;padding-top:40px">
-            <asp:ContentPlaceHolder runat="server" id="ContentPlaceHolder1"></asp:ContentPlaceHolder>
+        <div class="view-container" style="height: 600px; overflow: scroll">
+            <form runat="server">
+                <%--                             style="padding-left:10px; padding-top:15px;"--%>
+                <%-- <section data-ng-view id="content" class="animate-fade-up"></section>--%>
+                <div class="page page-table ng-scope">
+                    <section class="panel panel-default table-dynamic">
+                        <div class="animate-fade-up" style="padding-left: 217px; padding-top: 40px">
+                            <asp:ContentPlaceHolder runat="server" ID="ContentPlaceHolder1"></asp:ContentPlaceHolder>
 
-                   </div>
-                          </section>
-              </div>
-        </form>
-                  
+                        </div>
+                    </section>
                 </div>
+            </form>
+
+        </div>
     </div>
 
 
