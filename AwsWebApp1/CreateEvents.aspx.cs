@@ -18,7 +18,7 @@ namespace AwsWebApp1
 
         protected void submitButton_Click(object sender, EventArgs e)
         {
-            if (description.Text != null && end.Text != null && Id.Text != null && Name.Text != null && oName.Text != null && start.Text != null && venue.Text != null)
+            if (description.Text != "" && end.Text != "" && inId.Value != "" && Name.Text != "" && oName.Text != "" && start.Text != "" && venue.Text != "")
             {
                 AmazonDynamoDBClient client = new AmazonDynamoDBClient();
                 Amazon.DynamoDBv2.DocumentModel.Table table = Amazon.DynamoDBv2.DocumentModel.Table.LoadTable(client, "Event");
@@ -26,7 +26,7 @@ namespace AwsWebApp1
                 var book = new Document();
                 book["description1"] = description.Text;
                 book["endDate"] = end.Text;
-                book["eventId"] = Id.Text;
+                book["eventId"] = inId.Value;
                 book["eventName"] = Name.Text;
                 book["organiserName"] = oName.Text;
                 book["startDate"] = start.Text;
@@ -37,7 +37,7 @@ namespace AwsWebApp1
             }
             else
             {
-                string script = "alert(\"Please fill all the data.\");";
+                string script = "alert(\"Please fill all the data correctly.\");";
                 ScriptManager.RegisterStartupScript(this, GetType(),
                                       "ServerControlScript", script, true);
             }

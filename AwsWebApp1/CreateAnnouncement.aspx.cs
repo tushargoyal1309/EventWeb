@@ -23,14 +23,14 @@ namespace AwsWebApp1
 
         protected void submitButton_Click(object sender, EventArgs e)
         {
-            if (AnnouncementId.Text != null && EventId.Text != null && PublishTime.Text != null && txtText.Text != null)
+            if (inId.Value != null && inEid.Value != null && PublishTime.Text != null && txtText.Text != null)
             {
                 AmazonDynamoDBClient client = new AmazonDynamoDBClient();
                 Amazon.DynamoDBv2.DocumentModel.Table table = Amazon.DynamoDBv2.DocumentModel.Table.LoadTable(client, "Announcement");
 
                 var book = new Document();
-                book["AnnouncementId"] = AnnouncementId.Text;
-                book["EventId"] = EventId.Text;
+                book["AnnouncementId"] = inId.Value;
+                book["EventId"] = inEid.Value;
                 book["PublishTime"] = PublishTime.Text;
                 book["Text"] = txtText.Text;
 

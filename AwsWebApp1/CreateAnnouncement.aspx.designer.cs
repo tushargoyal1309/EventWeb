@@ -13,22 +13,22 @@ namespace AwsWebApp1 {
     public partial class CreateAnnouncement {
         
         /// <summary>
-        /// AnnouncementId control.
+        /// inId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox AnnouncementId;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText inId;
         
         /// <summary>
-        /// EventId control.
+        /// inEid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox EventId;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText inEid;
         
         /// <summary>
         /// PublishTime control.

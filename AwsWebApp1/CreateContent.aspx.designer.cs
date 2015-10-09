@@ -13,22 +13,22 @@ namespace AwsWebApp1 {
     public partial class CreateContent {
         
         /// <summary>
-        /// ContentId control.
+        /// inCId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ContentId;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText inCId;
         
         /// <summary>
-        /// EventId control.
+        /// inEid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox EventId;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText inEid;
         
         /// <summary>
         /// FileType control.

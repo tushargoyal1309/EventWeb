@@ -13,22 +13,22 @@ namespace AwsWebApp1 {
     public partial class CreateQuestion {
         
         /// <summary>
-        /// txtEventId control.
+        /// inId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEventId;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText inId;
         
         /// <summary>
-        /// txtQuestionId control.
+        /// inQid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtQuestionId;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText inQid;
         
         /// <summary>
         /// ddlQuestionType control.

@@ -23,7 +23,7 @@ namespace AwsWebApp1
 
         protected void submitButton_Click(object sender, EventArgs e)
         {
-            if (file.PostedFile != null && EventId.Text != null && Email.Text != null && Biography.Text != null && Designation.Text != null && Name.Text != null && Organization.Text != null)
+            if (file.PostedFile != null && inId.Value != "" && Email.Text != "" && Biography.Text != "" && Designation.Text != "" && Name.Text != "" && Organization.Text != "")
             {
                 //string FileName = Path.GetFileName(file.PostedFile.FileName);
                 string fileToBackup = file.PostedFile.FileName;
@@ -41,7 +41,7 @@ namespace AwsWebApp1
                 Amazon.DynamoDBv2.DocumentModel.Table table = Amazon.DynamoDBv2.DocumentModel.Table.LoadTable(client, "Attendee");
 
                 var book = new Document();
-                book["eventId"] = EventId.Text;
+                book["eventId"] = inId.Value;
                 book["email"] = Email.Text;
                 book["biography"] = Biography.Text;
                 book["designation"] = Designation.Text;

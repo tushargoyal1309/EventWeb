@@ -87,42 +87,44 @@ namespace AwsWebApp1
 
         protected void submitButton_Click(object sender, EventArgs e)
         {
-            string message = "";
-            int iCount = 0;
-            int iNewCount = 0;
-            List<string> txtOptionsList = new List<string>();
-            foreach (TextBox textBox in divTest.Controls.OfType<TextBox>())
+            if (inId.Value != "" && inQid.Value != "" && txtQuestion.Text != "" && txtCorrectAnswer.Text != "" && txtOptions0.Text != "")
             {
-                iCount = iCount + 1;
-                if (iCount > 3)
+                string message = "";
+                int iCount = 0;
+                int iNewCount = 0;
+                List<string> txtOptionsList = new List<string>();
+                foreach (TextBox textBox in divTest.Controls.OfType<TextBox>())
                 {
-                    if (textBox.ID == "txtOptions" + iNewCount)
+                    iCount = iCount + 1;
+                    if (iCount > 3)
                     {
-                        iNewCount = iNewCount + 1;
-                        message = textBox.Text;
+                        if (textBox.ID == "txtOptions" + iNewCount)
+                        {
+                            iNewCount = iNewCount + 1;
+                            message = textBox.Text;
+                        }
                     }
+                    txtOptionsList.Add(message);
                 }
-                txtOptionsList.Add(message);
-            }
 
-            string alpha = "ABCDEFGHIJKLMNOPQRSTUVQXYZ";
+                string alpha = "ABCDEFGHIJKLMNOPQRSTUVQXYZ";
 
-            Dictionary<string, AttributeValue> attValue = new Dictionary<string, AttributeValue>();
-            int alphabet = 0;
-            for (int i = 4; i < txtOptionsList.Count - 1; i++)
-            {
-                AttributeValue attribute = new AttributeValue();
-                attribute.S = txtOptionsList[i];
-                attValue.Add(alpha[alphabet].ToString().ToLower(), attribute);
-                alphabet = alphabet + 1;
-            }
-            AmazonDynamoDBClient client = new AmazonDynamoDBClient();
-            // Amazon.DynamoDBv2.DocumentModel.Table table = Amazon.DynamoDBv2.DocumentModel.Table.LoadTable(client, "Event");
-            client.PutItem("QuizQuestion", new Dictionary<string, AttributeValue>
+                Dictionary<string, AttributeValue> attValue = new Dictionary<string, AttributeValue>();
+                int alphabet = 0;
+                for (int i = 4; i < txtOptionsList.Count - 1; i++)
+                {
+                    AttributeValue attribute = new AttributeValue();
+                    attribute.S = txtOptionsList[i];
+                    attValue.Add(alpha[alphabet].ToString().ToLower(), attribute);
+                    alphabet = alphabet + 1;
+                }
+                AmazonDynamoDBClient client = new AmazonDynamoDBClient();
+                // Amazon.DynamoDBv2.DocumentModel.Table table = Amazon.DynamoDBv2.DocumentModel.Table.LoadTable(client, "Event");
+                client.PutItem("QuizQuestion", new Dictionary<string, AttributeValue>
 
             {
-    { "eventId", new AttributeValue { S = txtEventId.Text } },
-    { "questionId", new AttributeValue { S = txtQuestionId.Text } },
+    { "eventId", new AttributeValue { S = inId.Value } },
+    { "questionId", new AttributeValue { S = inQid.Value } },
     { "question", new AttributeValue { S = txtQuestion.Text } },
     { "questionType", new AttributeValue { S = ddlQuestionType.SelectedItem.Text } },
     { "correctAnswer", new AttributeValue { S = txtCorrectAnswer.Text } },
@@ -133,7 +135,14 @@ namespace AwsWebApp1
     }
     }
 });
-            Response.Redirect("Question.aspx");
+                Response.Redirect("Question.aspx");
+            }
+            else 
+            {
+                string script = "alert(\"Please fill all the data.\");";
+                ScriptManager.RegisterStartupScript(this, GetType(),
+                                      "ServerControlScript", script, true);
+            }
         }
 
         protected void ddlQuestionType_SelectedIndexChanged(object sender, EventArgs e)
