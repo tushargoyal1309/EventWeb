@@ -40,13 +40,13 @@ namespace AwsWebApp1
             {
                 TableName = "QuizAnswer",
             };
-            //var eventid = Session["EventId"].ToString();
+            var eventid = Session["EventId"].ToString();
             var response = client.Scan(request);
             List<Answers> answersList = new List<Answers>();
             foreach (Dictionary<string, AttributeValue> item in response.ScanResult.Items)
             {
-                //if (eventid == item["eventId"].S)
-                //{
+                if (eventid == item["eventId"].S)
+                {
                     // Process the result.
                     Answers answers = new Answers();
                     answers.userName = item["username"].S;
@@ -72,7 +72,7 @@ namespace AwsWebApp1
                         answers.answersByUser = testRemoveComaFromAnswers;
                     }
                     answersList.Add(answers);
-                //}
+                }
                 //Console.WriteLine(item);
             }
             //var requestNew = new ScanRequest

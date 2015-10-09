@@ -46,7 +46,7 @@ namespace AwsWebApp1
                 TableName = "QuizQuestion",
 
             };
-            //var eventid = Session["EventId"].ToString();
+            var eventid = Session["EventId"].ToString();
             var response = client.Scan(request);
             List<QuestionData> questionDataList = new List<QuestionData>();
             //var template = new TemplateField();
@@ -55,8 +55,8 @@ namespace AwsWebApp1
             //questionData.Columns.Add(template);
             foreach (Dictionary<string, AttributeValue> item in response.ScanResult.Items)
             {
-                //if (eventid == item["eventId"].S)
-                //{
+                if (eventid == item["eventId"].S)
+                {
                 // Process the result.
 
                 QuestionData question = new QuestionData();
@@ -85,11 +85,10 @@ namespace AwsWebApp1
                     }
                     testRemoveComa = test1234.Remove(test1234.Length - 1);
                     question.options = testRemoveComa;
-
-                    questionDataList.Add(question);
-                    //}
+                    }
+                questionDataList.Add(question);
                 }
-
+                
                 //Console.WriteLine(item);
             }
             DataTable dt = ToDataTable(questionDataList);
