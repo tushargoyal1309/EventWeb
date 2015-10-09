@@ -114,7 +114,7 @@
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
-                                    <asp:FileUpload ID="file" height="100px" Width="100px"  runat="server" />
+                                    <asp:FileUpload ID="file"  runat="server" />
                                     </div>
                             </div>
                      

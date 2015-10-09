@@ -1,5 +1,16 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/master.Master" AutoEventWireup="true" CodeBehind="Announcement.aspx.cs" Inherits="AwsWebApp1.Announcement" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script src="scripts/js/jquery-1.10.2.min.js"></script>
+    <script src="scripts/jquery-ui.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("[id$=PublishTime]").datepicker({
+                showOn: 'button',
+                buttonImageOnly: true,
+                buttonImage: "../images/images.png"
+            });
+        });
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 <div id="divMain" runat="server" style="background-color:#ffffff; overflow: hidden">

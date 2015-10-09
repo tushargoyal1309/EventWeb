@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/master.Master" AutoEventWireup="true" CodeBehind="CreateSession.aspx.cs" Inherits="AwsWebApp1.CreateSession" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script src="scripts/js/jquery-1.10.2.min.js"></script>
+    <script src="scripts/jquery-ui.min.js"></script>
     <script type="text/javascript">
         var specialKeys = new Array();
         specialKeys.push(8); //Backspace
@@ -15,6 +17,24 @@
             document.getElementById("error").style.display = ret ? "none" : "inline";
             return ret;
         }
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            $("[id$=startTime]").datepicker({
+                showOn: 'button',
+                buttonImageOnly: true,
+                buttonImage: "../images/images.png"
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            $("[id$=endTime]").datepicker({
+                showOn: 'button',
+                buttonImageOnly: true,
+                buttonImage: "../images/images.png"
+            });
+        });
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">

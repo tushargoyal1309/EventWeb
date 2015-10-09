@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script src="scripts/js/jquery-1.10.2.min.js"></script>
     <script src="scripts/jquery-ui.min.js"></script>
-
+    <link href="styles/datepicker.css" rel="stylesheet" />
 
     <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="Stylesheet" type="text/css" />
     <script type="text/javascript">
@@ -24,6 +24,15 @@
     <script type="text/javascript">
         $(function () {
             $("[id$=start]").datepicker({
+                showOn: 'button',
+                buttonImageOnly: true,
+                buttonImage: "../images/images.png"
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            $("[id$=end]").datepicker({
                 showOn: 'button',
                 buttonImageOnly: true,
                 buttonImage: "../images/images.png"
@@ -111,7 +120,7 @@
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
-                                    <asp:TextBox runat="server" id="end" class="form-control input-sm" type="Date" placeholder=""></asp:TextBox>
+                                    <asp:TextBox runat="server" id="end" class="form-control input-sm" placeholder=""></asp:TextBox>
                                 </div>
                             </div>
                      <div class="col-xs-2 col-sm-2 col-md-2"></div>

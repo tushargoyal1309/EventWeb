@@ -148,12 +148,10 @@ namespace AwsWebApp1
 
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (txtDesc.Value != null && txtEventName.Text != null && txtOName.Text != null && lblSatrt.Text != null && txtVenue.Text != null && txtEnd.Text != null)
-            {
                 string descNew = txtDesc.Value;
                 string eventNew = txtEventName.Text;
                 string oNewName = txtOName.Text;
-                string newStartDate = lblSatrt.Text;
+                string newStartDate = txtSatrt.Text;
                 string newVenue = txtVenue.Text;
                 string newEndDate = txtEnd.Text;
                 string eventId = txtEventId.Text;
@@ -201,13 +199,7 @@ namespace AwsWebApp1
                 divMain.Visible = true;
 
                 BindData();
-            }
-            else
-            {
-                string script = "alert(\"Please fill all the data to update this event.\");";
-                ScriptManager.RegisterStartupScript(this, GetType(),
-                                      "ServerControlScript", script, true);
-            }
+            
         }
        
 
@@ -235,7 +227,7 @@ namespace AwsWebApp1
             txtEventId.Text = eventId;
             txtEventName.Text = eventName;
             txtOName.Text = organiserName;
-            lblSatrt.Text = startDate;
+            txtSatrt.Text = startDate;
             txtVenue.Text = Place;
         }
 

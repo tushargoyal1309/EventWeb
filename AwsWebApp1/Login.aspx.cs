@@ -58,11 +58,13 @@ namespace AwsWebApp1
                         cookie.Expires = ticket.Expiration;
                     }
                     Response.Cookies.Add(cookie);
-                    Response.Redirect(FormsAuthentication.GetRedirectUrl(loginData.UserName, true));
-
                     status = true;
                     Session["EventId"] = item["eventId"].S;
-                    Response.Redirect("Default.aspx");
+                   // Response.Redirect("Default.aspx");
+                    Response.Redirect(FormsAuthentication.GetRedirectUrl(loginData.UserName, true));
+                    
+
+
                 }
                 if(item == response.ScanResult.Items.Last() && status == false)
                 {

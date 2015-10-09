@@ -1,6 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/master.Master" AutoEventWireup="true" CodeBehind="Events.aspx.cs" Inherits="AwsWebApp1.Events" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script src="scripts/jquery.min.js"></script>
+    <script src="scripts/bootstrap-datepicker.js"></script>
+    <link href="styles/datepicker.css" rel="stylesheet" />
     <script type="text/javascript">
         var specialKeys = new Array();
         specialKeys.push(8); //Backspace
@@ -17,15 +20,27 @@
             return ret;
         }
     </script>
+    <script type="text/javascript">
+        $(function () {
+            $("[id$=txtSatrt]").datepicker({
+                showOn: 'button',
+                buttonImageOnly: true,
+                buttonImage: "../images/images.png"
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            $("[id$=txtEnd]").datepicker({
+                showOn: 'button',
+                buttonImageOnly: true,
+                buttonImage: "../images/images.png"
+            });
+        });
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <script src="scripts/vendor.js"></script>
-
-    <script src="scripts/ui.js"></script>
-
-    <script src="scripts/app.js"></script>
-    <script src="scripts/bootstrap.min.js"></script>
-    <script src="scripts/jquery.min.js"></script>
+    
     <div id="divMain" runat="server" style="background-color: #ffffff; overflow: hidden">
         <br />
         <div class="row" style="background-color:#F9F9F9;">
@@ -189,7 +204,7 @@
                           </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
-                                    <asp:Label ID="lblSatrt" runat="server" cssclass="form-control input-sm"></asp:Label>
+                                    <asp:TextBox ID="txtSatrt" runat="server" cssclass="form-control input-sm"></asp:TextBox>
                                 </div>
                             </div>
                      
@@ -205,7 +220,7 @@
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group" >
-                                    <asp:TextBox ID="txtEnd" type="Date"  runat="server" cssclass="form-control input-sm"></asp:TextBox>
+                                    <asp:TextBox ID="txtEnd" runat="server" cssclass="form-control input-sm"></asp:TextBox>
                                 </div>
                             </div>
                         <div class="col-xs-2 col-sm-2 col-md-2"></div>

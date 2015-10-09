@@ -194,6 +194,7 @@
     <Content Include="QuizAnswer.aspx" />
     <Content Include="scripts\app.js" />
     <Content Include="scripts\bootbox.min.js" />
+    <Content Include="scripts\bootstrap-datepicker.js" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
     <Content Include="scripts\formValidation.min.js" />
@@ -209,6 +210,7 @@
     <Content Include="Speaker.aspx" />
     <Content Include="Sponsor.aspx" />
     <Content Include="styles\bootstrap.min.css" />
+    <Content Include="styles\datepicker.css" />
     <Content Include="styles\font-awesome.min.css" />
     <Content Include="styles\img\checkmark.png" />
     <Content Include="styles\main.css" />
