@@ -38,7 +38,7 @@ http://www.templatemo.com/preview/templatemo_394_sonic
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js"></script>
 </head>
 <body>
-
+    
     <div  id="header" class="top-header" style="z-index: 3;position: fixed;background-color:#fff">
        <div class="lgo"> <span style="text-align:right; color:white; font-size:30px; vertical-align:middle;margin-top:10px">
            <img src="images/ISB.png" width="100" height="42" /></span></div>
@@ -136,62 +136,6 @@ http://www.templatemo.com/preview/templatemo_394_sonic
 						</div>
 					</div>
 				</div>
-				<div class="row">
-					<div class="col-md-4">
-						<div class="member-item">
-							<div class="member-thumb">
-								<img src="images/team1.jpg" alt="girl 1">
-								<div class="overlay">
-									<ul class="social-member">
-										<li><a href="#" class="fa fa-facebook"></a></li>
-										<li><a href="#" class="fa fa-twitter"></a></li>
-										<li><a href="#" class="fa fa-linkedin"></a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="member-content">
-								<h4>Christina Welldone</h4>
-								<p>Marketing Director</p>
-							</div>
-						</div>
-					</div> <!-- /.col-md-4 -->
-					<div class="col-md-4">
-						<div class="member-item">
-							<div class="member-thumb">
-								<img src="images/team2.jpg" alt="girl 2">
-								<div class="overlay">
-									<ul class="social-member">
-										<li><a href="#" class="fa fa-facebook"></a></li>
-										<li><a href="#" class="fa fa-twitter"></a></li>
-										<li><a href="#" class="fa fa-linkedin"></a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="member-content">
-								<h4>Teri Belle</h4>
-								<p>Creative Executive</p>
-							</div>
-						</div>
-					</div> <!-- /.col-md-4 -->
-					<div class="col-md-4">
-						<div class="member-item">
-							<div class="member-thumb">
-								<img src="images/team3.jpg" alt="girl 3">
-								<div class="overlay">
-									<ul class="social-member">
-										<li><a href="#" class="fa fa-facebook"></a></li>
-										<li><a href="#" class="fa fa-twitter"></a></li>
-										<li><a href="#" class="fa fa-linkedin"></a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="member-content">
-								<h4>Tawana Cherry</h4>
-								<p>Company President</p>
-							</div>
-						</div>
-					</div> <!-- /.col-md-4 -->
-				</div> <!-- /.row -->
 				<div class="row our-story">
 					<div class="col-md-8">
 						<h3>Our Management Team</h3>
@@ -280,12 +224,16 @@ http://www.templatemo.com/preview/templatemo_394_sonic
 	</div>
 	<form id="loginForm" runat="server">
         <asp:TextBox ID ="txtusername" runat="server" placeHolder="Username" ></asp:TextBox>
+       <div><asp:RequiredFieldValidator runat="server" id="reqName" controltovalidate="txtusername" errormessage="Please enter your name!" /></div>
 		<%--<input type="text" value="Email address" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email address';}"/>--%>
 		<%--<input type="password" value="Password:"  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password:';}"/>--%>
         <asp:TextBox ID ="txtpassword" runat="server" placeHolder="Password" TextMode="Password"></asp:TextBox>
+        <div><asp:RequiredFieldValidator runat="server" id="RequiredFieldValidator1" controltovalidate="txtpassword" errormessage="Please enter your password!" /></div>
 		<%--<input type="submit" value="Authenticate" id="loginButton" />--%>
-          <div class="">
-      <asp:Button runat="server" Text="Authenticate" OnClick="newEvent_Click" type="button" ID="newEvent" class="btn btn-info"  CssClass="submit1"  UseSubmitBehavior="false" style=" background: #39DAF7;color: #FFF;font-size:20px;
+          
+        <div><asp:Label runat="server" Text="" ID="lbltext"></asp:Label></div>
+        <div class="">
+      <asp:Button runat="server" Text="Login" OnClick="newEvent_Click" type="button" ID="newEvent" class="btn btn-info"  CssClass="submit1"  UseSubmitBehavior="false" style=" background: #39DAF7;color: #FFF;font-size:20px;
     font-weight: 400;
     width: 60%;
     padding: 14px 15px;
@@ -309,23 +257,6 @@ http://www.templatemo.com/preview/templatemo_394_sonic
 		</div> <!-- /.container-fluid -->
 
 		<div class="site-footer">
-			<div class="first-footer">
-				<div class="container-fluid">
-					<div class="row">
-						<div class="col-md-12">
-							<div class="social-footer">
-								<ul>
-									<li><a href="#" class="fa fa-facebook"></a></li>
-									<li><a href="#" class="fa fa-twitter"></a></li>
-									<li><a href="#" class="fa fa-dribbble"></a></li>
-									<li><a href="#" class="fa fa-linkedin"></a></li>
-									<li><a href="#" class="fa fa-rss"></a></li>
-								</ul>
-							</div> <!-- /.social-footer -->
-						</div> <!-- /.col-md-12 -->
-					</div> <!-- /.row -->
-				</div> <!-- /.container-fluid -->
-			</div> <!-- /.first-footer -->
 			<div class="bottom-footer">
 				<div class="container-fluid">
 					<div class="row">
@@ -438,6 +369,10 @@ http://www.templatemo.com/preview/templatemo_394_sonic
 	
 
 	    });
+
+	    function openModal() {
+	        $('#myModal').modal('show');
+	    }
 
 	    function initialize() {
 	        var mapOptions = {

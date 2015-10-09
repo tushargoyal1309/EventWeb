@@ -154,7 +154,7 @@ ul.res li a:hover,ul.res li a.active{
   font-weight: 400;
   color: #fff;
   padding: 10px 10px 10px 39px;
-  margin: 0px 0px 25px 0px;
+  margin: 0px 0px 0px 0px;
   width: 60%;
   border-bottom: 1px solid #999;
   -webkit-appearance: none;
@@ -169,7 +169,7 @@ ul.res li a:hover,ul.res li a.active{
   font-weight: 400;
   color: #fff;
   padding: 5px 10px 10px 50px;
-  margin: 0px 0px 25px 0px;
+  margin: 0px 0px 0px 0px;
   width: 60%;
   border-bottom: 1px solid #999;
   -webkit-appearance: none;
