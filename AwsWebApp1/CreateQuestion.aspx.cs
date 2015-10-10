@@ -136,6 +136,9 @@ namespace AwsWebApp1
     }
 });
                 Response.Redirect("Question.aspx");
+                string script = "alert(\"Successfully created the Question.\");";
+                ScriptManager.RegisterStartupScript(this, GetType(),
+                                      "ServerControlScript", script, true);
             }
             else 
             {

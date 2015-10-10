@@ -49,6 +49,9 @@ namespace AwsWebApp1
 
                 table.PutItem(book);
                 Response.Redirect("Sponsor.aspx");
+                string script = "alert(\"Successfully created the Sponsor.\");";
+                ScriptManager.RegisterStartupScript(this, GetType(),
+                                      "ServerControlScript", script, true);
             }
             else
             {

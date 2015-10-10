@@ -53,6 +53,9 @@ namespace AwsWebApp1
 
                 table.PutItem(book);
                 Response.Redirect("Speaker.aspx");
+                string script = "alert(\"Successfully created the Speaker.\");";
+                ScriptManager.RegisterStartupScript(this, GetType(),
+                                      "ServerControlScript", script, true);
             }
             else
             {

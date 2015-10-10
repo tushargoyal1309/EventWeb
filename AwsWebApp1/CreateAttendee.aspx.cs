@@ -50,7 +50,9 @@ namespace AwsWebApp1
                 book["imageUrl"] = imageNew;
                 table.PutItem(book);
                 Response.Redirect("Attendee.aspx");
-
+                string script = "alert(\"Successfully created the Attendee.\");";
+                ScriptManager.RegisterStartupScript(this, GetType(),
+                                      "ServerControlScript", script, true);
             }
             else
             {

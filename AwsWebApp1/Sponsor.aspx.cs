@@ -174,6 +174,9 @@ namespace AwsWebApp1
             divMain.Visible = true;
 
             BindData();
+            string script = "alert(\"Successfully updated.\");";
+            ScriptManager.RegisterStartupScript(this, GetType(),
+                                  "ServerControlScript", script, true);
         }
 
         protected void btncancle_Click(object sender, EventArgs e)

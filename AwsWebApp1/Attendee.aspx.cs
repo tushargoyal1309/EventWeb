@@ -192,6 +192,9 @@ namespace AwsWebApp1
                 divMain.Visible = true;
 
                 BindData();
+                string script = "alert(\"Successfully updated.\");";
+                ScriptManager.RegisterStartupScript(this, GetType(),
+                                      "ServerControlScript", script, true);
             }
             else
             {
@@ -244,6 +247,9 @@ namespace AwsWebApp1
                 divMain.Visible = true;
 
                 BindData();
+                string script = "alert(\"Successfully updated.\");";
+                ScriptManager.RegisterStartupScript(this, GetType(),
+                                      "ServerControlScript", script, true);
             }
            
         }

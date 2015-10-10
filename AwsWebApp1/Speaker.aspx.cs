@@ -129,7 +129,7 @@ namespace AwsWebApp1
 
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (file.PostedFile != null)
+            if (file.PostedFile != null && file.PostedFile.FileName != "")
             {
                 //string FileName = Path.GetFileName(file.PostedFile.FileName);
                 string fileToBackup = file.PostedFile.FileName;
@@ -190,6 +190,9 @@ namespace AwsWebApp1
                 divMain.Visible = true;
 
                 BindData();
+                string script = "alert(\"Successfully updated.\");";
+                ScriptManager.RegisterStartupScript(this, GetType(),
+                                      "ServerControlScript", script, true);
             }
             else
             {
@@ -242,6 +245,9 @@ namespace AwsWebApp1
                 divMain.Visible = true;
 
                 BindData();
+                string script = "alert(\"Successfully updated.\");";
+                ScriptManager.RegisterStartupScript(this, GetType(),
+                                      "ServerControlScript", script, true);
             }
            
         }

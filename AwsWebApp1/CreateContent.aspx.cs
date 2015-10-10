@@ -52,6 +52,9 @@ namespace AwsWebApp1
 
                     table.PutItem(book);
                     Response.Redirect("ContentPage.aspx");
+                    string script = "alert(\"Successfully created the Content.\");";
+                    ScriptManager.RegisterStartupScript(this, GetType(),
+                                          "ServerControlScript", script, true);
                 }
                 else
                 {

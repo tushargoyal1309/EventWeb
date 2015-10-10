@@ -34,6 +34,9 @@ namespace AwsWebApp1
 
                 table.PutItem(book);
                 Response.Redirect("Events.aspx");
+                string script = "alert(\"Successfully created the Event.\");";
+                ScriptManager.RegisterStartupScript(this, GetType(),
+                                      "ServerControlScript", script, true);
             }
             else
             {

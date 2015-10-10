@@ -124,7 +124,7 @@ namespace AwsWebApp1
 
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (file.PostedFile != null)
+            if (file.PostedFile != null && file.PostedFile.FileName != "")
             {
                 //string FileName = Path.GetFileName(file.PostedFile.FileName);
                 string fileToBackup = file.PostedFile.FileName;
@@ -185,6 +185,9 @@ namespace AwsWebApp1
                     divMain.Visible = true;
 
                     BindData();
+                    string script = "alert(\"Successfully updated.\");";
+                    ScriptManager.RegisterStartupScript(this, GetType(),
+                                          "ServerControlScript", script, true);
                 }
                 else
                 {
@@ -198,9 +201,44 @@ namespace AwsWebApp1
             }
             else
             {
-                string script = "alert(\"Please select a file to upload.\");";
-                ScriptManager.RegisterStartupScript(this, GetType(),
-                                      "ServerControlScript", script, true);
+                string newName = txtName.Text;
+                string eventId = txtId.Text;
+                string cId = txtcontentId.Text;
+                AmazonDynamoDBClient client = new AmazonDynamoDBClient();
+                    string tableName = "Content";
+
+                    var request = new UpdateItemRequest
+                    {
+                        TableName = tableName,
+                        Key = new Dictionary<string, AttributeValue>() { { "eventId", new AttributeValue { S = eventId } }, { "contentId", new AttributeValue { S = cId } } },
+                        ExpressionAttributeNames = new Dictionary<string, string>()
+    {
+        //{"#oldUrl", "contentUrl"},
+        {"#oldFileName", "name"},
+       // {"#oldSpeakerName", "speakerName"},
+        //{"#P", "Price"},
+        //{"#NA", "NewAttribute"},
+        //{"#I", "ISBN"}
+    },
+                        ExpressionAttributeValues = new Dictionary<string, AttributeValue>()
+    {
+        //{":newUrl",new AttributeValue {S = newFile}},
+        {":newFileName",new AttributeValue {S = newName}},
+        //{":newSpeakerName",new AttributeValue {S = speaker}},
+       // {":newattr",new AttributeValue {S = "someValue"}},
+    },
+                        UpdateExpression = "SET #oldFileName = :newFileName"
+                    };
+                    var response = client.UpdateItem(request);
+                    //After updating the data in db.
+
+                    divEdit.Visible = false;
+                    divMain.Visible = true;
+
+                    BindData();
+                    string script = "alert(\"Successfully updated.\");";
+                    ScriptManager.RegisterStartupScript(this, GetType(),
+                                          "ServerControlScript", script, true);
             }
 
         }
