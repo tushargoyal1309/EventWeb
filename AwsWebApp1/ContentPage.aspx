@@ -19,7 +19,7 @@
             </span>--%>
         </div>
          <div class="col-md-2" style="padding-top:6px;">
-       <asp:Button runat="server" Text="Create a New Attendee" OnClick="newContent_Click" type="button" ID="newContent" class="btn btn-info pull-right"></asp:Button>
+       <asp:Button runat="server" Text="Create a New Content" OnClick="newContent_Click" type="button" ID="newContent" class="btn btn-info pull-right"></asp:Button>
         </div><div class="col-md-1"></div>
         </div>
     <br />

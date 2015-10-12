@@ -45,6 +45,10 @@ namespace AwsWebApp1
                     session.name = item["name"].S;
                     session.startTime = item["startTime"].S;
                     session.endTime = item["endTime"].S;
+                    if (item.ContainsKey("speakerName"))
+                    {
+                        session.speakerName = item["speakerName"].S;
+                    }
                     //session.endTime = item["speakerName"].S;
                     sessionList.Add(session);
                 }
@@ -105,16 +109,17 @@ namespace AwsWebApp1
             Label Name = (Label)(sessionData.SelectedRow.FindControl("name"));
             Label Start = (Label)(sessionData.SelectedRow.FindControl("startTime"));
             Label End = (Label)(sessionData.SelectedRow.FindControl("endTime"));
-           // Label Speaker = (Label)(sessionData.SelectedRow.FindControl("speaker"));
+            Label Speaker = (Label)(sessionData.SelectedRow.FindControl("speaker"));
             string name = Name.Text;
             string startTime = Start.Text;
             string endTime = End.Text;
             string eventId = Id.Text;
-           // string speakerName = Speaker.Text;
+            string speakerName = Speaker.Text;
             lblStart.Text = startTime;
             txtEnd.Text = endTime;
             txtName.Text = name;
             lblId.Text = eventId;
+            txtspeaker.Text = speakerName;
            // speakername.Text = speakerName;
         }
         protected void btnUpdate_Click(object sender, EventArgs e)
@@ -123,7 +128,7 @@ namespace AwsWebApp1
             string endNew = txtEnd.Text;
             string nameNew = txtName.Text;
             string eventId = lblId.Text;
-           // string speaker = speakername.Text;
+            string speaker = txtspeaker.Text;
             AmazonDynamoDBClient client = new AmazonDynamoDBClient();
             string tableName = "Session";
 
@@ -135,7 +140,7 @@ namespace AwsWebApp1
     {
         {"#oldEnd", "endTime"},
         {"#oldName", "name"},
-       // {"#oldSpeakerName", "speakerName"},
+        {"#oldSpeakerName", "speakerName"},
         //{"#P", "Price"},
         //{"#NA", "NewAttribute"},
         //{"#I", "ISBN"}
@@ -144,7 +149,7 @@ namespace AwsWebApp1
     {
         {":newEnd",new AttributeValue {S = endNew}},
         {":newName",new AttributeValue {S = nameNew}},
-        //{":newSpeakerName",new AttributeValue {S = speaker}},
+        {":newSpeakerName",new AttributeValue {S = speaker}},
        // {":newattr",new AttributeValue {S = "someValue"}},
     },
 
@@ -153,7 +158,7 @@ namespace AwsWebApp1
                 // 2) Reduces the price
                 // 3) Adds a new attribute to the item
                 // 4) Removes the ISBN attribute from the item
-                UpdateExpression = "SET #oldEnd = :newEnd, #oldName = :newName"
+                UpdateExpression = "SET #oldEnd = :newEnd, #oldName = :newName, #oldSpeakerName = :newSpeakerName"
             };
             var response = client.UpdateItem(request);
             //After updating the data in db.

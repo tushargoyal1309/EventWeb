@@ -86,7 +86,7 @@
                                    <asp:TextBox runat="server" id="Email" class="form-control input-sm" type="text" placeholder="">
                                        </asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate = "Email" Display ="Dynamic" runat="server" ErrorMessage="Please enter email"></asp:RequiredFieldValidator>
-<asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate = "Email" Display ="Dynamic" ValidationExpression="^\w+([-+.']\w+)*@domain.com$"
+<asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate = "Email" Display ="Dynamic" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.(com|co\.(in|uk)|org)$"
     ErrorMessage="Please enter valid email address. Eg. Something@domain.com"></asp:RegularExpressionValidator>
                                 </div>
                             </div>

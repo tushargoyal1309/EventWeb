@@ -157,7 +157,21 @@
                    
                    <div class="col-xs-2 col-sm-2 col-md-2"></div>
                 </div>
-
+                <div class="row">
+                         <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">
+                                <div class="form-group"  style="text-align:left">
+                                    <label>Speaker Name</label>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+        <asp:TextBox ID="txtspeaker" runat="server"  cssclass="form-control input-sm"></asp:TextBox>
+                             </div>
+                            </div>
+                   
+                   <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                </div>
 
                 <div class="row">
                     <div class="col-xs-4 col-sm-4 col-md-4"></div>
