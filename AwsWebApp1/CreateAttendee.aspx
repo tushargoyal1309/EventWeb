@@ -144,7 +144,7 @@
                     <div class="row">
                     <div class="col-xs-4 col-sm-4 col-md-4"></div>
                     <div class="col-md-6">
-                   <asp:Button runat="server" id="Cancel" Text="Cancel" value="Cancel" class="btn btn-danger" OnClick="Cancel_Click"/>&nbsp;&nbsp;&nbsp;&nbsp;
+                   <asp:Button runat="server" id="Cancel" Text="Cancel" value="Cancel" class="btn btn-danger" CausesValidation="false" OnClick="Cancel_Click"/>&nbsp;&nbsp;&nbsp;&nbsp;
                    <asp:Button runat="server"  Text="Create"  type="submit" id="submitButton" OnClick= "submitButton_Click" value="Create" class="btn btn-success" />
                    </div>
                         </div>
