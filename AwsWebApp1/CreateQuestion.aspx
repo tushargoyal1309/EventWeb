@@ -104,7 +104,7 @@
                         </div>
                         <div class="col-xs-6 col-sm-6 col-md-6">
                             <div class="form-group">
-                                <asp:TextBox runat="server" ID="txtQuestion" class="form-control input-sm" type="text" placeholder=""></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txtQuestion" ClientIDMode="Static" class="form-control input-sm" type="text" placeholder=""></asp:TextBox><br />
                             </div>
                         </div>
                         <div class="col-xs-2 col-sm-2 col-md-2"></div>
@@ -163,7 +163,7 @@
                     <div class="row">
                         <div class="col-xs-4 col-sm-4 col-md-4"></div>
                         <div class="col-md-6">
-                            <asp:Button runat="server" ID="Cancel" Text="Cancel" value="Cancel" class="btn btn-danger" />&nbsp;&nbsp;&nbsp;&nbsp;
+                            <asp:Button runat="server" ID="Cancel" Text="Cancel" value="Cancel" class="btn btn-danger" OnClick="Cancel_Click" />&nbsp;&nbsp;&nbsp;&nbsp;
                    <asp:Button runat="server" type="submit" ID="submitButton" OnClick="submitButton_Click" Text="Create" value="Create" class="btn btn-success" />
                         </div>
                     </div>
