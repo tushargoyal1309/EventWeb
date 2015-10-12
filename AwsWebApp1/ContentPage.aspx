@@ -62,6 +62,8 @@
 <%--<EditItemTemplate>
 <asp:TextBox ID="TextBox3" BorderStyle="None" runat="server" Text='<%# Eval("name") %>'></asp:TextBox>
 </EditItemTemplate>--%>
+    </asp:TemplateField>
+            <asp:TemplateField Visible="false" AccessibleHeaderText="center" HeaderStyle-BackColor="#FFFFFF">
     <ItemTemplate>
 <asp:Label ID="contentUrl" Visible="false" runat="server" Text='<%# Eval("contentUrl") %>'></asp:Label>
 </ItemTemplate>
@@ -142,13 +144,13 @@
                          <div class="col-xs-2 col-sm-2 col-md-2"></div>
                             <div class="col-xs-2 col-sm-2 col-md-2">
                                 <div class="form-group"  style="text-align:left">
-                                    <label></label>
+                                    <label>Choose a file to update your current</label>
 
                                 </div>
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group" style="text-align:left;">   
-                            <asp:FileUpload  height="100px" Width="100px" ID="file" runat="server" />
+                            <asp:FileUpload ID="file" runat="server" />
                             </div>
                             </div>
                      <div class="col-xs-2 col-sm-2 col-md-2"></div>

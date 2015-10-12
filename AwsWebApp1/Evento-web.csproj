@@ -157,6 +157,7 @@
     <Content Include="CreateSpeaker.aspx" />
     <Content Include="CreateSponsor.aspx" />
     <Content Include="Default.aspx" />
+    <Content Include="DefaultRedirectErrorPage.aspx" />
     <Content Include="Events.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -315,6 +316,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DefaultRedirectErrorPage.aspx.cs">
+      <DependentUpon>DefaultRedirectErrorPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DefaultRedirectErrorPage.aspx.designer.cs">
+      <DependentUpon>DefaultRedirectErrorPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Events.aspx.cs">
       <DependentUpon>Events.aspx</DependentUpon>
