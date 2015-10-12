@@ -23,22 +23,23 @@ namespace AwsWebApp1
 
         protected void submitButton_Click(object sender, EventArgs e)
         {
-            if (inId.Value != null && inEid.Value != null && PublishTime.Text != null && txtText.Text != null)
+            if (inId.Value != "" && inEid.Value != "" && PublishTime.Text != "" && txtText.Text != "")
             {
                 AmazonDynamoDBClient client = new AmazonDynamoDBClient();
                 Amazon.DynamoDBv2.DocumentModel.Table table = Amazon.DynamoDBv2.DocumentModel.Table.LoadTable(client, "Announcement");
 
                 var book = new Document();
-                book["AnnouncementId"] = inId.Value;
-                book["EventId"] = inEid.Value;
-                book["PublishTime"] = PublishTime.Text;
-                book["Text"] = txtText.Text;
+                book["announcementId"] = inId.Value;
+                book["eventId"] = inEid.Value;
+                book["publishTime"] = PublishTime.Text;
+                book["text"] = txtText.Text;
 
                 table.PutItem(book);
-                Response.Redirect("Announcement.aspx");
                 string script = "alert(\"Successfully created the Announcement.\");";
                 ScriptManager.RegisterStartupScript(this, GetType(),
                                       "ServerControlScript", script, true);
+                Response.Redirect("Announcement.aspx");
+                
             }
             else
             {
