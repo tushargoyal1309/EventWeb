@@ -214,6 +214,7 @@
     <Content Include="styles\datepicker.css" />
     <Content Include="styles\font-awesome.min.css" />
     <Content Include="styles\img\checkmark.png" />
+    <Content Include="styles\LoginStyle.css" />
     <Content Include="styles\main.css" />
     <Content Include="styles\style1.css" />
     <Content Include="styles\styles.css" />

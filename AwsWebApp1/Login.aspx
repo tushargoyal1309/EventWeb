@@ -24,8 +24,8 @@ http://www.templatemo.com/preview/templatemo_394_sonic
 	<link rel="stylesheet" href="styles/font-awesome.min.css">
 	<link rel="stylesheet" href="styles/templatemo_misc.css">
 	<link rel="stylesheet" href="styles/templatemo_style.css">
-    <link href="styles/style1.css" rel="stylesheet" />
-
+    <%--<link href="styles/style1.css" rel="stylesheet" />--%>
+    <link href="styles/LoginStyle.css" rel="stylesheet" />
 
    
        <link href="Content/formValidation.min.css" rel="stylesheet" />
@@ -195,11 +195,13 @@ http://www.templatemo.com/preview/templatemo_394_sonic
 
 
 
-                <div class="app modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="overflow:hidden;margin-top:40px;margin-bottom:40px">
-
-                   <div style="border-bottom: 1px solid #e5e5e5;"> <button style="margin-top: 21px;margin-right: 20px;" type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div> 
-
-	<div class="top-bar">
+                <div class="app modal fade in" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="overflow:hidden;margin-top:40px;margin-bottom:40px">
+                    <section id="content">
+                   <%--<div style="border-bottom: 1px solid #e5e5e5;"> <button style="margin-top: 21px;margin-right: 20px;" type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div> --%>
+<form runat="server">
+    <h1>Admin Login</h1>
+			<div id="loginForm" runat="server">
+<%--	<div class="top-bar">
 <%--			<div class="navg">
 				<span class="menu"> <img src="images/menu.png" alt=""/></span>
 				<ul class="res">
@@ -216,44 +218,42 @@ http://www.templatemo.com/preview/templatemo_394_sonic
 				    });
 		       </script>
 			</div>--%>
-		<h2>Welcome</h2>
-	</div>
-	<div class="cam-img" style="height:10px">
+
+<%--	</div>--%>
+<%--	<div class="cam-img" style="height:10px">--%>
 <%--		 <a href="#"><img src="images/cam.png" alt=""/></a> 
 		 <input type="file" value="" />--%>
-	</div>
-	<form id="loginForm" runat="server">
-        <asp:TextBox ID ="txtusername" runat="server" placeHolder="Username" ></asp:TextBox>
+	<%--</div>--%>
+<%--	<form id="loginForm" runat="server">--%>
+      <asp:TextBox ID ="txtusername" runat="server" placeHolder="Username" ></asp:TextBox>
        <div><asp:RequiredFieldValidator runat="server" id="reqName" controltovalidate="txtusername" errormessage="Please enter your name!" /></div>
+</div>
+    <div>
 		<%--<input type="text" value="Email address" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email address';}"/>--%>
 		<%--<input type="password" value="Password:"  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password:';}"/>--%>
-        <asp:TextBox ID ="txtpassword" runat="server" placeHolder="Password" TextMode="Password"></asp:TextBox>
+      <asp:TextBox ID ="txtpassword" runat="server" placeHolder="Password" TextMode="Password"></asp:TextBox>
                 <div><asp:Label runat="server" Text="" ID="lbltext" style="color:red"></asp:Label></div>
         <div><asp:RequiredFieldValidator runat="server" id="RequiredFieldValidator1" controltovalidate="txtpassword" errormessage="Please enter your password!" /></div>
+</div>
 		<%--<input type="submit" value="Authenticate" id="loginButton" />--%>
           
 
         <div class="">
-      <asp:Button runat="server" Text="Login" OnClick="newEvent_Click" type="button" ID="newEvent" class="btn btn-info"  CssClass="submit1"  UseSubmitBehavior="false" style=" background: #39DAF7;color: #FFF;font-size:20px;
-    font-weight: 400;
-    width: 60%;
-    padding: 14px 15px;
-    border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -o-border-radius: 5px;
-    margin: 10px 0px 0px 0px;
-    border: none;
-    cursor: pointer;
-    outline: none;" ></asp:Button>
+      <asp:Button runat="server" Text="Login" OnClick="newEvent_Click" type="button" ID="newEvent" class="btn btn-info btn-md" UseSubmitBehavior="false" />
+<br />
+<br />
+<br />
+<br />
+
 </div>
 	</form>
        <%-- <button class="btn btn-default" data-toggle="modal" data-target="#loginModal">Login</button>--%>
 <%--		<input type="submit" value="Authenticate" id="loginButton" />--%>
 
 
-
+</section>
     </div>
+            
 
 		</div> <!-- /.container-fluid -->
 
@@ -289,7 +289,7 @@ http://www.templatemo.com/preview/templatemo_394_sonic
 
 	<script>
 	    $(document).ready(function () {
-	      //  $("a[data-gal^='prettyPhoto']").prettyPhoto({ hook: 'data-gal' });
+	        //  $("a[data-gal^='prettyPhoto']").prettyPhoto({ hook: 'data-gal' });
 
 
 	        $("#details").click(function (e) {
@@ -297,7 +297,7 @@ http://www.templatemo.com/preview/templatemo_394_sonic
 
 	            var x = $(this).attr('name');
 
-	          //  alert(x);
+	            //  alert(x);
 	            // alert($("#description1").text());
 	            var lbltext = $('#description1');
 	            $("#descriptionfull").html(x);
@@ -345,12 +345,12 @@ http://www.templatemo.com/preview/templatemo_394_sonic
 
 
 
-	       // $('#loginButton').on('click', function () {
+	        // $('#loginButton').on('click', function () {
 	        $("#loginButton").click(function (e) {
 	            alert("test");
 	            $("#loginForm")
                     .dialog({
-                        title: 'Login',                       
+                        title: 'Login',
                         message: $('#loginForm'),
                         show: false // We will show it manually later
                     })
@@ -367,7 +367,7 @@ http://www.templatemo.com/preview/templatemo_394_sonic
                     })
                     .modal('show');
 	        });
-	
+
 
 	    });
 

@@ -41,29 +41,20 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     
-    <div id="divMain" runat="server" style="background-color: #ffffff; overflow: hidden">
-        <br />
-        <div class="row" style="background-color:#F9F9F9;">
+    <section id="divMain" runat="server" style="background-color: #ffffff; overflow: hidden">
+        <div class="page ng-scope">
+            <section class="panel panel-default">
+        <div class="panel panel-heading" style="height:50px">
 
-            <div class="col-md-4" style="padding-left: 40px;">
-                <%--<input type="text"
-                    placeholder="Search..."
-                    class="form-control fa-border"
-                    data-ng-model="searchKeywords"
-                    data-ng-keyup="search()">--%>
-                <p style="padding-top:10px; font-size:large"><span class="fa fa-table">&nbsp;&nbsp;&nbsp;</span>Event</p>
-            </div>
-            <div class="col-md-5 filter-result-info">
-                <%--<span>Showing {{filteredStores.length}}/{{stores.length}} entries
-            </span>--%>
-            </div>
-            <div class="col-md-2" style="padding-top:6px;">
-                <asp:Button runat="server" Text="Create a New Event" OnClick="newEvent_Click" type="button" ID="newEvent" class="btn btn-info pull-right"></asp:Button>
-            </div><div class="col-md-1"></div>
+                <p style="font-size:large"><span class="fa fa-table">&nbsp;&nbsp;</span>Events
+           
+        
+               <span style="margin-top:-5px;"><asp:Button runat="server"  Style="margin-top:-3px;" Text="Create Event" OnClick="newEvent_Click" type="button" ID="newEvent" class="btn btn-info pull-right"></asp:Button>
+           </span>
+                   </p>
         </div>
-        <br />
-        <div runat="server">
-
+       
+        <div runat="server" class="panel-body">
             <asp:GridView OnSelectedIndexChanged="EventData_SelectedIndexChanged" OnPageIndexChanging="EventData_PageIndexChanging" OnRowCancelingEdit="EventData_RowCancelingEdit"
                 CssClass="table table-bordered table-striped table-responsive" PageSize="5" AllowPaging="true"
                 AlternatingRowStyle-BackColor="#FFFFFF" BorderStyle="None" BackColor="#F9F9F9" ID="EventData"
@@ -141,7 +132,9 @@
             </asp:GridView>
 
         </div>
-    </div>
+    </section>
+            </div>
+        </section>
     <div class="panel panel-default" runat="server" id="divSearchResult" visible="false">
         <div class="panel-heading" style="background-color: #2EC1CC; color: white">
             <h3 class="panel-title">Edit an Event</h3>

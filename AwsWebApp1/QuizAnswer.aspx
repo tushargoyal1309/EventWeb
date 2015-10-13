@@ -2,26 +2,25 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div runat="server" id="divMain" style="background-color:#ffffff">
-        <br />
-        <div class="row">
-       
-        <div class="col-md-4" style="padding-left:40px;">
-            <input type="text"
-                placeholder="Search..."
-                class="form-control fa-border"
-                data-ng-model="searchKeywords"
-                data-ng-keyup="search()">
-        </div>
-        <div class="col-md-5 filter-result-info">
+    <section runat="server" id="divMain" style="background-color:#ffffff">
+        <div class="page ng-scope">
+            <section class="panel panel-default">
+        <div class="panel panel-heading" style="height:50px">
+
+                <p style="font-size:large"><span class="fa fa-table">&nbsp;&nbsp;</span>Answer
+           
+        
+               <span style="margin-top:-5px;">
             <%--<span>Showing {{filteredStores.length}}/{{stores.length}} entries
             </span>--%>
-        </div>
-        <%--<div class="col-md-3">
+         <%--<div class="col-md-3">
        <asp:Button runat="server" Text="Create a New Attendee" OnClick="newContent_Click" type="button" ID="newContent" class="btn btn-info"></asp:Button>
         </div>--%>
+       </span>
+                   </p>
         </div>
-        <br />
+       
+        <div runat="server" class="panel-body">
         <asp:GridView OnSelectedIndexChanged="gvQuizAnswer_SelectedIndexChanged"
         CssClass="table table-bordered table-striped table-responsive" AllowPaging="true" PageSize="5"
         AlternatingRowStyle-BackColor="#FFFFFF" BorderStyle="None" BackColor="#F9F9F9" ID="gvQuizAnswer"
@@ -56,7 +55,10 @@
     <asp:ButtonField CommandName="Select" HeaderText="Answeres" ImageUrl="images/edit%20(1).png"  Text="Edit" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#FFFFFFF" ButtonType="Image" ItemStyle-Height="10px" CausesValidation="false"></asp:ButtonField>
     </Columns>   
         </asp:GridView>
-    </div>
+            </div>
+    </section>
+            </div>
+        </section>
     <div class="panel panel-default" runat="server" id="divEdit" visible="false">
         <div class="panel-heading" style="background-color: #2EC1CC; color: white">
             <h3 class="panel-title">Information</h3>

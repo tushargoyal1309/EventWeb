@@ -2,27 +2,20 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div id="divMain" runat="server" style="background-color:#ffffff; overflow: hidden">
-        <br />
-    <div class="row" style="background-color:#F9F9F9;">
+    <section id="divMain" runat="server" style="background-color:#ffffff; overflow: hidden">
+        <div class="page ng-scope">
+            <section class="panel panel-default">
+        <div class="panel panel-heading" style="height:50px">
+
+                <p style="font-size:large"><span class="fa fa-table">&nbsp;&nbsp;</span>Content
+           
+        
+               <span style="margin-top:-5px;"><asp:Button Style="margin-top:-3px;"  runat="server" Text="Create Content" OnClick="newContent_Click" type="button" ID="newContent" class="btn btn-info pull-right"></asp:Button>
+        <</span>
+                   </p>
+        </div>
        
-        <div class="col-md-4" style="padding-left:40px;">
-            <%--<input type="text"
-                placeholder="Search..."
-                class="form-control fa-border"
-                data-ng-model="searchKeywords"
-                data-ng-keyup="search()">--%>
-            <p style="padding-top:10px; font-size:large"><span class="fa fa-table">&nbsp;&nbsp;&nbsp;</span>Content</p>
-        </div>
-        <div class="col-md-5 filter-result-info">
-            <%--<span>Showing {{filteredStores.length}}/{{stores.length}} entries
-            </span>--%>
-        </div>
-         <div class="col-md-2" style="padding-top:6px;">
-       <asp:Button runat="server" Text="Create a New Content" OnClick="newContent_Click" type="button" ID="newContent" class="btn btn-info pull-right"></asp:Button>
-        </div><div class="col-md-1"></div>
-        </div>
-    <br />
+        <div runat="server" class="panel-body">
     <asp:GridView OnSelectedIndexChanged="contentData_SelectedIndexChanged" OnPageIndexChanging="contentData_PageIndexChanging"
         CssClass="table table-bordered table-striped table-responsive" AllowPaging="true" PageSize="5"
         AlternatingRowStyle-BackColor="#FFFFFF" BorderStyle="None" BackColor="#F9F9F9" ID="contentData" 
@@ -71,7 +64,10 @@
     <asp:ButtonField CommandName="Select" HeaderText="Actions" ImageUrl="images/edit%20(1).png"  Text="Edit" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#FFFFFFF" ButtonType="Image" ItemStyle-Height="10px" CausesValidation="false"></asp:ButtonField>
     </Columns>   
         </asp:GridView>
-        </div>
+            </div>
+        </section>
+            </div>
+        </section>
     <div class="panel panel-default" runat="server" id="divEdit" visible="false">
         <div class="panel-heading" style="background-color: #6A55C2; color: white">
             <h3 class="panel-title">Edit a Content</h3>
