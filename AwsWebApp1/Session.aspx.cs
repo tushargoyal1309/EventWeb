@@ -4,6 +4,7 @@ using AwsWebApp1.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using System.Web;
@@ -125,7 +126,9 @@ namespace AwsWebApp1
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
             string startNew = lblStart.Text;
-            string endNew = txtEnd.Text;
+            //CultureInfo ci = new CultureInfo("en-US");
+            DateTime test = Convert.ToDateTime(txtEnd.Text);
+            string endNew = test.ToString("dd/MM/yyyy HH:mm tt");
             string nameNew = txtName.Text;
             string eventId = lblId.Text;
             string speaker = txtspeaker.Text;

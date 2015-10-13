@@ -30,8 +30,11 @@ namespace AwsWebApp1
 
                 var book = new Document();
                 book["eventId"] = inId.Value;
-                book["startTime"] = startTime.Text;
-                book["endTime"] = endTime.Text;
+                DateTime sTime = Convert.ToDateTime(startTime.Text);
+                //string endNew = test.ToString("dd/MM/yyyy HH:mm tt");
+                book["startTime"] = sTime.ToString("dd/MM/yyyy HH:mm tt");
+                DateTime eTime = Convert.ToDateTime(endTime.Text);
+                book["endTime"] = eTime.ToString("dd/MM/yyyy HH:mm tt");
                 book["name"] = name.Text;
                 book["speakerName"] = speakerName.Text;
 

@@ -31,7 +31,8 @@ namespace AwsWebApp1
                 var book = new Document();
                 book["announcementId"] = inId.Value;
                 book["eventId"] = inEid.Value;
-                book["publishTime"] = PublishTime.Text;
+                DateTime pTime = Convert.ToDateTime(PublishTime.Text);
+                book["publishTime"] = pTime.ToString("dd/MM/yyyy HH:mm tt");
                 book["text"] = txtText.Text;
 
                 table.PutItem(book);

@@ -118,7 +118,8 @@ namespace AwsWebApp1
 
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
-            string newPublishTime = PublishTime.Text;
+            DateTime pTime = Convert.ToDateTime(PublishTime.Text);
+            string newPublishTime = pTime.ToString("dd/MM/yyyy HH:mm tt");
             string newText = Text.Text;
             string aId = AnnouncementId.Text;
             string eventId = EventId    .Text;
