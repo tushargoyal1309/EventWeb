@@ -36,26 +36,35 @@ namespace AwsWebApp1
                 AmazonUploader myUploader = new AmazonUploader();
                 myUploader.sendMyFileToS3(fileToBackup, myBucketName, s3DirectoryName, flFile.PostedFile.InputStream, flFile.PostedFile.FileName);
                 // string FileExtension = System.IO.Path.GetExtension(file.FileName);
+                string FileExtension = System.IO.Path.GetExtension(flFile.FileName).Replace(".", "").ToLower();
+                if (FileExtension == "jpg" || FileExtension == "png")
+                {
+                    AmazonDynamoDBClient client = new AmazonDynamoDBClient();
+                    Amazon.DynamoDBv2.DocumentModel.Table table = Amazon.DynamoDBv2.DocumentModel.Table.LoadTable(client, "Speaker");
 
-                AmazonDynamoDBClient client = new AmazonDynamoDBClient();
-                Amazon.DynamoDBv2.DocumentModel.Table table = Amazon.DynamoDBv2.DocumentModel.Table.LoadTable(client, "Speaker");
+                    //var book = new Document();
 
-                //var book = new Document();
+                    var book = new Document();
+                    book["eventId"] = inId.Value;
+                    book["speakerName"] = SpeakerName.Text;
+                    book["email"] = Email.Text;
+                    book["designation"] = Designation.Text;
+                    book["biography"] = Biography.Text;
+                    book["imageUrl"] = Url;
+                    book["organization"] = Organization.Text;
 
-                var book = new Document();
-                book["eventId"] = inId.Value;
-                book["speakerName"] = SpeakerName.Text;
-                book["email"] = Email.Text;
-                book["designation"] = Designation.Text;
-                book["biography"] = Biography.Text;
-                book["imageUrl"] = Url;
-                book["organization"] = Organization.Text;
-
-                table.PutItem(book);
-                Response.Redirect("Speaker.aspx");
-                string script = "alert(\"Successfully created the Speaker.\");";
-                ScriptManager.RegisterStartupScript(this, GetType(),
-                                      "ServerControlScript", script, true);
+                    table.PutItem(book);
+                    Response.Redirect("Speaker.aspx");
+                    string script = "alert(\"Successfully created the Speaker.\");";
+                    ScriptManager.RegisterStartupScript(this, GetType(),
+                                          "ServerControlScript", script, true);
+                }
+                else
+                {
+                    string script = "alert(\"Please choose a file with extension 'png' or 'jpg'.\");";
+                    ScriptManager.RegisterStartupScript(this, GetType(),
+                                          "ServerControlScript", script, true);
+                }
             }
             else
             {

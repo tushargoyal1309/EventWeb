@@ -200,11 +200,13 @@
     <Content Include="scripts\bootstrap.min.js" />
     <Content Include="scripts\formValidation.min.js" />
     <Content Include="scripts\jquery-ui.min.js" />
+    <Content Include="scripts\js\bootstrap-datetimepicker.min.js" />
     <Content Include="scripts\js\custom.js" />
     <Content Include="scripts\js\jquery-1.10.2.min.js" />
     <Content Include="scripts\js\jquery.flexslider.js" />
     <Content Include="scripts\js\jquery.prettyPhoto.js" />
     <Content Include="scripts\js\jquery.singlePageNav.js" />
+    <Content Include="scripts\js\moment.js" />
     <Content Include="scripts\ui.js" />
     <Content Include="scripts\vendor.js" />
     <Content Include="Session.aspx" />

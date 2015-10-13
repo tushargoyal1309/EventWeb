@@ -7,7 +7,7 @@
             <section class="panel panel-default">
         <div class="panel panel-heading" style="height:50px">
 
-                <p style="font-size:large"><span class="fa fa-table">&nbsp;&nbsp;</span>Announcement
+                <p style="font-size:large"><span class="fa fa-table">&nbsp;&nbsp;</span>Sponsor
            
         
                <span style="margin-top:-5px;"><asp:Button runat="server"  Style="margin-top:-3px;" Text="Create a New Sponsor" OnClick="newSponsor_Click" type="button" ID="newSponsor" class="btn btn-info pull-right"></asp:Button>
@@ -129,6 +129,8 @@
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
                                     <asp:TextBox ID="txtEventName" cssclass="form-control input-sm" runat="server"></asp:TextBox>
+                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtEventName"
+    ValidationExpression="[a-zA-Z ]*$" ErrorMessage="*Valid characters: Alphabets and space." />
                                 </div>
                             </div>
                      
@@ -166,13 +168,14 @@
                 <div class="row">
                     <div class="col-xs-2 col-sm-2 col-md-2"></div>
                             <div class="col-xs-2 col-sm-2 col-md-2">
-                           
-                                
-                           </div>
+                                <div class="form-group" style="text-align:left">
+                                   <label style="text-align:left">Image</label>
+                                </div>
+                            </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
                                     <asp:FileUpload Visible="false" ID="file" height="100px" Width="100px"  runat="server" />
-                                    <asp:Image ID="Image" runat="server" Height="150px" Width="150px"></asp:Image>
+                                    <asp:Image ID="Image" runat="server" Height="100px" Width="100px"></asp:Image>
                                 </div>
                             </div>
                      

@@ -92,7 +92,7 @@
                                 <asp:TextBox MaxLength="500" Wrap="true" BorderStyle="None" ID="description1" runat="server" Text='<%# Eval("description1") %>'></asp:TextBox>
                             </EditItemTemplate>--%>
                     </asp:TemplateField>
-                <asp:TemplateField HeaderText="Star&nbsp;tDate" AccessibleHeaderText="center" HeaderStyle-BackColor="#FFFFFF">
+                <asp:TemplateField HeaderText="Start&nbsp;Date" AccessibleHeaderText="center" HeaderStyle-BackColor="#FFFFFF">
                         <ItemTemplate>
                             <asp:Label ReadOnly="true" BorderStyle="None" ID="startDate" runat="server" Text='<%# Eval("startDate") %>'></asp:Label>
                         </ItemTemplate>
@@ -165,7 +165,9 @@
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
-                                    <asp:TextBox ID="txtEventName" runat="server"  cssclass="form-control input-sm"></asp:TextBox>
+                                    <asp:TextBox ID="txtEventName" runat="server" cssclass="form-control input-sm"></asp:TextBox>
+                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtEventName"
+    ValidationExpression="[a-zA-Z ]*$" ErrorMessage="*Valid characters: Alphabets and space." />
                                 </div>
                             </div>
                      <div class="col-xs-2 col-sm-2 col-md-2"></div>
@@ -228,7 +230,9 @@
                            </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
-                                    <asp:TextBox ID="txtOName" runat="server"  cssclass="form-control input-sm"></asp:TextBox>
+                                    <asp:TextBox ID="txtOName" runat="server" cssclass="form-control input-sm"></asp:TextBox>
+                                     <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtOName"
+    ValidationExpression="[a-zA-Z ]*$" ErrorMessage="*Valid characters: Alphabets and space." />
                                 </div>
                             </div>
                    

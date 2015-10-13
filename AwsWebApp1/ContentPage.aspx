@@ -131,6 +131,8 @@
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
         <asp:TextBox ID="txtName" runat="server"  cssclass="form-control input-sm"></asp:TextBox>
+                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtName"
+    ValidationExpression="[a-zA-Z ]*$" ErrorMessage="*Valid characters: Alphabets and space." />
                               </div>
                             </div>
                      
@@ -140,7 +142,7 @@
                          <div class="col-xs-2 col-sm-2 col-md-2"></div>
                             <div class="col-xs-2 col-sm-2 col-md-2">
                                 <div class="form-group"  style="text-align:left">
-                                    <label>Choose a file to update your current</label>
+                                    <label>Choose a file to update your current file</label>
 
                                 </div>
                             </div>

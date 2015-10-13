@@ -148,14 +148,17 @@ namespace AwsWebApp1
                 string newName = txtSpeakerName.Text;
                 string orgNew = txtOrganisation.Text;
                 string eventId = EventId.Text;
-                AmazonDynamoDBClient client = new AmazonDynamoDBClient();
-                string tableName = "Speaker";
-
-                var request = new UpdateItemRequest
+                string FileExtension = System.IO.Path.GetExtension(file.FileName).Replace(".", "").ToLower();
+                if (FileExtension == "jpg" || FileExtension == "png")
                 {
-                    TableName = tableName,
-                    Key = new Dictionary<string, AttributeValue>() { { "eventId", new AttributeValue { S = eventId } }, { "email", new AttributeValue { S = emailNew } } },
-                    ExpressionAttributeNames = new Dictionary<string, string>()
+                    AmazonDynamoDBClient client = new AmazonDynamoDBClient();
+                    string tableName = "Speaker";
+
+                    var request = new UpdateItemRequest
+                    {
+                        TableName = tableName,
+                        Key = new Dictionary<string, AttributeValue>() { { "eventId", new AttributeValue { S = eventId } }, { "email", new AttributeValue { S = emailNew } } },
+                        ExpressionAttributeNames = new Dictionary<string, string>()
     {
         {"#oldBio", "biography"},
         {"#oldDesignation", "designation"},
@@ -166,7 +169,7 @@ namespace AwsWebApp1
         //{"#NA", "NewAttribute"},
         //{"#I", "ISBN"}
     },
-                    ExpressionAttributeValues = new Dictionary<string, AttributeValue>()
+                        ExpressionAttributeValues = new Dictionary<string, AttributeValue>()
     {
         {":newBiography",new AttributeValue {S = bioNew}},
         {":newDesignation",new AttributeValue {S = desigNew}},
@@ -176,23 +179,30 @@ namespace AwsWebApp1
        // {":newattr",new AttributeValue {S = "someValue"}},
     },
 
-                    // This expression does the following:
-                    // 1) Adds two new authors to the list
-                    // 2) Reduces the price
-                    // 3) Adds a new attribute to the item
-                    // 4) Removes the ISBN attribute from the item
-                    UpdateExpression = "SET #oldBio = :newBiography, #oldDesignation = :newDesignation, #oldImage = :newImage, #oldName = :newName, #oldOrganisation = :newOrganisation"
-                };
-                var response = client.UpdateItem(request);
-                //After updating the data in db.
+                        // This expression does the following:
+                        // 1) Adds two new authors to the list
+                        // 2) Reduces the price
+                        // 3) Adds a new attribute to the item
+                        // 4) Removes the ISBN attribute from the item
+                        UpdateExpression = "SET #oldBio = :newBiography, #oldDesignation = :newDesignation, #oldImage = :newImage, #oldName = :newName, #oldOrganisation = :newOrganisation"
+                    };
+                    var response = client.UpdateItem(request);
+                    //After updating the data in db.
 
-                divEdit.Visible = false;
-                divMain.Visible = true;
+                    divEdit.Visible = false;
+                    divMain.Visible = true;
 
-                BindData();
-                string script = "alert(\"Successfully updated.\");";
-                ScriptManager.RegisterStartupScript(this, GetType(),
-                                      "ServerControlScript", script, true);
+                    BindData();
+                    string script = "alert(\"Successfully updated.\");";
+                    ScriptManager.RegisterStartupScript(this, GetType(),
+                                          "ServerControlScript", script, true);
+                }
+                else
+                {
+                    string script = "alert(\"Please choose a file with extension 'png' or 'jpg'.\");";
+                    ScriptManager.RegisterStartupScript(this, GetType(),
+                                          "ServerControlScript", script, true);
+                }
             }
             else
             {

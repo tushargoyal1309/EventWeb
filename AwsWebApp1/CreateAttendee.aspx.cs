@@ -36,23 +36,32 @@ namespace AwsWebApp1
                 AmazonUploader myUploader = new AmazonUploader();
                 myUploader.sendMyFileToS3(fileToBackup, myBucketName, s3DirectoryName, file.PostedFile.InputStream, file.PostedFile.FileName);
                 // string FileExtension = System.IO.Path.GetExtension(file.FileName);
+                string FileExtension = System.IO.Path.GetExtension(file.FileName).Replace(".", "").ToLower();
+                if (FileExtension == "jpg" || FileExtension == "png")
+                {
+                    AmazonDynamoDBClient client = new AmazonDynamoDBClient();
+                    Amazon.DynamoDBv2.DocumentModel.Table table = Amazon.DynamoDBv2.DocumentModel.Table.LoadTable(client, "Attendee");
 
-                AmazonDynamoDBClient client = new AmazonDynamoDBClient();
-                Amazon.DynamoDBv2.DocumentModel.Table table = Amazon.DynamoDBv2.DocumentModel.Table.LoadTable(client, "Attendee");
-
-                var book = new Document();
-                book["eventId"] = inId.Value;
-                book["email"] = Email.Text;
-                book["biography"] = Biography.Text;
-                book["designation"] = Designation.Text;
-                book["name"] = Name.Text;
-                book["organization"] = Organization.Text;
-                book["imageUrl"] = imageNew;
-                table.PutItem(book);
-                Response.Redirect("Attendee.aspx");
-                string script = "alert(\"Successfully created the Attendee.\");";
-                ScriptManager.RegisterStartupScript(this, GetType(),
-                                      "ServerControlScript", script, true);
+                    var book = new Document();
+                    book["eventId"] = inId.Value;
+                    book["email"] = Email.Text;
+                    book["biography"] = Biography.Text;
+                    book["designation"] = Designation.Text;
+                    book["name"] = Name.Text;
+                    book["organization"] = Organization.Text;
+                    book["imageUrl"] = imageNew;
+                    table.PutItem(book);
+                    Response.Redirect("Attendee.aspx");
+                    string script = "alert(\"Successfully created the Attendee.\");";
+                    ScriptManager.RegisterStartupScript(this, GetType(),
+                                          "ServerControlScript", script, true);
+                }
+                else
+                {
+                    string script = "alert(\"Please choose a file with extension 'png' or 'jpg'.\");";
+                    ScriptManager.RegisterStartupScript(this, GetType(),
+                                          "ServerControlScript", script, true);
+                }
             }
             else
             {

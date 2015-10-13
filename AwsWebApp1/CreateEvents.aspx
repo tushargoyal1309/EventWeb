@@ -77,7 +77,9 @@
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group" style="text-align:left;">
                                   <asp:TextBox runat="server" id="Name" class="form-control input-sm" type="text" placeholder=""></asp:TextBox>
-                                </div>
+                               <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="Name"
+    ValidationExpression="[a-zA-Z ]*$" ErrorMessage="*Valid characters: Alphabets and space." />
+                                     </div>
                             </div>
                      <div class="col-xs-2 col-sm-2 col-md-2"></div>
                         </div>
@@ -136,6 +138,8 @@
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
                                    <asp:TextBox runat="server" id="oName" cssclass="form-control input-sm" type="text" placeholder=""></asp:TextBox>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="oName"
+    ValidationExpression="[a-zA-Z ]*$" ErrorMessage="*Valid characters: Alphabets and space." />
                                 </div>
                             </div>
                      <div class="col-xs-2 col-sm-2 col-md-2"></div>

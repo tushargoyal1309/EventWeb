@@ -1,7 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/master.Master" AutoEventWireup="true" CodeBehind="CreateAnnouncement.aspx.cs" Inherits="AwsWebApp1.CreateAnnouncement" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.css">
     <script src="scripts/js/jquery-1.10.2.min.js"></script>
     <script src="scripts/jquery-ui.min.js"></script>
+    <link href="styles/datepicker.css" rel="stylesheet" />
+    <script src="scripts/bootstrap-datepicker.js"></script>
+    <script src="scripts/js/moment.js"></script>
     <script type="text/javascript">
         var specialKeys = new Array();
         specialKeys.push(8); //Backspace
@@ -36,10 +40,9 @@
     </script>
     <script type="text/javascript">
         $(function () {
-            $("[id$=PublishTime]").datepicker({
-                showOn: 'button',
-                buttonImageOnly: true,
-                buttonImage: "../images/images.png"
+            $('#divPublishTime').datetimepicker();
+            $("#divPublishTime").on("dp.change", function (e) {
+                $('#divPublishTime').data("DateTimePicker").minDate(e.date);
             });
         });
     </script>
@@ -94,9 +97,12 @@
                                         </div>
                                    </div>
                                                         <div class="col-xs-6 col-sm-6 col-md-6">
-                                <div class="form-group" style="text-align:left;">
+                                <div class='input-group date' id='divPublishTime' style="text-align:left;">
                                    <asp:TextBox runat="server" id="PublishTime" class="form-control input-sm" type="text" placeholder="">
                                        </asp:TextBox>
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
                                 </div>
                             </div>
                      <div class="col-xs-2 col-sm-2 col-md-2"></div>

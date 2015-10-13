@@ -36,22 +36,31 @@ namespace AwsWebApp1
                 AmazonUploader myUploader = new AmazonUploader();
                 myUploader.sendMyFileToS3(fileToBackup, myBucketName, s3DirectoryName, file.PostedFile.InputStream, file.PostedFile.FileName);
                 // string FileExtension = System.IO.Path.GetExtension(file.FileName);
+                string FileExtension = System.IO.Path.GetExtension(file.FileName).Replace(".", "").ToLower();
+                if (FileExtension == "jpg" || FileExtension == "png")
+                {
+                    AmazonDynamoDBClient client = new AmazonDynamoDBClient();
+                    Amazon.DynamoDBv2.DocumentModel.Table table = Amazon.DynamoDBv2.DocumentModel.Table.LoadTable(client, "Sponsor");
+                    var book = new Document();
+                    book["description"] = description.Text;
+                    book["eventId"] = inId.Value;
+                    book["logoUrl"] = Url;
+                    book["name"] = Name.Text;
+                    book["sno"] = sno.Text;
+                    book["type"] = Type.Text;
 
-                AmazonDynamoDBClient client = new AmazonDynamoDBClient();
-                Amazon.DynamoDBv2.DocumentModel.Table table = Amazon.DynamoDBv2.DocumentModel.Table.LoadTable(client, "Sponsor");
-                var book = new Document();
-                book["description"] = description.Text;
-                book["eventId"] = inId.Value;
-                book["logoUrl"] = Url;
-                book["name"] = Name.Text;
-                book["sno"] = sno.Text;
-                book["type"] = Type.Text;
-
-                table.PutItem(book);
-                Response.Redirect("Sponsor.aspx");
-                string script = "alert(\"Successfully created the Sponsor.\");";
-                ScriptManager.RegisterStartupScript(this, GetType(),
-                                      "ServerControlScript", script, true);
+                    table.PutItem(book);
+                    Response.Redirect("Sponsor.aspx");
+                    string script = "alert(\"Successfully created the Sponsor.\");";
+                    ScriptManager.RegisterStartupScript(this, GetType(),
+                                          "ServerControlScript", script, true);
+                }
+                else
+                {
+                    string script = "alert(\"Please choose a file with extension 'png' or 'jpg'.\");";
+                    ScriptManager.RegisterStartupScript(this, GetType(),
+                                          "ServerControlScript", script, true);
+                }
             }
             else
             {

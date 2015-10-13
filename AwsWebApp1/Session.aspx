@@ -1,13 +1,26 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/master.Master" AutoEventWireup="true" CodeBehind="Session.aspx.cs" Inherits="AwsWebApp1.Session" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.css">
      <script src="scripts/js/jquery-1.10.2.min.js"></script>
     <script src="scripts/jquery-ui.min.js"></script>
-    <script type="text/javascript">
+    <link href="styles/datepicker.css" rel="stylesheet" />
+    <script src="scripts/bootstrap-datepicker.js"></script>
+    <script src="scripts/js/moment.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+    <%--<script type="text/javascript">
         $(function () {
             $("[id$=txtEnd]").datepicker({
                 showOn: 'button',
                 buttonImageOnly: true,
                 buttonImage: "../images/images.png"
+            });
+        });
+    </script>--%>
+    <script type="text/javascript">
+        $(function () {
+            $('#divEnd').datetimepicker();
+            $("#divEnd").on("dp.change", function (e) {
+                $('#divEnd').data("DateTimePicker").minDate(e.date);
             });
         });
     </script>
@@ -116,7 +129,9 @@
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group" >
-        <asp:TextBox ID="txtName" runat="server"  cssclass="form-control input-sm"></asp:TextBox>
+        <asp:TextBox ID="txtName" runat="server" cssclass="form-control input-sm"></asp:TextBox>
+                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtName"
+    ValidationExpression="[a-zA-Z ]*$" ErrorMessage="*Valid characters: Alphabets and space." />
                             </div>
                             </div>
                         <div class="col-xs-2 col-sm-2 col-md-2"></div>
@@ -131,7 +146,7 @@
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
-           <asp:Label ID="lblStart" runat="server"  cssclass="form-control input-sm"></asp:Label>
+           <asp:Label ID="lblStart" runat="server" cssclass="form-control input-sm"></asp:Label>
                 </div>
                             </div>
                      <div class="col-xs-2 col-sm-2 col-md-2"></div>
@@ -144,8 +159,11 @@
                                 </div>
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
-                                <div class="form-group">
-        <asp:TextBox ID="txtEnd" runat="server"  cssclass="form-control input-sm"></asp:TextBox>
+                                <div class='input-group date' id='divEnd'>
+        <asp:TextBox ID="txtEnd" runat="server" cssclass="form-control input-sm"></asp:TextBox>
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
                              </div>
                             </div>
                    
@@ -161,6 +179,8 @@
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
         <asp:TextBox ID="txtspeaker" runat="server"  cssclass="form-control input-sm"></asp:TextBox>
+                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtspeaker"
+    ValidationExpression="[a-zA-Z ]*$" ErrorMessage="*Valid characters: Alphabets and space." />
                              </div>
                             </div>
                    

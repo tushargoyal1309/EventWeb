@@ -122,7 +122,9 @@
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group" style="text-align:left;">
-        <asp:TextBox ID="txtName" runat="server"  cssclass="form-control input-sm"></asp:TextBox>
+        <asp:TextBox ID="txtName" runat="server" cssclass="form-control input-sm"></asp:TextBox>
+                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtName"
+    ValidationExpression="[a-zA-Z ]*$" ErrorMessage="*Valid characters: Alphabets and space." />
                               </div>
                             </div>
                         <div class="col-xs-2 col-sm-2 col-md-2"></div>
@@ -197,7 +199,7 @@
                            </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group" style="text-align:left;">
-        <asp:Image ID="Image" runat="server"></asp:Image>
+        <asp:Image ID="Image" Height="100px" Width="100px" runat="server"></asp:Image>
                                     <br /><br />
                                     <asp:FileUpload ID="file" runat="server" />
                 </div>

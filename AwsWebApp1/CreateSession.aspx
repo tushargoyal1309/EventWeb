@@ -1,7 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/master.Master" AutoEventWireup="true" CodeBehind="CreateSession.aspx.cs" Inherits="AwsWebApp1.CreateSession" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.css">
     <script src="scripts/js/jquery-1.10.2.min.js"></script>
     <script src="scripts/jquery-ui.min.js"></script>
+    <link href="styles/datepicker.css" rel="stylesheet" />
+    <script src="scripts/bootstrap-datepicker.js"></script>
+    <script src="scripts/js/moment.js"></script>
     <script type="text/javascript">
         var specialKeys = new Array();
         specialKeys.push(8); //Backspace
@@ -20,19 +24,17 @@
     </script>
     <script type="text/javascript">
         $(function () {
-            $("[id$=startTime]").datepicker({
-                showOn: 'button',
-                buttonImageOnly: true,
-                buttonImage: "../images/images.png"
+            $('#divEnd').datetimepicker();
+            $("#divEnd").on("dp.change", function (e) {
+                $('#divEnd').data("DateTimePicker").minDate(e.date);
             });
         });
     </script>
     <script type="text/javascript">
         $(function () {
-            $("[id$=endTime]").datepicker({
-                showOn: 'button',
-                buttonImageOnly: true,
-                buttonImage: "../images/images.png"
+            $('#divStart').datetimepicker();
+            $("#divStart").on("dp.change", function (e) {
+                $('#divStart').data("DateTimePicker").minDate(e.date);
             });
         });
     </script>
@@ -74,6 +76,8 @@
                                 <div class="form-group" style="text-align:left;">
                                   <asp:TextBox runat="server" id="name" cssclass="form-control input-sm" type="text" placeholder="">
                                       </asp:TextBox>
+                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="name"
+    ValidationExpression="[a-zA-Z ]*$" ErrorMessage="*Valid characters: Alphabets and space." />
                                 </div>
                             </div>
                      <div class="col-xs-2 col-sm-2 col-md-2"></div>
@@ -86,9 +90,12 @@
                                         </div>
                                    </div>
                                                         <div class="col-xs-6 col-sm-6 col-md-6">
-                                <div class="form-group" style="text-align:left;">
+                                <div class='input-group date' id='divStart' style="text-align:left;">
                                    <asp:TextBox runat="server" id="startTime"  cssclass="form-control input-sm" type="text" placeholder="">
                                        </asp:TextBox>
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
                                 </div>
                             </div>
                      <div class="col-xs-2 col-sm-2 col-md-2"></div>
@@ -101,9 +108,12 @@
                                     </div>
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
-                                <div class="form-group" style="text-align:left;">
+                                <div class='input-group date' id='divEnd' style="text-align:left;">
                                   <asp:TextBox runat="server" id="endTime"  cssclass="form-control input-sm" type="text" placeholder="">
                                       </asp:TextBox>
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
                                 </div>
                             </div>
                      <div class="col-xs-2 col-sm-2 col-md-2"></div>
@@ -118,8 +128,10 @@
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
-                                    <asp:TextBox runat="server" id="speakerName"  cssclass="form-control input-sm" type="text" placeholder="">
+                                    <asp:TextBox runat="server" id="speakerName" cssclass="form-control input-sm" type="text" placeholder="">
                                         </asp:TextBox>
+                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="speakerName"
+    ValidationExpression="[a-zA-Z ]*$" ErrorMessage="*Valid characters: Alphabets and space." />
                                 </div>
                             </div>
                      
