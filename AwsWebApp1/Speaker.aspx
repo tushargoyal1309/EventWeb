@@ -180,14 +180,10 @@
                                     <label>Image</label>
                             </div>
                             </div>
-                            <div class="col-xs-3 col-sm-3 col-md-3">
+                            <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group" >
         <asp:Image ID="Image" Height="100px" Width="100px" runat="server"></asp:Image>
-                                    </div>
-                                </div>
-                                    <div class="col-xs-3 col-sm-3 col-md-3">
-                                <div class="form-group pull-left" >
-                                   <span>Choose file to update</span> <br /> <asp:FileUpload ID="file" runat="server" />
+                                   <span>Choose an Image to update</span> <br /><br /> <asp:FileUpload ID="file" runat="server" />
                 </div>
                             </div>
                         <div class="col-xs-2 col-sm-2 col-md-2"></div>
@@ -202,7 +198,7 @@
                            </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
-        <asp:TextBox ID="txtOrganisation" runat="server"></asp:TextBox>
+        <asp:TextBox ID="txtOrganisation"  CssClass="form-control input-sm" runat="server"></asp:TextBox>
                               </div>
                             </div>
                    

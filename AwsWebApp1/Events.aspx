@@ -197,7 +197,7 @@
                           </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
-                                    <asp:TextBox ID="txtSatrt" runat="server" cssclass="form-control input-sm"></asp:TextBox>
+                                    <asp:TextBox ID="txtSatrt" ReadOnly="true" runat="server" cssclass="form-control input-sm"></asp:TextBox>
                                 </div>
                             </div>
                      
