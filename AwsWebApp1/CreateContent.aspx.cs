@@ -36,7 +36,7 @@ namespace AwsWebApp1
                 AmazonUploader myUploader = new AmazonUploader();
                 myUploader.sendMyFileToS3(fileToBackup, myBucketName, s3DirectoryName, file.PostedFile.InputStream, file.PostedFile.FileName);
                 string FileExtension = System.IO.Path.GetExtension(file.FileName).Replace(".", "").ToLower();
-                if (FileExtension == FileType.Text.ToLower())
+                if ((FileExtension == "pdf" && FileType.Text == "pdf") || (FileExtension == "jpg" && FileType.Text == "IMAGE") || (FileExtension == "png" && FileType.Text == "IMAGE"))
                 {
                     AmazonDynamoDBClient client = new AmazonDynamoDBClient();
                     Amazon.DynamoDBv2.DocumentModel.Table table = Amazon.DynamoDBv2.DocumentModel.Table.LoadTable(client, "Content");

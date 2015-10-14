@@ -11,7 +11,7 @@
            
         
                <span style="margin-top:-5px;"><asp:Button Style="margin-top:-3px;"  runat="server" Text="Create Content" OnClick="newContent_Click" type="button" ID="newContent" class="btn btn-info pull-right"></asp:Button>
-        <</span>
+        </span>
                    </p>
         </div>
        

@@ -141,7 +141,7 @@ namespace AwsWebApp1
                 string newName = txtName.Text;
                 string eventId = txtId.Text;
                 string cId = txtcontentId.Text;
-                if (FileExtension == newFileType)
+                if ((FileExtension == "pdf" && newFileType == "pdf") || (FileExtension == "jpg" && newFileType == "IMAGE") || (FileExtension == "png" && newFileType == "IMAGE"))
                 {
                     AmazonDynamoDBClient client = new AmazonDynamoDBClient();
                     string tableName = "Content";
