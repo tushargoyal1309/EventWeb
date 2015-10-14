@@ -25,16 +25,47 @@ namespace AwsWebApp1
             {
                 BindData();
             }
+            Control c = GetPostBackControl(this.Page);
 
-            List<string> keys = Request.Form.AllKeys.Where(key => key.Contains("txtOptions")).ToList();
-            
-            int i = 0;
-            foreach (string key in keys)
+            if (c != null)
             {
-                this.CreateTextBox("txtOptions" + i);
-                i++;
-            }
+                if (c.ID != "btncancle")
+                {
+                    List<string> keys = Request.Form.AllKeys.Where(key => key.Contains("txtOptions")).ToList();
 
+                    int i = 0;
+                    foreach (string key in keys)
+                    {
+                        this.CreateTextBox("txtOptions" + i);
+                        i++;
+                    }
+                }
+            }
+        }
+
+        public static Control GetPostBackControl(Page page)
+        {
+            Control control = null;
+            string ctrlname = page.Request.Params.Get("__EVENTTARGET");
+            if (ctrlname != null && ctrlname != String.Empty)
+            {
+                control = page.FindControl(ctrlname);
+
+            }
+            else
+            {
+                foreach (string ctl in page.Request.Form)
+                {
+                    Control c = page.FindControl(ctl);
+                    if (c is System.Web.UI.WebControls.Button)
+                    {
+                        control = c;
+                        break;
+                    }
+                }
+
+            }
+            return control;
         }
 
         DataTable GetData()
@@ -57,38 +88,38 @@ namespace AwsWebApp1
             {
                 if (eventid == item["eventId"].S)
                 {
-                // Process the result.
+                    // Process the result.
 
-                QuestionData question = new QuestionData();
-                if (item.ContainsKey("correctAnswer"))
-                {
-                    question.correctAnswer = item["correctAnswer"].S;
-                }
-                question.eventId = item["eventId"].S;
-                question.question = item["question"].S;
-                question.questionId = item["questionId"].S;
-                question.questionType = item["questionType"].S;
-
-                if (item.ContainsKey("options"))
-                {
-                    string test1234 = string.Empty;
-                    string testRemoveComa = string.Empty;
-
-                    foreach (var itemNew in item["options"].M)
+                    QuestionData question = new QuestionData();
+                    if (item.ContainsKey("correctAnswer"))
                     {
+                        question.correctAnswer = item["correctAnswer"].S;
+                    }
+                    question.eventId = item["eventId"].S;
+                    question.question = item["question"].S;
+                    question.questionId = item["questionId"].S;
+                    question.questionType = item["questionType"].S;
 
-                        if (item["options"].M.Count > 1)
+                    if (item.ContainsKey("options"))
+                    {
+                        string test1234 = string.Empty;
+                        string testRemoveComa = string.Empty;
+
+                        foreach (var itemNew in item["options"].M)
                         {
-                            test1234 += itemNew.Value.S + ",";
-                        }
 
+                            if (item["options"].M.Count > 1)
+                            {
+                                test1234 += itemNew.Value.S + ",";
+                            }
+
+                        }
+                        testRemoveComa = test1234.Remove(test1234.Length - 1);
+                        question.options = testRemoveComa;
                     }
-                    testRemoveComa = test1234.Remove(test1234.Length - 1);
-                    question.options = testRemoveComa;
-                    }
-                questionDataList.Add(question);
+                    questionDataList.Add(question);
                 }
-                
+
                 //Console.WriteLine(item);
             }
             DataTable dt = ToDataTable(questionDataList);
@@ -166,6 +197,7 @@ namespace AwsWebApp1
                 TextBox txt = new TextBox();
                 txt.ID = "txtOptions" + i;
                 txt.ClientIDMode = ClientIDMode.Static;
+                txt.Text = string.Empty;
                 txt.Text = optionsCount[i].ToString();
                 txt.CssClass = "form-control input-sm";
                 Session["ctrlCount"] = optionsCount.Count();
@@ -186,6 +218,20 @@ namespace AwsWebApp1
             txt.ID = id;
             txt.ClientIDMode = ClientIDMode.Static;
             txt.CssClass = "form-control input-sm";
+            pnlOptions.Controls.Add(txt);
+
+            Literal lt = new Literal();
+            lt.Text = "<br />";
+            pnlOptions.Controls.Add(lt);
+        }
+
+        private void ClearCreateTextBox(string id)
+        {
+            TextBox txt = new TextBox();
+            txt.ID = id;
+            txt.ClientIDMode = ClientIDMode.Static;
+            txt.CssClass = "form-control input-sm";
+            txt.Text = string.Empty;
             pnlOptions.Controls.Add(txt);
 
             Literal lt = new Literal();
@@ -295,6 +341,15 @@ namespace AwsWebApp1
 
         protected void btncancle_Click(object sender, EventArgs e)
         {
+            List<string> keys = Request.Form.AllKeys.Where(key => key.Contains("txtOptions")).ToList();
+
+            int i = 0;
+            foreach (string key in keys)
+            {
+                this.ClearCreateTextBox("txtOptions" + i);
+                i++;
+            }
+
             pnlEdit.Visible = false;
             divMain.Visible = true;
         }

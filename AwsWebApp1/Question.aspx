@@ -209,7 +209,7 @@
                 <div class="row">
                     <div class="col-xs-4 col-sm-4 col-md-4"></div>
                     <div class="col-md-6">
-                        <asp:Button ID="btncancle" OnClick="btncancle_Click" runat="server" CssClass="btn btn-danger" Text="Cancel" />&nbsp;&nbsp;&nbsp;&nbsp;
+                        <asp:Button ID="btncancle" ClientIDMode="Static" OnClick="btncancle_Click" runat="server" CssClass="btn btn-danger" Text="Cancel" />&nbsp;&nbsp;&nbsp;&nbsp;
        
                        
                         <asp:Button ID="btnUpdate" runat="server" ClientIDMode="Static"  OnClick="Update_Click" CssClass="btn btn-success" Text="Update" />
