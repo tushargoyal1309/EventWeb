@@ -60,7 +60,7 @@
             </div>
         </section>
     <div class="panel panel-default" runat="server" id="divEdit" visible="false">
-        <div class="panel-heading" style="background-color: #2EC1CC; color: white">
+        <div class="panel-heading" style="background-color: #008000; color: white">
             <h3 class="panel-title">Information</h3>
         </div>
         <asp:Label runat="server" Text="User:" Font-Bold="true"></asp:Label>

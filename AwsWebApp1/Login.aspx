@@ -41,7 +41,11 @@ http://www.templatemo.com/preview/templatemo_394_sonic
     
     <div  id="header" class="top-header" style="z-index: 3;position: fixed;background-color:#fff">
        <div class="lgo"> <span style="text-align:right; color:white; font-size:30px; vertical-align:middle;margin-top:10px">
-           <img src="images/ISB.png" width="100" height="42" /></span></div>
+           <%--<img src="images/ISB.png" width="100" height="42" />--%>
+           Evento
+                         </span>
+
+       </div>
         <p id="Eventmodel" class="pull-right"><a href="#" id="details" data-toggle="modal"  data-target="#myModal" style="color:black;float:right;font-size:15px;margin-right:30px;margin-top:10px;font-weight:bold" onclick="disable_arrivals();">LogIn</a></p>
     </div>
 	
@@ -54,8 +58,7 @@ http://www.templatemo.com/preview/templatemo_394_sonic
             <ul>
                 <li class="home"><a href="#templatemo">Home</a></li>
 	            <li class="about"><a href="#about">About Us</a></li>
-
-	            <li class="contact"><a href="#contact">Contact</a></li>
+                <li class="contact"><a href="#contact">Contact</a></li>
             </ul> <!-- /.main_menu -->
         </div> <!-- /.responsive_menu -->
     </div> <!-- /responsive_navigation -->

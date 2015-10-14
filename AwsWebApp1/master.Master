@@ -40,7 +40,7 @@
                 <%-- <section data-ng-view id="content" class="animate-fade-up"></section>--%>
                 <div class="page page-table ng-scope">
                     <section class="panel panel-default table-dynamic">
-                        <div class="animate-fade-up" style="padding-left: 217px; padding-top: 40px">
+                        <div class="animate-fade-up" style="padding-left: 217px; padding-top: 35px">
                             <asp:ContentPlaceHolder runat="server" ID="ContentPlaceHolder1"></asp:ContentPlaceHolder>
 
                         </div>
