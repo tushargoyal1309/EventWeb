@@ -181,7 +181,6 @@
     <Content Include="images\ISBSplash-main.png" />
     <Content Include="images\lock.png" />
     <Content Include="images\menu.png" />
-    <Content Include="images\profile.jpg" />
     <Content Include="images\server.png" />
     <Content Include="images\slid1.jpg" />
     <Content Include="images\slid2.jpg" />
