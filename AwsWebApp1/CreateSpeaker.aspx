@@ -70,8 +70,6 @@
                                 <div class="form-group" style="text-align:left;">
                                   <asp:TextBox runat="server" id="SpeakerName" class="form-control input-sm" type="text" placeholder="">
                                       </asp:TextBox>
-                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="SpeakerName"
-    ValidationExpression="[a-zA-Z ]*$" ErrorMessage="*Valid characters: Alphabets and space." />
                                 </div>
                             </div>
                      <div class="col-xs-2 col-sm-2 col-md-2"></div>
