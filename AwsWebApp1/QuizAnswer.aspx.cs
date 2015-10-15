@@ -42,7 +42,7 @@ namespace AwsWebApp1
             };
             var eventid = Session["EventId"].ToString();
             var response = client.Scan(request);
-            List<Answers> answersList = new List<Answers>();
+            List<Answers> answersList = new List<Answers>(); 
             foreach (Dictionary<string, AttributeValue> item in response.ScanResult.Items)
             {
                 if (eventid == item["eventId"].S)
@@ -56,13 +56,32 @@ namespace AwsWebApp1
                         string testRemoveComa = string.Empty;
                         string correctAnswers = string.Empty;
                         string testRemoveComaFromAnswers = string.Empty;
+                        string realCorrectAnswers = string.Empty;
+                        string removeComaFromRealCorrectAnswers = string.Empty;
                         foreach (var itemNew in item["answeredQuestion"].M)
                         {
-
                             if (item["answeredQuestion"].M.Count > 0)
                             {
-                                test1234 += itemNew.Key + ",";
+                                test1234 += itemNew.Key + "#";
                                 correctAnswers += itemNew.Value.S + ",";
+                                var requestNew = new ScanRequest
+            {
+                TableName = "QuizQuestion",
+            };
+                    var responseForAnswer = client.Scan(requestNew);
+                    foreach (Dictionary<string, AttributeValue> itemQuestion in responseForAnswer.ScanResult.Items)
+                    {
+                        if(itemNew.Key == itemQuestion["question"].S)
+                        {
+                            
+                            if (itemQuestion.ContainsKey("correctAnswer"))
+                            {
+                               // answers.rightChoice = itemQuestion["correctAnswer"].S;
+                                realCorrectAnswers += itemQuestion["correctAnswer"].S + ",";
+                                removeComaFromRealCorrectAnswers = realCorrectAnswers.Remove(realCorrectAnswers.Length - 1);
+                            }
+                        }
+                    }
                             }
 
                         }
@@ -70,29 +89,15 @@ namespace AwsWebApp1
                         testRemoveComaFromAnswers = correctAnswers.Remove(correctAnswers.Length - 1);
                         answers.answeredQuestions = testRemoveComa;
                         answers.answersByUser = testRemoveComaFromAnswers;
+                        answers.rightChoice = removeComaFromRealCorrectAnswers;
                     }
-                    answersList.Add(answers);
+                    
+                     answersList.Add(answers);
                 }
                 //Console.WriteLine(item);
             }
-            //var requestNew = new ScanRequest
-            //{
-            //    TableName = "QuizQuestion",
-            //};
-            //var responseForAnswer = client.Scan(requestNew);
-            //foreach (Dictionary<string, AttributeValue> item in responseForAnswer.ScanResult.Items)
-            //{
-            //    //if (eventid == item["eventId"].S)
-            //    //{
-            //        // Process the result.
-            //    Answers answersWithRightChoice = new Answers();
-            //        //answers.userName = item["username"].S;
-            //       // if (item.ContainsKey("answeredQuestion"))
-            //            if (item.ContainsKey("correctAnswer"))
-            //            {
-            //                answersWithRightChoice.rightChoice = item["correctAnswer"].S;
-            //            }
-            //    //}
+           
+            
             //    //Console.WriteLine(item);
             //}
             dt = ToDataTable(answersList);
@@ -138,8 +143,8 @@ namespace AwsWebApp1
             string answerData = answersLabel.Text;
             string answer = lblAnswer.Text;
             lblName.Text = uId;
-            lblRightAnswer.Text = answer;
-            string[] questions = questionData.Split(',');
+            //lblRightAnswer.Text = answer;
+            string[] questions = questionData.Split('#');
 
             for (int i = 0; i < questions.Count(); i++)
             {
@@ -153,13 +158,13 @@ namespace AwsWebApp1
                 ques.ID = "txtQuestions" + i;
                 ques.ClientIDMode = ClientIDMode.Static;
                 ques.Text = questions[i].ToString();
-               // Session["ctrlCount"] = optionsCount.Count();
+                // Session["ctrlCount"] = optionsCount.Count();
                 divEdit.Controls.Add(ques);
 
                 Literal lt3 = new Literal();
                 lt3.Text = "<br />";
                 divEdit.Controls.Add(lt3);
-                
+
             }
 
             Literal lt5 = new Literal();
@@ -195,6 +200,41 @@ namespace AwsWebApp1
                 Literal lt2 = new Literal();
                 lt2.Text = "<br />";
                 divEdit.Controls.Add(lt2);
+            }
+            Literal lt6 = new Literal();
+            lt6.Text = "<br />";
+            divEdit.Controls.Add(lt6);
+
+            Label gap2 = new Label();
+            gap2.Font.Bold = true;
+            gap2.Text = "Correct Answers Of Objective questions only:";
+            // Session["ctrlCount"] = optionsCount.Count();
+            divEdit.Controls.Add(gap2);
+
+            Literal lt7 = new Literal();
+            lt7.Text = "<br />";
+            divEdit.Controls.Add(lt7);
+            string[] realAnswers = answer.Split(',');
+
+            for (int i = 0; i < realAnswers.Count(); i++)
+            {
+                Literal lt = new Literal();
+                lt.Text = "<br />";
+                divEdit.Controls.Add(lt);
+
+                TextBox anss = new TextBox();
+                anss.ReadOnly = true;
+                anss.Width = 700;
+                anss.ID = "txtCorrectAnswers" + i;
+                anss.ClientIDMode = ClientIDMode.Static;
+                anss.Text = realAnswers[i].ToString();
+                // Session["ctrlCount"] = optionsCount.Count();
+                divEdit.Controls.Add(anss);
+
+                Literal lt3 = new Literal();
+                lt3.Text = "<br />";
+                divEdit.Controls.Add(lt3);
+
             }
         }
     }

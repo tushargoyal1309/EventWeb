@@ -129,8 +129,6 @@
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
                                     <asp:TextBox ID="txtEventName" cssclass="form-control input-sm" runat="server"></asp:TextBox>
-                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtEventName"
-    ValidationExpression="[a-zA-Z ]*$" ErrorMessage="*Valid characters: Alphabets and space." />
                                 </div>
                             </div>
                      
