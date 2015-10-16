@@ -21,7 +21,7 @@
      <div runat="server">
     <div class="panel panel-default">
         <div class="panel-heading" style="background-color: #FFB61C; color: white">
-            <h3 class="panel-title">Create an Attendee</h3>
+            <h3 class="panel-title"><span class="glyphicon glyphicon-hand-up">&nbsp;</span>Create an Attendee</h3>
         </div>
         <div class="panel-body">
             <div id="divParent">

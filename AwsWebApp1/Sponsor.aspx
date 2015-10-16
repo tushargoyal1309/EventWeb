@@ -7,7 +7,7 @@
             <section class="panel panel-default">
         <div class="panel panel-heading" style="height:50px">
 
-                <p style="font-size:large"><span class="fa fa-table">&nbsp;&nbsp;</span>Sponsor
+                <p style="font-size:large"><span class="glyphicon glyphicon-tags">&nbsp;</span>Sponsor
            
         
                <span style="margin-top:-5px;"><asp:Button runat="server"  Style="margin-top:-3px;" Text="Create a New Sponsor" OnClick="newSponsor_Click" type="button" ID="newSponsor" class="btn btn-info pull-right"></asp:Button>
@@ -81,7 +81,7 @@
         </section>
         <div class="panel panel-default" runat="server" id="divEdit" visible="false">
         <div class="panel-heading" style="background-color: #335397; color: white">
-            <h3 class="panel-title">Edit a Sponsor</h3>
+            <h3 class="panel-title"><span class="glyphicon glyphicon-tags">&nbsp;</span>Edit a Sponsor</h3>
         </div>
      <div class="panel-body">
             <div id="divParent">

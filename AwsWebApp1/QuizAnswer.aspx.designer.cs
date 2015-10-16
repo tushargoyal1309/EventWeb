@@ -31,13 +31,13 @@ namespace AwsWebApp1 {
         protected global::System.Web.UI.WebControls.GridView gvQuizAnswer;
         
         /// <summary>
-        /// divEdit control.
+        /// divQuestion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divEdit;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divQuestion;
         
         /// <summary>
         /// lblName control.
@@ -49,12 +49,21 @@ namespace AwsWebApp1 {
         protected global::System.Web.UI.WebControls.Label lblName;
         
         /// <summary>
-        /// lblRightAnswer control.
+        /// divAnsUser control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblRightAnswer;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divAnsUser;
+        
+        /// <summary>
+        /// divCorrectAnswer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divCorrectAnswer;
     }
 }

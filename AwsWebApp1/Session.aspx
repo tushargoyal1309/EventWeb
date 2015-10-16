@@ -31,7 +31,7 @@
             <section class="panel panel-default">
         <div class="panel panel-heading" style="height:50px">
 
-                <p style="font-size:large"><span class="fa fa-table">&nbsp;&nbsp;</span>Session
+                <p style="font-size:large"><span class="glyphicon glyphicon-time">&nbsp;</span>Session
            
         
                <span style="margin-top:-5px;"><asp:Button  Style="margin-top:-3px;" runat="server" Text="Create Session" OnClick="newSession_Click" type="button" ID="newSession" class="btn btn-info pull-right"></asp:Button>
@@ -98,7 +98,7 @@
 
         <div class="panel panel-default" runat="server" id="divEdit" visible="false">
         <div class="panel-heading" style="background-color: #449DD5; color: white">
-            <h3 class="panel-title">Edit a Session</h3>
+            <h3 class="panel-title"><span class="glyphicon glyphicon-time">&nbsp;</span>Edit a Session</h3>
         </div>
         <div class="panel-body">
             <div id="divParent">

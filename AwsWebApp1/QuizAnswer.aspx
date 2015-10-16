@@ -7,7 +7,7 @@
             <section class="panel panel-default">
         <div class="panel panel-heading" style="height:50px">
 
-                <p style="font-size:large"><span class="fa fa-table">&nbsp;&nbsp;</span>Answer
+                <p style="font-size:large"><span class="glyphicon glyphicon-ok">&nbsp;</span>Answer
            
         
                <span style="margin-top:-5px;">
@@ -52,20 +52,44 @@
 <asp:Label ID="lblCorrectAnswer" runat="server" Text='<%# Eval("rightChoice") %>'></asp:Label>
 </ItemTemplate>
     </asp:TemplateField>
-    <asp:ButtonField CommandName="Select" HeaderText="Answeres" ImageUrl="images/edit%20(1).png"  Text="Edit" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#FFFFFFF" ButtonType="Image" ItemStyle-Height="10px" CausesValidation="false"></asp:ButtonField>
+    <asp:ButtonField CommandName="Select" HeaderText="Answeres" ImageUrl="images/eye.png"  Text="Edit" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#FFFFFFF" ButtonType="Image" ItemStyle-Height="10px" CausesValidation="false"></asp:ButtonField>
     </Columns>   
         </asp:GridView>
             </div>
     </section>
             </div>
         </section>
-    <div class="panel panel-default" runat="server" id="divEdit" visible="false">
-        <div class="panel-heading" style="background-color: #008000; color: white">
-            <h3 class="panel-title">Information</h3>
+   <div class="panel panel-default" runat="server">
+       <%-- 
         </div>
+       
+        <asp:Label runat="server" ID="lblRightAnswer"></asp:Label>--%>
+    
+    <div id="divQuestion" runat="server" visible="false">
+        <div class="panel-heading" style="background-color: #008000; color: white">
+            <h3 class="panel-title"><span class="glyphicon glyphicon-ok">&nbsp;</span>Information</h3>
+            </div>
+        
+        <div class="col-md-6">
+                    <div class="col-md-2">
         <asp:Label runat="server" Text="User:" Font-Bold="true"></asp:Label>
-        <asp:Label runat="server" id="lblName"></asp:Label><br />
-        <asp:Label runat="server" Text="Questions:" Font-Bold="true"></asp:Label><br />
-        <asp:Label runat="server" ID="lblRightAnswer"></asp:Label>
+                        </div>
+                    <div class="col-md-4">
+            <asp:Label runat="server" id="lblName"></asp:Label>
+                        </div>
+            </div>
+        <div class="col-md-12">
+        <asp:Label runat="server" Text="Questions:" Font-Bold="true"></asp:Label>
     </div>
+        </div>
+       <div class="row">
+    <div id="divAnsUser" class="col-md-6" runat="server" visible="false">
+    <asp:Label runat="server" Text="Answers given by this user" Font-Bold="true"></asp:Label>
+        <br />
+    </div>
+    <div id="divCorrectAnswer" class="col-md-6" runat="server" visible="false">
+    <asp:Label runat="server" Text="Correct Answers Of Objective questions only" Font-Bold="true"></asp:Label>
+    </div>
+           </div>
+       </div>
 </asp:Content>

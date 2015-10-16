@@ -8,7 +8,7 @@
             <section class="panel panel-default">
         <div class="panel panel-heading" style="height:50px">
 
-                <p style="font-size:large"><span class="fa fa-table">&nbsp;&nbsp;</span>Attendee
+                <p style="font-size:large"><span class="glyphicon glyphicon-hand-up">&nbsp;</span>Attendee
            
         
                <span style="margin-top:-5px;"><asp:Button Style="margin-top:-3px;"  runat="server" Text="Create Attendee" OnClick="newAttendee_Click" type="button" ID="newAttendee" class="btn btn-info pull-right"></asp:Button>
@@ -91,7 +91,7 @@
         </section>
     <div id="divEdit" runat="server" class="panel panel-default" visible="false">
         <div class="panel-heading" style="background-color: #FFB61C; color: white">
-            <h3 class="panel-title">Edit an Attendee</h3>
+            <h3 class="panel-title"><span class="glyphicon glyphicon-hand-up">&nbsp;</span>Edit an Attendee</h3>
         </div>
         <div class="panel-body">
             <div id="divParent">

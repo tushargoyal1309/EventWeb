@@ -21,7 +21,7 @@
      <div runat="server">
     <div class="panel panel-default">
         <div class="panel-heading" style="background-color: #335397; color: white">
-            <h3 class="panel-title">Create Sponsor</h3>
+            <h3 class="panel-title"><span class="glyphicon glyphicon-tags">&nbsp;</span>Create Sponsor</h3>
         </div>
         <div class="panel-body">
             <div id="divParent">

@@ -133,7 +133,10 @@ namespace AwsWebApp1
         protected void gvQuizAnswer_SelectedIndexChanged(object sender, EventArgs e)
         {
             divMain.Visible = false;
-            divEdit.Visible = true;
+            divQuestion.Visible = true;
+            divAnsUser.Visible = true;
+            divCorrectAnswer.Visible = true;
+
             Label lblId = (Label)(gvQuizAnswer.SelectedRow.FindControl("lbluserId"));
             Label questionsLabel = (Label)(gvQuizAnswer.SelectedRow.FindControl("lblQuestions"));
             Label answersLabel = (Label)(gvQuizAnswer.SelectedRow.FindControl("lblAnswers"));
@@ -150,90 +153,105 @@ namespace AwsWebApp1
             {
                 Literal lt = new Literal();
                 lt.Text = "<br />";
-                divEdit.Controls.Add(lt);
+                divQuestion.Controls.Add(lt);
 
+                Label num = new Label();
+                //num.ReadOnly = true;
+                //num.Width = 700;
+                
+                num.ClientIDMode = ClientIDMode.Static;
+                num.Text = (i+1).ToString() + "  -  ";
+                num.Style[HtmlTextWriterStyle.PaddingLeft] = "50px";
+                // Session["ctrlCount"] = optionsCount.Count();
+                divQuestion.Controls.Add(num);
+                
+             
                 TextBox ques = new TextBox();
                 ques.ReadOnly = true;
                 ques.Width = 700;
+                ques.BorderStyle = BorderStyle.None;
                 ques.ID = "txtQuestions" + i;
                 ques.ClientIDMode = ClientIDMode.Static;
                 ques.Text = questions[i].ToString();
                 // Session["ctrlCount"] = optionsCount.Count();
-                divEdit.Controls.Add(ques);
+                divQuestion.Controls.Add(ques);
 
                 Literal lt3 = new Literal();
                 lt3.Text = "<br />";
-                divEdit.Controls.Add(lt3);
+                divQuestion.Controls.Add(lt3);
 
             }
 
-            Literal lt5 = new Literal();
-            lt5.Text = "<br />";
-            divEdit.Controls.Add(lt5);
+            //Label gap = new Label();
+            //gap.Font.Bold = true;
+            //gap.Text = "Answers given by this user:";
+            //// Session["ctrlCount"] = optionsCount.Count();
+            //divAnsUser.Controls.Add(gap);
 
-            Label gap = new Label();
-            gap.Font.Bold = true;
-            gap.Text = "Answers Respectively:";
-            // Session["ctrlCount"] = optionsCount.Count();
-            divEdit.Controls.Add(gap);
-
-            Literal lt4 = new Literal();
-            lt4.Text = "<br />";
-            divEdit.Controls.Add(lt4);
             string[] answers = answerData.Split(',');
 
             for (int i = 0; i < answers.Count(); i++)
             {
-                Literal lt1 = new Literal();
-                lt1.Text = "<br />";
-                divEdit.Controls.Add(lt1);
+                Literal num2 = new Literal();
+                //num2.ReadOnly = true;
+                //num2.Width = 700;
+                num2.ClientIDMode = ClientIDMode.Static;
+                num2.Text = (i + 1).ToString() + "  -  ";
+                // Session["ctrlCount"] = optionsCount.Count();
+                divAnsUser.Controls.Add(num2);
 
                 TextBox ans = new TextBox();
                 ans.Width = 100;
+                ans.BorderStyle = BorderStyle.None;
                 ans.ReadOnly = true;
                 ans.ID = "txtAnswers" + i;
                 ans.ClientIDMode = ClientIDMode.Static;
                 ans.Text = answers[i].ToString();
                 // Session["ctrlCount"] = optionsCount.Count();
-                divEdit.Controls.Add(ans);
+                divAnsUser.Controls.Add(ans);
 
                 Literal lt2 = new Literal();
                 lt2.Text = "<br />";
-                divEdit.Controls.Add(lt2);
+                divAnsUser.Controls.Add(lt2);
             }
             Literal lt6 = new Literal();
             lt6.Text = "<br />";
-            divEdit.Controls.Add(lt6);
+            divAnsUser.Controls.Add(lt6);
 
-            Label gap2 = new Label();
-            gap2.Font.Bold = true;
-            gap2.Text = "Correct Answers Of Objective questions only:";
-            // Session["ctrlCount"] = optionsCount.Count();
-            divEdit.Controls.Add(gap2);
+            //Label gap2 = new Label();
+            //gap2.Font.Bold = true;
+            //gap2.Text = "Correct Answers Of Objective questions only:";
+            //// Session["ctrlCount"] = optionsCount.Count();
+            //divAnsUser.Controls.Add(gap2);
 
             Literal lt7 = new Literal();
             lt7.Text = "<br />";
-            divEdit.Controls.Add(lt7);
+            divCorrectAnswer.Controls.Add(lt7);
             string[] realAnswers = answer.Split(',');
 
             for (int i = 0; i < realAnswers.Count(); i++)
             {
-                Literal lt = new Literal();
-                lt.Text = "<br />";
-                divEdit.Controls.Add(lt);
+                Literal num3 = new Literal();
+                //num2.ReadOnly = true;
+                //num2.Width = 700;
+                num3.ClientIDMode = ClientIDMode.Static;
+                num3.Text = (i + 1).ToString() + "  -  ";
+                // Session["ctrlCount"] = optionsCount.Count();
+                divCorrectAnswer.Controls.Add(num3);
 
                 TextBox anss = new TextBox();
                 anss.ReadOnly = true;
-                anss.Width = 700;
+                anss.Width = 510;
+                anss.BorderStyle = BorderStyle.None;
                 anss.ID = "txtCorrectAnswers" + i;
                 anss.ClientIDMode = ClientIDMode.Static;
                 anss.Text = realAnswers[i].ToString();
                 // Session["ctrlCount"] = optionsCount.Count();
-                divEdit.Controls.Add(anss);
+                divCorrectAnswer.Controls.Add(anss);
 
-                Literal lt3 = new Literal();
-                lt3.Text = "<br />";
-                divEdit.Controls.Add(lt3);
+                //Literal lt3 = new Literal();
+                //lt3.Text = "<br />";
+                //divCorrectAnswer.Controls.Add(lt3);
 
             }
         }

@@ -7,7 +7,7 @@
             <section class="panel panel-default">
         <div class="panel panel-heading" style="height:50px">
 
-                <p style="font-size:large"><span class="fa fa-table">&nbsp;&nbsp;</span>Speaker
+                <p style="font-size:large"><span class="glyphicon glyphicon-user">&nbsp;</span>Speaker
            
         
                <span style="margin-top:-5px;"><asp:Button runat="server" Text="Create Speaker" OnClick="newSpeaker_Click" type="button" ID="newSpeaker" class="btn btn-info pull-right"></asp:Button>
@@ -89,7 +89,7 @@
         </section>
         <div class="panel panel-default" runat="server" id="divEdit" visible="false">
         <div class="panel-heading" style="background-color: #F98E33; color: white">
-            <h3 class="panel-title">Edit a Speaker</h3>
+            <h3 class="panel-title"><span class="glyphicon glyphicon-user">&nbsp;</span>Edit a Speaker</h3>
         </div>
         <div class="panel-body">
             <div id="divParent">

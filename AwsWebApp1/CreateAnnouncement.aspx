@@ -51,7 +51,7 @@
      <div runat="server">
     <div class="panel panel-default">
         <div class="panel-heading" style="background-color: #00C7F7; color: white">
-            <h3 class="panel-title">Create an Announcement</h3>
+            <h3 class="panel-title"><span class="glyphicon glyphicon-volume-up">&nbsp;</span>Create an Announcement</h3>
         </div>
         <div class="panel-body">
             <div id="divParent">

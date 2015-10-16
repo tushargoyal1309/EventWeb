@@ -43,7 +43,7 @@
      <div runat="server">
     <div class="panel panel-default">
         <div class="panel-heading" style="background-color: #449DD5; color: white">
-            <h3 class="panel-title">Create a Session</h3>
+            <h3 class="panel-title"><span class="glyphicon glyphicon-time">&nbsp;</span>Create a Session</h3>
         </div>
         <div class="panel-body">
             <div id="divParent">

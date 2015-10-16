@@ -37,7 +37,7 @@
      <div runat="server">
     <div class="panel panel-default">
         <div class="panel-heading" style="background-color: #6A55C2; color: white">
-            <h3 class="panel-title">Create a Content</h3>
+            <h3 class="panel-title"><span class="glyphicon glyphicon-list-alt">&nbsp;</span>Create a Content</h3>
         </div>
         <div class="panel-body">
             <div id="divParent">

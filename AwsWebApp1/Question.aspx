@@ -18,7 +18,7 @@
             <section class="panel panel-default">
         <div class="panel panel-heading" style="height:50px">
 
-                <p style="font-size:large"><span class="fa fa-table">&nbsp;&nbsp;</span>Question
+                <p style="font-size:large"><span class="glyphicon glyphicon-question-sign">&nbsp;</span>Question
            
         
                <span style="margin-top:-5px;"><asp:Button ID="btnNewQuestion"  Style="margin-top:-3px;" Text="Create Question" runat="server" OnClick="btnNewQuestion_Click" type="button" class="btn btn-info pull-right"></asp:Button>
@@ -113,7 +113,7 @@
     <%--<asp:Panel id="pnlEdit" ClientIDMode="Static"  visible="false" runat="server" >--%>
     <div class="panel panel-default" runat="server" id="pnlEdit" visible="false">
         <div class="panel-heading" style="background-color: #2EC1CC; color: white">
-            <h3 class="panel-title">Edit a Question</h3>
+            <h3 class="panel-title"><span class="glyphicon glyphicon-question-sign">&nbsp;</span>Edit a Question</h3>
         </div>
         <div class="panel-body">
             <div id="divParent">

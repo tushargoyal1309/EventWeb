@@ -21,7 +21,7 @@
      <div runat="server">
     <div class="panel panel-default">
         <div class="panel-heading" style="background-color: #F98E33; color: white">
-            <h3 class="panel-title">Create a Speaker</h3>
+            <h3 class="panel-title"><span class="glyphicon glyphicon-user">&nbsp;</span>Create a Speaker</h3>
         </div>
         <div class="panel-body">
             <div id="divParent">

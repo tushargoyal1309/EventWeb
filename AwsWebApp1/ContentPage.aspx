@@ -7,7 +7,7 @@
             <section class="panel panel-default">
         <div class="panel panel-heading" style="height:50px">
 
-                <p style="font-size:large"><span class="fa fa-table">&nbsp;&nbsp;</span>Content
+                <p style="font-size:large"><span class="glyphicon glyphicon-list-alt">&nbsp;</span>Content
            
         
                <span style="margin-top:-5px;"><asp:Button Style="margin-top:-3px;"  runat="server" Text="Create Content" OnClick="newContent_Click" type="button" ID="newContent" class="btn btn-info pull-right"></asp:Button>
@@ -70,7 +70,7 @@
         </section>
     <div class="panel panel-default" runat="server" id="divEdit" visible="false">
         <div class="panel-heading" style="background-color: #6A55C2; color: white">
-            <h3 class="panel-title">Edit a Content</h3>
+            <h3 class="panel-title"><span class="glyphicon glyphicon-list-alt">&nbsp;</span>Edit a Content</h3>
         </div>
         <div class="panel-body">
             <div id="divParent">
