@@ -27,5 +27,9 @@ namespace AwsWebApp1
                 }
             }
         }
+        void Session_Start(object sender, EventArgs e)
+        {
+            Response.Redirect("Login.aspx");
+        }
     }
 }
