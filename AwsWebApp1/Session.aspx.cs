@@ -117,7 +117,8 @@ namespace AwsWebApp1
             string eventId = Id.Text;
             string speakerName = Speaker.Text;
             lblStart.Text = startTime;
-            txtEnd.Text = endTime;
+            HfDateid.Value = endTime;
+            //txtEnd.Text = endTime;
             txtName.Text = name;
             lblId.Text = eventId;
             txtspeaker.Text = speakerName;
