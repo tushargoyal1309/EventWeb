@@ -150,7 +150,7 @@
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group" style="text-align:left;">
-                                    <asp:Label ID="txtEventId" runat="server" cssclass="form-control input-sm"></asp:Label>
+                                    <asp:Label style="font-size:13px" ID="txtEventId" runat="server" cssclass="form-control input-sm"></asp:Label>
                                 </div>
                             </div>
                      <div class="col-xs-2 col-sm-2 col-md-2"></div>
@@ -165,7 +165,7 @@
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
-                                    <asp:TextBox ID="txtEventName" runat="server" cssclass="form-control input-sm"></asp:TextBox>
+                                    <asp:TextBox style="font-size:13px"  ID="txtEventName" runat="server" cssclass="form-control input-sm"></asp:TextBox>
                                 </div>
                             </div>
                      <div class="col-xs-2 col-sm-2 col-md-2"></div>
@@ -180,7 +180,7 @@
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
-                                    <textarea name="txtDesc" class="form-control" rows="5" id="txtDesc" runat="server"></textarea>
+                                    <textarea style="font-size:13px"  name="txtDesc" class="form-control" rows="5" id="txtDesc" runat="server"></textarea>
                                 </div>
                             </div>
                                         
@@ -197,7 +197,7 @@
                           </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
-                                    <asp:TextBox ID="txtSatrt" ReadOnly="true" runat="server" cssclass="form-control input-sm"></asp:TextBox>
+                                    <asp:TextBox style="font-size:13px"  ID="txtSatrt" ReadOnly="true" runat="server" cssclass="form-control input-sm"></asp:TextBox>
                                 </div>
                             </div>
                      
@@ -213,7 +213,7 @@
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group" >
-                                    <asp:TextBox ID="txtEnd" runat="server" cssclass="form-control input-sm"></asp:TextBox>
+                                    <asp:TextBox style="font-size:13px"  ID="txtEnd" runat="server" cssclass="form-control input-sm"></asp:TextBox>
                                 </div>
                             </div>
                         <div class="col-xs-2 col-sm-2 col-md-2"></div>
@@ -228,7 +228,7 @@
                            </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
-                                    <asp:TextBox ID="txtOName" runat="server" cssclass="form-control input-sm"></asp:TextBox>
+                                    <asp:TextBox style="font-size:13px"  ID="txtOName" runat="server" cssclass="form-control input-sm"></asp:TextBox>
                                      <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtOName"
     ValidationExpression="[a-zA-Z ]*$" ErrorMessage="*Valid characters: Alphabets and space." />
                                 </div>
@@ -245,7 +245,7 @@
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
-                                    <asp:TextBox ID="txtVenue" runat="server"  cssclass="form-control input-sm"></asp:TextBox>
+                                    <asp:TextBox style="font-size:13px"  ID="txtVenue" runat="server"  cssclass="form-control input-sm"></asp:TextBox>
                                 </div>
                             </div>
                      

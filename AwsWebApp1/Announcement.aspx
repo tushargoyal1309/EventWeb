@@ -7,12 +7,16 @@
     <script src="scripts/bootstrap-datepicker.js"></script>
     <script src="scripts/js/moment.js"></script>
     <script type="text/javascript">
-        $(function () {
-            $('#divPublishTime').datetimepicker();
-            $("#divPublishTime").on("dp.change", function (e) {
-                $('#divPublishTime').data("DateTimePicker").minDate(e.date);
-            });
-        });
+        //$(function () {
+        //    $('#divPublishTime').datetimepicker();
+        //    $("#divPublishTime").on("dp.change", function (e) {
+        //        $('#divPublishTime').data("DateTimePicker").minDate(e.date);
+        //    });
+        //});
+
+
+
+
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -91,7 +95,7 @@
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group" style="text-align:left;">
-        <asp:Label ID="AnnouncementId"  cssclass="form-control input-sm" runat="server"></asp:Label>
+        <asp:Label ID="AnnouncementId"  style="font-size:13px"  cssclass="form-control input-sm" runat="server"></asp:Label>
                 </div>
                             </div>
                      <div class="col-xs-2 col-sm-2 col-md-2"></div>
@@ -106,7 +110,7 @@
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
-        <asp:Label ID="EventId" runat="server"  cssclass="form-control input-sm"></asp:Label>
+        <asp:Label ID="EventId" runat="server" style="font-size:13px"   cssclass="form-control input-sm"></asp:Label>
                             </div>
                             </div>
                      <div class="col-xs-2 col-sm-2 col-md-2"></div>
@@ -121,7 +125,7 @@
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class='input-group date' id='divPublishTime'>
-        <asp:TextBox ID="PublishTime" runat="server" cssclass="form-control input-sm"></asp:TextBox>
+        <asp:TextBox ID="PublishTime" style="font-size:13px"  runat="server" cssclass="form-control input-sm"></asp:TextBox>
                                     <span class="input-group-addon">
                                         <span class="glyphicon glyphicon-calendar"></span>
                                     </span>
@@ -141,7 +145,7 @@
                           </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
-        <asp:TextBox ID="Text" runat="server"  cssclass="form-control input-sm"></asp:TextBox>
+        <asp:TextBox ID="Text" runat="server"  style="font-size:13px"  cssclass="form-control input-sm"></asp:TextBox>
                               </div>
                             </div>
                    

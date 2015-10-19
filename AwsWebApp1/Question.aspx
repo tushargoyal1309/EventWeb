@@ -126,7 +126,7 @@
                     </div>
                     <div class="col-xs-6 col-sm-6 col-md-6">
                         <div class="form-group" style="text-align: left;">
-                            <asp:Label ID="eId" CssClass="form-control input-sm" runat="server"></asp:Label>
+                            <asp:Label style="font-size:13px"  ID="eId" CssClass="form-control input-sm" runat="server"></asp:Label>
                         </div>
                     </div>
                     <div class="col-xs-2 col-sm-2 col-md-2"></div>
@@ -140,7 +140,7 @@
                     </div>
                     <div class="col-xs-6 col-sm-6 col-md-6">
                         <div class="form-group" style="text-align: left;">
-                            <asp:Label ID="lblquestionId" CssClass="form-control input-sm" runat="server"></asp:Label>
+                            <asp:Label style="font-size:13px"  ID="lblquestionId" CssClass="form-control input-sm" runat="server"></asp:Label>
                         </div>
                     </div>
                     <div class="col-xs-2 col-sm-2 col-md-2"></div>
@@ -154,7 +154,7 @@
                     </div>
                     <div class="col-xs-6 col-sm-6 col-md-6">
                         <div class="form-group" style="text-align: left;">
-                            <asp:TextBox ID="txtQuestionEdit" CssClass="form-control input-sm" runat="server"></asp:TextBox>
+                            <asp:TextBox style="font-size:13px"  ID="txtQuestionEdit" CssClass="form-control input-sm" runat="server"></asp:TextBox>
                         </div>
                     </div>
                     <div class="col-xs-2 col-sm-2 col-md-2"></div>
@@ -168,7 +168,7 @@
                     </div>
                     <div class="col-xs-6 col-sm-6 col-md-6">
                         <div class="form-group" style="text-align: left;">
-                            <asp:TextBox ID="txtQuestionType" CssClass="form-control input-sm" runat="server"></asp:TextBox>
+                            <asp:TextBox style="font-size:13px"  ID="txtQuestionType" CssClass="form-control input-sm" runat="server"></asp:TextBox>
                         </div>
                     </div>
                     <div class="col-xs-2 col-sm-2 col-md-2"></div>
@@ -182,7 +182,7 @@
                     </div>
                     <div class="col-xs-6 col-sm-6 col-md-6">
                         <div class="form-group" style="text-align: left;">
-                            <asp:TextBox ID="txtCorrectanswer" CssClass="form-control input-sm" runat="server"></asp:TextBox>
+                            <asp:TextBox style="font-size:13px"  ID="txtCorrectanswer" CssClass="form-control input-sm" runat="server"></asp:TextBox>
                         </div>
                     </div>
                     <div class="col-xs-2 col-sm-2 col-md-2"></div>
@@ -196,7 +196,7 @@
                     </div>
                     <div class="col-xs-4 col-sm-4 col-md-4">
                        <div class="form-group"  ID="pnlOptions" ClientIDMode="Static" runat="server">
-                           <asp:TextBox ID="txtOptions" ClientIDMode="Static" CssClass="form-control input-sm hideOne"  runat="server"></asp:TextBox>
+                           <asp:TextBox style="font-size:13px"  ID="txtOptions" ClientIDMode="Static" CssClass="form-control input-sm hideOne"  runat="server"></asp:TextBox>
                         </div>
                     </div>
                                         <div class="col-xs-2 col-sm-2 col-md-2">

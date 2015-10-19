@@ -192,11 +192,16 @@ namespace AwsWebApp1
 
             for (int i = 0; i < answers.Count(); i++)
             {
-                Literal num2 = new Literal();
+                Literal lt9 = new Literal();
+                lt9.Text = "<br />";
+                divAnsUser.Controls.Add(lt9);
+
+                Label num2 = new Label();
                 //num2.ReadOnly = true;
                 //num2.Width = 700;
                 num2.ClientIDMode = ClientIDMode.Static;
                 num2.Text = (i + 1).ToString() + "  -  ";
+                num2.Style[HtmlTextWriterStyle.PaddingLeft] = "50px";
                 // Session["ctrlCount"] = optionsCount.Count();
                 divAnsUser.Controls.Add(num2);
 
@@ -231,17 +236,22 @@ namespace AwsWebApp1
 
             for (int i = 0; i < realAnswers.Count(); i++)
             {
-                Literal num3 = new Literal();
+
+                Literal lt10 = new Literal();
+                lt10.Text = "<br />";
+                divCorrectAnswer.Controls.Add(lt10);
+                Label num3 = new Label();
                 //num2.ReadOnly = true;
                 //num2.Width = 700;
                 num3.ClientIDMode = ClientIDMode.Static;
                 num3.Text = (i + 1).ToString() + "  -  ";
+                num3.Style[HtmlTextWriterStyle.PaddingLeft] = "50px";
                 // Session["ctrlCount"] = optionsCount.Count();
                 divCorrectAnswer.Controls.Add(num3);
 
                 TextBox anss = new TextBox();
                 anss.ReadOnly = true;
-                anss.Width = 510;
+                anss.Width = 450;
                 anss.BorderStyle = BorderStyle.None;
                 anss.ID = "txtCorrectAnswers" + i;
                 anss.ClientIDMode = ClientIDMode.Static;
@@ -249,9 +259,9 @@ namespace AwsWebApp1
                 // Session["ctrlCount"] = optionsCount.Count();
                 divCorrectAnswer.Controls.Add(anss);
 
-                //Literal lt3 = new Literal();
-                //lt3.Text = "<br />";
-                //divCorrectAnswer.Controls.Add(lt3);
+                Literal lt3 = new Literal();
+                lt3.Text = "<br />";
+                divCorrectAnswer.Controls.Add(lt3);
 
             }
         }

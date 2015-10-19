@@ -113,7 +113,7 @@
                           </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
-        <asp:Label ID="lblId" runat="server"  cssclass="form-control input-sm"></asp:Label>
+        <asp:Label ID="lblId" style="font-size:13px"  runat="server"  cssclass="form-control input-sm"></asp:Label>
                 </div>
                             </div>
                      
@@ -129,7 +129,7 @@
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group" >
-        <asp:TextBox ID="txtName" runat="server" cssclass="form-control input-sm"></asp:TextBox>
+        <asp:TextBox ID="txtName" style="font-size:13px"  runat="server" cssclass="form-control input-sm"></asp:TextBox>
                                     
                             </div>
                             </div>
@@ -145,7 +145,7 @@
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
-           <asp:Label ID="lblStart" runat="server" cssclass="form-control input-sm"></asp:Label>
+           <asp:Label ID="lblStart" style="font-size:13px"  runat="server" cssclass="form-control input-sm"></asp:Label>
                 </div>
                             </div>
                      <div class="col-xs-2 col-sm-2 col-md-2"></div>
@@ -159,7 +159,7 @@
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class='input-group date' id='divEnd'>
-        <asp:TextBox ID="txtEnd" runat="server" cssclass="form-control input-sm"></asp:TextBox>
+        <asp:TextBox ID="txtEnd" style="font-size:13px"  runat="server" cssclass="form-control input-sm"></asp:TextBox>
                                     <span class="input-group-addon">
                                         <span class="glyphicon glyphicon-calendar"></span>
                                     </span>
@@ -177,7 +177,7 @@
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
-        <asp:TextBox ID="txtspeaker" runat="server"  cssclass="form-control input-sm"></asp:TextBox>
+        <asp:TextBox ID="txtspeaker" style="font-size:13px"  runat="server"  cssclass="form-control input-sm"></asp:TextBox>
                              </div>
                             </div>
                    

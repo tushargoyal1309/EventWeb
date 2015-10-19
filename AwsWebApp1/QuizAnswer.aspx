@@ -72,23 +72,24 @@
         
         <div class="col-md-6">
                     <div class="col-md-2">
-        <asp:Label runat="server" Text="User:" Font-Bold="true"></asp:Label>
+        <asp:Label  style="font-size:13px" runat="server" Text="User:" Font-Bold="true"></asp:Label>
                         </div>
                     <div class="col-md-4">
-            <asp:Label runat="server" id="lblName"></asp:Label>
+            <asp:Label style="font-size:13px"  runat="server" id="lblName"></asp:Label>
+
                         </div>
             </div>
-        <div class="col-md-12">
-        <asp:Label runat="server" Text="Questions:" Font-Bold="true"></asp:Label>
+        <div class="col-md-12" style="padding-top:30px">
+        <asp:Label runat="server" style="font-size:13px;" Text="Questions:" Font-Bold="true"></asp:Label>
     </div>
         </div>
-       <div class="row">
-    <div id="divAnsUser" class="col-md-6" runat="server" visible="false">
-    <asp:Label runat="server" Text="Answers given by this user" Font-Bold="true"></asp:Label>
+       <div class="row" style="padding-top:30px">
+    <div id="divAnsUser" class="col-md-6" runat="server" visible="false" style="padding-left:20px">
+    <asp:Label runat="server" style="font-size:13px; padding-left:20px"  Text="Answers given by this user" Font-Bold="true"></asp:Label>
         <br />
     </div>
     <div id="divCorrectAnswer" class="col-md-6" runat="server" visible="false">
-    <asp:Label runat="server" Text="Correct Answers Of Objective questions only" Font-Bold="true"></asp:Label>
+    <asp:Label runat="server" style="font-size:13px"  Text="Correct Answers Of Objective questions only" Font-Bold="true"></asp:Label>
     </div>
            </div>
        </div>

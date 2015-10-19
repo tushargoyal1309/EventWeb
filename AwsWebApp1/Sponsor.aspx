@@ -96,7 +96,7 @@
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
-                                    <asp:TextBox ID="sno" cssclass="form-control input-sm" runat="server"></asp:TextBox>
+                                    <asp:TextBox style="font-size:13px"  ID="sno" cssclass="form-control input-sm" runat="server"></asp:TextBox>
                                 </div>
                             </div>
                      <div class="col-xs-2 col-sm-2 col-md-2"></div>
@@ -111,7 +111,7 @@
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
-                                    <asp:Label ID="txtEventId" cssclass="form-control input-sm" runat="server"></asp:Label>
+                                    <asp:Label style="font-size:13px"  ID="txtEventId" cssclass="form-control input-sm" runat="server"></asp:Label>
                                 </div>
                             </div>
                                         
@@ -128,7 +128,7 @@
                           </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
-                                    <asp:TextBox ID="txtEventName" cssclass="form-control input-sm" runat="server"></asp:TextBox>
+                                    <asp:TextBox style="font-size:13px"  ID="txtEventName" cssclass="form-control input-sm" runat="server"></asp:TextBox>
                                 </div>
                             </div>
                      
@@ -143,7 +143,7 @@
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group" style="text-align:left;">
-                                    <textarea name="txtDesc" class="form-control" rows="5" id="Description" runat="server"></textarea>
+                                    <textarea  style="font-size:13px" name="txtDesc" class="form-control" rows="5" id="Description" runat="server"></textarea>
                                 </div>
                             </div>
                      <div class="col-xs-2 col-sm-2 col-md-2"></div>
@@ -158,7 +158,7 @@
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group" >
-                                    <asp:TextBox ID="txttype" cssclass="form-control input-sm" runat="server"></asp:TextBox>
+                                    <asp:TextBox  style="font-size:13px" ID="txttype" cssclass="form-control input-sm" runat="server"></asp:TextBox>
                                 </div>
                             </div>
                         <div class="col-xs-2 col-sm-2 col-md-2"></div>

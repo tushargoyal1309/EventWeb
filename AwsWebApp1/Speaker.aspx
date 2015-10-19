@@ -104,7 +104,7 @@
                           </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
-        <asp:Label ID="EventId" runat="server"></asp:Label>
+        <asp:Label ID="EventId" style="font-size:13px"  runat="server"></asp:Label>
                              </div>
                             </div>
                      
@@ -119,7 +119,7 @@
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
-        <asp:TextBox ID="txtSpeakerName" runat="server" CssClass="form-control input-sm"></asp:TextBox>
+        <asp:TextBox ID="txtSpeakerName" style="font-size:13px"  runat="server" CssClass="form-control input-sm"></asp:TextBox>
                 </div>
                             </div>
                      
@@ -135,7 +135,7 @@
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
-        <asp:Label ID="txtmail" runat="server"></asp:Label>
+        <asp:Label ID="txtmail" style="font-size:13px"  runat="server"></asp:Label>
                 </div>
                             </div>
                                         
@@ -151,7 +151,7 @@
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
-        <asp:TextBox ID="txtDesignation" runat="server" CssClass="form-control input-sm"></asp:TextBox>
+        <asp:TextBox ID="txtDesignation" style="font-size:13px"  runat="server" CssClass="form-control input-sm"></asp:TextBox>
                             </div>
                             </div>
                      <div class="col-xs-2 col-sm-2 col-md-2"></div>
@@ -165,7 +165,7 @@
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group" style="text-align:left;">
-        <textarea class="form-control" rows="5" ID="txtBio" runat="server"></textarea>
+        <textarea class="form-control" style="font-size:13px"  rows="5" ID="txtBio" runat="server"></textarea>
                 </div>
                             </div>
                      <div class="col-xs-2 col-sm-2 col-md-2"></div>
@@ -181,7 +181,7 @@
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group" >
         <asp:Image ID="Image" Height="100px" Width="100px" runat="server"></asp:Image>
-                                   <span>Choose an Image to update</span> <br /><br /> <asp:FileUpload ID="file" runat="server" />
+                                   <span style="font-size:13px" >Choose an Image to update</span> <br /><br /> <asp:FileUpload ID="file" runat="server" />
                 </div>
                             </div>
                         <div class="col-xs-2 col-sm-2 col-md-2"></div>
@@ -196,7 +196,7 @@
                            </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
-        <asp:TextBox ID="txtOrganisation"  CssClass="form-control input-sm" runat="server"></asp:TextBox>
+        <asp:TextBox ID="txtOrganisation" style="font-size:13px"   CssClass="form-control input-sm" runat="server"></asp:TextBox>
                               </div>
                             </div>
                    

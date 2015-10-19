@@ -84,7 +84,7 @@
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
-        <asp:Label ID="txtcontentId"  cssclass="form-control input-sm" runat="server"></asp:Label>
+        <asp:Label ID="txtcontentId"  style="font-size:13px"  cssclass="form-control input-sm" runat="server"></asp:Label>
                 </div>
                             </div>
                      <div class="col-xs-2 col-sm-2 col-md-2"></div>
@@ -99,7 +99,7 @@
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
-        <asp:TextBox ID="txtId" runat="server"  cssclass="form-control input-sm"></asp:TextBox>
+        <asp:TextBox ID="txtId" runat="server" style="font-size:13px"   cssclass="form-control input-sm"></asp:TextBox>
                                     </div>
                             </div>
                      <div class="col-xs-2 col-sm-2 col-md-2"></div>
@@ -114,7 +114,7 @@
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
-        <asp:TextBox ID="txtType" runat="server"  cssclass="form-control input-sm"></asp:TextBox>
+        <asp:TextBox ID="txtType" runat="server" style="font-size:13px"   cssclass="form-control input-sm"></asp:TextBox>
                               </div>
                             </div>
                      
@@ -130,7 +130,7 @@
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
-        <asp:TextBox ID="txtName" runat="server"  cssclass="form-control input-sm"></asp:TextBox>
+        <asp:TextBox ID="txtName" runat="server" style="font-size:13px"   cssclass="form-control input-sm"></asp:TextBox>
                                     <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtName"
     ValidationExpression="[a-zA-Z ]*$" ErrorMessage="*Valid characters: Alphabets and space." />
                               </div>
