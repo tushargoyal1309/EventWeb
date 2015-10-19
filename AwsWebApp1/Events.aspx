@@ -22,7 +22,7 @@
     </script>
     <script type="text/javascript">
         $(function () {
-            $("[id$=txtSatrt]").datepicker({
+            $("#txtSatrt").datepicker({
                 showOn: 'button',
                 buttonImageOnly: true,
                 buttonImage: "../images/images.png"
@@ -31,7 +31,7 @@
     </script>
     <script type="text/javascript">
         $(function () {
-            $("[id$=txtEnd]").datepicker({
+            $("#txtEnd").datepicker({
                 showOn: 'button',
                 buttonImageOnly: true,
                 buttonImage: "../images/images.png"
@@ -206,7 +206,7 @@
     ControlToValidate="txtSatrt"
     ErrorMessage="Date is not valid!">
 </asp:CompareValidator>
-                                    <asp:TextBox style="font-size:13px"  ID="txtSatrt" runat="server" cssclass="form-control input-sm"></asp:TextBox>
+                                    <asp:TextBox style="font-size:13px" ClientIDMode="Static" ID="txtSatrt" runat="server" cssclass="form-control input-sm"></asp:TextBox>
                                     <asp:RequiredFieldValidator runat="server" id="RequiredFieldValidator3" controltovalidate="txtSatrt" errormessage="Please enter Start date!" />
                                 </div>
                             </div>
@@ -230,7 +230,7 @@
     ControlToValidate="txtEnd"
     ErrorMessage="Date is not valid!">
 </asp:CompareValidator>
-                                    <asp:TextBox style="font-size:13px"  ID="txtEnd" runat="server" cssclass="form-control input-sm"></asp:TextBox>
+                                    <asp:TextBox style="font-size:13px" ClientIDMode="Static" ID="txtEnd" runat="server" cssclass="form-control input-sm"></asp:TextBox>
                                     <asp:RequiredFieldValidator runat="server" id="RequiredFieldValidator1" controltovalidate="txtEnd" errormessage="Please enter End date!" />
                                 </div>
                             </div>
@@ -246,10 +246,10 @@
                            </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
-                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtOName"
-    ValidationExpression="[a-zA-Z ]*$" ErrorMessage="*Valid characters: Alphabets and space." />
                                     <asp:TextBox style="font-size:13px"  ID="txtOName" runat="server" cssclass="form-control input-sm"></asp:TextBox>
-                                     <asp:RequiredFieldValidator runat="server" id="RequiredFieldValidator6" controltovalidate="txtOName" errormessage="Please enter Organiser Name!" />
+                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtOName"
+    ValidationExpression="[a-zA-Z ]*$" ErrorMessage="*Valid characters: Alphabets and space." /> 
+                                    <asp:RequiredFieldValidator runat="server" id="RequiredFieldValidator6" controltovalidate="txtOName" errormessage="Please enter Organiser Name!" />
                                 </div>
                             </div>
                    
