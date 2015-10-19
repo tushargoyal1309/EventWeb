@@ -11,12 +11,16 @@
     <script src="scripts/Date/jquery.datetimepicker.js"></script>
      <script type="text/javascript">
          $(document).ready(function () {
-             $('#divPublishTime').datetimepicker();
-             $('#divPublishTime').datetimepicker({ step: 5 });
+             $('#PublishTime').datetimepicker();
+             var hfproductid = $('#HfDateid').val();
+             $('#PublishTime').val(hfproductid);
+
+             //$('#txtEnd').datetimepicker({ value: '', step: 5 });
          });
-        </script>
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <asp:HiddenField ID="HfDateid" ClientIDMode="Static" runat="server" />
 <section id="divMain" runat="server" style="background-color:#ffffff; overflow: hidden">
        <div class="page ng-scope">
             <section class="panel panel-default">
@@ -123,10 +127,8 @@
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class='input-group date' id='divPublishTime'>
         <asp:TextBox ID="PublishTime" style="font-size:13px" ClientIDMode="Static" runat="server" cssclass="form-control input-sm"></asp:TextBox>
-                      <span class="input-group-addon">
-                                        <span class="glyphicon glyphicon-calendar"></span>
-                                    </span>              
-                </div>
+                <asp:RequiredFieldValidator runat="server" id="RequiredFieldValidator3" controltovalidate="PublishTime" errormessage="Please enter Publish time!" />
+                                </div>
                             </div>
                                         
                   <div class="col-xs-2 col-sm-2 col-md-2"></div>
@@ -143,6 +145,7 @@
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
         <asp:TextBox ID="Text" runat="server"  style="font-size:13px"  cssclass="form-control input-sm"></asp:TextBox>
+                                    <asp:RequiredFieldValidator runat="server" id="RequiredFieldValidator1" controltovalidate="Text" errormessage="Please enter Text!" />
                               </div>
                             </div>
                    
@@ -153,7 +156,7 @@
                 <div class="row">
                     <div class="col-xs-4 col-sm-4 col-md-4"></div>
                     <div class="col-md-6">
-                        <asp:Button ID="btncancle" runat="server" CssClass="btn btn-danger" Text="Cancel" OnClick="btncancle_Click"/>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <asp:Button ID="btncancle" runat="server" CausesValidation="false" CssClass="btn btn-danger" Text="Cancel" OnClick="btncancle_Click"/>&nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:Button ID="Update" runat="server" OnClick="btnUpdate_Click" CssClass="btn btn-success" Text="Update"/>
                     </div>
                 </div>

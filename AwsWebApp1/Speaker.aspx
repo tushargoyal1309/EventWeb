@@ -120,6 +120,7 @@
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
         <asp:TextBox ID="txtSpeakerName" style="font-size:13px"  runat="server" CssClass="form-control input-sm"></asp:TextBox>
+                                    <asp:RequiredFieldValidator runat="server" id="RequiredFieldValidator2" controltovalidate="txtSpeakerName" errormessage="Please enter Speaker name!" />
                 </div>
                             </div>
                      
@@ -152,6 +153,7 @@
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
         <asp:TextBox ID="txtDesignation" style="font-size:13px"  runat="server" CssClass="form-control input-sm"></asp:TextBox>
+                                    <asp:RequiredFieldValidator runat="server" id="RequiredFieldValidator1" controltovalidate="txtDesignation" errormessage="Please enter Designation!" />
                             </div>
                             </div>
                      <div class="col-xs-2 col-sm-2 col-md-2"></div>
@@ -166,6 +168,7 @@
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group" style="text-align:left;">
         <textarea class="form-control" style="font-size:13px"  rows="5" ID="txtBio" runat="server"></textarea>
+                                    <asp:RequiredFieldValidator runat="server" id="RequiredFieldValidator3" controltovalidate="txtBio" errormessage="Please enter Biography!" />
                 </div>
                             </div>
                      <div class="col-xs-2 col-sm-2 col-md-2"></div>
@@ -197,6 +200,7 @@
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
         <asp:TextBox ID="txtOrganisation" style="font-size:13px"   CssClass="form-control input-sm" runat="server"></asp:TextBox>
+                                    <asp:RequiredFieldValidator runat="server" id="RequiredFieldValidator4" controltovalidate="txtOrganisation" errormessage="Please enter Organisation!" />
                               </div>
                             </div>
                    
@@ -208,7 +212,7 @@
                 <div class="row">
                     <div class="col-xs-4 col-sm-4 col-md-4"></div>
                     <div class="col-md-6">
-                        <asp:Button ID="btncancle" runat="server" CssClass="btn btn-danger" Text="Cancel" OnClick="btncancle_Click"/>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <asp:Button ID="btncancle" runat="server" CausesValidation="false" CssClass="btn btn-danger" Text="Cancel" OnClick="btncancle_Click"/>&nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:Button ID="btnUpdate" runat="server" OnClick="btnUpdate_Click" CssClass="btn btn-success" Text="Update"/>
                     </div>          <div class="col-xs-2 col-sm-2 col-md-2"></div>
                 </div>

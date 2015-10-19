@@ -153,9 +153,13 @@ namespace AwsWebApp1
                 string descNew = txtDesc.Value;
                 string eventNew = txtEventName.Text;
                 string oNewName = txtOName.Text;
-                string newStartDate = txtSatrt.Text;
+                DateTime date1 = Convert.ToDateTime(txtSatrt.Text);
+                string newStartDate = date1.ToString("dd/MM/yyyy");
+               // string newStartDate = txtSatrt.Text;
                 string newVenue = txtVenue.Text;
-                string newEndDate = txtEnd.Text;
+                DateTime date2 = Convert.ToDateTime(txtEnd.Text);
+                string newEndDate = date2.ToString("dd/MM/yyyy");
+                //string newEndDate = txtEnd.Text;
                 string eventId = txtEventId.Text;
                 AmazonDynamoDBClient client = new AmazonDynamoDBClient();
                 string tableName = "Event";

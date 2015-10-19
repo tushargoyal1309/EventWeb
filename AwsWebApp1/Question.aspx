@@ -155,6 +155,7 @@
                     <div class="col-xs-6 col-sm-6 col-md-6">
                         <div class="form-group" style="text-align: left;">
                             <asp:TextBox style="font-size:13px"  ID="txtQuestionEdit" CssClass="form-control input-sm" runat="server"></asp:TextBox>
+                        <asp:RequiredFieldValidator runat="server" id="RequiredFieldValidator2" controltovalidate="txtQuestionEdit" errormessage="Please enter Question!" />
                         </div>
                     </div>
                     <div class="col-xs-2 col-sm-2 col-md-2"></div>
@@ -183,7 +184,8 @@
                     <div class="col-xs-6 col-sm-6 col-md-6">
                         <div class="form-group" style="text-align: left;">
                             <asp:TextBox style="font-size:13px"  ID="txtCorrectanswer" CssClass="form-control input-sm" runat="server"></asp:TextBox>
-                        </div>
+                       <asp:RequiredFieldValidator runat="server" id="RequiredFieldValidator4" controltovalidate="txtCorrectanswer" errormessage="Please enter Answer!" />
+                             </div>
                     </div>
                     <div class="col-xs-2 col-sm-2 col-md-2"></div>
                 </div>
@@ -197,7 +199,8 @@
                     <div class="col-xs-4 col-sm-4 col-md-4">
                        <div class="form-group"  ID="pnlOptions" ClientIDMode="Static" runat="server">
                            <asp:TextBox style="font-size:13px"  ID="txtOptions" ClientIDMode="Static" CssClass="form-control input-sm hideOne"  runat="server"></asp:TextBox>
-                        </div>
+                       <asp:RequiredFieldValidator runat="server" id="RequiredFieldValidator3" controltovalidate="txtOptions" errormessage="Please enter Options!" /> 
+                       </div>
                     </div>
                                         <div class="col-xs-2 col-sm-2 col-md-2">
                                                                     <div class="form-group" style="text-align: left;">
@@ -209,7 +212,7 @@
                 <div class="row">
                     <div class="col-xs-4 col-sm-4 col-md-4"></div>
                     <div class="col-md-6">
-                        <asp:Button ID="btncancle" ClientIDMode="Static" OnClick="btncancle_Click" runat="server" CssClass="btn btn-danger" Text="Cancel" />&nbsp;&nbsp;&nbsp;&nbsp;
+                        <asp:Button ID="btncancle" ClientIDMode="Static" OnClick="btncancle_Click" CausesValidation="false" runat="server" CssClass="btn btn-danger" Text="Cancel" />&nbsp;&nbsp;&nbsp;&nbsp;
        
                        
                         <asp:Button ID="btnUpdate" runat="server" ClientIDMode="Static"  OnClick="Update_Click" CssClass="btn btn-success" Text="Update" />

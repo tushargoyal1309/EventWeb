@@ -115,6 +115,7 @@
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
         <asp:TextBox ID="txtType" runat="server" style="font-size:13px"   cssclass="form-control input-sm"></asp:TextBox>
+                                    <asp:RequiredFieldValidator runat="server" id="RequiredFieldValidator1" controltovalidate="txtType" errormessage="Please enter Type!" />
                               </div>
                             </div>
                      
@@ -130,9 +131,10 @@
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
-        <asp:TextBox ID="txtName" runat="server" style="font-size:13px"   cssclass="form-control input-sm"></asp:TextBox>
                                     <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtName"
     ValidationExpression="[a-zA-Z ]*$" ErrorMessage="*Valid characters: Alphabets and space." />
+        <asp:TextBox ID="txtName" runat="server" style="font-size:13px"   cssclass="form-control input-sm"></asp:TextBox>
+                                    <asp:RequiredFieldValidator runat="server" id="RequiredFieldValidator2" controltovalidate="txtName" errormessage="Please enter Name!" />
                               </div>
                             </div>
                      
@@ -157,7 +159,7 @@
                 <div class="row">
                     <div class="col-xs-4 col-sm-4 col-md-4"></div>
                     <div class="col-md-6">
-        <asp:Button ID="btncancle" runat="server" CssClass="btn btn-danger" Text="Cancel" OnClick="btncancle_Click"/>&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Button ID="btncancle" runat="server" CssClass="btn btn-danger" CausesValidation="false" Text="Cancel" OnClick="btncancle_Click"/>&nbsp;&nbsp;&nbsp;&nbsp;
                          <asp:Button ID="btnUpdate" runat="server" CssClass="btn btn-success" OnClick="btnUpdate_Click" text="Update"/>
                     </div>          <div class="col-xs-2 col-sm-2 col-md-2"></div>
                 </div>

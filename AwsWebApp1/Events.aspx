@@ -85,7 +85,7 @@
 
                             <%--                                <asp:LinkButton CssClass="btn btn-info pull-right" ID="lnkBtn" runat="server"><a href="#" id="details" data-toggle="modal" data-target="#myModal">More info</a></asp:LinkButton>--%>
 
-                            <p id="Eventmodel" class="pull-right"><a href="#" id="details" data-toggle="modal" name="'<%# Eval("description1") %>'" data-target="#myModal" style="font-size: x-small">More..</a></p>
+                            <%--<p id="Eventmodel" class="pull-right"><a href="#" id="details" data-toggle="modal" name="'<%# Eval("description1") %>'" data-target="#myModal" style="font-size: x-small">More..</a></p>--%>
                             <%-- <aps:button cssclass="btn btn-info" value="More Info"></aps:button>  --%>
                         </ItemTemplate>
                         <%-- <EditItemTemplate>
@@ -166,6 +166,7 @@
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
                                     <asp:TextBox style="font-size:13px"  ID="txtEventName" runat="server" cssclass="form-control input-sm"></asp:TextBox>
+                               <asp:RequiredFieldValidator runat="server" id="RequiredFieldValidator4" controltovalidate="txtEventName" errormessage="Please enter Event Name!" />
                                 </div>
                             </div>
                      <div class="col-xs-2 col-sm-2 col-md-2"></div>
@@ -181,6 +182,7 @@
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
                                     <textarea style="font-size:13px"  name="txtDesc" class="form-control" rows="5" id="txtDesc" runat="server"></textarea>
+                                <asp:RequiredFieldValidator runat="server" id="RequiredFieldValidator2" controltovalidate="txtDesc" errormessage="Please enter Description!" />
                                 </div>
                             </div>
                                         
@@ -197,14 +199,15 @@
                           </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
-                                    <asp:TextBox style="font-size:13px"  ID="txtSatrt" ReadOnly="true" runat="server" cssclass="form-control input-sm"></asp:TextBox>
-                                <asp:CompareValidator
+                                    <asp:CompareValidator
     id="CompareValidator1" Display="Dynamic" runat="server"
     Type="Date"
     Operator="DataTypeCheck"
     ControlToValidate="txtSatrt"
     ErrorMessage="Date is not valid!">
 </asp:CompareValidator>
+                                    <asp:TextBox style="font-size:13px"  ID="txtSatrt" runat="server" cssclass="form-control input-sm"></asp:TextBox>
+                                    <asp:RequiredFieldValidator runat="server" id="RequiredFieldValidator3" controltovalidate="txtSatrt" errormessage="Please enter Start date!" />
                                 </div>
                             </div>
                      
@@ -219,15 +222,16 @@
                                 </div>
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
-                                <div class="form-group" >
-                                    <asp:TextBox style="font-size:13px"  ID="txtEnd" runat="server" cssclass="form-control input-sm"></asp:TextBox>
-                                <asp:CompareValidator
+                                <div class="form-group">
+                                    <asp:CompareValidator
     id="CompareValidator2" Display="Dynamic" runat="server"
     Type="Date"
     Operator="DataTypeCheck"
     ControlToValidate="txtEnd"
     ErrorMessage="Date is not valid!">
 </asp:CompareValidator>
+                                    <asp:TextBox style="font-size:13px"  ID="txtEnd" runat="server" cssclass="form-control input-sm"></asp:TextBox>
+                                    <asp:RequiredFieldValidator runat="server" id="RequiredFieldValidator1" controltovalidate="txtEnd" errormessage="Please enter End date!" />
                                 </div>
                             </div>
                         <div class="col-xs-2 col-sm-2 col-md-2"></div>
@@ -242,9 +246,10 @@
                            </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
-                                    <asp:TextBox style="font-size:13px"  ID="txtOName" runat="server" cssclass="form-control input-sm"></asp:TextBox>
-                                     <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtOName"
+                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtOName"
     ValidationExpression="[a-zA-Z ]*$" ErrorMessage="*Valid characters: Alphabets and space." />
+                                    <asp:TextBox style="font-size:13px"  ID="txtOName" runat="server" cssclass="form-control input-sm"></asp:TextBox>
+                                     <asp:RequiredFieldValidator runat="server" id="RequiredFieldValidator6" controltovalidate="txtOName" errormessage="Please enter Organiser Name!" />
                                 </div>
                             </div>
                    
@@ -260,6 +265,7 @@
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
                                     <asp:TextBox style="font-size:13px"  ID="txtVenue" runat="server"  cssclass="form-control input-sm"></asp:TextBox>
+                                    <asp:RequiredFieldValidator runat="server" id="RequiredFieldValidator7" controltovalidate="txtVenue" errormessage="Please enter Venue!" />
                                 </div>
                             </div>
                      
@@ -270,7 +276,7 @@
                 <div class="row">
                     <div class="col-xs-4 col-sm-4 col-md-4"></div>
                     <div class="col-md-6">
-                        <asp:Button ID="btncancle" runat="server" CssClass="btn btn-danger" Text="Cancel" OnClick="btncancle_Click"/>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <asp:Button ID="btncancle" runat="server" CssClass="btn btn-danger" CausesValidation="false" Text="Cancel" OnClick="btncancle_Click"/>&nbsp;&nbsp;&nbsp;&nbsp;
                          <asp:Button ID="Button1" runat="server" CssClass="btn btn-success" Text="Update" OnClick="btnUpdate_Click" />
                     </div>          <div class="col-xs-2 col-sm-2 col-md-2"></div>
                 </div>

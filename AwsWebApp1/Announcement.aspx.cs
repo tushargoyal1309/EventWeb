@@ -110,7 +110,8 @@ namespace AwsWebApp1
             string pubishtime = publishTime.Text;
             string text = randomText.Text;
             // string speakerName = Speaker.Text;
-            PublishTime.Text = pubishtime;
+           // PublishTime.Text = pubishtime;
+            HfDateid.Value = pubishtime;
             Text.Text = text;
             EventId.Text = eveId;
             AnnouncementId.Text = aId;
