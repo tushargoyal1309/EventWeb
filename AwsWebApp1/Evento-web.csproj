@@ -204,6 +204,7 @@
     <Content Include="scripts\Date\jquery.js" />
     <Content Include="scripts\formValidation.min.js" />
     <Content Include="scripts\jquery-ui.min.js" />
+    <Content Include="scripts\jquery.min.js" />
     <Content Include="scripts\js\bootstrap-datetimepicker.min.js" />
     <Content Include="scripts\js\custom.js" />
     <Content Include="scripts\js\jquery-1.10.2.min.js" />

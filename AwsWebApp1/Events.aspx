@@ -199,13 +199,7 @@
                           </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
-                                    <asp:CompareValidator
-    id="CompareValidator1" Display="Dynamic" runat="server"
-    Type="Date"
-    Operator="DataTypeCheck"
-    ControlToValidate="txtSatrt"
-    ErrorMessage="Date is not valid!">
-</asp:CompareValidator>
+                                    <asp:RegularExpressionValidator ID="dateValRegex" Display="Dynamic" runat="server" ControlToValidate="txtSatrt" ErrorMessage="Please Enter a valid date in the format (dd/MM/yyyy)" ValidationExpression="^(((((0[1-9])|(1\d)|(2[0-8]))\/((0[1-9])|(1[0-2])))|((31\/((0[13578])|(1[02])))|((29|30)\/((0[1,3-9])|(1[0-2])))))\/((20[0-9][0-9])|(19[0-9][0-9])))|((29\/02\/(19|20)(([02468][048])|([13579][26]))))$"></asp:RegularExpressionValidator>
                                     <asp:TextBox style="font-size:13px" ClientIDMode="Static" ID="txtSatrt" runat="server" cssclass="form-control input-sm"></asp:TextBox>
                                     <asp:RequiredFieldValidator runat="server" id="RequiredFieldValidator3" controltovalidate="txtSatrt" errormessage="Please enter Start date!" />
                                 </div>
@@ -223,13 +217,7 @@
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
-                                    <asp:CompareValidator
-    id="CompareValidator2" Display="Dynamic" runat="server"
-    Type="Date"
-    Operator="DataTypeCheck"
-    ControlToValidate="txtEnd"
-    ErrorMessage="Date is not valid!">
-</asp:CompareValidator>
+                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" Display="Dynamic" runat="server" ControlToValidate="txtEnd" ErrorMessage="Please Enter a valid date in the format (dd/MM/yyyy)" ValidationExpression="^(((((0[1-9])|(1\d)|(2[0-8]))\/((0[1-9])|(1[0-2])))|((31\/((0[13578])|(1[02])))|((29|30)\/((0[1,3-9])|(1[0-2])))))\/((20[0-9][0-9])|(19[0-9][0-9])))|((29\/02\/(19|20)(([02468][048])|([13579][26]))))$"></asp:RegularExpressionValidator>
                                     <asp:TextBox style="font-size:13px" ClientIDMode="Static" ID="txtEnd" runat="server" cssclass="form-control input-sm"></asp:TextBox>
                                     <asp:RequiredFieldValidator runat="server" id="RequiredFieldValidator1" controltovalidate="txtEnd" errormessage="Please enter End date!" />
                                 </div>
