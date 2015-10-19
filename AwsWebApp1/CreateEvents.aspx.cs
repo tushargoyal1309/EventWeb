@@ -25,15 +25,15 @@ namespace AwsWebApp1
 
                 var book = new Document();
                 book["description1"] = description.Text;
-                DateTime date2 = Convert.ToDateTime(end.Text);
-                string endDate = date2.ToString("dd/MM/yyyy");
-                book["endDate"] = endDate;
+                //DateTime date2 = Convert.ToDateTime(end.Text);
+                //string endDate = date2.ToString("dd/MM/yyyy");
+                book["endDate"] = end.Text;
                 book["eventId"] = inId.Value;
                 book["eventName"] = Name.Text;
                 book["organiserName"] = oName.Text;
-                DateTime date1 = Convert.ToDateTime(start.Text);
-                string startDate = date1.ToString("dd/MM/yyyy");
-                book["startDate"] = startDate;
+                //DateTime date1 = Convert.ToDateTime(start.Text);
+                //string startDate = date1.ToString("dd/MM/yyyy");
+                book["startDate"] = start.Text;
                 book["venue"] = venue.Text;
 
                 table.PutItem(book);
