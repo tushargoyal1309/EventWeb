@@ -21,7 +21,7 @@
         </div>
        
         <div runat="server" class="panel-body">
-        <asp:GridView OnSelectedIndexChanged="gvQuizAnswer_SelectedIndexChanged"
+        <asp:GridView OnSelectedIndexChanged="gvQuizAnswer_SelectedIndexChanged" OnPageIndexChanging="gvQuizAnswer_PageIndexChanging"
         CssClass="table table-bordered table-striped table-responsive" AllowPaging="true" PageSize="5"
         AlternatingRowStyle-BackColor="#FFFFFF" BorderStyle="None" BackColor="#F9F9F9" ID="gvQuizAnswer"
         runat="server" AutoGenerateColumns="false" PagerStyle-BackColor="White">

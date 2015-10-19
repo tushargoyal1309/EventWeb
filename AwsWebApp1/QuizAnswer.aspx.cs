@@ -265,5 +265,13 @@ namespace AwsWebApp1
 
             }
         }
+
+        protected void gvQuizAnswer_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvQuizAnswer.PageIndex = e.NewPageIndex;
+            dt = GetData();
+            gvQuizAnswer.DataSource = dt;
+            gvQuizAnswer.DataBind();
+        }
     }
 }
