@@ -22,22 +22,21 @@
             return ret;
         }
     </script>
+    <link href="styles/Date/jquery.datetimepicker.css" rel="stylesheet" />
+    <script src="scripts/Date/jquery.js"></script>
+    <script src="scripts/Date/jquery.datetimepicker.js"></script>
+     <script type="text/javascript">
+         $(document).ready(function () {
+             $('#endTime').datetimepicker();
+             $('#endTime').datetimepicker({ value: '', step: 5 });
+         });
+        </script>
     <script type="text/javascript">
-        $(function () {
-            $('#divEnd').datetimepicker();
-            $("#divEnd").on("dp.change", function (e) {
-                $('#divEnd').data("DateTimePicker").minDate(e.date);
-            });
+        $(document).ready(function () {
+            $('#startTime').datetimepicker();
+            $('#startTime').datetimepicker({ value: '', step: 5 });
         });
-    </script>
-    <script type="text/javascript">
-        $(function () {
-            $('#divStart').datetimepicker();
-            $("#divStart").on("dp.change", function (e) {
-                $('#divStart').data("DateTimePicker").minDate(e.date);
-            });
-        });
-    </script>
+        </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
      <div runat="server">
@@ -89,11 +88,8 @@
                                    </div>
                                                         <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class='input-group date' id='divStart' style="text-align:left;">
-                                   <asp:TextBox runat="server" id="startTime"  cssclass="form-control input-sm" type="text" placeholder="">
+                                   <asp:TextBox runat="server" id="startTime" ClientIDMode="Static" cssclass="form-control input-sm" type="text" placeholder="">
                                        </asp:TextBox>
-                                    <span class="input-group-addon">
-                                        <span class="glyphicon glyphicon-calendar"></span>
-                                    </span>
                                 </div>
                             </div>
                      <div class="col-xs-2 col-sm-2 col-md-2"></div>
@@ -107,11 +103,8 @@
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class='input-group date' id='divEnd' style="text-align:left;">
-                                  <asp:TextBox runat="server" id="endTime"  cssclass="form-control input-sm" type="text" placeholder="">
+                                  <asp:TextBox runat="server" id="endTime" ClientIDMode="Static" cssclass="form-control input-sm" type="text" placeholder="">
                                       </asp:TextBox>
-                                    <span class="input-group-addon">
-                                        <span class="glyphicon glyphicon-calendar"></span>
-                                    </span>
                                 </div>
                             </div>
                      <div class="col-xs-2 col-sm-2 col-md-2"></div>

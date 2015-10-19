@@ -38,14 +38,15 @@
             return ret;
         }
     </script>
-    <script type="text/javascript">
-        $(function () {
-            $('#divPublishTime').datetimepicker();
-            $("#divPublishTime").on("dp.change", function (e) {
-                $('#divPublishTime').data("DateTimePicker").minDate(e.date);
-            });
-        });
-    </script>
+    <link href="styles/Date/jquery.datetimepicker.css" rel="stylesheet" />
+    <script src="scripts/Date/jquery.js"></script>
+    <script src="scripts/Date/jquery.datetimepicker.js"></script>
+     <script type="text/javascript">
+         $(document).ready(function () {
+             $('#divPublishTime').datetimepicker();
+             $('#divPublishTime').datetimepicker({ step: 5 });
+         });
+        </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
      <div runat="server">
@@ -98,7 +99,7 @@
                                    </div>
                                                         <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class='input-group date' id='divPublishTime' style="text-align:left;">
-                                   <asp:TextBox runat="server" id="PublishTime" class="form-control input-sm" type="text" placeholder="">
+                                   <asp:TextBox runat="server" id="PublishTime" ClientIDMode="Static" class="form-control input-sm" type="text" placeholder="">
                                        </asp:TextBox>
                                     <span class="input-group-addon">
                                         <span class="glyphicon glyphicon-calendar"></span>

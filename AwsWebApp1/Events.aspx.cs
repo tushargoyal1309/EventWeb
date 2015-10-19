@@ -148,6 +148,8 @@ namespace AwsWebApp1
 
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
+            if (txtDesc.Value != "" && txtEventName.Text != "" && txtOName.Text != "" && txtSatrt.Text != "" && txtVenue.Text != "" && txtEnd.Text != "")
+            {
                 string descNew = txtDesc.Value;
                 string eventNew = txtEventName.Text;
                 string oNewName = txtOName.Text;
@@ -202,6 +204,13 @@ namespace AwsWebApp1
                 string script = "alert(\"Successfully updated.\");";
                 ScriptManager.RegisterStartupScript(this, GetType(),
                                       "ServerControlScript", script, true);
+            }
+            else
+            {
+                string script = "alert(\"Please fill all the data.\");";
+                ScriptManager.RegisterStartupScript(this, GetType(),
+                                      "ServerControlScript", script, true);
+            }
         }
        
 

@@ -200,6 +200,8 @@
     <Content Include="scripts\bootstrap-datepicker.js" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
+    <Content Include="scripts\Date\jquery.datetimepicker.js" />
+    <Content Include="scripts\Date\jquery.js" />
     <Content Include="scripts\formValidation.min.js" />
     <Content Include="scripts\jquery-ui.min.js" />
     <Content Include="scripts\js\bootstrap-datetimepicker.min.js" />
@@ -216,6 +218,7 @@
     <Content Include="Sponsor.aspx" />
     <Content Include="styles\bootstrap.min.css" />
     <Content Include="styles\datepicker.css" />
+    <Content Include="styles\Date\jquery.datetimepicker.css" />
     <Content Include="styles\font-awesome.min.css" />
     <Content Include="styles\img\checkmark.png" />
     <Content Include="styles\LoginStyle.css" />

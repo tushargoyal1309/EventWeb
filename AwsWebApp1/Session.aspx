@@ -7,6 +7,16 @@
     <script src="scripts/bootstrap-datepicker.js"></script>
     <script src="scripts/js/moment.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+    
+    <link href="styles/Date/jquery.datetimepicker.css" rel="stylesheet" />
+    <script src="scripts/Date/jquery.js"></script>
+    <script src="scripts/Date/jquery.datetimepicker.js"></script>
+     <script type="text/javascript">
+         $(document).ready(function () {
+             $('#txtEnd').datetimepicker();
+             $('#txtEnd').datetimepicker({ value: '', step: 5 });
+         });
+        </script>
     <%--<script type="text/javascript">
         $(function () {
             $("[id$=txtEnd]").datepicker({
@@ -16,14 +26,14 @@
             });
         });
     </script>--%>
-    <script type="text/javascript">
+    <%--<script type="text/javascript">
         $(function () {
             $('#divEnd').datetimepicker();
             $("#divEnd").on("dp.change", function (e) {
                 $('#divEnd').data("DateTimePicker").minDate(e.date);
             });
         });
-    </script>
+    </script>--%>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <section id="divMain" runat="server" style="background-color:#ffffff; overflow: hidden">
@@ -159,10 +169,8 @@
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class='input-group date' id='divEnd'>
-        <asp:TextBox ID="txtEnd" style="font-size:13px"  runat="server" cssclass="form-control input-sm"></asp:TextBox>
-                                    <span class="input-group-addon">
-                                        <span class="glyphicon glyphicon-calendar"></span>
-                                    </span>
+        <asp:TextBox ID="txtEnd" style="font-size:13px" ClientIDMode="Static"  runat="server" cssclass="form-control input-sm"></asp:TextBox>
+                                    
                              </div>
                             </div>
                    
