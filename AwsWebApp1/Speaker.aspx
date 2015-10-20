@@ -24,7 +24,7 @@
         <PagerStyle BackColor="#FFFFFF" CssClass="GridPager" HorizontalAlign="center"/>
         <Columns>
    
-        <asp:TemplateField HeaderText="EventId" AccessibleHeaderText="center"  HeaderStyle-BackColor="#FFFFFF">
+        <asp:TemplateField HeaderText="Event&nbsp;Id" AccessibleHeaderText="center"  HeaderStyle-BackColor="#FFFFFF">
 <ItemTemplate>
 <asp:Label ID="eventId" runat="server" Text='<%# Eval("eventId") %>'></asp:Label>
 </ItemTemplate>
@@ -32,7 +32,7 @@
 <asp:TextBox ID="eventId" BorderStyle="None" runat="server" Text='<%# Eval("eventId") %>'></asp:TextBox>
 </EditItemTemplate>--%>
             </asp:TemplateField>
-<asp:TemplateField HeaderText="SpeakerName"  AccessibleHeaderText="center"  HeaderStyle-BackColor="#FFFFFF">
+<asp:TemplateField HeaderText="Speaker&nbsp;Name"  AccessibleHeaderText="center"  HeaderStyle-BackColor="#FFFFFF">
 <ItemTemplate>
 <asp:Label ID="speakerName" runat="server" Text='<%# Eval("speakerName") %>'></asp:Label>
 </ItemTemplate>
@@ -64,7 +64,7 @@
 <asp:TextBox ID="TextBox4" BorderStyle="None" runat="server" Text='<%# Eval("biography") %>'></asp:TextBox>
 </EditItemTemplate>--%>
     </asp:TemplateField>
-<asp:TemplateField HeaderText="ImageUrl" Visible="false" AccessibleHeaderText="center"  HeaderStyle-BackColor="#FFFFFF">
+<asp:TemplateField HeaderText="Image&nbsp;Url" Visible="false" AccessibleHeaderText="center"  HeaderStyle-BackColor="#FFFFFF">
 <ItemTemplate>
 <asp:Label ID="imageUrl" runat="server" Visible="false" Text='<%# Eval("imageUrl") %>'></asp:Label>
 </ItemTemplate>
@@ -99,7 +99,7 @@
                             <div class="col-xs-2 col-sm-2 col-md-2">
                            
                                 <div class="form-group"  style="text-align:left">
-                                    <label>EventId</label>
+                                    <label>Event Id</label>
                                 </div>
                           </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
@@ -114,7 +114,7 @@
                      <div class="col-xs-2 col-sm-2 col-md-2"></div>
                             <div class="col-xs-2 col-sm-2 col-md-2">
                                 <div class="form-group" style="text-align:left">
-                                    <label>SpeakerName</label>
+                                    <label>Speaker Name</label>
                                 </div>
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">

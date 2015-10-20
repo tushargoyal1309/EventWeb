@@ -24,7 +24,7 @@
         <PagerStyle BackColor="#FFFFFF" CssClass="GridPager" HorizontalAlign="center"/>
         <Columns>
            
-<asp:TemplateField HeaderText="ContentId"  AccessibleHeaderText="center"  HeaderStyle-BackColor="#FFFFFF">
+<asp:TemplateField HeaderText="Content&nbsp;Id"  AccessibleHeaderText="center"  HeaderStyle-BackColor="#FFFFFF">
 <ItemTemplate>
 <asp:Label ID="contentId" runat="server" Text='<%# Eval("contentId") %>'></asp:Label>
 </ItemTemplate>
@@ -32,7 +32,7 @@
 <asp:TextBox ID="contentId" BorderStyle="None" runat="server" Text='<%# Eval("contentId") %>'></asp:TextBox>
 </EditItemTemplate>--%>
     </asp:TemplateField>
-<asp:TemplateField HeaderText="EventId"  AccessibleHeaderText="center"  HeaderStyle-BackColor="#FFFFFF">
+<asp:TemplateField HeaderText="Event&nbsp;Id"  AccessibleHeaderText="center"  HeaderStyle-BackColor="#FFFFFF">
 <ItemTemplate>
 <asp:Label ID="eventId" runat="server" Text='<%# Eval("eventId") %>'></asp:Label>
 </ItemTemplate>
@@ -40,7 +40,7 @@
 <asp:TextBox ID="TextBox1" BorderStyle="None" runat="server" Text='<%# Eval("eventId") %>'></asp:TextBox>
 </EditItemTemplate>--%>
     </asp:TemplateField>
-<asp:TemplateField HeaderText="FileType"  AccessibleHeaderText="center"  HeaderStyle-BackColor="#FFFFFF">
+<asp:TemplateField HeaderText="File&nbsp;Type"  AccessibleHeaderText="center"  HeaderStyle-BackColor="#FFFFFF">
 <ItemTemplate>
 <asp:Label ID="fileType" runat="server" Text='<%# Eval("fileType") %>'></asp:Label>
 </ItemTemplate>

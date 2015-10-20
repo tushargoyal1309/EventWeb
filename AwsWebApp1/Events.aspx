@@ -46,7 +46,7 @@
             <section class="panel panel-default">
         <div class="panel panel-heading" style="height:50px">
 
-                <p style="font-size:large"><span class="glyphicon glyphicon-stats">&nbsp;</span>Events
+                <p style="font-size:large"><span class="glyphicon glyphicon-stats">&nbsp;</span>Event
            
         
                <span style="margin-top:-5px;"><asp:Button runat="server"  Style="margin-top:-3px;" Text="Create Event" OnClick="newEvent_Click" type="button" ID="newEvent" class="btn btn-info pull-right"></asp:Button>
@@ -78,10 +78,10 @@
                                 <asp:TextBox ID="TextBox3" BorderStyle="None" runat="server" Text='<%# Eval("eventName") %>'></asp:TextBox>
                             </EditItemTemplate>--%>
                     </asp:TemplateField>
-                <asp:TemplateField HeaderText="Description" AccessibleHeaderText="center" HeaderStyle-BackColor="#FFFFFF">
+
+                    <asp:TemplateField HeaderText="Description" AccessibleHeaderText="center" HeaderStyle-BackColor="#FFFFFF">
                         <ItemTemplate>
-                            <asp:Label ID="description1" CssClass="ShortDesc" BorderStyle="None" ReadOnly="true" runat="server" Text='<%# Eval("description1").ToString().Substring(0,Math.Min(150,Eval("description1").ToString().Length)) %>'></asp:Label>
-                            <asp:Label ID="description11" Style="display: none" CssClass="ShortDesc" BorderStyle="None" ReadOnly="true" runat="server" Text='<%# Eval("description1") %>'></asp:Label>
+                            <asp:Label ID="description1" CssClass="ShortDesc" BorderStyle="None" ReadOnly="true" runat="server" Text='<%# Eval("description1") %>'></asp:Label>
 
                             <%--                                <asp:LinkButton CssClass="btn btn-info pull-right" ID="lnkBtn" runat="server"><a href="#" id="details" data-toggle="modal" data-target="#myModal">More info</a></asp:LinkButton>--%>
 

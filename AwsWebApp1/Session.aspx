@@ -64,7 +64,7 @@
                         <PagerStyle BackColor="#FFFFFF" CssClass="GridPager" HorizontalAlign="center" />
                         <Columns>
 
-                            <asp:TemplateField HeaderText="EventId" AccessibleHeaderText="center" HeaderStyle-BackColor="#FFFFFF">
+                            <asp:TemplateField HeaderText="Event&nbsp;Id" AccessibleHeaderText="center" HeaderStyle-BackColor="#FFFFFF">
                                 <ItemTemplate>
                                     <asp:Label ID="eventId" runat="server" Text='<%# Eval("eventId") %>'></asp:Label>
                                 </ItemTemplate>
@@ -80,7 +80,7 @@
 <asp:TextBox ID="TextBox1" BorderStyle="None" runat="server" Text='<%# Eval("name") %>'></asp:TextBox>
 </EditItemTemplate>--%>
                             </asp:TemplateField>
-                            <asp:TemplateField HeaderText="StartTime" AccessibleHeaderText="center" HeaderStyle-BackColor="#FFFFFF">
+                            <asp:TemplateField HeaderText="Start&nbsp;Time" AccessibleHeaderText="center" HeaderStyle-BackColor="#FFFFFF">
                                 <ItemTemplate>
                                     <asp:Label ID="startTime" runat="server" Text='<%# Eval("startTime") %>'></asp:Label>
                                 </ItemTemplate>
@@ -88,7 +88,7 @@
 <asp:TextBox ID="TextBox2" BorderStyle="None" runat="server" Text='<%# Eval("startTime") %>'></asp:TextBox>
 </EditItemTemplate>--%>
                             </asp:TemplateField>
-                            <asp:TemplateField HeaderText="EndTime" AccessibleHeaderText="center" HeaderStyle-BackColor="#FFFFFF">
+                            <asp:TemplateField HeaderText="End&nbsp;Time" AccessibleHeaderText="center" HeaderStyle-BackColor="#FFFFFF">
                                 <ItemTemplate>
                                     <asp:Label ID="endTime" runat="server" Text='<%# Eval("endTime") %>'></asp:Label>
                                 </ItemTemplate>
@@ -96,7 +96,7 @@
 <asp:TextBox ID="TextBox3" BorderStyle="None" runat="server" Text='<%# Eval("endTime") %>'></asp:TextBox>
 </EditItemTemplate>--%>
                             </asp:TemplateField>
-                            <asp:TemplateField HeaderText="Speaker Name" AccessibleHeaderText="center" HeaderStyle-BackColor="#FFFFFF">
+                            <asp:TemplateField HeaderText="Speaker&nbsp;Name" AccessibleHeaderText="center" HeaderStyle-BackColor="#FFFFFF">
                                 <ItemTemplate>
                                     <asp:Label ID="speaker" runat="server" Text='<%# Eval("speakerName") %>'></asp:Label>
                                 </ItemTemplate>
@@ -170,7 +170,7 @@
                     <div class="col-xs-2 col-sm-2 col-md-2"></div>
                     <div class="col-xs-2 col-sm-2 col-md-2">
                         <div class="form-group" style="text-align: left">
-                            <label>EndTime</label>
+                            <label>End Time</label>
                         </div>
                     </div>
                     <div class="col-xs-6 col-sm-6 col-md-6">

@@ -10,7 +10,7 @@
                 <p style="font-size:large"><span class="glyphicon glyphicon-tags">&nbsp;</span>Sponsor
            
         
-               <span style="margin-top:-5px;"><asp:Button runat="server"  Style="margin-top:-3px;" Text="Create a New Sponsor" OnClick="newSponsor_Click" type="button" ID="newSponsor" class="btn btn-info pull-right"></asp:Button>
+               <span style="margin-top:-5px;"><asp:Button runat="server"  Style="margin-top:-3px;" Text="Create Sponsor" OnClick="newSponsor_Click" type="button" ID="newSponsor" class="btn btn-info pull-right"></asp:Button>
         </span>
                    </p>
         </div>
@@ -23,7 +23,7 @@
         <PagerSettings Mode="NumericFirstLast" PageButtonCount="5" FirstPageText="First" LastPageText="Last" />
         <PagerStyle BackColor="#FFFFFF" CssClass="GridPager" HorizontalAlign="center"/>
         <Columns> 
-       <asp:TemplateField HeaderText="Sno" AccessibleHeaderText="center"  HeaderStyle-BackColor="#FFFFFF">
+       <asp:TemplateField HeaderText="S&nbsp;no" AccessibleHeaderText="center"  HeaderStyle-BackColor="#FFFFFF">
 <ItemTemplate>
 <asp:Label ID="sno" runat="server" Text='<%# Eval("sno") %>'></asp:Label>
 </ItemTemplate>
@@ -31,7 +31,7 @@
 <asp:TextBox ID="sno" BorderStyle="None" runat="server" Text='<%# Eval("sno") %>'></asp:TextBox>
 </EditItemTemplate>
         </asp:TemplateField>
-<asp:TemplateField HeaderText="EventId" AccessibleHeaderText="center"  HeaderStyle-BackColor="#FFFFFF">
+<asp:TemplateField HeaderText="Event&nbsp;Id" AccessibleHeaderText="center"  HeaderStyle-BackColor="#FFFFFF">
 <ItemTemplate>
 <asp:Label ID="eventId" runat="server" Text='<%# Eval("eventId") %>'></asp:Label>
 </ItemTemplate>
@@ -91,7 +91,7 @@
                       <div class="col-xs-2 col-sm-2 col-md-2"></div>
                             <div class="col-xs-2 col-sm-2 col-md-2">
                                 <div class="form-group"  style="text-align:left">
-                                    <label>Sno</label>
+                                    <label>S no</label>
                                 </div>
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
@@ -107,7 +107,7 @@
                                       
                             <div class="col-xs-2 col-sm-2 col-md-2">
                                 <div class="form-group" style="text-align:left">
-                                    <label>EventId</label>
+                                    <label>Event Id</label>
                                 </div>
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">

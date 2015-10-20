@@ -29,7 +29,7 @@
         <PagerStyle BackColor="#FFFFFF" CssClass="GridPager" HorizontalAlign="center"/>
         <Columns>
            
-<asp:TemplateField HeaderText="UserName"  AccessibleHeaderText="center"  HeaderStyle-BackColor="#FFFFFF">
+<asp:TemplateField HeaderText="User&nbsp;Name"  AccessibleHeaderText="center"  HeaderStyle-BackColor="#FFFFFF">
 <ItemTemplate>
 <asp:Label ID="lbluserId" runat="server" Text='<%# Eval("userName") %>'></asp:Label>
 </ItemTemplate>
@@ -59,7 +59,7 @@
     </section>
             </div>
         </section>
-   <div class="panel panel-default" runat="server">
+<%--   <div class="panel panel-default" runat="server" id="divEdit">--%>
        <%-- 
         </div>
        
@@ -91,6 +91,10 @@
     <div id="divCorrectAnswer" class="col-md-6" runat="server" visible="false">
     <asp:Label runat="server" style="font-size:13px"  Text="Correct Answers Of Objective questions only" Font-Bold="true"></asp:Label>
     </div>
-           </div>
+           <div class="col-md-12 center-block" runat="server">
+           <asp:Button ID="btncancle" runat="server" CausesValidation="false" CssClass="btn btn-danger" OnClick="btncancle_Click" Text="Cancel"/>
        </div>
+           </div>
+       
+<%--       </div>--%>
 </asp:Content>

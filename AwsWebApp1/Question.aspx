@@ -36,7 +36,7 @@
             <Columns>
 
 
-                <asp:TemplateField HeaderText="QuestionId" AccessibleHeaderText="center" HeaderStyle-BackColor="#FFFFFF">
+                <asp:TemplateField HeaderText="Question&nbsp;Id" AccessibleHeaderText="center" HeaderStyle-BackColor="#FFFFFF">
                     <ItemTemplate>
                         <asp:Label ID="questionId" runat="server" Text='<%# Eval("questionId") %>'></asp:Label>
                     </ItemTemplate>
@@ -44,7 +44,7 @@
 <asp:TextBox ID="TextBox3" BorderStyle="None" runat="server" Text='<%# Eval("questionId") %>'></asp:TextBox>
 </EditItemTemplate>--%>
                 </asp:TemplateField>
-                <asp:TemplateField HeaderText="EventId" AccessibleHeaderText="center" HeaderStyle-BackColor="#FFFFFF">
+                <asp:TemplateField HeaderText="Event&nbsp;Id" AccessibleHeaderText="center" HeaderStyle-BackColor="#FFFFFF">
                     <ItemTemplate>
                         <asp:Label ID="eventId" runat="server" Text='<%# Eval("eventId") %>'></asp:Label>
                     </ItemTemplate>
@@ -52,7 +52,7 @@
 <asp:TextBox ID="TextBox1" BorderStyle="None" runat="server" Text='<%# Eval("eventId") %>'></asp:TextBox>
 </EditItemTemplate>--%>
                 </asp:TemplateField>
-                <asp:TemplateField HeaderText="QuestionType" AccessibleHeaderText="center" HeaderStyle-BackColor="#FFFFFF">
+                <asp:TemplateField HeaderText="Question&nbsp;Type" AccessibleHeaderText="center" HeaderStyle-BackColor="#FFFFFF">
                     <ItemTemplate>
                         <asp:Label ID="lblQuestionType" runat="server" Text='<%# Eval("questionType") %>'></asp:Label>
                     </ItemTemplate>
@@ -73,7 +73,7 @@
                         <asp:Label ID="options" runat="server" Text='<%# Eval("options") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
-                <asp:TemplateField HeaderText="CorrectAnswer" AccessibleHeaderText="center" HeaderStyle-BackColor="#FFFFFF">
+                <asp:TemplateField HeaderText="Correct&nbsp;Answer" AccessibleHeaderText="center" HeaderStyle-BackColor="#FFFFFF">
                     <ItemTemplate>
                         <asp:Label ID="correctAnswer" runat="server" Text='<%# Eval("correctAnswer") %>'></asp:Label>
                     </ItemTemplate>
@@ -164,7 +164,7 @@
                     <div class="col-xs-2 col-sm-2 col-md-2"></div>
                     <div class="col-xs-2 col-sm-2 col-md-2">
                         <div class="form-group" style="text-align: left">
-                            <label>QuestionType</label>
+                            <label>Question Type</label>
                         </div>
                     </div>
                     <div class="col-xs-6 col-sm-6 col-md-6">
@@ -178,7 +178,7 @@
                     <div class="col-xs-2 col-sm-2 col-md-2"></div>
                     <div class="col-xs-2 col-sm-2 col-md-2">
                         <div class="form-group" style="text-align: left">
-                            <label>CorrectAnswer</label>
+                            <label>Correct Answer</label>
                         </div>
                     </div>
                     <div class="col-xs-6 col-sm-6 col-md-6">

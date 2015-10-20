@@ -1,5 +1,7 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="/css/styles.css?v={random number/string}"></script>
 <div id="nav-wrapper">
-    <ul id="nav"
+    <ul class="nav" id="nav"
         data-ng-controller="NavCtrl"
         data-collapse-nav
         data-slim-scroll
@@ -16,3 +18,39 @@
         <li><a href="../../QuizAnswer.aspx"><i class="glyphicon glyphicon-ok"><span class="icon-bg" style="background-color: #008000"></span></i><span data-translate="Answers"></span></a></li>
     </ul>
 </div>
+
+
+<!--<script>
+    $(function () {
+        $('li a').click(function () {
+            $('li a').each(function (a) {
+                $(this).removeClass('selectedclass')
+            });
+            $(this).addClass('selectedclass');
+        });
+
+        $('ul a').click(function () {
+            $('ul a').each(function (a) {
+                $(this).removeClass('selectedclass')
+            });
+            $(this).addClass('selectedclass');
+        });
+    });
+</script>-->
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+    $("a").click(function () {
+        //$("a").css("color", "black"); // change this color to default one
+        $(this).css("color", "RED");
+    });
+</script>
+
+<style>
+    a:active {
+        color: yellow;
+    }
+
+    a:visited {
+        color: green;
+    }
+</style>

@@ -30,7 +30,7 @@
         <PagerStyle BackColor="#FFFFFF" CssClass="GridPager" HorizontalAlign="center"/>
         <Columns>
     
-        <asp:TemplateField HeaderText="Businessid"  AccessibleHeaderText="center"  HeaderStyle-BackColor="#FFFFFF">
+        <asp:TemplateField HeaderText="Business&nbsp;Id"  AccessibleHeaderText="center"  HeaderStyle-BackColor="#FFFFFF">
 <ItemTemplate>
 <asp:Label ID="Businessid" runat="server" Text='<%# Eval("Businessid") %>'></asp:Label>
 </ItemTemplate>
@@ -38,7 +38,7 @@
 <asp:TextBox ID="Businessid" BorderStyle="None" runat="server" Text='<%# Eval("Businessid") %>'></asp:TextBox>
 </EditItemTemplate>
             </asp:TemplateField>
-<asp:TemplateField HeaderText="MenIn"  AccessibleHeaderText="center"  HeaderStyle-BackColor="#FFFFFF">
+<asp:TemplateField HeaderText="Men&nbsp;In"  AccessibleHeaderText="center"  HeaderStyle-BackColor="#FFFFFF">
 <ItemTemplate>
 <asp:Label ID="MenIn" runat="server" Text='<%# Eval("MenIn") %>'></asp:Label>
 </ItemTemplate>
@@ -46,7 +46,7 @@
 <asp:TextBox ID="TextBox1" BorderStyle="None" runat="server" Text='<%# Eval("MenIn") %>'></asp:TextBox>
 </EditItemTemplate>
     </asp:TemplateField>
-<asp:TemplateField HeaderText="MenOut"  AccessibleHeaderText="center"  HeaderStyle-BackColor="#FFFFFF">
+<asp:TemplateField HeaderText="Men&nbsp;Out"  AccessibleHeaderText="center"  HeaderStyle-BackColor="#FFFFFF">
 <ItemTemplate>
 <asp:Label ID="MenOut" runat="server" Text='<%# Eval("MenOut") %>'></asp:Label>
 </ItemTemplate>
@@ -54,7 +54,7 @@
 <asp:TextBox ID="TextBox2" BorderStyle="None" runat="server" Text='<%# Eval("MenOut") %>'></asp:TextBox>
 </EditItemTemplate>
     </asp:TemplateField>
-<asp:TemplateField HeaderText="WomenIn"  AccessibleHeaderText="center"  HeaderStyle-BackColor="#FFFFFF">
+<asp:TemplateField HeaderText="Women&nbsp;In"  AccessibleHeaderText="center"  HeaderStyle-BackColor="#FFFFFF">
 <ItemTemplate>
 <asp:Label ID="WomenIn" runat="server" Text='<%# Eval("WomenIn") %>'></asp:Label>
 </ItemTemplate>
@@ -62,7 +62,7 @@
 <asp:TextBox ID="TextBox3" BorderStyle="None" runat="server" Text='<%# Eval("WomenIn") %>'></asp:TextBox>
 </EditItemTemplate>
     </asp:TemplateField>
-<asp:TemplateField HeaderText="WomenOut"  AccessibleHeaderText="center"  HeaderStyle-BackColor="#FFFFFF">
+<asp:TemplateField HeaderText="Women&nbsp;Out"  AccessibleHeaderText="center"  HeaderStyle-BackColor="#FFFFFF">
 <ItemTemplate>
 <asp:Label ID="WomenOut" runat="server" Text='<%# Eval("WomenOut") %>'></asp:Label>
 </ItemTemplate>
@@ -70,7 +70,7 @@
 <asp:TextBox ID="TextBox4" BorderStyle="None" runat="server" Text='<%# Eval("WomenOut") %>'></asp:TextBox>
 </EditItemTemplate>
     </asp:TemplateField>
-<asp:TemplateField HeaderText="DeviceToken"  AccessibleHeaderText="center"  HeaderStyle-BackColor="#FFFFFF">
+<asp:TemplateField HeaderText="Device&nbsp;Token"  AccessibleHeaderText="center"  HeaderStyle-BackColor="#FFFFFF">
 <ItemTemplate>
 <asp:Label ID="deviceToken" runat="server" Text='<%# Eval("deviceToken") %>'></asp:Label>
 </ItemTemplate>
@@ -94,7 +94,7 @@
 <asp:TextBox ID="TextBox7" BorderStyle="None" runat="server" Text='<%# Eval("longitude") %>'></asp:TextBox>
 </EditItemTemplate>
     </asp:TemplateField>
-<asp:TemplateField HeaderText="TotalPeople"  AccessibleHeaderText="center"  HeaderStyle-BackColor="#FFFFFF">
+<asp:TemplateField HeaderText="Total&nbsp;People"  AccessibleHeaderText="center"  HeaderStyle-BackColor="#FFFFFF">
 <ItemTemplate>
 <asp:Label ID="totalpeople" runat="server" Text='<%# Eval("totalpeople") %>'></asp:Label>
 </ItemTemplate>
@@ -102,7 +102,7 @@
 <asp:TextBox ID="TextBox8" BorderStyle="None" runat="server" Text='<%# Eval("totalpeople") %>'></asp:TextBox>
 </EditItemTemplate>
     </asp:TemplateField>
-<asp:TemplateField HeaderText="TotalProducts"  AccessibleHeaderText="center"  HeaderStyle-BackColor="#FFFFFF">
+<asp:TemplateField HeaderText="Total&nbsp;Products"  AccessibleHeaderText="center"  HeaderStyle-BackColor="#FFFFFF">
 <ItemTemplate>
 <asp:Label ID="totalproducts" runat="server" Text='<%# Eval("totalproducts") %>'></asp:Label>
 </ItemTemplate>
@@ -110,7 +110,7 @@
 <asp:TextBox ID="TextBox9" BorderStyle="None" runat="server" Text='<%# Eval("totalproducts") %>'></asp:TextBox>
 </EditItemTemplate>
     </asp:TemplateField>
-<asp:TemplateField HeaderText="TotalVehicles"  AccessibleHeaderText="center"  HeaderStyle-BackColor="#FFFFFF">
+<asp:TemplateField HeaderText="Total&nbsp;Vehicles"  AccessibleHeaderText="center"  HeaderStyle-BackColor="#FFFFFF">
 <ItemTemplate>
 <asp:Label ID="totalvehicles" runat="server" Text='<%# Eval("totalvehicles") %>'></asp:Label>
 </ItemTemplate>

@@ -196,6 +196,7 @@ namespace AwsWebApp1
             {
                 TextBox txt = new TextBox();
                 txt.ID = "txtOptions" + i;
+                txt.Font.Size = 10;
                 txt.ClientIDMode = ClientIDMode.Static;
                 txt.Text = string.Empty;
                 txt.Text = optionsCount[i].ToString();

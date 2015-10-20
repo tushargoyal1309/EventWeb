@@ -42,7 +42,7 @@
         <PagerSettings Mode="NumericFirstLast" PageButtonCount="5" FirstPageText="First" LastPageText="Last" />
         <PagerStyle BackColor="#FFFFFF" CssClass="GridPager" HorizontalAlign="center"/>
      <Columns>
-     <asp:TemplateField HeaderText="AnnouncementId"  AccessibleHeaderText="center"  HeaderStyle-BackColor="#FFFFFF">
+     <asp:TemplateField HeaderText="Announcement&nbsp;Id"  AccessibleHeaderText="center"  HeaderStyle-BackColor="#FFFFFF">
 <ItemTemplate>
 <asp:Label ID="announcementId" runat="server" Text='<%# Eval("announcementId") %>'></asp:Label>
 </ItemTemplate>
@@ -50,7 +50,7 @@
 <asp:TextBox ID="announcementId" BorderStyle="None" runat="server" Text='<%# Eval("announcementId") %>'></asp:TextBox>
 </EditItemTemplate>--%>
          </asp:TemplateField>
-<asp:TemplateField HeaderText="EventId"  AccessibleHeaderText="center"  HeaderStyle-BackColor="#FFFFFF">
+<asp:TemplateField HeaderText="Event&nbsp;Id"  AccessibleHeaderText="center"  HeaderStyle-BackColor="#FFFFFF">
 <ItemTemplate>
 <asp:Label ID="eventId" runat="server" Text='<%# Eval("eventId") %>'></asp:Label>
 </ItemTemplate>
@@ -58,7 +58,7 @@
 <asp:TextBox ID="TextBox1" BorderStyle="None" runat="server" Text='<%# Eval("eventId") %>'></asp:TextBox>
 </EditItemTemplate>--%>
     </asp:TemplateField>
-<asp:TemplateField HeaderText="PublishTime"  AccessibleHeaderText="center"  HeaderStyle-BackColor="#FFFFFF">
+<asp:TemplateField HeaderText="Publish&nbsp;Time"  AccessibleHeaderText="center"  HeaderStyle-BackColor="#FFFFFF">
 <ItemTemplate>
 <asp:Label ID="publishTime" runat="server" Text='<%# Eval("publishTime") %>'></asp:Label>
 </ItemTemplate>
@@ -91,7 +91,7 @@
                          <div class="col-xs-2 col-sm-2 col-md-2"></div>
                             <div class="col-xs-2 col-sm-2 col-md-2">
                                 <div class="form-group"  style="text-align:left">
-                                    <label>AnnouncementId</label>
+                                    <label>Announcement Id</label>
                                 </div>
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
@@ -106,7 +106,7 @@
                       <div class="col-xs-2 col-sm-2 col-md-2"></div>
                             <div class="col-xs-2 col-sm-2 col-md-2">
                                 <div class="form-group"  style="text-align:left">
-                                    <label>EventId</label>
+                                    <label>Event Id</label>
                                 </div>
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
@@ -121,7 +121,7 @@
                                       
                             <div class="col-xs-2 col-sm-2 col-md-2">
                                 <div class="form-group" style="text-align:left">
-                                    <label>PublishTime</label>
+                                    <label>Publish Time</label>
                                 </div>
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">

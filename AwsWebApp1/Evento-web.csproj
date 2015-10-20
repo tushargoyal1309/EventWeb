@@ -112,7 +112,6 @@
     <Content Include="app\form\validation.html" />
     <Content Include="app\form\wizard.html" />
     <Content Include="app\layout\header.html" />
-    <Content Include="app\layout\HtmlPage1.html" />
     <Content Include="app\layout\nav.html" />
     <Content Include="app\mail\compose.html" />
     <Content Include="app\mail\inbox.html" />

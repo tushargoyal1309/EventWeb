@@ -273,5 +273,10 @@ namespace AwsWebApp1
             gvQuizAnswer.DataSource = dt;
             gvQuizAnswer.DataBind();
         }
+
+        protected void btncancle_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("QuizAnswer.aspx");
+        }
     }
 }
